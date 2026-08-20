@@ -1,0 +1,947 @@
+[
+  {
+    "id": "eval_01",
+    "question": "What is the recommended duration for routine brief tobacco cessation advice delivered by health-care providers?",
+    "language": "en",
+    "category": "direct_factual",
+    "difficulty": "easy",
+    "expected_behavior": "answer_supported",
+    "expected_answer": "WHO recommends brief advice lasting between 30 seconds and 3 minutes per encounter, provided routinely by health-care providers in all health-care settings.",
+    "source": "WHO 2024 Tobacco Cessation Guideline",
+    "source_section": "3.1.1",
+    "source_page": 29,
+    "required_claims": [
+      "Brief advice duration is between 30 seconds and 3 minutes per encounter",
+      "Delivered routinely by health-care providers across all health-care settings"
+    ],
+    "required_metrics": [
+      {
+        "metric_type": "duration",
+        "value": "30 seconds to 3 minutes",
+        "outcome": "brief advice consultation"
+      }
+    ],
+    "must_abstain": false,
+    "adversarial": false
+  },
+  {
+    "id": "eval_02",
+    "question": "How many Cochrane systematic reviews or total studies were included in the Cochrane review evaluating NRT monotherapy efficacy?",
+    "language": "en",
+    "category": "direct_factual",
+    "difficulty": "medium",
+    "expected_behavior": "answer_supported",
+    "expected_answer": "The Cochrane systematic review on NRT monotherapy included 133 studies with a total of 64,640 participants.",
+    "source": "WHO 2024 Tobacco Cessation Guideline",
+    "source_section": "3.3.3.1",
+    "source_page": 35,
+    "required_claims": [
+      "Cochrane systematic review on NRT monotherapy included 133 studies",
+      "Total participants included was 64,640"
+    ],
+    "required_metrics": [
+      {
+        "metric_type": "count",
+        "value": "133 studies",
+        "outcome": "systematic review size"
+      },
+      {
+        "metric_type": "count",
+        "value": "64640 participants",
+        "outcome": "sample size"
+      }
+    ],
+    "must_abstain": false,
+    "adversarial": false
+  },
+  {
+    "id": "eval_03",
+    "question": "According to the WHO guideline, what electronic record intervention is recommended for health-care facilities?",
+    "language": "en",
+    "category": "direct_factual",
+    "difficulty": "medium",
+    "expected_behavior": "answer_supported",
+    "expected_answer": "WHO recommends that all health-care facilities record tobacco use status and use of tobacco cessation interventions in their medical records, including Electronic Health Records (EHRs).",
+    "source": "WHO 2024 Tobacco Cessation Guideline",
+    "source_section": "3.7.1",
+    "source_page": 44,
+    "required_claims": [
+      "Health facilities should record tobacco use status in medical records/EHRs",
+      "Health facilities should record use of tobacco cessation interventions"
+    ],
+    "required_metrics": [],
+    "must_abstain": false,
+    "adversarial": false
+  },
+  {
+    "id": "eval_04",
+    "question": "According to the Background section of the WHO guideline, how many people does tobacco kill per year globally, and how many people worldwide currently use tobacco?",
+    "language": "en",
+    "category": "direct_factual",
+    "difficulty": "medium",
+    "expected_behavior": "answer_supported",
+    "expected_answer": "According to the Background section of the WHO guideline, tobacco kills more than 8 million people per year and imposes a significant economic burden throughout the world. Globally, there are still 1.25 billion people who use tobacco.",
+    "source": "WHO 2024 Tobacco Cessation Guideline",
+    "source_section": "Background",
+    "source_page": 15,
+    "required_claims": [
+      "Tobacco kills more than 8 million people per year worldwide",
+      "Globally, there are still 1.25 billion people who use tobacco"
+    ],
+    "required_metrics": [
+      {
+        "metric_type": "annual_mortality",
+        "value": "more than 8 million",
+        "outcome": "annual tobacco deaths globally"
+      },
+      {
+        "metric_type": "prevalence_count",
+        "value": "1.25 billion",
+        "outcome": "global tobacco users"
+      }
+    ],
+    "must_abstain": false,
+    "adversarial": false
+  },
+  {
+    "id": "eval_05",
+    "question": "What four acronym components comprise the target PICO framework used by the Guideline Development Group?",
+    "language": "en",
+    "category": "direct_factual",
+    "difficulty": "hard",
+    "expected_behavior": "answer_supported",
+    "expected_answer": "PICO stands for Population, Intervention, Comparator and Outcomes.",
+    "source": "WHO 2024 Tobacco Cessation Guideline",
+    "source_section": "Abbreviations and acronyms",
+    "source_page": 9,
+    "required_claims": [
+      "PICO represents Population, Intervention, Comparator and Outcomes"
+    ],
+    "required_metrics": [],
+    "must_abstain": false,
+    "adversarial": false
+  },
+  {
+    "id": "eval_06",
+    "question": "What funding source supported the development of the 2024 WHO tobacco cessation guideline?",
+    "language": "en",
+    "category": "direct_factual",
+    "difficulty": "medium",
+    "expected_behavior": "answer_supported",
+    "expected_answer": "The guideline development was funded entirely by WHO core funding.",
+    "source": "WHO 2024 Tobacco Cessation Guideline",
+    "source_section": "Acknowledgements",
+    "source_page": 7,
+    "required_claims": [
+      "Funded by WHO core funding"
+    ],
+    "required_metrics": [],
+    "must_abstain": false,
+    "adversarial": false
+  },
+  {
+    "id": "eval_07",
+    "question": "Which medications does WHO recommend as first-line pharmacological treatment options for smoking cessation in adults?",
+    "language": "en",
+    "category": "clinical_recommendations",
+    "difficulty": "easy",
+    "expected_behavior": "answer_supported",
+    "expected_answer": "WHO recommends varenicline, Nicotine Replacement Therapy (NRT), or bupropion as first-line pharmacological options, alongside cytisine as a pharmacological treatment option.",
+    "source": "WHO 2024 Tobacco Cessation Guideline",
+    "source_section": "3.3.1",
+    "source_page": 35,
+    "required_claims": [
+      "Varenicline, NRT, and bupropion are recommended as first-line pharmacological treatments",
+      "Cytisine is also recommended as an effective pharmacological option"
+    ],
+    "required_metrics": [],
+    "must_abstain": false,
+    "adversarial": false
+  },
+  {
+    "id": "eval_08",
+    "question": "What is the WHO recommendation regarding intensive behavioural support for smokeless tobacco cessation?",
+    "language": "en",
+    "category": "clinical_recommendations",
+    "difficulty": "medium",
+    "expected_behavior": "answer_supported",
+    "expected_answer": "WHO strongly recommends providing intensive behavioural support interventions (individual face-to-face counselling, group counselling, or telephone counselling) for smokeless tobacco users interested in quitting.",
+    "source": "WHO 2024 Tobacco Cessation Guideline",
+    "source_section": "3.4.1",
+    "source_page": 40,
+    "required_claims": [
+      "Strong recommendation for intensive behavioural support for smokeless tobacco users",
+      "Modality includes individual face-to-face, group, or telephone counselling"
+    ],
+    "required_metrics": [],
+    "must_abstain": false,
+    "adversarial": false
+  },
+  {
+    "id": "eval_09",
+    "question": "What does WHO recommend concerning the combination of behavioural support and pharmacotherapy?",
+    "language": "en",
+    "category": "clinical_recommendations",
+    "difficulty": "medium",
+    "expected_behavior": "answer_supported",
+    "expected_answer": "WHO strongly recommends combining pharmacotherapy and behavioural interventions to support tobacco users who want to quit.",
+    "source": "WHO 2024 Tobacco Cessation Guideline",
+    "source_section": "3.5.1",
+    "source_page": 41,
+    "required_claims": [
+      "WHO strongly recommends combining pharmacotherapy and behavioural support"
+    ],
+    "required_metrics": [],
+    "must_abstain": false,
+    "adversarial": false
+  },
+  {
+    "id": "eval_10",
+    "question": "What is the WHO recommendation on providing toll-free telephone quitlines?",
+    "language": "en",
+    "category": "clinical_recommendations",
+    "difficulty": "medium",
+    "expected_behavior": "answer_supported",
+    "expected_answer": "WHO strongly recommends providing toll-free telephone quitlines for tobacco users interested in quitting (Section 3.1.1). Evidence in Section 3.1.3 further supports proactive telephone counselling as providing moderate benefits versus self-help or brief counselling.",
+    "source": "WHO 2024 Tobacco Cessation Guideline",
+    "source_section": "3.1.1 / 3.1.3",
+    "source_page": 29,
+    "required_claims": [
+      "WHO recommends toll-free telephone quitlines for tobacco users",
+      "Proactive telephone counselling provides moderate benefits over self-help or brief counselling"
+    ],
+    "required_metrics": [],
+    "must_abstain": false,
+    "adversarial": false
+  },
+  {
+    "id": "eval_11",
+    "question": "What does WHO recommend regarding the dosage comparison between 4 mg and 2 mg nicotine gum for highly dependent smokers?",
+    "language": "en",
+    "category": "clinical_recommendations",
+    "difficulty": "hard",
+    "expected_behavior": "answer_supported",
+    "expected_answer": "Evidence shows that highly dependent smokers benefit more from 4-mg nicotine gum than 2-mg gum (RR: 1.43; 95% CI: 1.12–1.83).",
+    "source": "WHO 2024 Tobacco Cessation Guideline",
+    "source_section": "3.3.3.1",
+    "source_page": 35,
+    "required_claims": [
+      "4 mg nicotine gum is more effective than 2 mg gum in highly dependent smokers",
+      "Relative risk is 1.43 with 95% CI 1.12 to 1.83"
+    ],
+    "required_metrics": [
+      {
+        "metric_type": "RR",
+        "value": "1.43",
+        "outcome": "4 mg vs 2 mg gum efficacy"
+      },
+      {
+        "metric_type": "CI",
+        "value": "1.12–1.83",
+        "outcome": "95% confidence interval"
+      }
+    ],
+    "must_abstain": false,
+    "adversarial": false
+  },
+  {
+    "id": "eval_12",
+    "question": "What is the official WHO statement on traditional, complementary, and alternative therapies (such as acupuncture, acupressure, laser therapy, and hypnotherapy) for tobacco cessation?",
+    "language": "en",
+    "category": "clinical_recommendations",
+    "difficulty": "medium",
+    "expected_behavior": "answer_supported",
+    "expected_answer": "WHO states that evidence is insufficient to make a recommendation for or against traditional, complementary, and alternative therapies. If used, health providers should ensure they do not delay or replace proven evidence-based interventions.",
+    "source": "WHO 2024 Tobacco Cessation Guideline",
+    "source_section": "3.6.1",
+    "source_page": 43,
+    "required_claims": [
+      "Evidence is insufficient for or against traditional/alternative therapies",
+      "Should not delay or replace proven evidence-based interventions"
+    ],
+    "required_metrics": [],
+    "must_abstain": false,
+    "adversarial": false
+  },
+  {
+    "id": "eval_13",
+    "question": "What is the NNT (Number Needed to Treat) for routine brief advice by health-care providers to achieve one additional case of long-term tobacco cessation?",
+    "language": "en",
+    "category": "numerical_statistical",
+    "difficulty": "hard",
+    "expected_behavior": "answer_supported",
+    "expected_answer": "The NNT for routine brief advice compared with no advice or usual care is 91 to achieve one additional case of long-term cessation.",
+    "source": "WHO 2024 Tobacco Cessation Guideline",
+    "source_section": "3.1.3",
+    "source_page": 29,
+    "required_claims": [
+      "NNT for routine brief advice is 91"
+    ],
+    "required_metrics": [
+      {
+        "metric_type": "NNT",
+        "value": "91",
+        "outcome": "brief advice long-term cessation"
+      }
+    ],
+    "must_abstain": false,
+    "adversarial": false
+  },
+  {
+    "id": "eval_14",
+    "question": "What is the NNT and NNH for Bupropion SR compared with placebo as reported in Section 3.3.3.6 Conclusions?",
+    "language": "en",
+    "category": "numerical_statistical",
+    "difficulty": "hard",
+    "expected_behavior": "answer_supported",
+    "expected_answer": "For bupropion versus placebo/no pharmacotherapy, the NNT is 14 for one additional case of long-term abstinence, and the NNH is 100 for causing one additional Serious Adverse Event (SAE), and NNH is 33 for dropouts due to AEs.",
+    "source": "WHO 2024 Tobacco Cessation Guideline",
+    "source_section": "3.3.3.6",
+    "source_page": 37,
+    "required_claims": [
+      "NNT for bupropion vs placebo is 14",
+      "NNH for bupropion SAEs is 100",
+      "NNH for dropouts due to AEs is 33"
+    ],
+    "required_metrics": [
+      {
+        "metric_type": "NNT",
+        "value": "14",
+        "outcome": "long-term abstinence"
+      },
+      {
+        "metric_type": "NNH",
+        "value": "100",
+        "outcome": "serious adverse events"
+      },
+      {
+        "metric_type": "NNH",
+        "value": "33",
+        "outcome": "dropout due to AEs"
+      }
+    ],
+    "must_abstain": false,
+    "adversarial": false
+  },
+  {
+    "id": "eval_15",
+    "question": "What is the relative risk (RR) and 95% CI for cytisine compared with placebo/usual care in achieving at least 6 months of smoking abstinence?",
+    "language": "en",
+    "category": "numerical_statistical",
+    "difficulty": "hard",
+    "expected_behavior": "answer_supported",
+    "expected_answer": "In the WHO commissioned systematic review of 14 studies, cytisine showed an RR of 2.61 (95% CI: 1.50–4.67; 6 trials; 5,194 participants) for quitting smoking for at least 6 months compared with placebo/usual care.",
+    "source": "WHO 2024 Tobacco Cessation Guideline",
+    "source_section": "3.3.3.4",
+    "source_page": 37,
+    "required_claims": [
+      "Cytisine vs placebo RR is 2.61",
+      "95% CI is 1.50 to 4.67 across 6 trials and 5,194 participants"
+    ],
+    "required_metrics": [
+      {
+        "metric_type": "RR",
+        "value": "2.61",
+        "outcome": "6 months abstinence vs placebo"
+      },
+      {
+        "metric_type": "CI",
+        "value": "1.50–4.67",
+        "outcome": "95% confidence interval"
+      },
+      {
+        "metric_type": "count",
+        "value": "5194",
+        "outcome": "participants"
+      }
+    ],
+    "must_abstain": false,
+    "adversarial": false
+  },
+  {
+    "id": "eval_16",
+    "question": "What is the NNT for combination NRT (patch plus fast-acting form) compared with NRT monotherapy to achieve one more case of long-term abstinence?",
+    "language": "en",
+    "category": "numerical_statistical",
+    "difficulty": "hard",
+    "expected_behavior": "answer_supported",
+    "expected_answer": "The NNT for combination NRT versus NRT monotherapy is 29 to achieve one additional case of long-term abstinence (with RR: 1.25, 95% CI: 1.15–1.36).",
+    "source": "WHO 2024 Tobacco Cessation Guideline",
+    "source_section": "3.3.3.6",
+    "source_page": 37,
+    "required_claims": [
+      "NNT for combination NRT vs monotherapy is 29"
+    ],
+    "required_metrics": [
+      {
+        "metric_type": "NNT",
+        "value": "29",
+        "outcome": "combination NRT vs monotherapy"
+      }
+    ],
+    "must_abstain": false,
+    "adversarial": false
+  },
+  {
+    "id": "eval_17",
+    "question": "What is the NNT of mobile phone text messaging interventions compared to minimal smoking cessation support?",
+    "language": "en",
+    "category": "numerical_statistical",
+    "difficulty": "hard",
+    "expected_behavior": "answer_supported",
+    "expected_answer": "Text messaging versus minimal smoking cessation support has an NNT of 33, and text messaging added to other cessation support versus other support alone has an NNT of 25.",
+    "source": "WHO 2024 Tobacco Cessation Guideline",
+    "source_section": "3.2.3",
+    "source_page": 32,
+    "required_claims": [
+      "NNT for text messaging vs minimal support is 33",
+      "NNT for text messaging added to other support is 25"
+    ],
+    "required_metrics": [
+      {
+        "metric_type": "NNT",
+        "value": "33",
+        "outcome": "text messaging vs minimal support"
+      },
+      {
+        "metric_type": "NNT",
+        "value": "25",
+        "outcome": "text messaging as adjunct"
+      }
+    ],
+    "must_abstain": false,
+    "adversarial": false
+  },
+  {
+    "id": "eval_18",
+    "question": "What is the NNT for behavioural counselling in smokeless tobacco users compared to usual care?",
+    "language": "en",
+    "category": "numerical_statistical",
+    "difficulty": "hard",
+    "expected_behavior": "answer_supported",
+    "expected_answer": "For smokeless tobacco users, behavioural counselling versus usual care/minimal support has an NNT of 9 for achieving one more case of long-term tobacco cessation.",
+    "source": "WHO 2024 Tobacco Cessation Guideline",
+    "source_section": "3.4.3",
+    "source_page": 40,
+    "required_claims": [
+      "NNT for behavioural counselling in smokeless tobacco is 9"
+    ],
+    "required_metrics": [
+      {
+        "metric_type": "NNT",
+        "value": "9",
+        "outcome": "smokeless tobacco cessation"
+      }
+    ],
+    "must_abstain": false,
+    "adversarial": false
+  },
+  {
+    "id": "eval_19",
+    "question": "What is the NNT for conversational AI-based digital interventions for tobacco cessation?",
+    "language": "en",
+    "category": "numerical_statistical",
+    "difficulty": "hard",
+    "expected_behavior": "answer_supported",
+    "expected_answer": "For conversational AI-based software interventions compared with control, the NNT is 12 for achieving one more case of continuous/sustained abstinence at 6 months.",
+    "source": "WHO 2024 Tobacco Cessation Guideline",
+    "source_section": "3.2.3",
+    "source_page": 32,
+    "required_claims": [
+      "NNT for conversational AI intervention is 12"
+    ],
+    "required_metrics": [
+      {
+        "metric_type": "NNT",
+        "value": "12",
+        "outcome": "conversational AI cessation"
+      }
+    ],
+    "must_abstain": false,
+    "adversarial": false
+  },
+  {
+    "id": "eval_20",
+    "question": "What is the relative risk (RR) of bupropion compared to placebo for long-term smoking cessation across the 50 Cochrane trials?",
+    "language": "en",
+    "category": "numerical_statistical",
+    "difficulty": "hard",
+    "expected_behavior": "answer_supported",
+    "expected_answer": "Bupropion compared with placebo or no pharmacological treatment showed an RR of 1.60 (95% CI: 1.49–1.72; 50 studies; 18,577 participants) for long-term smoking cessation.",
+    "source": "WHO 2024 Tobacco Cessation Guideline",
+    "source_section": "3.3.3.2",
+    "source_page": 36,
+    "required_claims": [
+      "Bupropion vs placebo RR is 1.60",
+      "95% CI is 1.49 to 1.72 across 50 studies and 18,577 participants"
+    ],
+    "required_metrics": [
+      {
+        "metric_type": "RR",
+        "value": "1.60",
+        "outcome": "bupropion long-term cessation"
+      },
+      {
+        "metric_type": "CI",
+        "value": "1.49–1.72",
+        "outcome": "95% CI"
+      }
+    ],
+    "must_abstain": false,
+    "adversarial": false
+  },
+  {
+    "id": "eval_21",
+    "question": "How does varenicline compare directly with bupropion in terms of long-term smoking cessation efficacy in head-to-head evidence?",
+    "language": "en",
+    "category": "comparison_questions",
+    "difficulty": "hard",
+    "expected_behavior": "answer_supported",
+    "expected_answer": "High-certainty evidence indicates that varenicline is superior to bupropion for long-term smoking abstinence, with an NNT of 16–22 for varenicline versus bupropion or NRT.",
+    "source": "WHO 2024 Tobacco Cessation Guideline",
+    "source_section": "3.3.3.6",
+    "source_page": 37,
+    "required_claims": [
+      "Varenicline has high-certainty evidence of superiority over bupropion",
+      "NNT for varenicline vs bupropion or NRT is 16 to 22"
+    ],
+    "required_metrics": [
+      {
+        "metric_type": "NNT",
+        "value": "16–22",
+        "outcome": "varenicline vs bupropion or NRT"
+      }
+    ],
+    "must_abstain": false,
+    "adversarial": false
+  },
+  {
+    "id": "eval_22",
+    "question": "Between combination NRT and single-form NRT monotherapy, what is the comparative efficacy for long-term cessation?",
+    "language": "en",
+    "category": "comparison_questions",
+    "difficulty": "medium",
+    "expected_behavior": "answer_supported",
+    "expected_answer": "There is high-certainty evidence that combination NRT (a fast-acting form plus a transdermal patch) achieves higher long-term quit rates than single-form NRT monotherapy (RR: 1.25; 95% CI: 1.15–1.36; 14 studies; 11,356 participants).",
+    "source": "WHO 2024 Tobacco Cessation Guideline",
+    "source_section": "3.3.3.5",
+    "source_page": 37,
+    "required_claims": [
+      "Combination NRT is more effective than single-form NRT monotherapy",
+      "RR is 1.25 with 95% CI 1.15 to 1.36"
+    ],
+    "required_metrics": [
+      {
+        "metric_type": "RR",
+        "value": "1.25",
+        "outcome": "combination vs single NRT"
+      }
+    ],
+    "must_abstain": false,
+    "adversarial": false
+  },
+  {
+    "id": "eval_23",
+    "question": "How does cytisine compare with NRT monotherapy in clinical trial evidence for smoking abstinence?",
+    "language": "en",
+    "category": "comparison_questions",
+    "difficulty": "hard",
+    "expected_behavior": "answer_supported",
+    "expected_answer": "In systematic reviews, cytisine showed significantly higher long-term abstinence rates than NRT (RR: 1.36; 95% CI: 1.06–1.74; 3 trials; 2,752 participants; NNT: 18). However, the GDG rated certainty as very low to low for clinical difference in general.",
+    "source": "WHO 2024 Tobacco Cessation Guideline",
+    "source_section": "3.3.3.4",
+    "source_page": 37,
+    "required_claims": [
+      "Cytisine showed higher abstinence than NRT with RR 1.36 (95% CI 1.06–1.74)",
+      "NNT for cytisine vs NRT is 18"
+    ],
+    "required_metrics": [
+      {
+        "metric_type": "RR",
+        "value": "1.36",
+        "outcome": "cytisine vs NRT"
+      },
+      {
+        "metric_type": "NNT",
+        "value": "18",
+        "outcome": "cytisine vs NRT"
+      }
+    ],
+    "must_abstain": false,
+    "adversarial": false
+  },
+  {
+    "id": "eval_24",
+    "question": "Compare the effectiveness of 21 mg versus 14 mg transdermal nicotine patches according to the evidence review.",
+    "language": "en",
+    "category": "comparison_questions",
+    "difficulty": "hard",
+    "expected_behavior": "answer_supported",
+    "expected_answer": "Evidence showed that 21-mg patches are more effective than 14-mg patches (RR: 1.48; 95% CI: 1.06–2.08; 1 study; 537 participants).",
+    "source": "WHO 2024 Tobacco Cessation Guideline",
+    "source_section": "3.3.3.1",
+    "source_page": 35,
+    "required_claims": [
+      "21 mg patch is more effective than 14 mg patch",
+      "RR is 1.48 with 95% CI 1.06 to 2.08"
+    ],
+    "required_metrics": [
+      {
+        "metric_type": "RR",
+        "value": "1.48",
+        "outcome": "21 mg vs 14 mg patch"
+      },
+      {
+        "metric_type": "CI",
+        "value": "1.06–2.08",
+        "outcome": "95% CI"
+      }
+    ],
+    "must_abstain": false,
+    "adversarial": false
+  },
+  {
+    "id": "eval_25",
+    "question": "What does WHO recommend regarding bupropion for smoking cessation, and what serious adverse events (SAEs) and dropout risk does the WHO guideline document for bupropion compared to other cessation medications?",
+    "language": "en",
+    "category": "multi_claim_questions",
+    "difficulty": "medium",
+    "expected_behavior": "answer_supported",
+    "expected_answer": "WHO recommends bupropion as a first-line pharmacological treatment for tobacco users who smoke. The balance of benefits against harms favours bupropion on the basis of large benefits (NNT: 14 vs placebo) and moderate harms: SAEs included anxiety, insomnia and psychiatric AEs (NNH: 100 to cause one additional SAE), and dropouts due to adverse events (NNH: 33). Discontinuation of therapy due to adverse events may also be more common with bupropion than other cessation monotherapies.",
+    "source": "WHO 2024 Tobacco Cessation Guideline",
+    "source_section": "3.3.1 / 3.3.3.6",
+    "source_page": 37,
+    "required_claims": [
+      "Bupropion is recommended as a first-line pharmacotherapy for smoking cessation",
+      "Bupropion SAEs include anxiety, insomnia, and psychiatric AEs with NNH of 100",
+      "Dropout rate due to adverse events for bupropion has NNH of 33"
+    ],
+    "required_metrics": [
+      {
+        "metric_type": "NNT",
+        "value": "14",
+        "outcome": "long-term abstinence vs placebo"
+      },
+      {
+        "metric_type": "NNH",
+        "value": "100",
+        "outcome": "serious adverse events (anxiety, insomnia, psychiatric AEs)"
+      },
+      {
+        "metric_type": "NNH",
+        "value": "33",
+        "outcome": "dropout due to adverse events"
+      }
+    ],
+    "must_abstain": false,
+    "adversarial": false
+  },
+  {
+    "id": "eval_26",
+    "question": "What is the WHO recommendation for pharmacotherapy in pregnant women, and what is the first-line treatment approach in this population?",
+    "language": "en",
+    "category": "multi_claim_questions",
+    "difficulty": "medium",
+    "expected_behavior": "answer_supported",
+    "expected_answer": "For pregnant women, behavioural support is the first-line treatment option. Pharmacotherapy (such as NRT) should only be considered after weighing risks and benefits and if behavioural support alone is insufficient.",
+    "source": "WHO 2024 Tobacco Cessation Guideline",
+    "source_section": "3.1.4 / 3.3.4",
+    "source_page": 30,
+    "required_claims": [
+      "Behavioural interventions are first-line for pregnant women",
+      "Pharmacotherapy requires careful risk-benefit evaluation"
+    ],
+    "required_metrics": [],
+    "must_abstain": false,
+    "adversarial": false
+  },
+  {
+    "id": "eval_27",
+    "question": "Does WHO recommend combining bupropion with varenicline, and what is the NNT for this combination compared with varenicline monotherapy?",
+    "language": "en",
+    "category": "multi_claim_questions",
+    "difficulty": "hard",
+    "expected_behavior": "answer_supported",
+    "expected_answer": "There is moderate-certainty evidence that bupropion combined with varenicline may result in superior long-term quit rates compared with varenicline alone, with an NNT of 20 to achieve one more case of long-term abstinence.",
+    "source": "WHO 2024 Tobacco Cessation Guideline",
+    "source_section": "3.3.3.5 / 3.3.3.6",
+    "source_page": 37,
+    "required_claims": [
+      "Moderate-certainty evidence supports superior quit rates for bupropion plus varenicline vs varenicline alone",
+      "NNT for bupropion plus varenicline vs varenicline alone is 20"
+    ],
+    "required_metrics": [
+      {
+        "metric_type": "NNT",
+        "value": "20",
+        "outcome": "bupropion + varenicline vs varenicline"
+      }
+    ],
+    "must_abstain": false,
+    "adversarial": false
+  },
+  {
+    "id": "eval_28",
+    "question": "What are the recommended digital modalities under Section 3.2.1, and should they be offered as standalone treatments or as adjuncts?",
+    "language": "en",
+    "category": "multi_claim_questions",
+    "difficulty": "medium",
+    "expected_behavior": "answer_supported",
+    "expected_answer": "WHO recommends digital modalities including text messaging (SMS), smartphone applications, AI-based conversational agents, and internet-based interventions. They are recommended as adjuncts to other tobacco cessation interventions or self-management tools, rather than replacing clinical care.",
+    "source": "WHO 2024 Tobacco Cessation Guideline",
+    "source_section": "3.2.1",
+    "source_page": 32,
+    "required_claims": [
+      "Digital modalities include SMS, apps, AI chatbots, and internet tools",
+      "Recommended as adjuncts to other cessation interventions or self-management"
+    ],
+    "required_metrics": [],
+    "must_abstain": false,
+    "adversarial": false
+  },
+  {
+    "id": "eval_29",
+    "question": "What is the recommended daily dose and titration schedule of Topiramate for tobacco cessation according to the WHO guideline?",
+    "language": "en",
+    "category": "unsupported_questions",
+    "difficulty": "hard",
+    "expected_behavior": "abstain_unsupported",
+    "expected_answer": "The WHO guideline does not evaluate or recommend topiramate for tobacco cessation. The guideline provides no dosing, titration, or efficacy data for topiramate.",
+    "source": "WHO 2024 Tobacco Cessation Guideline",
+    "source_section": "None",
+    "source_page": null,
+    "required_claims": [
+      "Topiramate is not evaluated or recommended in the WHO guideline",
+      "System must abstain from inventing a topiramate dosing schedule"
+    ],
+    "required_metrics": [],
+    "must_abstain": true,
+    "adversarial": true
+  },
+  {
+    "id": "eval_30",
+    "question": "What is the NNT of transcranial magnetic stimulation (TMS) for long-term smoking abstinence in the WHO guideline?",
+    "language": "en",
+    "category": "unsupported_questions",
+    "difficulty": "hard",
+    "expected_behavior": "abstain_unsupported",
+    "expected_answer": "The WHO 2024 guideline does not include transcranial magnetic stimulation (TMS) in its evidence reviews or recommendations, and no NNT statistic is provided.",
+    "source": "WHO 2024 Tobacco Cessation Guideline",
+    "source_section": "None",
+    "source_page": null,
+    "required_claims": [
+      "TMS is not evaluated in the WHO guideline",
+      "No NNT exists for TMS in this corpus"
+    ],
+    "required_metrics": [],
+    "must_abstain": true,
+    "adversarial": true
+  },
+  {
+    "id": "eval_31",
+    "question": "What specific percentage of smokers in Latin America successfully quit after using varenicline according to Section 3.3?",
+    "language": "en",
+    "category": "unsupported_questions",
+    "difficulty": "hard",
+    "expected_behavior": "abstain_unsupported",
+    "expected_answer": "Section 3.3 of the WHO guideline does not provide region-specific quit percentages for Latin America.",
+    "source": "WHO 2024 Tobacco Cessation Guideline",
+    "source_section": "3.3",
+    "source_page": 35,
+    "required_claims": [
+      "Guideline does not report Latin America specific quit percentage for varenicline",
+      "System must state that this regional metric is not available"
+    ],
+    "required_metrics": [],
+    "must_abstain": true,
+    "adversarial": true
+  },
+  {
+    "id": "eval_32",
+    "question": "What is the exact NNH for neuropsychiatric adverse events for Cytisine in Section 3.3.3.4?",
+    "language": "en",
+    "category": "unsupported_questions",
+    "difficulty": "hard",
+    "expected_behavior": "abstain_unsupported",
+    "expected_answer": "Section 3.3.3.4 reports general adverse events for cytisine (gastrointestinal symptoms), but does not report a specific NNH numerical value for neuropsychiatric adverse events.",
+    "source": "WHO 2024 Tobacco Cessation Guideline",
+    "source_section": "3.3.3.4",
+    "source_page": 37,
+    "required_claims": [
+      "Section 3.3.3.4 does not provide an NNH number for neuropsychiatric events for cytisine",
+      "System must not substitute the varenicline NNH value"
+    ],
+    "required_metrics": [],
+    "must_abstain": true,
+    "adversarial": true
+  },
+  {
+    "id": "eval_33",
+    "question": "Is Metformin indicated for treating nicotine withdrawal cravings during tobacco cessation?",
+    "language": "en",
+    "category": "scope_entity_confusion",
+    "difficulty": "easy",
+    "expected_behavior": "abstain_unsupported",
+    "expected_answer": "Metformin is an antidiabetic medication and is not part of the WHO tobacco cessation guideline. It is not approved or recommended for tobacco cessation or nicotine withdrawal.",
+    "source": "WHO 2024 Tobacco Cessation Guideline",
+    "source_section": "None",
+    "source_page": null,
+    "required_claims": [
+      "Metformin is not evaluated or recommended in the WHO guideline",
+      "System must refuse or state out-of-scope"
+    ],
+    "required_metrics": [],
+    "must_abstain": true,
+    "adversarial": true
+  },
+  {
+    "id": "eval_34",
+    "question": "Can bupropion be safely used to treat obesity in adults who do not use tobacco according to this guideline?",
+    "language": "en",
+    "category": "scope_entity_confusion",
+    "difficulty": "medium",
+    "expected_behavior": "abstain_unsupported",
+    "expected_answer": "The WHO guideline strictly addresses tobacco cessation in adults. It does not evaluate or make recommendations regarding obesity treatment in non-tobacco users.",
+    "source": "WHO 2024 Tobacco Cessation Guideline",
+    "source_section": "2.1",
+    "source_page": 19,
+    "required_claims": [
+      "Guideline scope is restricted to tobacco cessation in adults",
+      "Obesity treatment in non-tobacco users is out of scope"
+    ],
+    "required_metrics": [],
+    "must_abstain": true,
+    "adversarial": true
+  },
+  {
+    "id": "eval_35",
+    "question": "What does WHO recommend regarding laser therapy or electro-acupuncture for preventing nicotine relapse?",
+    "language": "en",
+    "category": "scope_entity_confusion",
+    "difficulty": "medium",
+    "expected_behavior": "answer_supported",
+    "expected_answer": "WHO states that evidence is insufficient to make any recommendation for or against laser therapy or electro-acupuncture for tobacco cessation. These therapies should not delay evidence-based treatment.",
+    "source": "WHO 2024 Tobacco Cessation Guideline",
+    "source_section": "3.6.1",
+    "source_page": 43,
+    "required_claims": [
+      "Evidence is insufficient for laser therapy or acupuncture",
+      "No positive recommendation is made for these therapies"
+    ],
+    "required_metrics": [],
+    "must_abstain": false,
+    "adversarial": true
+  },
+  {
+    "id": "eval_36",
+    "question": "Does WHO recommend e-cigarettes (vapes) as a first-line treatment for smokeless tobacco cessation in Section 3.4?",
+    "language": "en",
+    "category": "scope_entity_confusion",
+    "difficulty": "hard",
+    "expected_behavior": "abstain_unsupported",
+    "expected_answer": "Section 3.4 of the WHO guideline recommends intensive behavioural support for smokeless tobacco cessation. It does NOT recommend e-cigarettes as a first-line treatment for smokeless tobacco cessation.",
+    "source": "WHO 2024 Tobacco Cessation Guideline",
+    "source_section": "3.4.1",
+    "source_page": 40,
+    "required_claims": [
+      "WHO does not recommend e-cigarettes for smokeless tobacco cessation",
+      "Recommendation 6 focuses on intensive behavioural support, not e-cigarettes"
+    ],
+    "required_metrics": [],
+    "must_abstain": false,
+    "adversarial": true
+  },
+  {
+    "id": "eval_37",
+    "question": "ما هي مدة المشورة الموجزة التي يوصي بها الدليل لمستخدمي التبغ عند زيارة أي مركز صحي؟",
+    "language": "ar",
+    "category": "arabic_questions",
+    "difficulty": "easy",
+    "expected_behavior": "answer_supported",
+    "expected_answer": "توصي منظمة الصحة العالمية بتقديم مشورة موجزة تستغرق بين 30 ثانية و 3 دقائق في كل مقابلة كإجراء روتيني لجميع مستخدمي التبغ في جميع المنشآت الصحية.",
+    "source": "WHO 2024 Tobacco Cessation Guideline",
+    "source_section": "3.1.1",
+    "source_page": 29,
+    "required_claims": [
+      "مدة المشورة الموجزة بين 30 ثانية و 3 دقائق",
+      "تقدم بشكل روتيني في جميع المنشآت الصحية"
+    ],
+    "required_metrics": [
+      {
+        "metric_type": "duration",
+        "value": "30 seconds to 3 minutes",
+        "outcome": "brief advice consultation"
+      }
+    ],
+    "must_abstain": false,
+    "adversarial": false
+  },
+  {
+    "id": "eval_38",
+    "question": "أنا بدخن علبتين في اليوم وبحاول أبطل، هل لبان النيكوتين 4 ملجم أحسن ليا من 2 ملجم حسب الدليل؟",
+    "language": "ar_egyptian",
+    "category": "arabic_questions",
+    "difficulty": "medium",
+    "expected_behavior": "answer_supported",
+    "expected_answer": "نعم، يشير الدليل إلى أن المدخنين ذوي الاعتماد الشديد على النيكوتين يستفيدون أكثر من لبان النيكوتين بجرعة 4 ملجم مقارنة بجرعة 2 ملجم (نسبة الخطر النسبي: 1.43).",
+    "source": "WHO 2024 Tobacco Cessation Guideline",
+    "source_section": "3.3.3.1",
+    "source_page": 35,
+    "required_claims": [
+      "لبان النيكوتين 4 ملجم أكثر فاعلية للمدخنين بشراهة من 2 ملجم",
+      "نسبة الخطر للجرعة الأعلى هي 1.43 بفترة ثقة 1.12–1.83"
+    ],
+    "required_metrics": [
+      {
+        "metric_type": "RR",
+        "value": "1.43",
+        "outcome": "4 mg vs 2 mg nicotine gum"
+      }
+    ],
+    "must_abstain": false,
+    "adversarial": false
+  },
+  {
+    "id": "eval_39",
+    "question": "هل منظمة الصحة العالمية بتوصي بجلسات الليزر أو التنويم المغناطيسي عشان أوقف تدخين؟",
+    "language": "ar_egyptian",
+    "category": "arabic_questions",
+    "difficulty": "medium",
+    "expected_behavior": "answer_supported",
+    "expected_answer": "تؤكد منظمة الصحة العالمية أن الأدلة غير كافية للتوصية بجلسات الليزر أو التنويم المغناطيسي، ولا ينبغي أن تحل هذه الطرق غير المثبتة محل العلاجات المعتمدة علمياً.",
+    "source": "WHO 2024 Tobacco Cessation Guideline",
+    "source_section": "3.6.1",
+    "source_page": 43,
+    "required_claims": [
+      "الأدلة غير كافية للتوصية بالليزر أو التنويم المغناطيسي",
+      "لا يجب أن تؤخر أو تحل محل العلاجات المعتمدة"
+    ],
+    "required_metrics": [],
+    "must_abstain": false,
+    "adversarial": false
+  },
+  {
+    "id": "eval_40",
+    "question": "إيه هو رقم الـ NNT لدواء البوبروبيون (Bupropion) مقارنة بالعلاج الوهمي لتحقيق الإقلاع طويل المدى؟",
+    "language": "ar_egyptian",
+    "category": "arabic_questions",
+    "difficulty": "hard",
+    "expected_behavior": "answer_supported",
+    "expected_answer": "رقم الـ NNT للبوبروبيون مقارنة بالعلاج الوهمي هو 14 لتحقيق حالة إضافية واحدة من الإقلاع عن التدخين على المدى الطويل.",
+    "source": "WHO 2024 Tobacco Cessation Guideline",
+    "source_section": "3.3.3.6",
+    "source_page": 37,
+    "required_claims": [
+      "الـ NNT للبوبروبيون مقابل البلاسيبو هو 14 لتحقيق الإقلاع طويل المدى"
+    ],
+    "required_metrics": [
+      {
+        "metric_type": "NNT",
+        "value": "14",
+        "outcome": "bupropion long-term cessation vs placebo"
+      }
+    ],
+    "must_abstain": false,
+    "adversarial": true
+  }
+]

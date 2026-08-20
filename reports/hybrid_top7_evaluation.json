@@ -1,0 +1,3205 @@
+{
+  "metadata": {
+    "experiment_name": "Hybrid_Evidence_Budget_Top5_vs_Top7",
+    "source_guideline": "WHO Clinical Treatment Guideline for Tobacco Cessation in Adults (2024)",
+    "pipeline": "BM25 + Dense Semantic -> RRF (k=60)",
+    "total_queries": 33,
+    "positive_queries": 30,
+    "control_queries": 3
+  },
+  "overall_metrics": {
+    "recall_1": 0.1667,
+    "recall_5": 0.4,
+    "recall_7": 0.4333,
+    "recall_10": 0.5,
+    "mrr": 0.2717,
+    "delta_recall_top5_to_top7": 0.0333
+  },
+  "category_performance": {
+    "A) Medical Terminology": {
+      "query_count": 5,
+      "recall_1": 0.4,
+      "recall_5": 0.6,
+      "recall_7": 0.8,
+      "recall_10": 0.8,
+      "mrr": 0.5015
+    },
+    "B) English Paraphrase": {
+      "query_count": 5,
+      "recall_1": 0.2,
+      "recall_5": 0.4,
+      "recall_7": 0.4,
+      "recall_10": 0.6,
+      "mrr": 0.3138
+    },
+    "C) Egyptian Arabic": {
+      "query_count": 5,
+      "recall_1": 0.2,
+      "recall_5": 0.4,
+      "recall_7": 0.4,
+      "recall_10": 0.4,
+      "mrr": 0.25
+    },
+    "D) Non-Medical Wording": {
+      "query_count": 5,
+      "recall_1": 0.0,
+      "recall_5": 0.4,
+      "recall_7": 0.4,
+      "recall_10": 0.4,
+      "mrr": 0.1784
+    },
+    "E) Implicit Clinical Intent": {
+      "query_count": 5,
+      "recall_1": 0.0,
+      "recall_5": 0.2,
+      "recall_7": 0.2,
+      "recall_10": 0.4,
+      "mrr": 0.12
+    },
+    "F) Specific Clinical Situations": {
+      "query_count": 5,
+      "recall_1": 0.2,
+      "recall_5": 0.4,
+      "recall_7": 0.4,
+      "recall_10": 0.4,
+      "mrr": 0.2667
+    }
+  },
+  "recovered_queries_top5_to_top7": [
+    {
+      "query_id": "QA2_cytisine_evidence",
+      "category": "A) Medical Terminology",
+      "query_text": "Cytisine clinical trial certainty of evidence and dosage",
+      "recovered_rank": 6,
+      "recovered_chunk_id": "chunk_sec_3_3_3_4",
+      "section_number": "3.3.3.4",
+      "physical_page": 37,
+      "verbatim_snippet": "3.3.3.4.\tCytisine\nA systematic review of 14 studies commissioned by WHO showed that participants who received cytisine \nwere significantly more likely to quit smoking for at least 6 months than those ...",
+      "is_actual_correct_evidence": true
+    }
+  ],
+  "evidence_noise_comparison": {
+    "top_5": {
+      "CORRECT_EVIDENCE": 17,
+      "RELATED_INSUFFICIENT": 5,
+      "IRRELEVANT": 127,
+      "POTENTIALLY_MISLEADING": 1
+    },
+    "top_7": {
+      "CORRECT_EVIDENCE": 22,
+      "RELATED_INSUFFICIENT": 6,
+      "IRRELEVANT": 179,
+      "POTENTIALLY_MISLEADING": 3
+    }
+  },
+  "query_reports": [
+    {
+      "query_id": "QA1_varenicline_efficacy",
+      "category": "A) Medical Terminology",
+      "query_text": "Varenicline efficacy and adverse events for tobacco cessation",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_3_p01",
+        "chunk_sec_3_3_4_p01"
+      ],
+      "first_rank": 11,
+      "hit_1": false,
+      "hit_5": false,
+      "hit_7": false,
+      "hit_10": false,
+      "is_recovered_in_top7": false,
+      "top_7_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_node_L5_varenicline",
+          "rrf_score": 0.030679,
+          "bm25_rank": 10,
+          "dense_rank": 1,
+          "section": null,
+          "physical_page": 68,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_sec_3_4_3_p03",
+          "rrf_score": 0.028665,
+          "bm25_rank": 14,
+          "dense_rank": 6,
+          "section": "3.4.3",
+          "physical_page": 40,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_sec_3_4_3_p02",
+          "rrf_score": 0.028068,
+          "bm25_rank": 22,
+          "dense_rank": 3,
+          "section": "3.4.3",
+          "physical_page": 40,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_sec_3_3_3_2",
+          "rrf_score": 0.027826,
+          "bm25_rank": 9,
+          "dense_rank": 15,
+          "section": "3.3.3.2",
+          "physical_page": 36,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_node_L3_interventions_for_smokele",
+          "rrf_score": 0.027598,
+          "bm25_rank": 11,
+          "dense_rank": 14,
+          "section": null,
+          "physical_page": 18,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "chunk_node_L3_pharmacological_intervent",
+          "rrf_score": 0.027588,
+          "bm25_rank": 12,
+          "dense_rank": 13,
+          "section": null,
+          "physical_page": 17,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "chunk_node_L1_references_p10",
+          "rrf_score": 0.027493,
+          "bm25_rank": 28,
+          "dense_rank": 2,
+          "section": null,
+          "physical_page": 55,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        }
+      ]
+    },
+    {
+      "query_id": "QA2_cytisine_evidence",
+      "category": "A) Medical Terminology",
+      "query_text": "Cytisine clinical trial certainty of evidence and dosage",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_4"
+      ],
+      "first_rank": 6,
+      "hit_1": false,
+      "hit_5": false,
+      "hit_7": true,
+      "hit_10": true,
+      "is_recovered_in_top7": true,
+      "top_7_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_node_L5_cytisine",
+          "rrf_score": 0.032018,
+          "bm25_rank": 4,
+          "dense_rank": 1,
+          "section": null,
+          "physical_page": 68,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_sec_3_3_3_6_p03",
+          "rrf_score": 0.031754,
+          "bm25_rank": 2,
+          "dense_rank": 4,
+          "section": "3.3.3.6",
+          "physical_page": 37,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_node_L1_references_p10",
+          "rrf_score": 0.030798,
+          "bm25_rank": 3,
+          "dense_rank": 7,
+          "section": null,
+          "physical_page": 55,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_node_L3_pharmacological_intervent",
+          "rrf_score": 0.030478,
+          "bm25_rank": 1,
+          "dense_rank": 11,
+          "section": null,
+          "physical_page": 17,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_sec_3_3_3_1_p02",
+          "rrf_score": 0.030366,
+          "bm25_rank": 9,
+          "dense_rank": 3,
+          "section": "3.3.3.1",
+          "physical_page": 35,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "chunk_sec_3_3_3_4",
+          "rrf_score": 0.029828,
+          "bm25_rank": 13,
+          "dense_rank": 2,
+          "section": "3.3.3.4",
+          "physical_page": 37,
+          "hit": true,
+          "quality_tier": "CORRECT_EVIDENCE"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "chunk_sec_3_3_3_3_p02",
+          "rrf_score": 0.02904,
+          "bm25_rank": 12,
+          "dense_rank": 6,
+          "section": "3.3.3.3",
+          "physical_page": 36,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        }
+      ]
+    },
+    {
+      "query_id": "QA3_bupropion_contraindications",
+      "category": "A) Medical Terminology",
+      "query_text": "Bupropion sustained release contraindications seizure history",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_2",
+        "chunk_sec_3_3_4_p01"
+      ],
+      "first_rank": 4,
+      "hit_1": false,
+      "hit_5": true,
+      "hit_7": true,
+      "hit_10": true,
+      "is_recovered_in_top7": false,
+      "top_7_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_node_L1_glossary_of_terms_p04",
+          "rrf_score": 0.032787,
+          "bm25_rank": 1,
+          "dense_rank": 1,
+          "section": null,
+          "physical_page": 11,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_sec_3_3_3_6_p02",
+          "rrf_score": 0.031498,
+          "bm25_rank": 3,
+          "dense_rank": 4,
+          "section": "3.3.3.6",
+          "physical_page": 37,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_sec_3_3_3_6_p04",
+          "rrf_score": 0.031025,
+          "bm25_rank": 6,
+          "dense_rank": 3,
+          "section": "3.3.3.6",
+          "physical_page": 37,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_sec_3_3_3_2",
+          "rrf_score": 0.030622,
+          "bm25_rank": 9,
+          "dense_rank": 2,
+          "section": "3.3.3.2",
+          "physical_page": 36,
+          "hit": true,
+          "quality_tier": "CORRECT_EVIDENCE"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_sec_3_3_3_5",
+          "rrf_score": 0.029211,
+          "bm25_rank": 10,
+          "dense_rank": 7,
+          "section": "3.3.3.5",
+          "physical_page": 37,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "chunk_node_L4_bupropion",
+          "rrf_score": 0.028814,
+          "bm25_rank": 7,
+          "dense_rank": 12,
+          "section": null,
+          "physical_page": 67,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "chunk_sec_4_3",
+          "rrf_score": 0.02879,
+          "bm25_rank": 11,
+          "dense_rank": 8,
+          "section": "4.3",
+          "physical_page": 50,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        }
+      ]
+    },
+    {
+      "query_id": "QA4_combination_nrt",
+      "category": "A) Medical Terminology",
+      "query_text": "Combination nicotine replacement therapy patch plus short-acting form",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_5",
+        "chunk_node_L1_glossary_of_terms_p05"
+      ],
+      "first_rank": 1,
+      "hit_1": true,
+      "hit_5": true,
+      "hit_7": true,
+      "hit_10": true,
+      "is_recovered_in_top7": false,
+      "top_7_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_node_L1_glossary_of_terms_p05",
+          "rrf_score": 0.032787,
+          "bm25_rank": 1,
+          "dense_rank": 1,
+          "section": null,
+          "physical_page": 11,
+          "hit": true,
+          "quality_tier": "CORRECT_EVIDENCE"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_sec_3_3_3_1_p03",
+          "rrf_score": 0.031514,
+          "bm25_rank": 5,
+          "dense_rank": 2,
+          "section": "3.3.3.1",
+          "physical_page": 35,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_sec_3_3_1",
+          "rrf_score": 0.030366,
+          "bm25_rank": 3,
+          "dense_rank": 9,
+          "section": "3.3.1",
+          "physical_page": 35,
+          "hit": true,
+          "quality_tier": "CORRECT_EVIDENCE"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_node_L4_nrt",
+          "rrf_score": 0.030331,
+          "bm25_rank": 8,
+          "dense_rank": 4,
+          "section": null,
+          "physical_page": 67,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_node_L3_pharmacological_intervent",
+          "rrf_score": 0.030214,
+          "bm25_rank": 2,
+          "dense_rank": 11,
+          "section": null,
+          "physical_page": 17,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "chunk_node_L1_glossary_of_terms_p17",
+          "rrf_score": 0.029877,
+          "bm25_rank": 9,
+          "dense_rank": 5,
+          "section": null,
+          "physical_page": 11,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "chunk_sec_3_3_3_1_p01",
+          "rrf_score": 0.029762,
+          "bm25_rank": 12,
+          "dense_rank": 3,
+          "section": "3.3.3.1",
+          "physical_page": 35,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        }
+      ]
+    },
+    {
+      "query_id": "QA5_brief_advice_primary_care",
+      "category": "A) Medical Terminology",
+      "query_text": "Brief advice 30 seconds to 3 minutes routine clinical consultation",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p01",
+        "chunk_node_L1_glossary_of_terms_p03"
+      ],
+      "first_rank": 1,
+      "hit_1": true,
+      "hit_5": true,
+      "hit_7": true,
+      "hit_10": true,
+      "is_recovered_in_top7": false,
+      "top_7_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_sec_3_1_1",
+          "rrf_score": 0.032266,
+          "bm25_rank": 3,
+          "dense_rank": 1,
+          "section": "3.1.1",
+          "physical_page": 29,
+          "hit": true,
+          "quality_tier": "CORRECT_EVIDENCE"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_node_L3_behavioural_support_deliv",
+          "rrf_score": 0.032258,
+          "bm25_rank": 2,
+          "dense_rank": 2,
+          "section": null,
+          "physical_page": 17,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_sec_3_1_3_p01",
+          "rrf_score": 0.031498,
+          "bm25_rank": 4,
+          "dense_rank": 3,
+          "section": "3.1.3",
+          "physical_page": 29,
+          "hit": true,
+          "quality_tier": "CORRECT_EVIDENCE"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_sec_3_1_3_p04",
+          "rrf_score": 0.03031,
+          "bm25_rank": 7,
+          "dense_rank": 5,
+          "section": "3.1.3",
+          "physical_page": 29,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_node_L2_brief_advice",
+          "rrf_score": 0.029877,
+          "bm25_rank": 5,
+          "dense_rank": 9,
+          "section": null,
+          "physical_page": 65,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "chunk_node_L1_glossary_of_terms_p03",
+          "rrf_score": 0.029214,
+          "bm25_rank": 1,
+          "dense_rank": 18,
+          "section": null,
+          "physical_page": 11,
+          "hit": true,
+          "quality_tier": "CORRECT_EVIDENCE"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "chunk_sec_3_1_4",
+          "rrf_score": 0.02904,
+          "bm25_rank": 6,
+          "dense_rank": 12,
+          "section": "3.1.4",
+          "physical_page": 31,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        }
+      ]
+    },
+    {
+      "query_id": "QB1_stop_smoking_medications",
+      "category": "B) English Paraphrase",
+      "query_text": "What are the approved medicines that help someone quit cigarettes?",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_6_p01"
+      ],
+      "first_rank": 13,
+      "hit_1": false,
+      "hit_5": false,
+      "hit_7": false,
+      "hit_10": false,
+      "is_recovered_in_top7": false,
+      "top_7_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_sec_3_7_3_p02",
+          "rrf_score": 0.028485,
+          "bm25_rank": 15,
+          "dense_rank": 6,
+          "section": "3.7.3",
+          "physical_page": 44,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_sec_3_3_4_p01",
+          "rrf_score": 0.027921,
+          "bm25_rank": 3,
+          "dense_rank": 23,
+          "section": "3.3.4",
+          "physical_page": 39,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_node_L2_products",
+          "rrf_score": 0.027799,
+          "bm25_rank": 10,
+          "dense_rank": 14,
+          "section": null,
+          "physical_page": 53,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_sec_3_8_p02",
+          "rrf_score": 0.027418,
+          "bm25_rank": 11,
+          "dense_rank": 15,
+          "section": "3.8",
+          "physical_page": 47,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_node_L2_strategies_and_methods",
+          "rrf_score": 0.027397,
+          "bm25_rank": 13,
+          "dense_rank": 13,
+          "section": null,
+          "physical_page": 53,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "chunk_sec_3_6_4",
+          "rrf_score": 0.026084,
+          "bm25_rank": 12,
+          "dense_rank": 22,
+          "section": "3.6.4",
+          "physical_page": 43,
+          "hit": false,
+          "quality_tier": "POTENTIALLY_MISLEADING"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "chunk_sec_3_4_4",
+          "rrf_score": 0.024625,
+          "bm25_rank": 14,
+          "dense_rank": 30,
+          "section": "3.4.4",
+          "physical_page": 41,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        }
+      ]
+    },
+    {
+      "query_id": "QB2_pills_without_nicotine",
+      "category": "B) English Paraphrase",
+      "query_text": "Are there pills without nicotine that reduce the urge to smoke?",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_2",
+        "chunk_sec_3_3_3_3_p01",
+        "chunk_sec_3_3_3_4"
+      ],
+      "first_rank": 10,
+      "hit_1": false,
+      "hit_5": false,
+      "hit_7": false,
+      "hit_10": true,
+      "is_recovered_in_top7": false,
+      "top_7_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_sec_3_3_2",
+          "rrf_score": 0.031746,
+          "bm25_rank": 3,
+          "dense_rank": 3,
+          "section": "3.3.2",
+          "physical_page": 35,
+          "hit": false,
+          "quality_tier": "RELATED_INSUFFICIENT"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_sec_2_2_p04",
+          "rrf_score": 0.030886,
+          "bm25_rank": 9,
+          "dense_rank": 1,
+          "section": "2.2",
+          "physical_page": 24,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_sec_3_4_2",
+          "rrf_score": 0.028629,
+          "bm25_rank": 20,
+          "dense_rank": 2,
+          "section": "3.4.2",
+          "physical_page": 40,
+          "hit": false,
+          "quality_tier": "RELATED_INSUFFICIENT"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_node_L2_products",
+          "rrf_score": 0.02773,
+          "bm25_rank": 21,
+          "dense_rank": 5,
+          "section": null,
+          "physical_page": 53,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_node_L1_references_p02",
+          "rrf_score": 0.027313,
+          "bm25_rank": 18,
+          "dense_rank": 9,
+          "section": null,
+          "physical_page": 55,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "chunk_node_L1_references_p07",
+          "rrf_score": 0.027119,
+          "bm25_rank": 27,
+          "dense_rank": 4,
+          "section": null,
+          "physical_page": 55,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "chunk_sec_1_1",
+          "rrf_score": 0.027119,
+          "bm25_rank": 4,
+          "dense_rank": 27,
+          "section": "1.1",
+          "physical_page": 19,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        }
+      ]
+    },
+    {
+      "query_id": "QB3_doctor_talking_duration",
+      "category": "B) English Paraphrase",
+      "query_text": "How much time should a physician spend talking to a patient about quitting?",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p01"
+      ],
+      "first_rank": 17,
+      "hit_1": false,
+      "hit_5": false,
+      "hit_7": false,
+      "hit_10": false,
+      "is_recovered_in_top7": false,
+      "top_7_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_node_L2_intensive_behavioural_sup",
+          "rrf_score": 0.031778,
+          "bm25_rank": 5,
+          "dense_rank": 1,
+          "section": null,
+          "physical_page": 65,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_node_L3_general_p02",
+          "rrf_score": 0.027921,
+          "bm25_rank": 3,
+          "dense_rank": 23,
+          "section": null,
+          "physical_page": 66,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_node_L1_glossary_of_terms_p22",
+          "rrf_score": 0.027894,
+          "bm25_rank": 2,
+          "dense_rank": 25,
+          "section": null,
+          "physical_page": 11,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_sec_2_2_p03",
+          "rrf_score": 0.027052,
+          "bm25_rank": 8,
+          "dense_rank": 21,
+          "section": "2.2",
+          "physical_page": 24,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_sec_3_5_1",
+          "rrf_score": 0.02683,
+          "bm25_rank": 24,
+          "dense_rank": 7,
+          "section": "3.5.1",
+          "physical_page": 41,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "chunk_sec_3_1_3_p04",
+          "rrf_score": 0.026263,
+          "bm25_rank": 30,
+          "dense_rank": 6,
+          "section": "3.1.3",
+          "physical_page": 29,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "chunk_sec_3_1_4",
+          "rrf_score": 0.025987,
+          "bm25_rank": 9,
+          "dense_rank": 27,
+          "section": "3.1.4",
+          "physical_page": 31,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        }
+      ]
+    },
+    {
+      "query_id": "QB4_phone_support_quitting",
+      "category": "B) English Paraphrase",
+      "query_text": "Does calling a telephone helpline really help people quit smoking?",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p04",
+        "chunk_node_L1_glossary_of_terms_p14"
+      ],
+      "first_rank": 3,
+      "hit_1": false,
+      "hit_5": true,
+      "hit_7": true,
+      "hit_10": true,
+      "is_recovered_in_top7": false,
+      "top_7_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_sec_3_1_3_p03",
+          "rrf_score": 0.032018,
+          "bm25_rank": 1,
+          "dense_rank": 4,
+          "section": "3.1.3",
+          "physical_page": 29,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_node_L2_intensive_behavioural_sup",
+          "rrf_score": 0.031025,
+          "bm25_rank": 3,
+          "dense_rank": 6,
+          "section": null,
+          "physical_page": 65,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_node_L1_glossary_of_terms_p14",
+          "rrf_score": 0.030415,
+          "bm25_rank": 10,
+          "dense_rank": 2,
+          "section": null,
+          "physical_page": 11,
+          "hit": true,
+          "quality_tier": "CORRECT_EVIDENCE"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_sec_3_1_3_p04",
+          "rrf_score": 0.030018,
+          "bm25_rank": 2,
+          "dense_rank": 12,
+          "section": "3.1.3",
+          "physical_page": 29,
+          "hit": true,
+          "quality_tier": "CORRECT_EVIDENCE"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_sec_3_4_3_p01",
+          "rrf_score": 0.028595,
+          "bm25_rank": 12,
+          "dense_rank": 8,
+          "section": "3.4.3",
+          "physical_page": 40,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "chunk_sec_3_7_3_p01",
+          "rrf_score": 0.027746,
+          "bm25_rank": 7,
+          "dense_rank": 18,
+          "section": "3.7.3",
+          "physical_page": 44,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "chunk_node_L1_references_p06",
+          "rrf_score": 0.02712,
+          "bm25_rank": 22,
+          "dense_rank": 7,
+          "section": null,
+          "physical_page": 55,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        }
+      ]
+    },
+    {
+      "query_id": "QB5_digital_text_apps",
+      "category": "B) English Paraphrase",
+      "query_text": "Can text messages or smartphone apps assist in stopping tobacco use?",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_2_1",
+        "chunk_sec_3_2_3_p01",
+        "chunk_node_L1_glossary_of_terms_p16",
+        "chunk_node_L1_glossary_of_terms_p19"
+      ],
+      "first_rank": 1,
+      "hit_1": true,
+      "hit_5": true,
+      "hit_7": true,
+      "hit_10": true,
+      "is_recovered_in_top7": false,
+      "top_7_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_sec_3_2_1",
+          "rrf_score": 0.032018,
+          "bm25_rank": 1,
+          "dense_rank": 4,
+          "section": "3.2.1",
+          "physical_page": 32,
+          "hit": true,
+          "quality_tier": "CORRECT_EVIDENCE"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_sec_3_2_3_p02",
+          "rrf_score": 0.031778,
+          "bm25_rank": 5,
+          "dense_rank": 1,
+          "section": "3.2.3",
+          "physical_page": 32,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_node_L2_digital_tobacco_cessation",
+          "rrf_score": 0.030798,
+          "bm25_rank": 7,
+          "dense_rank": 3,
+          "section": null,
+          "physical_page": 66,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_node_L1_glossary_of_terms_p19",
+          "rrf_score": 0.030798,
+          "bm25_rank": 3,
+          "dense_rank": 7,
+          "section": null,
+          "physical_page": 11,
+          "hit": true,
+          "quality_tier": "CORRECT_EVIDENCE"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_sec_3_2_2",
+          "rrf_score": 0.030622,
+          "bm25_rank": 9,
+          "dense_rank": 2,
+          "section": "3.2.2",
+          "physical_page": 32,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "chunk_node_L1_glossary_of_terms_p08",
+          "rrf_score": 0.030415,
+          "bm25_rank": 2,
+          "dense_rank": 10,
+          "section": null,
+          "physical_page": 11,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "chunk_sec_3_2_3_p03",
+          "rrf_score": 0.030303,
+          "bm25_rank": 6,
+          "dense_rank": 6,
+          "section": "3.2.3",
+          "physical_page": 32,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        }
+      ]
+    },
+    {
+      "query_id": "QC1_ana_ayez_abatal_mosh_qader",
+      "category": "C) Egyptian Arabic",
+      "query_text": "أنا عايز أبطل السجاير ومش عارف أبدأ منين",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_5_1"
+      ],
+      "first_rank": null,
+      "hit_1": false,
+      "hit_5": false,
+      "hit_7": false,
+      "hit_10": false,
+      "is_recovered_in_top7": false,
+      "top_7_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_sec_1_2_p03",
+          "rrf_score": 0.016393,
+          "bm25_rank": null,
+          "dense_rank": 1,
+          "section": "1.2",
+          "physical_page": 20,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_node_L1_acknowledgements_p03",
+          "rrf_score": 0.016129,
+          "bm25_rank": null,
+          "dense_rank": 2,
+          "section": null,
+          "physical_page": 7,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_node_L1_references_p08",
+          "rrf_score": 0.015873,
+          "bm25_rank": null,
+          "dense_rank": 3,
+          "section": null,
+          "physical_page": 55,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_sec_3_3_3_6_p03",
+          "rrf_score": 0.015625,
+          "bm25_rank": null,
+          "dense_rank": 4,
+          "section": "3.3.3.6",
+          "physical_page": 37,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_node_L3_who_steering_group_p02",
+          "rrf_score": 0.015385,
+          "bm25_rank": null,
+          "dense_rank": 5,
+          "section": null,
+          "physical_page": 60,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "chunk_node_L2_references",
+          "rrf_score": 0.015152,
+          "bm25_rank": null,
+          "dense_rank": 6,
+          "section": null,
+          "physical_page": 69,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "chunk_node_L1_abbreviations_and_acronym",
+          "rrf_score": 0.014925,
+          "bm25_rank": null,
+          "dense_rank": 7,
+          "section": null,
+          "physical_page": 9,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        }
+      ]
+    },
+    {
+      "query_id": "QC2_doctor_followup_ar",
+      "category": "C) Egyptian Arabic",
+      "query_text": "في حد أو دكتور ممكن يساعدني خطوة بخطوة وأنا بحاول أبطل؟",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p02",
+        "chunk_sec_3_5_1"
+      ],
+      "first_rank": null,
+      "hit_1": false,
+      "hit_5": false,
+      "hit_7": false,
+      "hit_10": false,
+      "is_recovered_in_top7": false,
+      "top_7_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_sec_3_1_3_p01",
+          "rrf_score": 0.016393,
+          "bm25_rank": null,
+          "dense_rank": 1,
+          "section": "3.1.3",
+          "physical_page": 29,
+          "hit": false,
+          "quality_tier": "RELATED_INSUFFICIENT"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_sec_3_3_3_6_p01",
+          "rrf_score": 0.016129,
+          "bm25_rank": null,
+          "dense_rank": 2,
+          "section": "3.3.3.6",
+          "physical_page": 37,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_sec_3_5_3_p02",
+          "rrf_score": 0.015873,
+          "bm25_rank": null,
+          "dense_rank": 3,
+          "section": "3.5.3",
+          "physical_page": 41,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_node_L3_behavioural_support_deliv",
+          "rrf_score": 0.015625,
+          "bm25_rank": null,
+          "dense_rank": 4,
+          "section": null,
+          "physical_page": 17,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_sec_3_8_p02",
+          "rrf_score": 0.015385,
+          "bm25_rank": null,
+          "dense_rank": 5,
+          "section": "3.8",
+          "physical_page": 47,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "chunk_sec_2_2_p04",
+          "rrf_score": 0.015152,
+          "bm25_rank": null,
+          "dense_rank": 6,
+          "section": "2.2",
+          "physical_page": 24,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "chunk_sec_3_6_3_p01",
+          "rrf_score": 0.014925,
+          "bm25_rank": null,
+          "dense_rank": 7,
+          "section": "3.6.3",
+          "physical_page": 43,
+          "hit": false,
+          "quality_tier": "POTENTIALLY_MISLEADING"
+        }
+      ]
+    },
+    {
+      "query_id": "QC3_quitline_ar",
+      "category": "C) Egyptian Arabic",
+      "query_text": "في خط ساخن مجاني بالتليفون ممكن يساعدني في تبطيل السجاير؟",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p04",
+        "chunk_node_L1_glossary_of_terms_p14"
+      ],
+      "first_rank": 4,
+      "hit_1": false,
+      "hit_5": true,
+      "hit_7": true,
+      "hit_10": true,
+      "is_recovered_in_top7": false,
+      "top_7_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_node_L1_references_p06",
+          "rrf_score": 0.016393,
+          "bm25_rank": null,
+          "dense_rank": 1,
+          "section": null,
+          "physical_page": 55,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_sec_3_8_p02",
+          "rrf_score": 0.016129,
+          "bm25_rank": null,
+          "dense_rank": 2,
+          "section": "3.8",
+          "physical_page": 47,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_sec_3_4_1",
+          "rrf_score": 0.015873,
+          "bm25_rank": null,
+          "dense_rank": 3,
+          "section": "3.4.1",
+          "physical_page": 40,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_node_L1_glossary_of_terms_p14",
+          "rrf_score": 0.015625,
+          "bm25_rank": null,
+          "dense_rank": 4,
+          "section": null,
+          "physical_page": 11,
+          "hit": true,
+          "quality_tier": "CORRECT_EVIDENCE"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_sec_2_2_p03",
+          "rrf_score": 0.015385,
+          "bm25_rank": null,
+          "dense_rank": 5,
+          "section": "2.2",
+          "physical_page": 24,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "chunk_node_L2_intensive_behavioural_sup",
+          "rrf_score": 0.015152,
+          "bm25_rank": null,
+          "dense_rank": 6,
+          "section": null,
+          "physical_page": 65,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "chunk_node_L2_references",
+          "rrf_score": 0.014925,
+          "bm25_rank": null,
+          "dense_rank": 7,
+          "section": null,
+          "physical_page": 69,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        }
+      ]
+    },
+    {
+      "query_id": "QC4_group_support_ar",
+      "category": "C) Egyptian Arabic",
+      "query_text": "في جلسات جماعية مع ناس تانية بتحاول تبطل عشان نشجع بعض؟",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p03",
+        "chunk_node_L1_glossary_of_terms_p13"
+      ],
+      "first_rank": 1,
+      "hit_1": true,
+      "hit_5": true,
+      "hit_7": true,
+      "hit_10": true,
+      "is_recovered_in_top7": false,
+      "top_7_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_node_L1_glossary_of_terms_p13",
+          "rrf_score": 0.016393,
+          "bm25_rank": null,
+          "dense_rank": 1,
+          "section": null,
+          "physical_page": 11,
+          "hit": true,
+          "quality_tier": "CORRECT_EVIDENCE"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_sec_3_1_3_p05",
+          "rrf_score": 0.016129,
+          "bm25_rank": null,
+          "dense_rank": 2,
+          "section": "3.1.3",
+          "physical_page": 29,
+          "hit": false,
+          "quality_tier": "RELATED_INSUFFICIENT"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_node_L2_counselling_interventions",
+          "rrf_score": 0.015873,
+          "bm25_rank": null,
+          "dense_rank": 3,
+          "section": null,
+          "physical_page": 52,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_node_L1_acknowledgements_p03",
+          "rrf_score": 0.015625,
+          "bm25_rank": null,
+          "dense_rank": 4,
+          "section": null,
+          "physical_page": 7,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_sec_3_8_p02",
+          "rrf_score": 0.015385,
+          "bm25_rank": null,
+          "dense_rank": 5,
+          "section": "3.8",
+          "physical_page": 47,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "chunk_sec_3_1_3_p03",
+          "rrf_score": 0.015152,
+          "bm25_rank": null,
+          "dense_rank": 6,
+          "section": "3.1.3",
+          "physical_page": 29,
+          "hit": true,
+          "quality_tier": "CORRECT_EVIDENCE"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "chunk_sec_3_4_1",
+          "rrf_score": 0.014925,
+          "bm25_rank": null,
+          "dense_rank": 7,
+          "section": "3.4.1",
+          "physical_page": 40,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        }
+      ]
+    },
+    {
+      "query_id": "QC5_pills_license_ar",
+      "category": "C) Egyptian Arabic",
+      "query_text": "في حبوب معينة مرخصة بتساعد الواحد يبطل السجاير؟",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_3_1",
+        "chunk_node_L1_glossary_of_terms_p09"
+      ],
+      "first_rank": null,
+      "hit_1": false,
+      "hit_5": false,
+      "hit_7": false,
+      "hit_10": false,
+      "is_recovered_in_top7": false,
+      "top_7_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_node_L1_abbreviations_and_acronym",
+          "rrf_score": 0.016393,
+          "bm25_rank": null,
+          "dense_rank": 1,
+          "section": null,
+          "physical_page": 9,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_node_L3_who_steering_group_p02",
+          "rrf_score": 0.016129,
+          "bm25_rank": null,
+          "dense_rank": 2,
+          "section": null,
+          "physical_page": 60,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_sec_3_4_3_p02",
+          "rrf_score": 0.015873,
+          "bm25_rank": null,
+          "dense_rank": 3,
+          "section": "3.4.3",
+          "physical_page": 40,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_node_L1_references_p07",
+          "rrf_score": 0.015625,
+          "bm25_rank": null,
+          "dense_rank": 4,
+          "section": null,
+          "physical_page": 55,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_sec_3_3_3_3_p01",
+          "rrf_score": 0.015385,
+          "bm25_rank": null,
+          "dense_rank": 5,
+          "section": "3.3.3.3",
+          "physical_page": 36,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "chunk_sec_2_2_p02",
+          "rrf_score": 0.015152,
+          "bm25_rank": null,
+          "dense_rank": 6,
+          "section": "2.2",
+          "physical_page": 24,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "chunk_node_L1_references_p05",
+          "rrf_score": 0.014925,
+          "bm25_rank": null,
+          "dense_rank": 7,
+          "section": null,
+          "physical_page": 55,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        }
+      ]
+    },
+    {
+      "query_id": "QD1_craving_reduction_ar",
+      "category": "D) Non-Medical Wording",
+      "query_text": "في حاجة تساعدني أقلل الرغبة في السجاير ومن غير ما أفضل مشتهي أدخن؟",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_1_p01",
+        "chunk_node_L1_glossary_of_terms_p17"
+      ],
+      "first_rank": null,
+      "hit_1": false,
+      "hit_5": false,
+      "hit_7": false,
+      "hit_10": false,
+      "is_recovered_in_top7": false,
+      "top_7_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_sec_3_4_1",
+          "rrf_score": 0.016393,
+          "bm25_rank": null,
+          "dense_rank": 1,
+          "section": "3.4.1",
+          "physical_page": 40,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_node_L1_references_p07",
+          "rrf_score": 0.016129,
+          "bm25_rank": null,
+          "dense_rank": 2,
+          "section": null,
+          "physical_page": 55,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_node_L1_references_p06",
+          "rrf_score": 0.015873,
+          "bm25_rank": null,
+          "dense_rank": 3,
+          "section": null,
+          "physical_page": 55,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_node_L3_interventions_for_smokele",
+          "rrf_score": 0.015625,
+          "bm25_rank": null,
+          "dense_rank": 4,
+          "section": null,
+          "physical_page": 18,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_node_L1_references_p03",
+          "rrf_score": 0.015385,
+          "bm25_rank": null,
+          "dense_rank": 5,
+          "section": null,
+          "physical_page": 55,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "chunk_node_L2_strategies_and_methods",
+          "rrf_score": 0.015152,
+          "bm25_rank": null,
+          "dense_rank": 6,
+          "section": null,
+          "physical_page": 53,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "chunk_node_L2_references",
+          "rrf_score": 0.014925,
+          "bm25_rank": null,
+          "dense_rank": 7,
+          "section": null,
+          "physical_page": 69,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        }
+      ]
+    },
+    {
+      "query_id": "QD2_patch_gum_ar",
+      "category": "D) Non-Medical Wording",
+      "query_text": "في لزقة أو لبانة نيكوتين تخفف الشغف للتدخين؟",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_1_p01",
+        "chunk_node_L1_glossary_of_terms_p17"
+      ],
+      "first_rank": 17,
+      "hit_1": false,
+      "hit_5": false,
+      "hit_7": false,
+      "hit_10": false,
+      "is_recovered_in_top7": false,
+      "top_7_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_sec_2_2_p04",
+          "rrf_score": 0.016393,
+          "bm25_rank": null,
+          "dense_rank": 1,
+          "section": "2.2",
+          "physical_page": 24,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_sec_3_3_2",
+          "rrf_score": 0.016129,
+          "bm25_rank": null,
+          "dense_rank": 2,
+          "section": "3.3.2",
+          "physical_page": 35,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_node_L1_references_p07",
+          "rrf_score": 0.015873,
+          "bm25_rank": null,
+          "dense_rank": 3,
+          "section": null,
+          "physical_page": 55,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_node_L1_glossary_of_terms_p21",
+          "rrf_score": 0.015625,
+          "bm25_rank": null,
+          "dense_rank": 4,
+          "section": null,
+          "physical_page": 11,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_node_L1_references_p02",
+          "rrf_score": 0.015385,
+          "bm25_rank": null,
+          "dense_rank": 5,
+          "section": null,
+          "physical_page": 55,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "chunk_sec_3_3_3_6_p03",
+          "rrf_score": 0.015152,
+          "bm25_rank": null,
+          "dense_rank": 6,
+          "section": "3.3.3.6",
+          "physical_page": 37,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "chunk_sec_3_4_2",
+          "rrf_score": 0.014925,
+          "bm25_rank": null,
+          "dense_rank": 7,
+          "section": "3.4.2",
+          "physical_page": 40,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        }
+      ]
+    },
+    {
+      "query_id": "QD3_mobile_sms_ar",
+      "category": "D) Non-Medical Wording",
+      "query_text": "في برنامج على الموبايل أو رسايل تساعد في التبطيل؟",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_2_1",
+        "chunk_sec_3_2_3_p01",
+        "chunk_node_L1_glossary_of_terms_p16"
+      ],
+      "first_rank": 3,
+      "hit_1": false,
+      "hit_5": true,
+      "hit_7": true,
+      "hit_10": true,
+      "is_recovered_in_top7": false,
+      "top_7_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_sec_3_2_4",
+          "rrf_score": 0.016393,
+          "bm25_rank": null,
+          "dense_rank": 1,
+          "section": "3.2.4",
+          "physical_page": 34,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_node_L1_glossary_of_terms_p15",
+          "rrf_score": 0.016129,
+          "bm25_rank": null,
+          "dense_rank": 2,
+          "section": null,
+          "physical_page": 11,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_node_L1_glossary_of_terms_p16",
+          "rrf_score": 0.015873,
+          "bm25_rank": null,
+          "dense_rank": 3,
+          "section": null,
+          "physical_page": 11,
+          "hit": true,
+          "quality_tier": "CORRECT_EVIDENCE"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_node_L2_digital_interventions",
+          "rrf_score": 0.015625,
+          "bm25_rank": null,
+          "dense_rank": 4,
+          "section": null,
+          "physical_page": 53,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_sec_3_8_p02",
+          "rrf_score": 0.015385,
+          "bm25_rank": null,
+          "dense_rank": 5,
+          "section": "3.8",
+          "physical_page": 47,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "chunk_sec_3_2_3_p01",
+          "rrf_score": 0.015152,
+          "bm25_rank": null,
+          "dense_rank": 6,
+          "section": "3.2.3",
+          "physical_page": 32,
+          "hit": true,
+          "quality_tier": "CORRECT_EVIDENCE"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "chunk_node_L1_glossary_of_terms_p04",
+          "rrf_score": 0.014925,
+          "bm25_rank": null,
+          "dense_rank": 7,
+          "section": null,
+          "physical_page": 11,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        }
+      ]
+    },
+    {
+      "query_id": "QD4_withdrawal_symptoms_ar",
+      "category": "D) Non-Medical Wording",
+      "query_text": "جسمي بيتعب وبيجيلي صداع وعصبية أول ما أوقف السجاير، أعمل إيه؟",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_1_p01",
+        "chunk_node_L1_glossary_of_terms_p17"
+      ],
+      "first_rank": null,
+      "hit_1": false,
+      "hit_5": false,
+      "hit_7": false,
+      "hit_10": false,
+      "is_recovered_in_top7": false,
+      "top_7_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_node_L3_who_steering_group_p02",
+          "rrf_score": 0.016393,
+          "bm25_rank": null,
+          "dense_rank": 1,
+          "section": null,
+          "physical_page": 60,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_node_L1_abbreviations_and_acronym",
+          "rrf_score": 0.016129,
+          "bm25_rank": null,
+          "dense_rank": 2,
+          "section": null,
+          "physical_page": 9,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_node_L1_references_p03",
+          "rrf_score": 0.015873,
+          "bm25_rank": null,
+          "dense_rank": 3,
+          "section": null,
+          "physical_page": 55,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_sec_2_2_p03",
+          "rrf_score": 0.015625,
+          "bm25_rank": null,
+          "dense_rank": 4,
+          "section": "2.2",
+          "physical_page": 24,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_sec_1_2_p03",
+          "rrf_score": 0.015385,
+          "bm25_rank": null,
+          "dense_rank": 5,
+          "section": "1.2",
+          "physical_page": 20,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "chunk_node_L1_references_p07",
+          "rrf_score": 0.015152,
+          "bm25_rank": null,
+          "dense_rank": 6,
+          "section": null,
+          "physical_page": 55,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "chunk_node_L1_references_p05",
+          "rrf_score": 0.014925,
+          "bm25_rank": null,
+          "dense_rank": 7,
+          "section": null,
+          "physical_page": 55,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        }
+      ]
+    },
+    {
+      "query_id": "QD5_combo_patch_gum_ar",
+      "category": "D) Non-Medical Wording",
+      "query_text": "هل ينفع أجمع بين نوعين علاج نيكوتين مع بعض زي اللزقة واللبان؟",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_5",
+        "chunk_node_L1_glossary_of_terms_p05"
+      ],
+      "first_rank": 2,
+      "hit_1": false,
+      "hit_5": true,
+      "hit_7": true,
+      "hit_10": true,
+      "is_recovered_in_top7": false,
+      "top_7_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_sec_3_3_2",
+          "rrf_score": 0.016393,
+          "bm25_rank": null,
+          "dense_rank": 1,
+          "section": "3.3.2",
+          "physical_page": 35,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_node_L1_glossary_of_terms_p05",
+          "rrf_score": 0.016129,
+          "bm25_rank": null,
+          "dense_rank": 2,
+          "section": null,
+          "physical_page": 11,
+          "hit": true,
+          "quality_tier": "CORRECT_EVIDENCE"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_node_L1_references_p07",
+          "rrf_score": 0.015873,
+          "bm25_rank": null,
+          "dense_rank": 3,
+          "section": null,
+          "physical_page": 55,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_sec_3_3_3_6_p03",
+          "rrf_score": 0.015625,
+          "bm25_rank": null,
+          "dense_rank": 4,
+          "section": "3.3.3.6",
+          "physical_page": 37,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_sec_3_5_2",
+          "rrf_score": 0.015385,
+          "bm25_rank": null,
+          "dense_rank": 5,
+          "section": "3.5.2",
+          "physical_page": 41,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "chunk_sec_2_2_p04",
+          "rrf_score": 0.015152,
+          "bm25_rank": null,
+          "dense_rank": 6,
+          "section": "2.2",
+          "physical_page": 24,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "chunk_node_L1_references_p06",
+          "rrf_score": 0.014925,
+          "bm25_rank": null,
+          "dense_rank": 7,
+          "section": null,
+          "physical_page": 55,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        }
+      ]
+    },
+    {
+      "query_id": "QE1_relapse_cycle_ar",
+      "category": "E) Implicit Clinical Intent",
+      "query_text": "كل ما أحاول أبطل برجع أدخن تاني، أعمل إيه؟",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_5"
+      ],
+      "first_rank": null,
+      "hit_1": false,
+      "hit_5": false,
+      "hit_7": false,
+      "hit_10": false,
+      "is_recovered_in_top7": false,
+      "top_7_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_node_L1_acknowledgements_p03",
+          "rrf_score": 0.016393,
+          "bm25_rank": null,
+          "dense_rank": 1,
+          "section": null,
+          "physical_page": 7,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_sec_2_2_p03",
+          "rrf_score": 0.016129,
+          "bm25_rank": null,
+          "dense_rank": 2,
+          "section": "2.2",
+          "physical_page": 24,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_node_L1_references_p07",
+          "rrf_score": 0.015873,
+          "bm25_rank": null,
+          "dense_rank": 3,
+          "section": null,
+          "physical_page": 55,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_node_L1_abbreviations_and_acronym",
+          "rrf_score": 0.015625,
+          "bm25_rank": null,
+          "dense_rank": 4,
+          "section": null,
+          "physical_page": 9,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_node_L1_references_p10",
+          "rrf_score": 0.015385,
+          "bm25_rank": null,
+          "dense_rank": 5,
+          "section": null,
+          "physical_page": 55,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "chunk_node_L1_references_p09",
+          "rrf_score": 0.015152,
+          "bm25_rank": null,
+          "dense_rank": 6,
+          "section": null,
+          "physical_page": 55,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "chunk_sec_3_3_3_6_p03",
+          "rrf_score": 0.014925,
+          "bm25_rank": null,
+          "dense_rank": 7,
+          "section": "3.3.3.6",
+          "physical_page": 37,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        }
+      ]
+    },
+    {
+      "query_id": "QE2_medication_plus_sessions_ar",
+      "category": "E) Implicit Clinical Intent",
+      "query_text": "الدواء لوحده كفاية ولا لازم جلسات ومتابعة عشان النتيجة تبقى أحسن؟",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_5_1",
+        "chunk_sec_3_5_3_p01"
+      ],
+      "first_rank": null,
+      "hit_1": false,
+      "hit_5": false,
+      "hit_7": false,
+      "hit_10": false,
+      "is_recovered_in_top7": false,
+      "top_7_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_sec_2_1",
+          "rrf_score": 0.016393,
+          "bm25_rank": null,
+          "dense_rank": 1,
+          "section": "2.1",
+          "physical_page": 23,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_node_L2_medications",
+          "rrf_score": 0.016129,
+          "bm25_rank": null,
+          "dense_rank": 2,
+          "section": null,
+          "physical_page": 53,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_sec_3_6_1",
+          "rrf_score": 0.015873,
+          "bm25_rank": null,
+          "dense_rank": 3,
+          "section": "3.6.1",
+          "physical_page": 43,
+          "hit": false,
+          "quality_tier": "POTENTIALLY_MISLEADING"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_sec_3_5_3_p02",
+          "rrf_score": 0.015625,
+          "bm25_rank": null,
+          "dense_rank": 4,
+          "section": "3.5.3",
+          "physical_page": 41,
+          "hit": false,
+          "quality_tier": "RELATED_INSUFFICIENT"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_sec_2_2_p04",
+          "rrf_score": 0.015385,
+          "bm25_rank": null,
+          "dense_rank": 5,
+          "section": "2.2",
+          "physical_page": 24,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "chunk_node_L2_traditional_complementary",
+          "rrf_score": 0.015152,
+          "bm25_rank": null,
+          "dense_rank": 6,
+          "section": null,
+          "physical_page": 68,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "chunk_sec_3_1_3_p02",
+          "rrf_score": 0.014925,
+          "bm25_rank": null,
+          "dense_rank": 7,
+          "section": "3.1.3",
+          "physical_page": 29,
+          "hit": false,
+          "quality_tier": "RELATED_INSUFFICIENT"
+        }
+      ]
+    },
+    {
+      "query_id": "QE3_doctor_advice_value_ar",
+      "category": "E) Implicit Clinical Intent",
+      "query_text": "نصيحة الطبيب السريعة اللي في دقيقة أو دقيقتين بتفرق بجد ولا كلام وخلاص؟",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p01",
+        "chunk_node_L1_glossary_of_terms_p03"
+      ],
+      "first_rank": 2,
+      "hit_1": false,
+      "hit_5": true,
+      "hit_7": true,
+      "hit_10": true,
+      "is_recovered_in_top7": false,
+      "top_7_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_node_L3_behavioural_support_deliv",
+          "rrf_score": 0.016393,
+          "bm25_rank": null,
+          "dense_rank": 1,
+          "section": null,
+          "physical_page": 17,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_sec_3_1_1",
+          "rrf_score": 0.016129,
+          "bm25_rank": null,
+          "dense_rank": 2,
+          "section": "3.1.1",
+          "physical_page": 29,
+          "hit": true,
+          "quality_tier": "CORRECT_EVIDENCE"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_node_L1_glossary_of_terms_p03",
+          "rrf_score": 0.015873,
+          "bm25_rank": null,
+          "dense_rank": 3,
+          "section": null,
+          "physical_page": 11,
+          "hit": true,
+          "quality_tier": "CORRECT_EVIDENCE"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_sec_3_8_p02",
+          "rrf_score": 0.015625,
+          "bm25_rank": null,
+          "dense_rank": 4,
+          "section": "3.8",
+          "physical_page": 47,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_annex_3_p03",
+          "rrf_score": 0.015385,
+          "bm25_rank": null,
+          "dense_rank": 5,
+          "section": null,
+          "physical_page": 70,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "chunk_sec_2_2_p04",
+          "rrf_score": 0.015152,
+          "bm25_rank": null,
+          "dense_rank": 6,
+          "section": "2.2",
+          "physical_page": 24,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "chunk_node_L2_brief_advice",
+          "rrf_score": 0.014925,
+          "bm25_rank": null,
+          "dense_rank": 7,
+          "section": null,
+          "physical_page": 65,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        }
+      ]
+    },
+    {
+      "query_id": "QE4_heavy_smoker_options_ar",
+      "category": "E) Implicit Clinical Intent",
+      "query_text": "بشرب علبتين سجاير في اليوم من سنين ومش عارف أسيطر على نفسي",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_5_1",
+        "chunk_sec_3_3_3_5"
+      ],
+      "first_rank": null,
+      "hit_1": false,
+      "hit_5": false,
+      "hit_7": false,
+      "hit_10": false,
+      "is_recovered_in_top7": false,
+      "top_7_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_node_L1_acknowledgements_p03",
+          "rrf_score": 0.016393,
+          "bm25_rank": null,
+          "dense_rank": 1,
+          "section": null,
+          "physical_page": 7,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_sec_3_3_3_6_p03",
+          "rrf_score": 0.016129,
+          "bm25_rank": null,
+          "dense_rank": 2,
+          "section": "3.3.3.6",
+          "physical_page": 37,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_sec_1_2_p03",
+          "rrf_score": 0.015873,
+          "bm25_rank": null,
+          "dense_rank": 3,
+          "section": "1.2",
+          "physical_page": 20,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_sec_2_2_p04",
+          "rrf_score": 0.015625,
+          "bm25_rank": null,
+          "dense_rank": 4,
+          "section": "2.2",
+          "physical_page": 24,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_node_L2_references",
+          "rrf_score": 0.015385,
+          "bm25_rank": null,
+          "dense_rank": 5,
+          "section": null,
+          "physical_page": 69,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "chunk_node_L1_references_p06",
+          "rrf_score": 0.015152,
+          "bm25_rank": null,
+          "dense_rank": 6,
+          "section": null,
+          "physical_page": 55,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "chunk_sec_3_4_3_p02",
+          "rrf_score": 0.014925,
+          "bm25_rank": null,
+          "dense_rank": 7,
+          "section": "3.4.3",
+          "physical_page": 40,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        }
+      ]
+    },
+    {
+      "query_id": "QE5_ai_chatbot_cessation_ar",
+      "category": "E) Implicit Clinical Intent",
+      "query_text": "هل في ذكاء اصطناعي أو شات بوت معتمد يساعد في الإقلاع عن التدخين؟",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_2_1",
+        "chunk_sec_3_2_3_p02",
+        "chunk_node_L1_glossary_of_terms_p01"
+      ],
+      "first_rank": 10,
+      "hit_1": false,
+      "hit_5": false,
+      "hit_7": false,
+      "hit_10": true,
+      "is_recovered_in_top7": false,
+      "top_7_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_node_L1_references_p09",
+          "rrf_score": 0.016393,
+          "bm25_rank": null,
+          "dense_rank": 1,
+          "section": null,
+          "physical_page": 55,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_node_L1_references_p06",
+          "rrf_score": 0.016129,
+          "bm25_rank": null,
+          "dense_rank": 2,
+          "section": null,
+          "physical_page": 55,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_node_L3_digital_tobacco_cessation",
+          "rrf_score": 0.015873,
+          "bm25_rank": null,
+          "dense_rank": 3,
+          "section": null,
+          "physical_page": 17,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_node_L2_digital_interventions",
+          "rrf_score": 0.015625,
+          "bm25_rank": null,
+          "dense_rank": 4,
+          "section": null,
+          "physical_page": 53,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_sec_2_2_p02",
+          "rrf_score": 0.015385,
+          "bm25_rank": null,
+          "dense_rank": 5,
+          "section": "2.2",
+          "physical_page": 24,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "chunk_sec_2_2_p03",
+          "rrf_score": 0.015152,
+          "bm25_rank": null,
+          "dense_rank": 6,
+          "section": "2.2",
+          "physical_page": 24,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "chunk_node_L1_references_p07",
+          "rrf_score": 0.014925,
+          "bm25_rank": null,
+          "dense_rank": 7,
+          "section": null,
+          "physical_page": 55,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        }
+      ]
+    },
+    {
+      "query_id": "QF1_pregnant_women_ar",
+      "category": "F) Specific Clinical Situations",
+      "query_text": "أنا حامل وبشرب سجاير، أعمل إيه والدواء أمان ليا ولا لأ؟",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_3_4_p01",
+        "chunk_sec_3_1_4"
+      ],
+      "first_rank": null,
+      "hit_1": false,
+      "hit_5": false,
+      "hit_7": false,
+      "hit_10": false,
+      "is_recovered_in_top7": false,
+      "top_7_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_node_L1_abbreviations_and_acronym",
+          "rrf_score": 0.016393,
+          "bm25_rank": null,
+          "dense_rank": 1,
+          "section": null,
+          "physical_page": 9,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_node_L1_references_p03",
+          "rrf_score": 0.016129,
+          "bm25_rank": null,
+          "dense_rank": 2,
+          "section": null,
+          "physical_page": 55,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_node_L3_who_steering_group_p02",
+          "rrf_score": 0.015873,
+          "bm25_rank": null,
+          "dense_rank": 3,
+          "section": null,
+          "physical_page": 60,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_node_L1_acknowledgements_p03",
+          "rrf_score": 0.015625,
+          "bm25_rank": null,
+          "dense_rank": 4,
+          "section": null,
+          "physical_page": 7,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_sec_2_2_p03",
+          "rrf_score": 0.015385,
+          "bm25_rank": null,
+          "dense_rank": 5,
+          "section": "2.2",
+          "physical_page": 24,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "chunk_node_L1_references_p04",
+          "rrf_score": 0.015152,
+          "bm25_rank": null,
+          "dense_rank": 6,
+          "section": null,
+          "physical_page": 55,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "chunk_node_L1_references_p07",
+          "rrf_score": 0.014925,
+          "bm25_rank": null,
+          "dense_rank": 7,
+          "section": null,
+          "physical_page": 55,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        }
+      ]
+    },
+    {
+      "query_id": "QF2_smokeless_tobacco_shammah_ar",
+      "category": "F) Specific Clinical Situations",
+      "query_text": "الناس اللي بتستخدم الشمة أو التبغ غير المدخن، إيه علاجهم؟",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_4_1",
+        "chunk_sec_3_4_3_p01",
+        "chunk_node_L1_glossary_of_terms_p20"
+      ],
+      "first_rank": 3,
+      "hit_1": false,
+      "hit_5": true,
+      "hit_7": true,
+      "hit_10": true,
+      "is_recovered_in_top7": false,
+      "top_7_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_node_L2_strategies_and_methods",
+          "rrf_score": 0.016393,
+          "bm25_rank": null,
+          "dense_rank": 1,
+          "section": null,
+          "physical_page": 53,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_node_L1_glossary_of_terms_p26",
+          "rrf_score": 0.016129,
+          "bm25_rank": null,
+          "dense_rank": 2,
+          "section": null,
+          "physical_page": 11,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_node_L1_glossary_of_terms_p20",
+          "rrf_score": 0.015873,
+          "bm25_rank": null,
+          "dense_rank": 3,
+          "section": null,
+          "physical_page": 11,
+          "hit": true,
+          "quality_tier": "CORRECT_EVIDENCE"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_node_L3_interventions_for_smokele",
+          "rrf_score": 0.015625,
+          "bm25_rank": null,
+          "dense_rank": 4,
+          "section": null,
+          "physical_page": 18,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_node_L1_references_p03",
+          "rrf_score": 0.015385,
+          "bm25_rank": null,
+          "dense_rank": 5,
+          "section": null,
+          "physical_page": 55,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "chunk_sec_3_4_1",
+          "rrf_score": 0.015152,
+          "bm25_rank": null,
+          "dense_rank": 6,
+          "section": "3.4.1",
+          "physical_page": 40,
+          "hit": true,
+          "quality_tier": "CORRECT_EVIDENCE"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "chunk_sec_3_4_2",
+          "rrf_score": 0.014925,
+          "bm25_rank": null,
+          "dense_rank": 7,
+          "section": "3.4.2",
+          "physical_page": 40,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        }
+      ]
+    },
+    {
+      "query_id": "QF3_alternative_acupuncture_hypnosis_ar",
+      "category": "F) Specific Clinical Situations",
+      "query_text": "هل جلسات الإبر الصينية أو التنويم المغناطيسي بتنفع في الإقلاع عن التدخين؟",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_6_1",
+        "chunk_sec_3_6_3_p01",
+        "chunk_node_L1_glossary_of_terms_p26"
+      ],
+      "first_rank": 1,
+      "hit_1": true,
+      "hit_5": true,
+      "hit_7": true,
+      "hit_10": true,
+      "is_recovered_in_top7": false,
+      "top_7_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_node_L1_glossary_of_terms_p26",
+          "rrf_score": 0.016393,
+          "bm25_rank": null,
+          "dense_rank": 1,
+          "section": null,
+          "physical_page": 11,
+          "hit": true,
+          "quality_tier": "CORRECT_EVIDENCE"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_node_L2_references",
+          "rrf_score": 0.016129,
+          "bm25_rank": null,
+          "dense_rank": 2,
+          "section": null,
+          "physical_page": 69,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_sec_3_6_4",
+          "rrf_score": 0.015873,
+          "bm25_rank": null,
+          "dense_rank": 3,
+          "section": "3.6.4",
+          "physical_page": 43,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_sec_3_6_3_p02",
+          "rrf_score": 0.015625,
+          "bm25_rank": null,
+          "dense_rank": 4,
+          "section": "3.6.3",
+          "physical_page": 43,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_sec_2_2_p04",
+          "rrf_score": 0.015385,
+          "bm25_rank": null,
+          "dense_rank": 5,
+          "section": "2.2",
+          "physical_page": 24,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "chunk_node_L2_rationale_and_objectives",
+          "rrf_score": 0.015152,
+          "bm25_rank": null,
+          "dense_rank": 6,
+          "section": null,
+          "physical_page": 15,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "chunk_node_L1_references_p03",
+          "rrf_score": 0.014925,
+          "bm25_rank": null,
+          "dense_rank": 7,
+          "section": null,
+          "physical_page": 55,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        }
+      ]
+    },
+    {
+      "query_id": "QF4_adolescents_young_people_ar",
+      "category": "F) Specific Clinical Situations",
+      "query_text": "هل الأدوية دي تنفع للمراهقين والشباب الصغيرين تحت 18 سنة؟",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_3_4_p01",
+        "chunk_sec_3_1_4"
+      ],
+      "first_rank": null,
+      "hit_1": false,
+      "hit_5": false,
+      "hit_7": false,
+      "hit_10": false,
+      "is_recovered_in_top7": false,
+      "top_7_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_sec_3_3_3_3_p02",
+          "rrf_score": 0.03055,
+          "bm25_rank": 7,
+          "dense_rank": 4,
+          "section": "3.3.3.3",
+          "physical_page": 36,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_sec_3_5_3_p02",
+          "rrf_score": 0.029206,
+          "bm25_rank": 15,
+          "dense_rank": 3,
+          "section": "3.5.3",
+          "physical_page": 41,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_node_L1_references_p02",
+          "rrf_score": 0.029199,
+          "bm25_rank": 8,
+          "dense_rank": 9,
+          "section": null,
+          "physical_page": 55,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_sec_3_7_3_p02",
+          "rrf_score": 0.028958,
+          "bm25_rank": 4,
+          "dense_rank": 15,
+          "section": "3.7.3",
+          "physical_page": 44,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_node_L1_references_p10",
+          "rrf_score": 0.026876,
+          "bm25_rank": 12,
+          "dense_rank": 17,
+          "section": null,
+          "physical_page": 55,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "chunk_sec_3_3_3_6_p03",
+          "rrf_score": 0.026044,
+          "bm25_rank": 13,
+          "dense_rank": 21,
+          "section": "3.3.3.6",
+          "physical_page": 37,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "chunk_sec_1_2_p02",
+          "rrf_score": 0.025658,
+          "bm25_rank": 16,
+          "dense_rank": 20,
+          "section": "1.2",
+          "physical_page": 20,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        }
+      ]
+    },
+    {
+      "query_id": "QF5_tuberculosis_comorbidity_ar",
+      "category": "F) Specific Clinical Situations",
+      "query_text": "مرضى الدرن والسل الرئوي اللي بيدخنوا، إيه توصيات منظمة الصحة العالمية ليهم؟",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_1_4",
+        "chunk_sec_3_3_4_p01"
+      ],
+      "first_rank": null,
+      "hit_1": false,
+      "hit_5": false,
+      "hit_7": false,
+      "hit_10": false,
+      "is_recovered_in_top7": false,
+      "top_7_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_node_L2_references",
+          "rrf_score": 0.016393,
+          "bm25_rank": null,
+          "dense_rank": 1,
+          "section": null,
+          "physical_page": 69,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_node_L1_references_p03",
+          "rrf_score": 0.016129,
+          "bm25_rank": null,
+          "dense_rank": 2,
+          "section": null,
+          "physical_page": 55,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_sec_3_4_1",
+          "rrf_score": 0.015873,
+          "bm25_rank": null,
+          "dense_rank": 3,
+          "section": "3.4.1",
+          "physical_page": 40,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_node_L1_references_p01",
+          "rrf_score": 0.015625,
+          "bm25_rank": null,
+          "dense_rank": 4,
+          "section": null,
+          "physical_page": 55,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_node_L1_references_p11",
+          "rrf_score": 0.015385,
+          "bm25_rank": null,
+          "dense_rank": 5,
+          "section": null,
+          "physical_page": 55,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "chunk_node_L1_references_p02",
+          "rrf_score": 0.015152,
+          "bm25_rank": null,
+          "dense_rank": 6,
+          "section": null,
+          "physical_page": 55,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "chunk_node_L3_external_review_group_p02",
+          "rrf_score": 0.014925,
+          "bm25_rank": null,
+          "dense_rank": 7,
+          "section": null,
+          "physical_page": 63,
+          "hit": false,
+          "quality_tier": "IRRELEVANT"
+        }
+      ]
+    },
+    {
+      "query_id": "QG1_ecigarettes_cessation_control",
+      "category": "G) Control (NO_DIRECT_EVIDENCE)",
+      "query_text": "هل السجائر الإلكترونية والفيب موصى بيها كعلاج رسمي للإقلاع عن التدخين في دليل منظمة الصحة العالمية؟",
+      "is_control": true,
+      "top7_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_sec_1_2_p02",
+          "rrf_score": 0.016393,
+          "bm25_rank": null,
+          "dense_rank": 1,
+          "section_number": "1.2",
+          "physical_page": 20,
+          "text_snippet": "3.a: “Strengthen the implementation of the World Health Organization Framework Convention on Tobacco \nControl in all cou..."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_node_L1_references_p03",
+          "rrf_score": 0.016129,
+          "bm25_rank": null,
+          "dense_rank": 2,
+          "section_number": null,
+          "physical_page": 55,
+          "text_snippet": "12.\t\nLiu Z, Li YH, Cui ZY, Li L, Nie XQ, Yu CD, et al. Prevalence of tobacco dependence and associated factors \nin China..."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_node_L2_references",
+          "rrf_score": 0.015873,
+          "bm25_rank": null,
+          "dense_rank": 3,
+          "section_number": null,
+          "physical_page": 69,
+          "text_snippet": "References\n1.\t\nToolkit for delivering the 5A’s and 5R’s brief tobacco interventions in primary care. Geneva: World \nHeal..."
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_node_L1_references_p04",
+          "rrf_score": 0.015625,
+          "bm25_rank": null,
+          "dense_rank": 4,
+          "section_number": null,
+          "physical_page": 55,
+          "text_snippet": "17.\t\nWHO Model List of Essential Medicines – 22nd list, 2021. Geneva: World Health Organization; 2021 \n(https://iris.who..."
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_node_L1_references_p02",
+          "rrf_score": 0.015385,
+          "bm25_rank": null,
+          "dense_rank": 5,
+          "section_number": null,
+          "physical_page": 55,
+          "text_snippet": "7.\t\nWHO report on the global tobacco epidemic 2021: addressing new and emerging products. Geneva: \nWorld Health Organiza..."
+        },
+        {
+          "rank": 6,
+          "chunk_id": "chunk_node_L3_who_steering_group_p02",
+          "rrf_score": 0.015152,
+          "bm25_rank": null,
+          "dense_rank": 6,
+          "section_number": null,
+          "physical_page": 60,
+          "text_snippet": "Members of the SG \nName\nCluster/department/unit\nExpertise\nAdriana Bacelar Gomes\nRisk Factors and Nutrition Unit, Departm..."
+        },
+        {
+          "rank": 7,
+          "chunk_id": "chunk_node_L2_rationale_and_objectives",
+          "rrf_score": 0.014925,
+          "bm25_rank": null,
+          "dense_rank": 7,
+          "section_number": null,
+          "physical_page": 15,
+          "text_snippet": "Rationale and objectives\nThe need to help tobacco users quit as a key component of a comprehensive tobacco control appro..."
+        }
+      ]
+    },
+    {
+      "query_id": "QG2_metformin_diabetes_control",
+      "category": "G) Control (NO_DIRECT_EVIDENCE)",
+      "query_text": "هل دواء الميتفورمين بتاع السكر بيساعد في تبطيل التدخين؟",
+      "is_control": true,
+      "top7_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_node_L1_references_p07",
+          "rrf_score": 0.016393,
+          "bm25_rank": null,
+          "dense_rank": 1,
+          "section_number": null,
+          "physical_page": 55,
+          "text_snippet": "33.\t\nLindson N, Chepkin SC, Ye W, Fanshawe TR, Bullen C, Hartmann-Boyce J et al. Different doses, durations \nand modes o..."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_node_L1_abbreviations_and_acronym",
+          "rrf_score": 0.016129,
+          "bm25_rank": null,
+          "dense_rank": 2,
+          "section_number": null,
+          "physical_page": 9,
+          "text_snippet": "Abbreviations and acronyms\nAbbreviations and acronyms\nAE \t\nadverse event\nAI \t\nartificial intelligence\nApp \t\napplication\n..."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_node_L1_references_p08",
+          "rrf_score": 0.015873,
+          "bm25_rank": null,
+          "dense_rank": 3,
+          "section_number": null,
+          "physical_page": 55,
+          "text_snippet": "38.\t\nThomas D, Abramson MJ, Bonevski B, George J. System change interventions for smoking cessation. \nCochrane Database ..."
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_sec_3_7_3_p02",
+          "rrf_score": 0.015625,
+          "bm25_rank": null,
+          "dense_rank": 4,
+          "section_number": "3.7.3",
+          "physical_page": 44,
+          "text_snippet": "3. Recommendations\n\n27\nsmokers (OR 2.28; 95% CI: 1.58–3.27; 14 studies; 8531 participants), provision of self-help mater..."
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_sec_3_3_3_3_p01",
+          "rrf_score": 0.015385,
+          "bm25_rank": null,
+          "dense_rank": 5,
+          "section_number": "3.3.3.3",
+          "physical_page": 36,
+          "text_snippet": "3.3.3.3.\tVarenicline\nA Cochrane systematic review of 75 trials with 45 049 participants (35) published in 2023 found hig..."
+        },
+        {
+          "rank": 6,
+          "chunk_id": "chunk_node_L1_references_p05",
+          "rrf_score": 0.015152,
+          "bm25_rank": null,
+          "dense_rank": 6,
+          "section_number": null,
+          "physical_page": 55,
+          "text_snippet": "22.\t\nDurkin SJ, Biener L, Wakefield MA. Effects of different types of antismoking ads on reducing disparities \nin smokin..."
+        },
+        {
+          "rank": 7,
+          "chunk_id": "chunk_sec_3_7_3_p03",
+          "rrf_score": 0.014925,
+          "bm25_rank": null,
+          "dense_rank": 7,
+          "section_number": "3.7.3",
+          "physical_page": 44,
+          "text_snippet": "95% CI: 1.37–2.28; 9333 participants); an increased number of participants attempted to quit when compared \nwith no inte..."
+        }
+      ]
+    },
+    {
+      "query_id": "QG3_acupuncture_weight_loss_control",
+      "category": "G) Control (NO_DIRECT_EVIDENCE)",
+      "query_text": "هل الإبر الصينية بتساعد على إنقاص الوزن وحرق الدهون؟",
+      "is_control": true,
+      "top7_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_node_L1_references_p05",
+          "rrf_score": 0.016393,
+          "bm25_rank": null,
+          "dense_rank": 1,
+          "section_number": null,
+          "physical_page": 55,
+          "text_snippet": "22.\t\nDurkin SJ, Biener L, Wakefield MA. Effects of different types of antismoking ads on reducing disparities \nin smokin..."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_node_L1_abbreviations_and_acronym",
+          "rrf_score": 0.016129,
+          "bm25_rank": null,
+          "dense_rank": 2,
+          "section_number": null,
+          "physical_page": 9,
+          "text_snippet": "Abbreviations and acronyms\nAbbreviations and acronyms\nAE \t\nadverse event\nAI \t\nartificial intelligence\nApp \t\napplication\n..."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_node_L1_references_p03",
+          "rrf_score": 0.015873,
+          "bm25_rank": null,
+          "dense_rank": 3,
+          "section_number": null,
+          "physical_page": 55,
+          "text_snippet": "12.\t\nLiu Z, Li YH, Cui ZY, Li L, Nie XQ, Yu CD, et al. Prevalence of tobacco dependence and associated factors \nin China..."
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_node_L1_acknowledgements_p02",
+          "rrf_score": 0.015625,
+          "bm25_rank": null,
+          "dense_rank": 4,
+          "section_number": null,
+          "physical_page": 7,
+          "text_snippet": "Additional reviews of evidence were conducted by Daniel Erku (Centre for Applied Health Economics, \nGriffith University,..."
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_node_L2_references",
+          "rrf_score": 0.015385,
+          "bm25_rank": null,
+          "dense_rank": 5,
+          "section_number": null,
+          "physical_page": 69,
+          "text_snippet": "References\n1.\t\nToolkit for delivering the 5A’s and 5R’s brief tobacco interventions in primary care. Geneva: World \nHeal..."
+        },
+        {
+          "rank": 6,
+          "chunk_id": "chunk_node_L3_external_review_group_p02",
+          "rrf_score": 0.015152,
+          "bm25_rank": null,
+          "dense_rank": 6,
+          "section_number": null,
+          "physical_page": 63,
+          "text_snippet": "Japan\nWHO Regional Office for \nthe Western Pacific\nMale\nPublic health dentistry \nand tobacco cessation\nDanielle McCarthy..."
+        },
+        {
+          "rank": 7,
+          "chunk_id": "chunk_node_L1_references_p04",
+          "rrf_score": 0.014925,
+          "bm25_rank": null,
+          "dense_rank": 7,
+          "section_number": null,
+          "physical_page": 55,
+          "text_snippet": "17.\t\nWHO Model List of Essential Medicines – 22nd list, 2021. Geneva: World Health Organization; 2021 \n(https://iris.who..."
+        }
+      ]
+    }
+  ]
+}

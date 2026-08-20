@@ -1,0 +1,755 @@
+[
+  {
+    "case": {
+      "id": "ADV_01_PARAPHRASE",
+      "category": "Paraphrase Robustness",
+      "query": "Is it okay to give someone wanting to quit cigarettes a skin sticker with nicotine plus some nicotine chewing sweets together?",
+      "expected_concepts": [
+        "combination NRT",
+        "patch + fast-acting NRT",
+        "higher quit rates",
+        "recommendation"
+      ],
+      "is_unsupported": false
+    },
+    "parsed_query": {
+      "intents": [
+        "CESSATION_SEEKING"
+      ],
+      "interventions": [],
+      "populations": [],
+      "is_out_of_scope": false,
+      "expanded_search_query": "Is it okay to give someone wanting to quit cigarettes a skin sticker with nicotine plus some nicotine chewing sweets together?",
+      "dimensions": []
+    },
+    "gated_output": {
+      "is_grounded": true,
+      "safety_flag": null,
+      "admitted_count": 6,
+      "admitted_chunks": [
+        {
+          "chunk_id": "chunk_sec_2_2_p04",
+          "clinical_score": 0.8665,
+          "section_number": "2.2",
+          "section_title": "2.2. Evidence reviews",
+          "heading_path": "2. Methods > 2.2. Evidence reviews",
+          "text": "Do the effects vary according \nto the intensity or duration of the intervention, the types of tobacco used, the duration of tobacco use since \ninitiation, quantity of tobacco used, readiness to quit and gender?\n\n·\t For adults who smoke tobacco, does cytisine increase the chance of successful quittin"
+        },
+        {
+          "chunk_id": "chunk_sec_3_3_1",
+          "clinical_score": 0.8567,
+          "section_number": "3.3.1",
+          "section_title": "3.3.1. Recommendations",
+          "heading_path": "3. Recommendations > 3.3. Pharmacological interventions delivered in both clinical and community settings > 3.3.1. Recommendations",
+          "text": "3.3.1.\t Recommendations\n4.\nWHO recommends varenicline, NRT, bupropion and cytisine4 as pharmacological \ntreatment options for tobacco users who smoke and are interested in quitting. \nVarenicline, NRT or bupropion are recommended as first-line options; combination \nNRT (a patch plus a short-acting fo"
+        },
+        {
+          "chunk_id": "chunk_sec_3_3_2",
+          "clinical_score": 0.8476,
+          "section_number": "3.3.2",
+          "section_title": "3.3.2. Overall questions",
+          "heading_path": "3. Recommendations > 3.3. Pharmacological interventions delivered in both clinical and community settings > 3.3.2. Overall questions",
+          "text": "3.3.2.\t Overall questions\nFor adults who smoke, do NRT, bupropion, varenicline and cytisine increase their chance of successful quitting? \nFor adults who smoke, is combination therapy better than monotherapy in smoking cessation treatment? Does \nthe effect vary by form, dose and duration of use; the"
+        },
+        {
+          "chunk_id": "chunk_node_L3_general_p01",
+          "clinical_score": 0.847,
+          "section_number": null,
+          "section_title": "General",
+          "heading_path": "Annex 2: Additional information for implementing the recommendations > Pharmacological interventions > General",
+          "text": "General\nSpecial consideration should be exercised with several groups:\n·\t People who are pregnant should not be routinely prescribed or recommended cessation medication due \nto pregnancy-related safety concerns, including for Nicotine Replacement Therapy (NRT) products. They \nshould receive tobacco-"
+        },
+        {
+          "chunk_id": "chunk_node_L2_products",
+          "clinical_score": 0.8382,
+          "section_number": null,
+          "section_title": "Products",
+          "heading_path": "5. Research needs > Products",
+          "text": "Products \n·\t Quantify nicotine concentrations for different modes of delivery (for example, waterpipe smoking, \ne-cigarettes and smokeless tobacco).\n·\t Additional research on the efficacies of pharmacotherapies and behavioural support for smokeless tobacco \ncessation, especially in LMICs with high p"
+        },
+        {
+          "chunk_id": "chunk_sec_3_3_3_1_p03",
+          "clinical_score": 0.8346,
+          "section_number": "3.3.3.1",
+          "section_title": "3.3.3.1. NRT",
+          "heading_path": "3. Recommendations > 3.3. Pharmacological interventions delivered in both clinical and community settings > 3.3.3. Justification and evidence > 3.3.3.1. NRT",
+          "text": "WHO clinical treatment guideline for tobacco cessation in adults\t\n18\neight studies suggests that the use of either a form of fast-acting NRT or a nicotine patch results in similar long-\nterm quit rates (RR: 0.90; 95% CI: 0.77–1.05; 8 studies; 3319 participants). The authors identified no evidence of"
+        }
+      ]
+    }
+  },
+  {
+    "case": {
+      "id": "ADV_02_TERMINOLOGY",
+      "category": "Terminology Variation",
+      "query": "What are the clinical trial outcomes regarding Tabex administration for tobacco cessation?",
+      "expected_concepts": [
+        "cytisine",
+        "effectiveness vs placebo/NRT",
+        "recommendation"
+      ],
+      "is_unsupported": false
+    },
+    "parsed_query": {
+      "intents": [],
+      "interventions": [
+        "cytisine"
+      ],
+      "populations": [],
+      "is_out_of_scope": false,
+      "expanded_search_query": "What are the clinical trial outcomes regarding Tabex administration for tobacco cessation? cytisine plant-based alkaloid",
+      "dimensions": [
+        "cytisine"
+      ]
+    },
+    "gated_output": {
+      "is_grounded": true,
+      "safety_flag": null,
+      "admitted_count": 6,
+      "admitted_chunks": [
+        {
+          "chunk_id": "chunk_sec_3_3_3_4",
+          "clinical_score": 0.8408,
+          "section_number": "3.3.3.4",
+          "section_title": "3.3.3.4. Cytisine",
+          "heading_path": "3. Recommendations > 3.3. Pharmacological interventions delivered in both clinical and community settings > 3.3.3. Justification and evidence > 3.3.3.4. Cytisine",
+          "text": "3.3.3.4.\tCytisine\nA systematic review of 14 studies commissioned by WHO showed that participants who received cytisine \nwere significantly more likely to quit smoking for at least 6 months than those who received placebo/no \nintervention/usual care (RR: 2.61; 95% CI: 1.50–4.67; 6 trials; 5194 partic"
+        },
+        {
+          "chunk_id": "chunk_sec_2_2_p04",
+          "clinical_score": 0.7399,
+          "section_number": "2.2",
+          "section_title": "2.2. Evidence reviews",
+          "heading_path": "2. Methods > 2.2. Evidence reviews",
+          "text": "Do the effects vary according \nto the intensity or duration of the intervention, the types of tobacco used, the duration of tobacco use since \ninitiation, quantity of tobacco used, readiness to quit and gender?\n\n·\t For adults who smoke tobacco, does cytisine increase the chance of successful quittin"
+        },
+        {
+          "chunk_id": "chunk_node_L5_cytisine",
+          "clinical_score": 0.7096,
+          "section_number": null,
+          "section_title": "Cytisine",
+          "heading_path": "Annex 2: Additional information for implementing the recommendations > Pharmacological interventions > Specific pharmacotherapy > Varenicline and cytisine (partial agonists of a4b2 nicotinic receptors) > Cytisine",
+          "text": "Cytisine\nCytisine is another agonist of a4b2 nicotinic receptors with a similar molecular structure and mode of action to \nvarenicline. It may be a reasonable and currently less expensive alternative, with moderate-certainty evidence \nfor efficacy that appears similar to varenicline, although head-t"
+        },
+        {
+          "chunk_id": "chunk_sec_3_3_3_6_p03",
+          "clinical_score": 0.7053,
+          "section_number": "3.3.3.6",
+          "section_title": "3.3.3.6. Conclusions",
+          "heading_path": "3. Recommendations > 3.3. Pharmacological interventions delivered in both clinical and community settings > 3.3.3. Justification and evidence > 3.3.3.6. Conclusions",
+          "text": "·\t There is moderate-certainty evidence that cytisine is more effective than placebo/no intervention/usual \ncare in supporting smokers to quit smoking for 6 months or longer; there is very low- to low-certainty \nevidence for a significant difference in the likelihood of quitting smoking between cyti"
+        },
+        {
+          "chunk_id": "chunk_node_L3_pharmacological_intervent",
+          "clinical_score": 0.7048,
+          "section_number": null,
+          "section_title": "Pharmacological interventions delivered in both clinical and community settings",
+          "heading_path": "Executive summary > Summary of recommendations > Pharmacological interventions delivered in both clinical and community settings",
+          "text": "Pharmacological interventions delivered in both clinical and community settings\n4.\nWHO recommends varenicline, Nicotine Replacement Therapy (NRT), bupropion and \ncytisine2 as pharmacological treatment options for tobacco users who smoke and \nare interested in quitting. Varenicline, NRT or bupropion "
+        },
+        {
+          "chunk_id": "chunk_sec_2_4_p02",
+          "clinical_score": 0.7043,
+          "section_number": "2.4",
+          "section_title": "2.4. Going from evidence to recommendations",
+          "heading_path": "2. Methods > 2.4. Going from evidence to recommendations",
+          "text": "For strong recommendations, the GDG was confident that the desirable effect of following \nthe recommendation outweighed any potential undesirable effects.\n\nOther factors that supported strong \nrecommendations were whether the balance of benefits to harms is sensitive to variability in patient values"
+        }
+      ]
+    }
+  },
+  {
+    "case": {
+      "id": "ADV_03_CONCEPT_COMBO",
+      "category": "Concept Combination",
+      "query": "What is the recommended treatment duration and seizure risk for bupropion in adults attempting to stop smoking?",
+      "expected_concepts": [
+        "bupropion",
+        "duration (standard 7-12 weeks)",
+        "contraindication/risk for seizure"
+      ],
+      "is_unsupported": false
+    },
+    "parsed_query": {
+      "intents": [
+        "CESSATION_SEEKING",
+        "CONSULTATION_DURATION"
+      ],
+      "interventions": [
+        "bupropion_sr"
+      ],
+      "populations": [
+        "seizure_disorder_patients"
+      ],
+      "is_out_of_scope": false,
+      "expanded_search_query": "What is the recommended treatment duration and seizure risk for bupropion in adults attempting to stop smoking? bupropion bupropion sustained-release seizure disorder epilepsy",
+      "dimensions": [
+        "bupropion",
+        "seizure disorder"
+      ]
+    },
+    "gated_output": {
+      "is_grounded": true,
+      "safety_flag": null,
+      "admitted_count": 6,
+      "admitted_chunks": [
+        {
+          "chunk_id": "chunk_sec_3_3_3_2",
+          "clinical_score": 0.9671,
+          "section_number": "3.3.3.2",
+          "section_title": "3.3.3.2. Bupropion",
+          "heading_path": "3. Recommendations > 3.3. Pharmacological interventions delivered in both clinical and community settings > 3.3.3. Justification and evidence > 3.3.3.2. Bupropion",
+          "text": "3.3.3.2.\tBupropion\nIn terms of the evidence for bupropion regarding long-term tobacco cessation, a Cochrane systematic review \nof 124 studies that included 48 832 participants demonstrated that there was high-certainty evidence that \nbupropion increased smoking cessation rates when compared with pla"
+        },
+        {
+          "chunk_id": "chunk_sec_3_3_4_p01",
+          "clinical_score": 0.9043,
+          "section_number": "3.3.4",
+          "section_title": "3.3.4. Implementation consideration",
+          "heading_path": "3. Recommendations > 3.3. Pharmacological interventions delivered in both clinical and community settings > 3.3.4. Implementation consideration",
+          "text": "3.3.4.\n\nImplementation consideration\nIt is critical to minimize or ideally eliminate the cost of medication, and other access barriers, to increase tobacco \nusers’ medication use, compliance with dose and duration recommendations, and maximize population-level \nimpacts on prevalence (see Section 3.7"
+        },
+        {
+          "chunk_id": "chunk_sec_3_3_1",
+          "clinical_score": 0.7985,
+          "section_number": "3.3.1",
+          "section_title": "3.3.1. Recommendations",
+          "heading_path": "3. Recommendations > 3.3. Pharmacological interventions delivered in both clinical and community settings > 3.3.1. Recommendations",
+          "text": "3.3.1.\t Recommendations\n4.\nWHO recommends varenicline, NRT, bupropion and cytisine4 as pharmacological \ntreatment options for tobacco users who smoke and are interested in quitting. \nVarenicline, NRT or bupropion are recommended as first-line options; combination \nNRT (a patch plus a short-acting fo"
+        },
+        {
+          "chunk_id": "chunk_sec_3_3_3_6_p04",
+          "clinical_score": 0.766,
+          "section_number": "3.3.3.6",
+          "section_title": "3.3.3.6. Conclusions",
+          "heading_path": "3. Recommendations > 3.3. Pharmacological interventions delivered in both clinical and community settings > 3.3.3. Justification and evidence > 3.3.3.6. Conclusions",
+          "text": "·\t There is moderate-certainty evidence that a combination of bupropion and varenicline may result in \nsuperior long-term quit rates compared with varenicline alone; there is insufficient evidence that a \ncombination of bupropion and NRT results in superior long-term quit rates compared with NRT alo"
+        },
+        {
+          "chunk_id": "chunk_sec_3_3_3_6_p01",
+          "clinical_score": 0.7656,
+          "section_number": "3.3.3.6",
+          "section_title": "3.3.3.6. Conclusions",
+          "heading_path": "3. Recommendations > 3.3. Pharmacological interventions delivered in both clinical and community settings > 3.3.3. Justification and evidence > 3.3.3.6. Conclusions",
+          "text": "3.3.3.6.\tConclusions\nThe GDG concluded the following.\n·\t There is high-certainty evidence that all forms of NRT are more effective in achieving long-term tobacco \nabstinence compared with a placebo or non-NRT control group.\n·\t The balance of benefits against harms favours NRT on the basis of moderat"
+        },
+        {
+          "chunk_id": "chunk_sec_3_3_3_6_p02",
+          "clinical_score": 0.7635,
+          "section_number": "3.3.3.6",
+          "section_title": "3.3.3.6. Conclusions",
+          "heading_path": "3. Recommendations > 3.3. Pharmacological interventions delivered in both clinical and community settings > 3.3.3. Justification and evidence > 3.3.3.6. Conclusions",
+          "text": "20\n·\t Decisions regarding bupropion are probably preference sensitive (moderate harms with some uncertainty \nregarding serious harms), it requires small cost, and it is feasible and probably acceptable, with probably \nincreased equity.\n·\t There is high-certainty evidence that varenicline is more eff"
+        }
+      ]
+    }
+  },
+  {
+    "case": {
+      "id": "ADV_04_DISTRACTOR",
+      "category": "Distractor Queries",
+      "query": "For a 45-year-old adult smoker who loves cycling, drinks two cups of coffee daily, and lives in a rainy climate, what pharmacological intervention is strongly recommended by WHO?",
+      "expected_concepts": [
+        "varenicline",
+        "cytisine",
+        "bupropion",
+        "NRT",
+        "standard adult recommendations"
+      ],
+      "is_unsupported": false
+    },
+    "parsed_query": {
+      "intents": [],
+      "interventions": [],
+      "populations": [],
+      "is_out_of_scope": false,
+      "expanded_search_query": "For a 45-year-old adult smoker who loves cycling, drinks two cups of coffee daily, and lives in a rainy climate, what pharmacological intervention is strongly recommended by WHO?",
+      "dimensions": []
+    },
+    "gated_output": {
+      "is_grounded": false,
+      "safety_flag": "UNSUPPORTED_INTERVENTION_NOT_VERIFIED",
+      "admitted_count": 0,
+      "admitted_chunks": []
+    }
+  },
+  {
+    "case": {
+      "id": "ADV_05_LEXICAL_TRAP",
+      "category": "Lexical Trap",
+      "query": "Does the guideline recommend using electronic nicotine delivery systems (vapes) as a standard first-line medical cessation therapy?",
+      "expected_concepts": [
+        "electronic cigarettes/ENDS not recommended or unproven as licensed medical therapy",
+        "Section 3.6/unproven"
+      ],
+      "is_unsupported": false
+    },
+    "parsed_query": {
+      "intents": [],
+      "interventions": [],
+      "populations": [],
+      "is_out_of_scope": false,
+      "expanded_search_query": "Does the guideline recommend using electronic nicotine delivery systems (vapes) as a standard first-line medical cessation therapy?",
+      "dimensions": []
+    },
+    "gated_output": {
+      "is_grounded": false,
+      "safety_flag": "NO_GROUNDED_EVIDENCE_IN_WHO_GUIDELINE",
+      "admitted_count": 0,
+      "admitted_chunks": []
+    }
+  },
+  {
+    "case": {
+      "id": "ADV_06_NEAR_CONCEPT",
+      "category": "Near-Concept Confusion",
+      "query": "Does the guideline recommend cytisine for the prevention of tobacco initiation in non-smoking teenagers?",
+      "expected_concepts": [
+        "initiation/prevention vs cessation",
+        "guideline covers cessation in adults, not prevention in non-smokers"
+      ],
+      "is_unsupported": true
+    },
+    "parsed_query": {
+      "intents": [
+        "PRIMARY_PREVENTION"
+      ],
+      "interventions": [
+        "cytisine"
+      ],
+      "populations": [
+        "adolescents_young_people"
+      ],
+      "is_out_of_scope": false,
+      "expanded_search_query": "Does the guideline recommend cytisine for the prevention of tobacco initiation in non-smoking teenagers? cytisine plant-based alkaloid adolescents young people children under 18",
+      "dimensions": [
+        "cytisine",
+        "adolescents"
+      ]
+    },
+    "gated_output": {
+      "is_grounded": false,
+      "safety_flag": "OUT_OF_SCOPE_PRIMARY_PREVENTION_NOT_COVERED_IN_CESSATION_GUIDELINE",
+      "admitted_count": 0,
+      "admitted_chunks": []
+    }
+  },
+  {
+    "case": {
+      "id": "ADV_07_UNSUPPORTED",
+      "category": "Unsupported Question",
+      "query": "What is the recommended dosage and taper schedule of psilocybin-assisted psychotherapy for tobacco cessation according to WHO?",
+      "expected_concepts": [
+        "NO EVIDENCE / OUT OF SCOPE (psilocybin not in guideline)"
+      ],
+      "is_unsupported": true
+    },
+    "parsed_query": {
+      "intents": [],
+      "interventions": [],
+      "populations": [],
+      "is_out_of_scope": false,
+      "expanded_search_query": "What is the recommended dosage and taper schedule of psilocybin-assisted psychotherapy for tobacco cessation according to WHO?",
+      "dimensions": []
+    },
+    "gated_output": {
+      "is_grounded": false,
+      "safety_flag": "UNSUPPORTED_INTERVENTION_NOT_VERIFIED",
+      "admitted_count": 0,
+      "admitted_chunks": []
+    }
+  },
+  {
+    "case": {
+      "id": "ADV_08_PARTIAL_EVIDENCE",
+      "category": "Partial Evidence",
+      "query": "What is the specific cost-effectiveness ratio in USD per QALY gained for varenicline versus cytisine in low-income countries?",
+      "expected_concepts": [
+        "economic/cost considerations exist, but exact USD/QALY cost-effectiveness model is not established"
+      ],
+      "is_unsupported": false
+    },
+    "parsed_query": {
+      "intents": [
+        "COMPARATIVE_EFFECTIVENESS"
+      ],
+      "interventions": [
+        "varenicline",
+        "cytisine",
+        "combination_therapy"
+      ],
+      "populations": [],
+      "is_out_of_scope": false,
+      "expanded_search_query": "What is the specific cost-effectiveness ratio in USD per QALY gained for varenicline versus cytisine in low-income countries? varenicline nicotinic receptor partial agonist cytisine plant-based alkaloid combination treatment combined interventions",
+      "dimensions": [
+        "varenicline",
+        "cytisine",
+        "combination treatment",
+        "comparative effectiveness"
+      ]
+    },
+    "gated_output": {
+      "is_grounded": true,
+      "safety_flag": null,
+      "admitted_count": 6,
+      "admitted_chunks": [
+        {
+          "chunk_id": "chunk_sec_3_3_1",
+          "clinical_score": 0.895,
+          "section_number": "3.3.1",
+          "section_title": "3.3.1. Recommendations",
+          "heading_path": "3. Recommendations > 3.3. Pharmacological interventions delivered in both clinical and community settings > 3.3.1. Recommendations",
+          "text": "3.3.1.\t Recommendations\n4.\nWHO recommends varenicline, NRT, bupropion and cytisine4 as pharmacological \ntreatment options for tobacco users who smoke and are interested in quitting. \nVarenicline, NRT or bupropion are recommended as first-line options; combination \nNRT (a patch plus a short-acting fo"
+        },
+        {
+          "chunk_id": "chunk_sec_3_3_3_6_p03",
+          "clinical_score": 0.712,
+          "section_number": "3.3.3.6",
+          "section_title": "3.3.3.6. Conclusions",
+          "heading_path": "3. Recommendations > 3.3. Pharmacological interventions delivered in both clinical and community settings > 3.3.3. Justification and evidence > 3.3.3.6. Conclusions",
+          "text": "·\t There is moderate-certainty evidence that cytisine is more effective than placebo/no intervention/usual \ncare in supporting smokers to quit smoking for 6 months or longer; there is very low- to low-certainty \nevidence for a significant difference in the likelihood of quitting smoking between cyti"
+        },
+        {
+          "chunk_id": "chunk_sec_3_3_3_3_p02",
+          "clinical_score": 0.7118,
+          "section_number": "3.3.3.3",
+          "section_title": "3.3.3.3. Varenicline",
+          "heading_path": "3. Recommendations > 3.3. Pharmacological interventions delivered in both clinical and community settings > 3.3.3. Justification and evidence > 3.3.3.3. Varenicline",
+          "text": "5 studies; 5317 participants), neuropsychiatric SAEs (RR: 1.05; 95% CI: 0.16–7.04; 2 studies; 866 participants) or \ncardiac SAEs (RR: 3.17; 95% CI: 0.33–30.18; 2 studies; 866 participants). When compared with combination NRT, \npeople taking varenicline had increased risk of SAEs (RR: 2.15; 95% CI: 0"
+        },
+        {
+          "chunk_id": "chunk_sec_3_3_3_4",
+          "clinical_score": 0.7095,
+          "section_number": "3.3.3.4",
+          "section_title": "3.3.3.4. Cytisine",
+          "heading_path": "3. Recommendations > 3.3. Pharmacological interventions delivered in both clinical and community settings > 3.3.3. Justification and evidence > 3.3.3.4. Cytisine",
+          "text": "3.3.3.4.\tCytisine\nA systematic review of 14 studies commissioned by WHO showed that participants who received cytisine \nwere significantly more likely to quit smoking for at least 6 months than those who received placebo/no \nintervention/usual care (RR: 2.61; 95% CI: 1.50–4.67; 6 trials; 5194 partic"
+        },
+        {
+          "chunk_id": "chunk_sec_3_3_4_p01",
+          "clinical_score": 0.7079,
+          "section_number": "3.3.4",
+          "section_title": "3.3.4. Implementation consideration",
+          "heading_path": "3. Recommendations > 3.3. Pharmacological interventions delivered in both clinical and community settings > 3.3.4. Implementation consideration",
+          "text": "3.3.4.\n\nImplementation consideration\nIt is critical to minimize or ideally eliminate the cost of medication, and other access barriers, to increase tobacco \nusers’ medication use, compliance with dose and duration recommendations, and maximize population-level \nimpacts on prevalence (see Section 3.7"
+        },
+        {
+          "chunk_id": "chunk_sec_3_3_3_5",
+          "clinical_score": 0.7057,
+          "section_number": "3.3.3.5",
+          "section_title": "3.3.3.5. Combination pharmacotherapy",
+          "heading_path": "3. Recommendations > 3.3. Pharmacological interventions delivered in both clinical and community settings > 3.3.3. Justification and evidence > 3.3.3.5. Combination pharmacotherapy",
+          "text": "3.3.3.5.\tCombination pharmacotherapy\nThere was high-certainty evidence that combination NRT (a fast-acting form plus a patch) results in higher \nlong-term quit rates than single-form NRT (RR: 1.25; 95% CI: 1.15–1.36; 14 studies; 11 356 participants) (33). \nThe authors found no evidence of an effect "
+        }
+      ]
+    }
+  },
+  {
+    "case": {
+      "id": "ADV_09_NUMERICAL_TRAP",
+      "category": "Numerical / Duration Trap",
+      "query": "What is the exact Number Needed to Treat (NNT) for varenicline compared to placebo for continuous abstinence at 6 months or longer?",
+      "expected_concepts": [
+        "varenicline vs placebo",
+        "NNT: 7.6 (or range 7-8)",
+        "6 months"
+      ],
+      "is_unsupported": false
+    },
+    "parsed_query": {
+      "intents": [
+        "COMPARATIVE_EFFECTIVENESS",
+        "METRIC_STATISTICAL"
+      ],
+      "interventions": [
+        "varenicline"
+      ],
+      "populations": [],
+      "is_out_of_scope": false,
+      "expanded_search_query": "What is the exact Number Needed to Treat (NNT) for varenicline compared to placebo for continuous abstinence at 6 months or longer? varenicline nicotinic receptor partial agonist",
+      "dimensions": [
+        "varenicline",
+        "comparative effectiveness"
+      ]
+    },
+    "gated_output": {
+      "is_grounded": true,
+      "safety_flag": null,
+      "admitted_count": 5,
+      "admitted_chunks": [
+        {
+          "chunk_id": "chunk_sec_3_3_1",
+          "clinical_score": 0.8752,
+          "section_number": "3.3.1",
+          "section_title": "3.3.1. Recommendations",
+          "heading_path": "3. Recommendations > 3.3. Pharmacological interventions delivered in both clinical and community settings > 3.3.1. Recommendations",
+          "text": "3.3.1.\t Recommendations\n4.\nWHO recommends varenicline, NRT, bupropion and cytisine4 as pharmacological \ntreatment options for tobacco users who smoke and are interested in quitting. \nVarenicline, NRT or bupropion are recommended as first-line options; combination \nNRT (a patch plus a short-acting fo"
+        },
+        {
+          "chunk_id": "chunk_sec_3_3_3_6_p03",
+          "clinical_score": 0.8673,
+          "section_number": "3.3.3.6",
+          "section_title": "3.3.3.6. Conclusions",
+          "heading_path": "3. Recommendations > 3.3. Pharmacological interventions delivered in both clinical and community settings > 3.3.3. Justification and evidence > 3.3.3.6. Conclusions",
+          "text": "·\t There is moderate-certainty evidence that cytisine is more effective than placebo/no intervention/usual \ncare in supporting smokers to quit smoking for 6 months or longer; there is very low- to low-certainty \nevidence for a significant difference in the likelihood of quitting smoking between cyti"
+        },
+        {
+          "chunk_id": "chunk_sec_3_3_3_3_p01",
+          "clinical_score": 0.8407,
+          "section_number": "3.3.3.3",
+          "section_title": "3.3.3.3. Varenicline",
+          "heading_path": "3. Recommendations > 3.3. Pharmacological interventions delivered in both clinical and community settings > 3.3.3. Justification and evidence > 3.3.3.3. Varenicline",
+          "text": "3.3.3.3.\tVarenicline\nA Cochrane systematic review of 75 trials with 45 049 participants (35) published in 2023 found high-certainty \nevidence that varenicline helps more people to quit than placebo (RR: 2.32; 95% CI: 2.15–2.51; 41 studies;\n\n17 395 participants); helps more people to quit than buprop"
+        },
+        {
+          "chunk_id": "chunk_sec_3_3_3_6_p02",
+          "clinical_score": 0.8655,
+          "section_number": "3.3.3.6",
+          "section_title": "3.3.3.6. Conclusions",
+          "heading_path": "3. Recommendations > 3.3. Pharmacological interventions delivered in both clinical and community settings > 3.3.3. Justification and evidence > 3.3.3.6. Conclusions",
+          "text": "20\n·\t Decisions regarding bupropion are probably preference sensitive (moderate harms with some uncertainty \nregarding serious harms), it requires small cost, and it is feasible and probably acceptable, with probably \nincreased equity.\n·\t There is high-certainty evidence that varenicline is more eff"
+        },
+        {
+          "chunk_id": "chunk_sec_3_3_3_6_p04",
+          "clinical_score": 0.8546,
+          "section_number": "3.3.3.6",
+          "section_title": "3.3.3.6. Conclusions",
+          "heading_path": "3. Recommendations > 3.3. Pharmacological interventions delivered in both clinical and community settings > 3.3.3. Justification and evidence > 3.3.3.6. Conclusions",
+          "text": "·\t There is moderate-certainty evidence that a combination of bupropion and varenicline may result in \nsuperior long-term quit rates compared with varenicline alone; there is insufficient evidence that a \ncombination of bupropion and NRT results in superior long-term quit rates compared with NRT alo"
+        }
+      ]
+    }
+  },
+  {
+    "case": {
+      "id": "ADV_10_NEGATION_TRAP",
+      "category": "Negation Trap",
+      "query": "Which tobacco cessation interventions should NOT be recommended or have insufficient evidence according to WHO guidelines?",
+      "expected_concepts": [
+        "unproven therapies",
+        "acupuncture",
+        "hypnotherapy",
+        "laser",
+        "no recommendation"
+      ],
+      "is_unsupported": false
+    },
+    "parsed_query": {
+      "intents": [],
+      "interventions": [],
+      "populations": [],
+      "is_out_of_scope": false,
+      "expanded_search_query": "Which tobacco cessation interventions should NOT be recommended or have insufficient evidence according to WHO guidelines?",
+      "dimensions": []
+    },
+    "gated_output": {
+      "is_grounded": true,
+      "safety_flag": null,
+      "admitted_count": 5,
+      "admitted_chunks": [
+        {
+          "chunk_id": "chunk_node_L2_rationale_and_objectives",
+          "clinical_score": 0.9092,
+          "section_number": null,
+          "section_title": "Rationale and objectives",
+          "heading_path": "Executive summary > Rationale and objectives",
+          "text": "Rationale and objectives\nThe need to help tobacco users quit as a key component of a comprehensive tobacco control approach has been \nreflected in the actions recommended by the Guidelines for implementation of Article 14 of the World Health \nOrganization Framework Convention on Tobacco Control (WHO"
+        },
+        {
+          "chunk_id": "chunk_sec_1_1",
+          "clinical_score": 0.8977,
+          "section_number": "1.1",
+          "section_title": "1.1. Existing WHO guidelines",
+          "heading_path": "1. Introduction > 1.1. Existing WHO guidelines",
+          "text": "1.1.\t Existing WHO guidelines\nThe need to provide interventions and supportive systems to help tobacco users quit as a key component of \na comprehensive tobacco control approach to reduce the prevalence of tobacco use has been reflected in the \nactions recommended by the Guidelines for implementatio"
+        },
+        {
+          "chunk_id": "chunk_sec_1_2_p01",
+          "clinical_score": 0.891,
+          "section_number": "1.2",
+          "section_title": "1.2. Rationale and objectives",
+          "heading_path": "1. Introduction > 1.2. Rationale and objectives",
+          "text": "1.2.\t Rationale and objectives\nNational clinical treatment guidelines are recommended by the WHO FCTC Article 14 guidelines as basic \ninfrastructure needed to promote tobacco cessation and provide effective tobacco dependence treatment. \nThe 2019 WHO report on the global tobacco epidemic survey (13)"
+        },
+        {
+          "chunk_id": "chunk_sec_2_2_p03",
+          "clinical_score": 0.8602,
+          "section_number": "2.2",
+          "section_title": "2.2. Evidence reviews",
+          "heading_path": "2. Methods > 2.2. Evidence reviews",
+          "text": "2014 conducted another Cochrane system review with 16 studies to assess the effectiveness of electronic \nhealth record (EHR)-facilitated interventions on smoking cessation support actions by clinicians, clinics \nand health-care delivery systems, and on patient smoking cessation outcomes (39).\n\n7\n\n2."
+        },
+        {
+          "chunk_id": "chunk_sec_4_5_p02",
+          "clinical_score": 0.8513,
+          "section_number": "4.5",
+          "section_title": "4.5. Equity, acceptability and feasibility",
+          "heading_path": "4. Evidence to recommendations > 4.5. Equity, acceptability and feasibility",
+          "text": "In terms of feasibility, the GDG judged that \nall tobacco cessation interventions are “probably yes” or “yes”, except for group counselling and traditional, \ncomplementary and alternative therapies, the feasibility of which varies in different settings.\n\nThe behavioural \nand pharmacological interven"
+        }
+      ]
+    }
+  },
+  {
+    "case": {
+      "id": "ADV_11_POPULATION_TRAP",
+      "category": "Population Trap",
+      "query": "What is the WHO recommendation regarding the use of varenicline in pregnant women who smoke?",
+      "expected_concepts": [
+        "pregnancy special considerations",
+        "insufficient evidence/safety concerns or behavioral first",
+        "Annex 2 / pregnant population"
+      ],
+      "is_unsupported": false
+    },
+    "parsed_query": {
+      "intents": [],
+      "interventions": [
+        "varenicline"
+      ],
+      "populations": [
+        "pregnant_women"
+      ],
+      "is_out_of_scope": false,
+      "expanded_search_query": "What is the WHO recommendation regarding the use of varenicline in pregnant women who smoke? varenicline nicotinic receptor partial agonist pregnant women pregnancy antenatal care",
+      "dimensions": [
+        "varenicline",
+        "pregnant women"
+      ]
+    },
+    "gated_output": {
+      "is_grounded": true,
+      "safety_flag": null,
+      "admitted_count": 6,
+      "admitted_chunks": [
+        {
+          "chunk_id": "chunk_sec_3_3_4_p01",
+          "clinical_score": 0.9535,
+          "section_number": "3.3.4",
+          "section_title": "3.3.4. Implementation consideration",
+          "heading_path": "3. Recommendations > 3.3. Pharmacological interventions delivered in both clinical and community settings > 3.3.4. Implementation consideration",
+          "text": "3.3.4.\n\nImplementation consideration\nIt is critical to minimize or ideally eliminate the cost of medication, and other access barriers, to increase tobacco \nusers’ medication use, compliance with dose and duration recommendations, and maximize population-level \nimpacts on prevalence (see Section 3.7"
+        },
+        {
+          "chunk_id": "chunk_sec_3_3_1",
+          "clinical_score": 0.7985,
+          "section_number": "3.3.1",
+          "section_title": "3.3.1. Recommendations",
+          "heading_path": "3. Recommendations > 3.3. Pharmacological interventions delivered in both clinical and community settings > 3.3.1. Recommendations",
+          "text": "3.3.1.\t Recommendations\n4.\nWHO recommends varenicline, NRT, bupropion and cytisine4 as pharmacological \ntreatment options for tobacco users who smoke and are interested in quitting. \nVarenicline, NRT or bupropion are recommended as first-line options; combination \nNRT (a patch plus a short-acting fo"
+        },
+        {
+          "chunk_id": "chunk_sec_3_3_3_6_p02",
+          "clinical_score": 0.7525,
+          "section_number": "3.3.3.6",
+          "section_title": "3.3.3.6. Conclusions",
+          "heading_path": "3. Recommendations > 3.3. Pharmacological interventions delivered in both clinical and community settings > 3.3.3. Justification and evidence > 3.3.3.6. Conclusions",
+          "text": "20\n·\t Decisions regarding bupropion are probably preference sensitive (moderate harms with some uncertainty \nregarding serious harms), it requires small cost, and it is feasible and probably acceptable, with probably \nincreased equity.\n·\t There is high-certainty evidence that varenicline is more eff"
+        },
+        {
+          "chunk_id": "chunk_sec_1_1",
+          "clinical_score": 0.7522,
+          "section_number": "1.1",
+          "section_title": "1.1. Existing WHO guidelines",
+          "heading_path": "1. Introduction > 1.1. Existing WHO guidelines",
+          "text": "1.1.\t Existing WHO guidelines\nThe need to provide interventions and supportive systems to help tobacco users quit as a key component of \na comprehensive tobacco control approach to reduce the prevalence of tobacco use has been reflected in the \nactions recommended by the Guidelines for implementatio"
+        },
+        {
+          "chunk_id": "chunk_sec_3_3_3_3_p01",
+          "clinical_score": 0.7286,
+          "section_number": "3.3.3.3",
+          "section_title": "3.3.3.3. Varenicline",
+          "heading_path": "3. Recommendations > 3.3. Pharmacological interventions delivered in both clinical and community settings > 3.3.3. Justification and evidence > 3.3.3.3. Varenicline",
+          "text": "3.3.3.3.\tVarenicline\nA Cochrane systematic review of 75 trials with 45 049 participants (35) published in 2023 found high-certainty \nevidence that varenicline helps more people to quit than placebo (RR: 2.32; 95% CI: 2.15–2.51; 41 studies;\n\n17 395 participants); helps more people to quit than buprop"
+        },
+        {
+          "chunk_id": "chunk_sec_3_4_1",
+          "clinical_score": 0.6544,
+          "section_number": "3.4.1",
+          "section_title": "3.4.1. Recommendations",
+          "heading_path": "3. Recommendations > 3.4. Interventions for smokeless tobacco use cessation > 3.4.1. Recommendations",
+          "text": "3.4.1.\t Recommendations\n6.\nWHO recommends providing intensive behavioural support interventions (individual \nface-to-face counselling, face-to-face group counselling or telephone counselling) for \nsmokeless tobacco users interested in quitting.\n Strong recommendation; \n moderate certainty \n6\n7.\nWHO "
+        }
+      ]
+    }
+  },
+  {
+    "case": {
+      "id": "ADV_12_TEMPORAL_TRAP",
+      "category": "Temporal Trap",
+      "query": "How long should a brief advice intervention delivered by a primary care physician take during a routine consultation?",
+      "expected_concepts": [
+        "duration of brief advice",
+        "under 3 minutes (or 30 seconds to 3 minutes)"
+      ],
+      "is_unsupported": false
+    },
+    "parsed_query": {
+      "intents": [],
+      "interventions": [
+        "brief_advice"
+      ],
+      "populations": [],
+      "is_out_of_scope": false,
+      "expanded_search_query": "How long should a brief advice intervention delivered by a primary care physician take during a routine consultation? brief advice clinical advice routine consultation health-care providers",
+      "dimensions": [
+        "brief advice"
+      ]
+    },
+    "gated_output": {
+      "is_grounded": true,
+      "safety_flag": null,
+      "admitted_count": 6,
+      "admitted_chunks": [
+        {
+          "chunk_id": "chunk_sec_3_1_1",
+          "clinical_score": 0.8947,
+          "section_number": "3.1.1",
+          "section_title": "3.1.1. Recommendations",
+          "heading_path": "3. Recommendations > 3.1. Behavioural support delivered in both clinical and community settings > 3.1.1. Recommendations",
+          "text": "3.1.1. \t Recommendations\n1.\nWHO recommends brief advice (between 30 seconds and 3 minutes per encounter)\nbe consistently provided by health-care providers as a routine practice to all tobacco\nusers accessing any health-care settings.\n Strong recommendation; \n moderate certainty\n1\n30 sec – 3 min\n2.\nW"
+        },
+        {
+          "chunk_id": "chunk_sec_3_1_3_p01",
+          "clinical_score": 0.8877,
+          "section_number": "3.1.3",
+          "section_title": "3.1.3. Justification and evidence",
+          "heading_path": "3. Recommendations > 3.1. Behavioural support delivered in both clinical and community settings > 3.1.3. Justification and evidence",
+          "text": "3.1.3. \t Justification and evidence\nFor these recommendations on behavioural support delivered in both clinical and community settings, one \nnewly commissioned systematic review, which is now published (43), and four Cochrane systematic reviews \n(27–30) were used. Full details of the EtD tables can "
+        },
+        {
+          "chunk_id": "chunk_sec_3_1_3_p04",
+          "clinical_score": 0.887,
+          "section_number": "3.1.3",
+          "section_title": "3.1.3. Justification and evidence",
+          "heading_path": "3. Recommendations > 3.1. Behavioural support delivered in both clinical and community settings > 3.1.3. Justification and evidence",
+          "text": "2602 participants). Subgroup analysis identified no evidence that the effect of telephone counselling depended \nupon whether or not other interventions were provided, that more-intensive support was more effective than \nless-intensive support, or that the effect of telephone support depended upon wh"
+        },
+        {
+          "chunk_id": "chunk_sec_3_1_3_p02",
+          "clinical_score": 0.8654,
+          "section_number": "3.1.3",
+          "section_title": "3.1.3. Justification and evidence",
+          "heading_path": "3. Recommendations > 3.1. Behavioural support delivered in both clinical and community settings > 3.1.3. Justification and evidence",
+          "text": "1.08). Subgroup analyses on age, high- versus low-income countries, types of health-care providers, clinical \nversus community settings and outcome characteristics (for example, duration of follow-up) were conducted. \nNo significant heterogeneity of treatment effects on long-term or short-term absti"
+        },
+        {
+          "chunk_id": "chunk_sec_3_1_3_p05",
+          "clinical_score": 0.8209,
+          "section_number": "3.1.3",
+          "section_title": "3.1.3. Justification and evidence",
+          "heading_path": "3. Recommendations > 3.1. Behavioural support delivered in both clinical and community settings > 3.1.3. Justification and evidence",
+          "text": "3. Recommendations\n\n13\n·\t The balance of benefits against harms favours individual behavioural counselling over minimal contact and \nmore- versus less-intensive counselling on the basis of:\n–\t moderate to large benefits (individual behavioural counselling with or without pharmacotherapy \nversus mini"
+        },
+        {
+          "chunk_id": "chunk_sec_3_5_3_p02",
+          "clinical_score": 0.735,
+          "section_number": "3.5.3",
+          "section_title": "3.5.3. Justification and evidence",
+          "heading_path": "3. Recommendations > 3.5. Combination of behavioural and pharmacological treatments > 3.5.3. Justification and evidence",
+          "text": "WHO clinical treatment guideline for tobacco cessation in adults\t\n24\nA Cochrane systematic review published in 2016 (36), which examined 53 studies with a total of more than \n25 000 participants, found high-quality evidence for a benefit of combined pharmacotherapy and behavioural \nsupport compared "
+        }
+      ]
+    }
+  }
+]

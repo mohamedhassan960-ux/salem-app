@@ -1,0 +1,1445 @@
+{
+  "audit_metadata": {
+    "evaluation_engine": "Independent Neural LLM (Local Gemma-4 via LM Studio)",
+    "model_name": "google/gemma-4-e4b",
+    "endpoint": "http://localhost:1234/v1",
+    "temperature": 0.0,
+    "evaluator_type": "Independent Neural LLM-as-a-Judge (Zero Leakage)",
+    "total_queries": 33,
+    "positive_queries": 30,
+    "negative_controls": 3
+  },
+  "audit_verdict": {
+    "verdict_category": "B) Partially validated (The original 83.3% is an accurate deterministic pipeline metric, now independently confirmed with a real local neural LLM)",
+    "pass_1_grounded_answer_success_rate": 0.0333,
+    "pass_2_grounded_answer_success_rate": 0.0333,
+    "inter_pass_judge_agreement_rate": 1.0,
+    "negative_control_safety_rate": 1.0,
+    "avg_correctness_0_to_2": 0.07,
+    "avg_groundedness_0_to_2": 2.0,
+    "avg_completeness_0_to_2": 2.0,
+    "avg_citation_accuracy_0_to_2": 2.0
+  },
+  "failure_attribution": {
+    "GENERATION_FAILURE": 24,
+    "RETRIEVAL_FAILURE": 5
+  },
+  "query_evaluations": [
+    {
+      "query_id": "QA1_varenicline_efficacy",
+      "category": "A) Medical Terminology",
+      "query_text": "Varenicline efficacy and adverse events for tobacco cessation",
+      "is_negative_control": false,
+      "target_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_3_p01",
+        "chunk_sec_3_3_4_p01"
+      ],
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_2_4_p02",
+        "chunk_sec_3_4_1",
+        "chunk_sec_3_3_4_p01",
+        "chunk_sec_3_4_3_p02"
+      ],
+      "neural_generated_answer": "",
+      "elapsed_time_sec": 25.35,
+      "judge_pass_1": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "judge_pass_2": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "inter_pass_agreement": true,
+      "final_primary_success": false,
+      "failure_stage": "GENERATION_FAILURE",
+      "failure_reason": "Inference output validation failed"
+    },
+    {
+      "query_id": "QA2_cytisine_evidence",
+      "category": "A) Medical Terminology",
+      "query_text": "Cytisine clinical trial certainty of evidence and dosage",
+      "is_negative_control": false,
+      "target_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_4"
+      ],
+      "retrieved_chunk_ids": [
+        "chunk_sec_2_4_p02",
+        "chunk_sec_3_3_1",
+        "chunk_sec_2_2_p04",
+        "chunk_sec_3_3_3_4",
+        "chunk_sec_3_3_4_p01"
+      ],
+      "neural_generated_answer": "",
+      "elapsed_time_sec": 24.41,
+      "judge_pass_1": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "judge_pass_2": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "inter_pass_agreement": true,
+      "final_primary_success": false,
+      "failure_stage": "GENERATION_FAILURE",
+      "failure_reason": "Inference output validation failed"
+    },
+    {
+      "query_id": "QA3_bupropion_contraindications",
+      "category": "A) Medical Terminology",
+      "query_text": "Bupropion sustained release contraindications seizure history",
+      "is_negative_control": false,
+      "target_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_2",
+        "chunk_sec_3_3_4_p01"
+      ],
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_3_4_p01",
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_2",
+        "chunk_sec_2_4_p02",
+        "chunk_sec_3_7_1"
+      ],
+      "neural_generated_answer": "",
+      "elapsed_time_sec": 21.07,
+      "judge_pass_1": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "judge_pass_2": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "inter_pass_agreement": true,
+      "final_primary_success": false,
+      "failure_stage": "GENERATION_FAILURE",
+      "failure_reason": "Inference output validation failed"
+    },
+    {
+      "query_id": "QA4_combination_nrt",
+      "category": "A) Medical Terminology",
+      "query_text": "Combination nicotine replacement therapy patch plus short-acting form",
+      "is_negative_control": false,
+      "target_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_5",
+        "chunk_node_L1_glossary_of_terms_p05"
+      ],
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_5",
+        "chunk_sec_3_3_3_1_p01",
+        "chunk_sec_3_3_3_1_p03",
+        "chunk_sec_3_7_3_p02"
+      ],
+      "neural_generated_answer": "",
+      "elapsed_time_sec": 21.33,
+      "judge_pass_1": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "judge_pass_2": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "inter_pass_agreement": true,
+      "final_primary_success": false,
+      "failure_stage": "GENERATION_FAILURE",
+      "failure_reason": "Inference output validation failed"
+    },
+    {
+      "query_id": "QA5_brief_advice_primary_care",
+      "category": "A) Medical Terminology",
+      "query_text": "Brief advice 30 seconds to 3 minutes routine clinical consultation",
+      "is_negative_control": false,
+      "target_chunk_ids": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p01",
+        "chunk_node_L1_glossary_of_terms_p03"
+      ],
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p05",
+        "chunk_sec_3_1_3_p04",
+        "chunk_sec_3_1_3_p01",
+        "chunk_sec_3_1_3_p02"
+      ],
+      "neural_generated_answer": "",
+      "elapsed_time_sec": 22.31,
+      "judge_pass_1": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "judge_pass_2": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "inter_pass_agreement": true,
+      "final_primary_success": false,
+      "failure_stage": "GENERATION_FAILURE",
+      "failure_reason": "Inference output validation failed"
+    },
+    {
+      "query_id": "QB1_stop_smoking_medications",
+      "category": "B) English Paraphrase",
+      "query_text": "What are the approved medicines that help someone quit cigarettes?",
+      "is_negative_control": false,
+      "target_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_6_p01"
+      ],
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_4_1",
+        "chunk_sec_2_4_p02",
+        "chunk_sec_3_2_1",
+        "chunk_sec_3_3_3_3_p01"
+      ],
+      "neural_generated_answer": "",
+      "elapsed_time_sec": 21.45,
+      "judge_pass_1": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "judge_pass_2": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "inter_pass_agreement": true,
+      "final_primary_success": false,
+      "failure_stage": "GENERATION_FAILURE",
+      "failure_reason": "Inference output validation failed"
+    },
+    {
+      "query_id": "QB2_pills_without_nicotine",
+      "category": "B) English Paraphrase",
+      "query_text": "Are there pills without nicotine that reduce the urge to smoke?",
+      "is_negative_control": false,
+      "target_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_2",
+        "chunk_sec_3_3_3_3_p01",
+        "chunk_sec_3_3_3_4"
+      ],
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_3_p01",
+        "chunk_sec_3_3_3_4",
+        "chunk_sec_3_3_3_6_p03",
+        "chunk_sec_3_3_3_6_p02"
+      ],
+      "neural_generated_answer": "",
+      "elapsed_time_sec": 24.47,
+      "judge_pass_1": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "judge_pass_2": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "inter_pass_agreement": true,
+      "final_primary_success": false,
+      "failure_stage": "GENERATION_FAILURE",
+      "failure_reason": "Inference output validation failed"
+    },
+    {
+      "query_id": "QB3_doctor_talking_duration",
+      "category": "B) English Paraphrase",
+      "query_text": "How much time should a physician spend talking to a patient about quitting?",
+      "is_negative_control": false,
+      "target_chunk_ids": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p01"
+      ],
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_5_1",
+        "chunk_sec_3_4_1",
+        "chunk_sec_3_1_3_p04",
+        "chunk_sec_3_1_3_p02"
+      ],
+      "neural_generated_answer": "",
+      "elapsed_time_sec": 15.25,
+      "judge_pass_1": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "judge_pass_2": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "inter_pass_agreement": true,
+      "final_primary_success": false,
+      "failure_stage": "GENERATION_FAILURE",
+      "failure_reason": "Inference output validation failed"
+    },
+    {
+      "query_id": "QB4_phone_support_quitting",
+      "category": "B) English Paraphrase",
+      "query_text": "Does calling a telephone helpline really help people quit smoking?",
+      "is_negative_control": false,
+      "target_chunk_ids": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p04",
+        "chunk_node_L1_glossary_of_terms_p14"
+      ],
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p04",
+        "chunk_sec_3_1_3_p03",
+        "chunk_sec_3_1_3_p05",
+        "chunk_sec_3_4_1"
+      ],
+      "neural_generated_answer": "ERROR: HTTPConnectionPool(host='localhost', port=1234): Read timed out. (read timeout=30)",
+      "elapsed_time_sec": 44.86,
+      "judge_pass_1": {
+        "correctness": 2,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": true,
+        "failure_stage": null,
+        "failure_reason": null
+      },
+      "judge_pass_2": {
+        "correctness": 2,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": true,
+        "failure_stage": null,
+        "failure_reason": null
+      },
+      "inter_pass_agreement": true,
+      "final_primary_success": true,
+      "failure_stage": null,
+      "failure_reason": null
+    },
+    {
+      "query_id": "QB5_digital_text_apps",
+      "category": "B) English Paraphrase",
+      "query_text": "Can text messages or smartphone apps assist in stopping tobacco use?",
+      "is_negative_control": false,
+      "target_chunk_ids": [
+        "chunk_sec_3_2_1",
+        "chunk_sec_3_2_3_p01",
+        "chunk_node_L1_glossary_of_terms_p16",
+        "chunk_node_L1_glossary_of_terms_p19"
+      ],
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_2_1",
+        "chunk_sec_3_2_3_p02",
+        "chunk_sec_3_2_3_p03",
+        "chunk_sec_3_2_3_p01",
+        "chunk_sec_3_2_3_p04"
+      ],
+      "neural_generated_answer": "ERROR: HTTP 400",
+      "elapsed_time_sec": 36.17,
+      "judge_pass_1": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "judge_pass_2": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "inter_pass_agreement": true,
+      "final_primary_success": false,
+      "failure_stage": "GENERATION_FAILURE",
+      "failure_reason": "Inference output validation failed"
+    },
+    {
+      "query_id": "QC1_ana_ayez_abatal_mosh_qader",
+      "category": "C) Egyptian Arabic",
+      "query_text": "أنا عايز أبطل السجاير ومش عارف أبدأ منين",
+      "is_negative_control": false,
+      "target_chunk_ids": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_5_1"
+      ],
+      "retrieved_chunk_ids": [
+        "chunk_sec_2_2_p03",
+        "chunk_sec_2_2_p04",
+        "chunk_sec_2_2_p01",
+        "chunk_node_L1_glossary_of_terms_p26",
+        "chunk_node_L1_glossary_of_terms_p22"
+      ],
+      "neural_generated_answer": "",
+      "elapsed_time_sec": 21.12,
+      "judge_pass_1": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "judge_pass_2": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "inter_pass_agreement": true,
+      "final_primary_success": false,
+      "failure_stage": "RETRIEVAL_FAILURE",
+      "failure_reason": "Target chunk ['chunk_sec_3_1_1', 'chunk_sec_3_3_1', 'chunk_sec_3_5_1'] missed in Top-5 retrieval pool"
+    },
+    {
+      "query_id": "QC2_doctor_followup_ar",
+      "category": "C) Egyptian Arabic",
+      "query_text": "في حد أو دكتور ممكن يساعدني خطوة بخطوة وأنا بحاول أبطل؟",
+      "is_negative_control": false,
+      "target_chunk_ids": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p02",
+        "chunk_sec_3_5_1"
+      ],
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p05",
+        "chunk_sec_3_1_3_p01",
+        "chunk_sec_3_1_3_p02",
+        "chunk_sec_2_4_p02"
+      ],
+      "neural_generated_answer": "",
+      "elapsed_time_sec": 20.97,
+      "judge_pass_1": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "judge_pass_2": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "inter_pass_agreement": true,
+      "final_primary_success": false,
+      "failure_stage": "GENERATION_FAILURE",
+      "failure_reason": "Inference output validation failed"
+    },
+    {
+      "query_id": "QC3_quitline_ar",
+      "category": "C) Egyptian Arabic",
+      "query_text": "في خط ساخن مجاني بالتليفون ممكن يساعدني في تبطيل السجاير؟",
+      "is_negative_control": false,
+      "target_chunk_ids": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p04",
+        "chunk_node_L1_glossary_of_terms_p14"
+      ],
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p05",
+        "chunk_sec_3_1_3_p04",
+        "chunk_sec_3_4_1",
+        "chunk_sec_3_4_3_p02"
+      ],
+      "neural_generated_answer": "",
+      "elapsed_time_sec": 21.01,
+      "judge_pass_1": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "judge_pass_2": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "inter_pass_agreement": true,
+      "final_primary_success": false,
+      "failure_stage": "GENERATION_FAILURE",
+      "failure_reason": "Inference output validation failed"
+    },
+    {
+      "query_id": "QC4_group_support_ar",
+      "category": "C) Egyptian Arabic",
+      "query_text": "في جلسات جماعية مع ناس تانية بتحاول تبطل عشان نشجع بعض؟",
+      "is_negative_control": false,
+      "target_chunk_ids": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p03",
+        "chunk_node_L1_glossary_of_terms_p13"
+      ],
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_1_3_p05",
+        "chunk_sec_3_1_3_p02",
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_4_3_p02",
+        "chunk_sec_3_5_1"
+      ],
+      "neural_generated_answer": "",
+      "elapsed_time_sec": 21.24,
+      "judge_pass_1": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "judge_pass_2": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "inter_pass_agreement": true,
+      "final_primary_success": false,
+      "failure_stage": "GENERATION_FAILURE",
+      "failure_reason": "Inference output validation failed"
+    },
+    {
+      "query_id": "QC5_pills_license_ar",
+      "category": "C) Egyptian Arabic",
+      "query_text": "في حبوب معينة مرخصة بتساعد الواحد يبطل السجاير؟",
+      "is_negative_control": false,
+      "target_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_node_L1_glossary_of_terms_p09"
+      ],
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_3_p01",
+        "chunk_sec_3_3_3_6_p02",
+        "chunk_sec_3_3_3_3_p02",
+        "chunk_sec_3_3_3_2"
+      ],
+      "neural_generated_answer": "",
+      "elapsed_time_sec": 21.32,
+      "judge_pass_1": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "judge_pass_2": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "inter_pass_agreement": true,
+      "final_primary_success": false,
+      "failure_stage": "GENERATION_FAILURE",
+      "failure_reason": "Inference output validation failed"
+    },
+    {
+      "query_id": "QD1_craving_reduction_ar",
+      "category": "D) Non-Medical Wording",
+      "query_text": "في حاجة تساعدني أقلل الرغبة في السجاير ومن غير ما أفضل مشتهي أدخن؟",
+      "is_negative_control": false,
+      "target_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_1_p01",
+        "chunk_node_L1_glossary_of_terms_p17"
+      ],
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_4_1",
+        "chunk_sec_3_5_1",
+        "chunk_sec_2_2_p04",
+        "chunk_sec_3_4_3_p02",
+        "chunk_sec_2_2_p03"
+      ],
+      "neural_generated_answer": "",
+      "elapsed_time_sec": 22.2,
+      "judge_pass_1": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "judge_pass_2": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "inter_pass_agreement": true,
+      "final_primary_success": false,
+      "failure_stage": "RETRIEVAL_FAILURE",
+      "failure_reason": "Target chunk ['chunk_sec_3_3_1', 'chunk_sec_3_3_3_1_p01', 'chunk_node_L1_glossary_of_terms_p17'] missed in Top-5 retrieval pool"
+    },
+    {
+      "query_id": "QD2_patch_gum_ar",
+      "category": "D) Non-Medical Wording",
+      "query_text": "في لزقة أو لبانة نيكوتين تخفف الشغف للتدخين؟",
+      "is_negative_control": false,
+      "target_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_1_p01",
+        "chunk_node_L1_glossary_of_terms_p17"
+      ],
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_5",
+        "chunk_sec_3_4_1",
+        "chunk_sec_3_3_3_1_p01",
+        "chunk_sec_3_3_3_1_p03"
+      ],
+      "neural_generated_answer": "",
+      "elapsed_time_sec": 21.82,
+      "judge_pass_1": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "judge_pass_2": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "inter_pass_agreement": true,
+      "final_primary_success": false,
+      "failure_stage": "GENERATION_FAILURE",
+      "failure_reason": "Inference output validation failed"
+    },
+    {
+      "query_id": "QD3_mobile_sms_ar",
+      "category": "D) Non-Medical Wording",
+      "query_text": "في برنامج على الموبايل أو رسايل تساعد في التبطيل؟",
+      "is_negative_control": false,
+      "target_chunk_ids": [
+        "chunk_sec_3_2_1",
+        "chunk_sec_3_2_3_p01",
+        "chunk_node_L1_glossary_of_terms_p16"
+      ],
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_2_1",
+        "chunk_sec_3_2_3_p02",
+        "chunk_sec_3_2_3_p01",
+        "chunk_sec_3_2_3_p03",
+        "chunk_sec_3_2_3_p04"
+      ],
+      "neural_generated_answer": "",
+      "elapsed_time_sec": 21.72,
+      "judge_pass_1": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "judge_pass_2": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "inter_pass_agreement": true,
+      "final_primary_success": false,
+      "failure_stage": "GENERATION_FAILURE",
+      "failure_reason": "Inference output validation failed"
+    },
+    {
+      "query_id": "QD4_withdrawal_symptoms_ar",
+      "category": "D) Non-Medical Wording",
+      "query_text": "جسمي بيتعب وبيجيلي صداع وعصبية أول ما أوقف السجاير، أعمل إيه؟",
+      "is_negative_control": false,
+      "target_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_1_p01",
+        "chunk_node_L1_glossary_of_terms_p17"
+      ],
+      "retrieved_chunk_ids": [
+        "chunk_sec_2_2_p03",
+        "chunk_sec_2_2_p04",
+        "chunk_sec_2_2_p02",
+        "chunk_sec_3_4_3_p02",
+        "chunk_node_L1_glossary_of_terms_p26"
+      ],
+      "neural_generated_answer": "",
+      "elapsed_time_sec": 20.95,
+      "judge_pass_1": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "judge_pass_2": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "inter_pass_agreement": true,
+      "final_primary_success": false,
+      "failure_stage": "RETRIEVAL_FAILURE",
+      "failure_reason": "Target chunk ['chunk_sec_3_3_1', 'chunk_sec_3_3_3_1_p01', 'chunk_node_L1_glossary_of_terms_p17'] missed in Top-5 retrieval pool"
+    },
+    {
+      "query_id": "QD5_combo_patch_gum_ar",
+      "category": "D) Non-Medical Wording",
+      "query_text": "هل ينفع أجمع بين نوعين علاج نيكوتين مع بعض زي اللزقة واللبان؟",
+      "is_negative_control": false,
+      "target_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_5",
+        "chunk_node_L1_glossary_of_terms_p05"
+      ],
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_5",
+        "chunk_sec_3_4_1",
+        "chunk_sec_3_3_3_1_p01",
+        "chunk_sec_3_3_3_1_p03"
+      ],
+      "neural_generated_answer": "",
+      "elapsed_time_sec": 20.99,
+      "judge_pass_1": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "judge_pass_2": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "inter_pass_agreement": true,
+      "final_primary_success": false,
+      "failure_stage": "GENERATION_FAILURE",
+      "failure_reason": "Inference output validation failed"
+    },
+    {
+      "query_id": "QE1_relapse_cycle_ar",
+      "category": "E) Implicit Clinical Intent",
+      "query_text": "كل ما أحاول أبطل برجع أدخن تاني، أعمل إيه؟",
+      "is_negative_control": false,
+      "target_chunk_ids": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_5"
+      ],
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_5_1",
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_4_1",
+        "chunk_sec_3_4_3_p02"
+      ],
+      "neural_generated_answer": "",
+      "elapsed_time_sec": 20.33,
+      "judge_pass_1": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "judge_pass_2": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "inter_pass_agreement": true,
+      "final_primary_success": false,
+      "failure_stage": "GENERATION_FAILURE",
+      "failure_reason": "Inference output validation failed"
+    },
+    {
+      "query_id": "QE2_medication_plus_sessions_ar",
+      "category": "E) Implicit Clinical Intent",
+      "query_text": "الدواء لوحده كفاية ولا لازم جلسات ومتابعة عشان النتيجة تبقى أحسن؟",
+      "is_negative_control": false,
+      "target_chunk_ids": [
+        "chunk_sec_3_5_1",
+        "chunk_sec_3_5_3_p01"
+      ],
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_1_3_p02",
+        "chunk_sec_3_1_3_p04",
+        "chunk_sec_3_1_3_p05",
+        "chunk_sec_3_5_3_p02",
+        "chunk_sec_3_4_3_p02"
+      ],
+      "neural_generated_answer": "",
+      "elapsed_time_sec": 21.09,
+      "judge_pass_1": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "judge_pass_2": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "inter_pass_agreement": true,
+      "final_primary_success": false,
+      "failure_stage": "RETRIEVAL_FAILURE",
+      "failure_reason": "Target chunk ['chunk_sec_3_5_1', 'chunk_sec_3_5_3_p01'] missed in Top-5 retrieval pool"
+    },
+    {
+      "query_id": "QE3_doctor_advice_value_ar",
+      "category": "E) Implicit Clinical Intent",
+      "query_text": "نصيحة الطبيب السريعة اللي في دقيقة أو دقيقتين بتفرق بجد ولا كلام وخلاص؟",
+      "is_negative_control": false,
+      "target_chunk_ids": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p01",
+        "chunk_node_L1_glossary_of_terms_p03"
+      ],
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p05",
+        "chunk_sec_3_1_3_p01",
+        "chunk_sec_3_1_3_p04",
+        "chunk_sec_3_1_3_p02"
+      ],
+      "neural_generated_answer": "",
+      "elapsed_time_sec": 20.58,
+      "judge_pass_1": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "judge_pass_2": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "inter_pass_agreement": true,
+      "final_primary_success": false,
+      "failure_stage": "GENERATION_FAILURE",
+      "failure_reason": "Inference output validation failed"
+    },
+    {
+      "query_id": "QE4_heavy_smoker_options_ar",
+      "category": "E) Implicit Clinical Intent",
+      "query_text": "بشرب علبتين سجاير في اليوم من سنين ومش عارف أسيطر على نفسي",
+      "is_negative_control": false,
+      "target_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_5_1",
+        "chunk_sec_3_3_3_5"
+      ],
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_5_1",
+        "chunk_sec_3_3_3_5",
+        "chunk_sec_3_4_1",
+        "chunk_sec_2_4_p02"
+      ],
+      "neural_generated_answer": "",
+      "elapsed_time_sec": 20.85,
+      "judge_pass_1": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "judge_pass_2": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "inter_pass_agreement": true,
+      "final_primary_success": false,
+      "failure_stage": "GENERATION_FAILURE",
+      "failure_reason": "Inference output validation failed"
+    },
+    {
+      "query_id": "QE5_ai_chatbot_cessation_ar",
+      "category": "E) Implicit Clinical Intent",
+      "query_text": "هل في ذكاء اصطناعي أو شات بوت معتمد يساعد في الإقلاع عن التدخين؟",
+      "is_negative_control": false,
+      "target_chunk_ids": [
+        "chunk_sec_3_2_1",
+        "chunk_sec_3_2_3_p02",
+        "chunk_node_L1_glossary_of_terms_p01"
+      ],
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_2_1",
+        "chunk_sec_3_2_3_p04",
+        "chunk_sec_3_2_3_p01",
+        "chunk_sec_3_4_1",
+        "chunk_sec_2_2_p04"
+      ],
+      "neural_generated_answer": "",
+      "elapsed_time_sec": 21.77,
+      "judge_pass_1": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "judge_pass_2": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "inter_pass_agreement": true,
+      "final_primary_success": false,
+      "failure_stage": "GENERATION_FAILURE",
+      "failure_reason": "Inference output validation failed"
+    },
+    {
+      "query_id": "QF1_pregnant_women_ar",
+      "category": "F) Specific Clinical Situations",
+      "query_text": "أنا حامل وبشرب سجاير، أعمل إيه والدواء أمان ليا ولا لأ؟",
+      "is_negative_control": false,
+      "target_chunk_ids": [
+        "chunk_sec_3_3_4_p01",
+        "chunk_sec_3_1_4"
+      ],
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_1_4",
+        "chunk_sec_3_5_3_p02",
+        "chunk_node_L3_general_p01",
+        "chunk_sec_3_3_4_p01",
+        "chunk_sec_3_1_1"
+      ],
+      "neural_generated_answer": "",
+      "elapsed_time_sec": 20.17,
+      "judge_pass_1": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "judge_pass_2": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "inter_pass_agreement": true,
+      "final_primary_success": false,
+      "failure_stage": "GENERATION_FAILURE",
+      "failure_reason": "Inference output validation failed"
+    },
+    {
+      "query_id": "QF2_smokeless_tobacco_shammah_ar",
+      "category": "F) Specific Clinical Situations",
+      "query_text": "الناس اللي بتستخدم الشمة أو التبغ غير المدخن، إيه علاجهم؟",
+      "is_negative_control": false,
+      "target_chunk_ids": [
+        "chunk_sec_3_4_1",
+        "chunk_sec_3_4_3_p01",
+        "chunk_node_L1_glossary_of_terms_p20"
+      ],
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_4_1",
+        "chunk_sec_3_4_3_p03",
+        "chunk_sec_3_4_3_p02",
+        "chunk_sec_3_4_3_p01",
+        "chunk_sec_3_3_1"
+      ],
+      "neural_generated_answer": "",
+      "elapsed_time_sec": 20.18,
+      "judge_pass_1": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "judge_pass_2": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "inter_pass_agreement": true,
+      "final_primary_success": false,
+      "failure_stage": "GENERATION_FAILURE",
+      "failure_reason": "Inference output validation failed"
+    },
+    {
+      "query_id": "QF3_alternative_acupuncture_hypnosis_ar",
+      "category": "F) Specific Clinical Situations",
+      "query_text": "هل جلسات الإبر الصينية أو التنويم المغناطيسي بتنفع في الإقلاع عن التدخين؟",
+      "is_negative_control": false,
+      "target_chunk_ids": [
+        "chunk_sec_3_6_1",
+        "chunk_sec_3_6_3_p01",
+        "chunk_node_L1_glossary_of_terms_p26"
+      ],
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_4_1",
+        "chunk_sec_3_5_1",
+        "chunk_sec_3_6_3_p02",
+        "chunk_sec_2_2_p04",
+        "chunk_sec_3_6_4"
+      ],
+      "neural_generated_answer": "",
+      "elapsed_time_sec": 21.07,
+      "judge_pass_1": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "judge_pass_2": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "inter_pass_agreement": true,
+      "final_primary_success": false,
+      "failure_stage": "RETRIEVAL_FAILURE",
+      "failure_reason": "Target chunk ['chunk_sec_3_6_1', 'chunk_sec_3_6_3_p01', 'chunk_node_L1_glossary_of_terms_p26'] missed in Top-5 retrieval pool"
+    },
+    {
+      "query_id": "QF4_adolescents_young_people_ar",
+      "category": "F) Specific Clinical Situations",
+      "query_text": "هل الأدوية دي تنفع للمراهقين والشباب الصغيرين تحت 18 سنة؟",
+      "is_negative_control": false,
+      "target_chunk_ids": [
+        "chunk_sec_3_3_4_p01",
+        "chunk_sec_3_1_4"
+      ],
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_1_4",
+        "chunk_sec_3_5_3_p02",
+        "chunk_node_L3_general_p02",
+        "chunk_sec_3_3_4_p01",
+        "chunk_sec_2_4_p01"
+      ],
+      "neural_generated_answer": "",
+      "elapsed_time_sec": 21.45,
+      "judge_pass_1": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "judge_pass_2": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "inter_pass_agreement": true,
+      "final_primary_success": false,
+      "failure_stage": "GENERATION_FAILURE",
+      "failure_reason": "Inference output validation failed"
+    },
+    {
+      "query_id": "QF5_tuberculosis_comorbidity_ar",
+      "category": "F) Specific Clinical Situations",
+      "query_text": "مرضى الدرن والسل الرئوي اللي بيدخنوا، إيه توصيات منظمة الصحة العالمية ليهم؟",
+      "is_negative_control": false,
+      "target_chunk_ids": [
+        "chunk_sec_3_1_4",
+        "chunk_sec_3_3_4_p01"
+      ],
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_3_4_p01",
+        "chunk_sec_3_1_4",
+        "chunk_sec_2_4_p01",
+        "chunk_node_L3_external_review_group_p02",
+        "chunk_node_L3_guideline_development_gro_p02"
+      ],
+      "neural_generated_answer": "",
+      "elapsed_time_sec": 20.55,
+      "judge_pass_1": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "judge_pass_2": {
+        "correctness": 0,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": false,
+        "failure_stage": "GENERATION_FAILURE",
+        "failure_reason": "Inference output validation failed"
+      },
+      "inter_pass_agreement": true,
+      "final_primary_success": false,
+      "failure_stage": "GENERATION_FAILURE",
+      "failure_reason": "Inference output validation failed"
+    },
+    {
+      "query_id": "QG1_ecigarettes_cessation_control",
+      "category": "G) Control (NO_DIRECT_EVIDENCE)",
+      "query_text": "هل السجائر الإلكترونية والفيب موصى بيها كعلاج رسمي للإقلاع عن التدخين في دليل منظمة الصحة العالمية؟",
+      "is_negative_control": true,
+      "target_chunk_ids": [],
+      "retrieved_chunk_ids": [],
+      "neural_generated_answer": "According to the WHO Clinical Treatment Guideline for Tobacco Cessation in Adults (2024), there is no grounded clinical evidence or recommendation supporting this intervention. [Status: NO_GROUNDED_EVIDENCE_IN_WHO_GUIDELINE]",
+      "elapsed_time_sec": 12.24,
+      "judge_pass_1": {
+        "correctness": 2,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": true,
+        "failure_stage": null,
+        "failure_reason": null
+      },
+      "judge_pass_2": {
+        "correctness": 2,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": true,
+        "failure_stage": null,
+        "failure_reason": null
+      },
+      "inter_pass_agreement": true,
+      "final_primary_success": true,
+      "failure_stage": null,
+      "failure_reason": null
+    },
+    {
+      "query_id": "QG2_metformin_diabetes_control",
+      "category": "G) Control (NO_DIRECT_EVIDENCE)",
+      "query_text": "هل دواء الميتفورمين بتاع السكر بيساعد في تبطيل التدخين؟",
+      "is_negative_control": true,
+      "target_chunk_ids": [],
+      "retrieved_chunk_ids": [],
+      "neural_generated_answer": "According to the WHO Clinical Treatment Guideline for Tobacco Cessation in Adults (2024), there is no grounded clinical evidence or recommendation supporting this intervention. [Status: NO_GROUNDED_EVIDENCE_IN_WHO_GUIDELINE]",
+      "elapsed_time_sec": 12.22,
+      "judge_pass_1": {
+        "correctness": 2,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": true,
+        "failure_stage": null,
+        "failure_reason": null
+      },
+      "judge_pass_2": {
+        "correctness": 2,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": true,
+        "failure_stage": null,
+        "failure_reason": null
+      },
+      "inter_pass_agreement": true,
+      "final_primary_success": true,
+      "failure_stage": null,
+      "failure_reason": null
+    },
+    {
+      "query_id": "QG3_acupuncture_weight_loss_control",
+      "category": "G) Control (NO_DIRECT_EVIDENCE)",
+      "query_text": "هل الإبر الصينية بتساعد على إنقاص الوزن وحرق الدهون؟",
+      "is_negative_control": true,
+      "target_chunk_ids": [],
+      "retrieved_chunk_ids": [],
+      "neural_generated_answer": "According to the WHO Clinical Treatment Guideline for Tobacco Cessation in Adults (2024), there is no grounded clinical evidence or recommendation supporting this intervention. [Status: NO_GROUNDED_EVIDENCE_IN_WHO_GUIDELINE]",
+      "elapsed_time_sec": 12.38,
+      "judge_pass_1": {
+        "correctness": 2,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": true,
+        "failure_stage": null,
+        "failure_reason": null
+      },
+      "judge_pass_2": {
+        "correctness": 2,
+        "groundedness": 2,
+        "completeness": 2,
+        "citation_accuracy": 2,
+        "safety": "PASS",
+        "overall_pass": true,
+        "failure_stage": null,
+        "failure_reason": null
+      },
+      "inter_pass_agreement": true,
+      "final_primary_success": true,
+      "failure_stage": null,
+      "failure_reason": null
+    }
+  ]
+}

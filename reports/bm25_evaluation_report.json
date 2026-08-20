@@ -1,0 +1,1716 @@
+{
+  "strategy_verbatim": {
+    "text_field": "verbatim_text",
+    "total_queries": 18,
+    "recall_at_5": 0.7222,
+    "recall_at_10": 0.8889,
+    "mrr": 0.5909,
+    "recall_5_hits": 13,
+    "recall_10_hits": 16,
+    "query_details": [
+      {
+        "query_id": "Q01_varenicline_rec",
+        "category": "Medications",
+        "query_text": "What does WHO recommend regarding Varenicline for tobacco cessation?",
+        "relevant_target_count": 4,
+        "retrieved_top_5": [
+          {
+            "chunk_id": "chunk_node_L3_general_p02",
+            "score": 6.9572,
+            "section": null,
+            "page": 66,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_4_3",
+            "score": 6.4993,
+            "section": "4.3",
+            "page": 50,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_node_L5_varenicline",
+            "score": 5.8845,
+            "section": null,
+            "page": 68,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_1_1",
+            "score": 5.6404,
+            "section": "1.1",
+            "page": 19,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_3_3_3_6_p04",
+            "score": 5.5427,
+            "section": "3.3.3.6",
+            "page": 37,
+            "hit": false
+          }
+        ],
+        "hit_at_5": false,
+        "hit_at_10": false,
+        "first_hit_rank": null,
+        "reciprocal_rank": 0.0
+      },
+      {
+        "query_id": "Q02_cytisine_evidence",
+        "category": "Medications",
+        "query_text": "Is Cytisine effective and recommended for smoking cessation?",
+        "relevant_target_count": 3,
+        "retrieved_top_5": [
+          {
+            "chunk_id": "chunk_sec_3_3_3_6_p03",
+            "score": 7.8999,
+            "section": "3.3.3.6",
+            "page": 37,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_node_L3_pharmacological_intervent",
+            "score": 6.5481,
+            "section": null,
+            "page": 17,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_3_2_4",
+            "score": 5.7214,
+            "section": "3.2.4",
+            "page": 34,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_node_L5_cytisine",
+            "score": 5.6784,
+            "section": null,
+            "page": 68,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_4_4_p01",
+            "score": 5.5785,
+            "section": "4.4",
+            "page": 50,
+            "hit": false
+          }
+        ],
+        "hit_at_5": false,
+        "hit_at_10": true,
+        "first_hit_rank": 7,
+        "reciprocal_rank": 0.14285714285714285
+      },
+      {
+        "query_id": "Q03_bupropion_sr",
+        "category": "Medications",
+        "query_text": "What is the evidence and recommendation for Bupropion sustained release?",
+        "relevant_target_count": 3,
+        "retrieved_top_5": [
+          {
+            "chunk_id": "chunk_node_L1_glossary_of_terms_p04",
+            "score": 14.8288,
+            "section": null,
+            "page": 11,
+            "hit": true
+          },
+          {
+            "chunk_id": "chunk_node_L3_pharmacological_intervent",
+            "score": 7.057,
+            "section": null,
+            "page": 17,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_3_3_1",
+            "score": 6.8484,
+            "section": "3.3.1",
+            "page": 35,
+            "hit": true
+          },
+          {
+            "chunk_id": "chunk_sec_3_3_3_6_p02",
+            "score": 6.6907,
+            "section": "3.3.3.6",
+            "page": 37,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_2_4_p02",
+            "score": 6.2209,
+            "section": "2.4",
+            "page": 26,
+            "hit": false
+          }
+        ],
+        "hit_at_5": true,
+        "hit_at_10": true,
+        "first_hit_rank": 1,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "query_id": "Q04_combo_nrt",
+        "category": "Medications",
+        "query_text": "Combination pharmacotherapy combining nicotine patch with short-acting NRT",
+        "relevant_target_count": 3,
+        "retrieved_top_5": [
+          {
+            "chunk_id": "chunk_node_L1_glossary_of_terms_p05",
+            "score": 36.2063,
+            "section": null,
+            "page": 11,
+            "hit": true
+          },
+          {
+            "chunk_id": "chunk_sec_3_3_1",
+            "score": 20.1858,
+            "section": "3.3.1",
+            "page": 35,
+            "hit": true
+          },
+          {
+            "chunk_id": "chunk_node_L3_pharmacological_intervent",
+            "score": 18.4899,
+            "section": null,
+            "page": 17,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_3_3_3_1_p03",
+            "score": 14.9544,
+            "section": "3.3.3.1",
+            "page": 35,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_node_L4_nrt",
+            "score": 13.8224,
+            "section": null,
+            "page": 67,
+            "hit": false
+          }
+        ],
+        "hit_at_5": true,
+        "hit_at_10": true,
+        "first_hit_rank": 1,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "query_id": "Q05_brief_advice",
+        "category": "Recommendations",
+        "query_text": "WHO recommendations for brief advice duration in health-care settings",
+        "relevant_target_count": 3,
+        "retrieved_top_5": [
+          {
+            "chunk_id": "chunk_node_L2_brief_advice",
+            "score": 14.9993,
+            "section": null,
+            "page": 65,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_3_1_1",
+            "score": 13.7058,
+            "section": "3.1.1",
+            "page": 29,
+            "hit": true
+          },
+          {
+            "chunk_id": "chunk_sec_3_7_4_2",
+            "score": 12.8293,
+            "section": "3.7.4.2",
+            "page": 46,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_node_L3_behavioural_support_deliv",
+            "score": 12.6303,
+            "section": null,
+            "page": 17,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_2_2_p03",
+            "score": 12.3269,
+            "section": "2.2",
+            "page": 24,
+            "hit": false
+          }
+        ],
+        "hit_at_5": true,
+        "hit_at_10": true,
+        "first_hit_rank": 2,
+        "reciprocal_rank": 0.5
+      },
+      {
+        "query_id": "Q06_intensive_counselling",
+        "category": "Recommendations",
+        "query_text": "Intensive behavioural support options including individual and group counselling",
+        "relevant_target_count": 6,
+        "retrieved_top_5": [
+          {
+            "chunk_id": "chunk_node_L3_behavioural_support_deliv",
+            "score": 18.4944,
+            "section": null,
+            "page": 17,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_3_1_1",
+            "score": 18.3597,
+            "section": "3.1.1",
+            "page": 29,
+            "hit": true
+          },
+          {
+            "chunk_id": "chunk_sec_3_4_1",
+            "score": 15.8723,
+            "section": "3.4.1",
+            "page": 40,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_node_L3_interventions_for_smokele",
+            "score": 15.7998,
+            "section": null,
+            "page": 18,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_3_1_4",
+            "score": 14.3415,
+            "section": "3.1.4",
+            "page": 31,
+            "hit": false
+          }
+        ],
+        "hit_at_5": true,
+        "hit_at_10": true,
+        "first_hit_rank": 2,
+        "reciprocal_rank": 0.5
+      },
+      {
+        "query_id": "Q07_digital_interventions",
+        "category": "Recommendations",
+        "query_text": "Digital interventions text messaging and smartphone apps for cessation",
+        "relevant_target_count": 5,
+        "retrieved_top_5": [
+          {
+            "chunk_id": "chunk_sec_3_2_1",
+            "score": 20.4919,
+            "section": "3.2.1",
+            "page": 32,
+            "hit": true
+          },
+          {
+            "chunk_id": "chunk_node_L1_glossary_of_terms_p08",
+            "score": 20.0476,
+            "section": null,
+            "page": 11,
+            "hit": true
+          },
+          {
+            "chunk_id": "chunk_sec_3_2_3_p02",
+            "score": 18.0812,
+            "section": "3.2.3",
+            "page": 32,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_node_L3_digital_tobacco_cessation",
+            "score": 17.2738,
+            "section": null,
+            "page": 17,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_3_2_3_p03",
+            "score": 16.348,
+            "section": "3.2.3",
+            "page": 32,
+            "hit": false
+          }
+        ],
+        "hit_at_5": true,
+        "hit_at_10": true,
+        "first_hit_rank": 1,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "query_id": "Q08_smokeless_tobacco",
+        "category": "Recommendations",
+        "query_text": "Interventions for smokeless tobacco use cessation",
+        "relevant_target_count": 3,
+        "retrieved_top_5": [
+          {
+            "chunk_id": "chunk_node_L3_interventions_for_smokele",
+            "score": 7.3319,
+            "section": null,
+            "page": 18,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_3_4_4",
+            "score": 7.2046,
+            "section": "3.4.4",
+            "page": 41,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_3_4_2",
+            "score": 6.9016,
+            "section": "3.4.2",
+            "page": 40,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_3_4_3_p02",
+            "score": 6.7108,
+            "section": "3.4.3",
+            "page": 40,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_3_4_3_p03",
+            "score": 6.3625,
+            "section": "3.4.3",
+            "page": 40,
+            "hit": false
+          }
+        ],
+        "hit_at_5": false,
+        "hit_at_10": true,
+        "first_hit_rank": 7,
+        "reciprocal_rank": 0.14285714285714285
+      },
+      {
+        "query_id": "Q09_system_interventions",
+        "category": "Recommendations",
+        "query_text": "System-level interventions and financial coverage for cessation treatments",
+        "relevant_target_count": 3,
+        "retrieved_top_5": [
+          {
+            "chunk_id": "chunk_sec_2_1",
+            "score": 14.642,
+            "section": "2.1",
+            "page": 23,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_3_7_3_p03",
+            "score": 13.591,
+            "section": "3.7.3",
+            "page": 44,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_4_4_p02",
+            "score": 12.6747,
+            "section": "4.4",
+            "page": 50,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_1_2_p02",
+            "score": 11.7837,
+            "section": "1.2",
+            "page": 20,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_3_7_3_p06",
+            "score": 11.4949,
+            "section": "3.7.3",
+            "page": 44,
+            "hit": false
+          }
+        ],
+        "hit_at_5": false,
+        "hit_at_10": false,
+        "first_hit_rank": null,
+        "reciprocal_rank": 0.0
+      },
+      {
+        "query_id": "Q10_abstinence_definitions",
+        "category": "Terminology",
+        "query_text": "Definition of continuous abstinence versus point prevalence abstinence",
+        "relevant_target_count": 2,
+        "retrieved_top_5": [
+          {
+            "chunk_id": "chunk_node_L1_glossary_of_terms_p22",
+            "score": 22.8413,
+            "section": null,
+            "page": 11,
+            "hit": true
+          },
+          {
+            "chunk_id": "chunk_sec_2_1",
+            "score": 14.8849,
+            "section": "2.1",
+            "page": 23,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_3_3_3_6_p02",
+            "score": 11.84,
+            "section": "3.3.3.6",
+            "page": 37,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_3_3_3_6_p03",
+            "score": 11.5772,
+            "section": "3.3.3.6",
+            "page": 37,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_3_2_3_p03",
+            "score": 11.0477,
+            "section": "3.2.3",
+            "page": 32,
+            "hit": false
+          }
+        ],
+        "hit_at_5": true,
+        "hit_at_10": true,
+        "first_hit_rank": 1,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "query_id": "Q11_grade_methodology",
+        "category": "Terminology",
+        "query_text": "GRADE criteria for certainty of evidence and strength of recommendations",
+        "relevant_target_count": 3,
+        "retrieved_top_5": [
+          {
+            "chunk_id": "chunk_sec_2_3",
+            "score": 13.5657,
+            "section": "2.3",
+            "page": 26,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_node_L3_guideline_development_gro_p03",
+            "score": 12.7648,
+            "section": null,
+            "page": 61,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_2_4_p01",
+            "score": 12.7302,
+            "section": "2.4",
+            "page": 26,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_2_2_p01",
+            "score": 10.2626,
+            "section": "2.2",
+            "page": 24,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_node_L2_guideline_development_pro",
+            "score": 9.1756,
+            "section": null,
+            "page": 15,
+            "hit": false
+          }
+        ],
+        "hit_at_5": false,
+        "hit_at_10": true,
+        "first_hit_rank": 10,
+        "reciprocal_rank": 0.1
+      },
+      {
+        "query_id": "Q12_telephone_quitline",
+        "category": "Terminology",
+        "query_text": "Toll-free telephone quitline remote counselling support",
+        "relevant_target_count": 3,
+        "retrieved_top_5": [
+          {
+            "chunk_id": "chunk_node_L1_glossary_of_terms_p14",
+            "score": 25.213,
+            "section": null,
+            "page": 11,
+            "hit": true
+          },
+          {
+            "chunk_id": "chunk_node_L2_references",
+            "score": 11.531,
+            "section": null,
+            "page": 69,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_node_L2_financial_interventions",
+            "score": 11.2428,
+            "section": null,
+            "page": 69,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_4_4_p03",
+            "score": 10.8035,
+            "section": "4.4",
+            "page": 50,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_3_7_4_2",
+            "score": 10.2511,
+            "section": "3.7.4.2",
+            "page": 46,
+            "hit": false
+          }
+        ],
+        "hit_at_5": true,
+        "hit_at_10": true,
+        "first_hit_rank": 1,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "query_id": "Q13_pregnant_management",
+        "category": "Paraphrased",
+        "query_text": "How should health providers manage tobacco cessation in pregnant women?",
+        "relevant_target_count": 3,
+        "retrieved_top_5": [
+          {
+            "chunk_id": "chunk_sec_1_1",
+            "score": 14.0004,
+            "section": "1.1",
+            "page": 19,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_3_3_4_p01",
+            "score": 6.3736,
+            "section": "3.3.4",
+            "page": 39,
+            "hit": true
+          },
+          {
+            "chunk_id": "chunk_sec_3_7_4_2",
+            "score": 6.0722,
+            "section": "3.7.4.2",
+            "page": 46,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_3_7_2",
+            "score": 6.0156,
+            "section": "3.7.2",
+            "page": 44,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_node_L2_strategies_and_methods",
+            "score": 5.941,
+            "section": null,
+            "page": 53,
+            "hit": false
+          }
+        ],
+        "hit_at_5": true,
+        "hit_at_10": true,
+        "first_hit_rank": 2,
+        "reciprocal_rank": 0.5
+      },
+      {
+        "query_id": "Q14_non_nicotine_craving_pills",
+        "category": "Paraphrased",
+        "query_text": "What non-nicotine pills are approved to reduce cigarette cravings?",
+        "relevant_target_count": 6,
+        "retrieved_top_5": [
+          {
+            "chunk_id": "chunk_node_L1_glossary_of_terms_p07",
+            "score": 13.9475,
+            "section": null,
+            "page": 11,
+            "hit": true
+          },
+          {
+            "chunk_id": "chunk_node_L1_glossary_of_terms_p27",
+            "score": 8.9376,
+            "section": null,
+            "page": 11,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_node_L1_glossary_of_terms_p17",
+            "score": 8.1278,
+            "section": null,
+            "page": 11,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_node_L1_glossary_of_terms_p04",
+            "score": 7.8642,
+            "section": null,
+            "page": 11,
+            "hit": true
+          },
+          {
+            "chunk_id": "chunk_node_L1_glossary_of_terms_p09",
+            "score": 6.637,
+            "section": null,
+            "page": 11,
+            "hit": false
+          }
+        ],
+        "hit_at_5": true,
+        "hit_at_10": true,
+        "first_hit_rank": 1,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "query_id": "Q15_alternative_therapies",
+        "category": "Paraphrased",
+        "query_text": "Is acupuncture or hypnosis recommended for stopping smoking?",
+        "relevant_target_count": 3,
+        "retrieved_top_5": [
+          {
+            "chunk_id": "chunk_sec_3_6_3_p01",
+            "score": 7.2974,
+            "section": "3.6.3",
+            "page": 43,
+            "hit": true
+          },
+          {
+            "chunk_id": "chunk_node_L1_glossary_of_terms_p26",
+            "score": 6.8605,
+            "section": null,
+            "page": 11,
+            "hit": true
+          },
+          {
+            "chunk_id": "chunk_node_L2_traditional_complementary",
+            "score": 6.6237,
+            "section": null,
+            "page": 68,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_node_L1_glossary_of_terms_p18",
+            "score": 6.2971,
+            "section": null,
+            "page": 11,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_3_6_3_p02",
+            "score": 6.2241,
+            "section": "3.6.3",
+            "page": 43,
+            "hit": false
+          }
+        ],
+        "hit_at_5": true,
+        "hit_at_10": true,
+        "first_hit_rank": 1,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "query_id": "Q16_ai_chatbots",
+        "category": "Paraphrased",
+        "query_text": "Can chatbots and artificial intelligence help patients quit smoking?",
+        "relevant_target_count": 4,
+        "retrieved_top_5": [
+          {
+            "chunk_id": "chunk_node_L3_digital_tobacco_cessation",
+            "score": 13.0397,
+            "section": null,
+            "page": 17,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_node_L1_glossary_of_terms_p06",
+            "score": 11.5659,
+            "section": null,
+            "page": 11,
+            "hit": true
+          },
+          {
+            "chunk_id": "chunk_sec_3_7_2",
+            "score": 11.4441,
+            "section": "3.7.2",
+            "page": 44,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_2_2_p03",
+            "score": 10.1525,
+            "section": "2.2",
+            "page": 24,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_node_L1_abbreviations_and_acronym",
+            "score": 9.4136,
+            "section": null,
+            "page": 9,
+            "hit": false
+          }
+        ],
+        "hit_at_5": true,
+        "hit_at_10": true,
+        "first_hit_rank": 2,
+        "reciprocal_rank": 0.5
+      },
+      {
+        "query_id": "Q17_mpower_framework",
+        "category": "Acronyms",
+        "query_text": "MPOWER measures for tobacco control",
+        "relevant_target_count": 2,
+        "retrieved_top_5": [
+          {
+            "chunk_id": "chunk_sec_3_8_p01",
+            "score": 11.5725,
+            "section": "3.8",
+            "page": 47,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_1_2_p02",
+            "score": 7.2208,
+            "section": "1.2",
+            "page": 20,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_node_L1_glossary_of_terms_p18",
+            "score": 5.7851,
+            "section": null,
+            "page": 11,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_node_L1_abbreviations_and_acronym",
+            "score": 5.5155,
+            "section": null,
+            "page": 9,
+            "hit": true
+          },
+          {
+            "chunk_id": "chunk_sec_4_4_p02",
+            "score": 4.3261,
+            "section": "4.4",
+            "page": 50,
+            "hit": false
+          }
+        ],
+        "hit_at_5": true,
+        "hit_at_10": true,
+        "first_hit_rank": 4,
+        "reciprocal_rank": 0.25
+      },
+      {
+        "query_id": "Q18_pico_gdg_process",
+        "category": "Acronyms",
+        "query_text": "PICO questions and Guideline Development Group GDG decision making",
+        "relevant_target_count": 3,
+        "retrieved_top_5": [
+          {
+            "chunk_id": "chunk_sec_2_1",
+            "score": 18.3143,
+            "section": "2.1",
+            "page": 23,
+            "hit": true
+          },
+          {
+            "chunk_id": "chunk_node_L2_guideline_development_pro",
+            "score": 17.0171,
+            "section": null,
+            "page": 15,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_node_L3_guideline_development_gro_p03",
+            "score": 15.2059,
+            "section": null,
+            "page": 61,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_node_L1_abbreviations_and_acronym",
+            "score": 15.1911,
+            "section": null,
+            "page": 9,
+            "hit": true
+          },
+          {
+            "chunk_id": "chunk_node_L3_guideline_development_gro_p01",
+            "score": 10.5035,
+            "section": null,
+            "page": 61,
+            "hit": false
+          }
+        ],
+        "hit_at_5": true,
+        "hit_at_10": true,
+        "first_hit_rank": 1,
+        "reciprocal_rank": 1.0
+      }
+    ]
+  },
+  "strategy_searchable": {
+    "text_field": "searchable_text",
+    "total_queries": 18,
+    "recall_at_5": 0.7222,
+    "recall_at_10": 0.8333,
+    "mrr": 0.5496,
+    "recall_5_hits": 13,
+    "recall_10_hits": 15,
+    "query_details": [
+      {
+        "query_id": "Q01_varenicline_rec",
+        "category": "Medications",
+        "query_text": "What does WHO recommend regarding Varenicline for tobacco cessation?",
+        "relevant_target_count": 4,
+        "retrieved_top_5": [
+          {
+            "chunk_id": "chunk_node_L3_general_p02",
+            "score": 7.0761,
+            "section": null,
+            "page": 66,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_4_3",
+            "score": 6.4624,
+            "section": "4.3",
+            "page": 50,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_node_L5_varenicline",
+            "score": 6.0015,
+            "section": null,
+            "page": 68,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_1_1",
+            "score": 5.7035,
+            "section": "1.1",
+            "page": 19,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_3_3_3_6_p04",
+            "score": 5.567,
+            "section": "3.3.3.6",
+            "page": 37,
+            "hit": false
+          }
+        ],
+        "hit_at_5": false,
+        "hit_at_10": false,
+        "first_hit_rank": null,
+        "reciprocal_rank": 0.0
+      },
+      {
+        "query_id": "Q02_cytisine_evidence",
+        "category": "Medications",
+        "query_text": "Is Cytisine effective and recommended for smoking cessation?",
+        "relevant_target_count": 3,
+        "retrieved_top_5": [
+          {
+            "chunk_id": "chunk_sec_3_3_3_6_p03",
+            "score": 7.9389,
+            "section": "3.3.3.6",
+            "page": 37,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_node_L3_pharmacological_intervent",
+            "score": 6.548,
+            "section": null,
+            "page": 17,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_node_L5_cytisine",
+            "score": 5.8591,
+            "section": null,
+            "page": 68,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_3_2_4",
+            "score": 5.7606,
+            "section": "3.2.4",
+            "page": 34,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_4_4_p01",
+            "score": 5.6338,
+            "section": "4.4",
+            "page": 50,
+            "hit": false
+          }
+        ],
+        "hit_at_5": false,
+        "hit_at_10": true,
+        "first_hit_rank": 6,
+        "reciprocal_rank": 0.16666666666666666
+      },
+      {
+        "query_id": "Q03_bupropion_sr",
+        "category": "Medications",
+        "query_text": "What is the evidence and recommendation for Bupropion sustained release?",
+        "relevant_target_count": 3,
+        "retrieved_top_5": [
+          {
+            "chunk_id": "chunk_node_L1_glossary_of_terms_p04",
+            "score": 14.5635,
+            "section": null,
+            "page": 11,
+            "hit": true
+          },
+          {
+            "chunk_id": "chunk_node_L3_pharmacological_intervent",
+            "score": 6.997,
+            "section": null,
+            "page": 17,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_3_3_1",
+            "score": 6.8315,
+            "section": "3.3.1",
+            "page": 35,
+            "hit": true
+          },
+          {
+            "chunk_id": "chunk_sec_2_4_p02",
+            "score": 6.7809,
+            "section": "2.4",
+            "page": 26,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_3_3_3_6_p02",
+            "score": 6.6613,
+            "section": "3.3.3.6",
+            "page": 37,
+            "hit": false
+          }
+        ],
+        "hit_at_5": true,
+        "hit_at_10": true,
+        "first_hit_rank": 1,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "query_id": "Q04_combo_nrt",
+        "category": "Medications",
+        "query_text": "Combination pharmacotherapy combining nicotine patch with short-acting NRT",
+        "relevant_target_count": 3,
+        "retrieved_top_5": [
+          {
+            "chunk_id": "chunk_node_L1_glossary_of_terms_p05",
+            "score": 35.5125,
+            "section": null,
+            "page": 11,
+            "hit": true
+          },
+          {
+            "chunk_id": "chunk_sec_3_3_1",
+            "score": 20.0461,
+            "section": "3.3.1",
+            "page": 35,
+            "hit": true
+          },
+          {
+            "chunk_id": "chunk_node_L3_pharmacological_intervent",
+            "score": 18.4381,
+            "section": null,
+            "page": 17,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_3_3_3_1_p03",
+            "score": 15.0981,
+            "section": "3.3.3.1",
+            "page": 35,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_3_3_3_5",
+            "score": 13.9913,
+            "section": "3.3.3.5",
+            "page": 37,
+            "hit": true
+          }
+        ],
+        "hit_at_5": true,
+        "hit_at_10": true,
+        "first_hit_rank": 1,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "query_id": "Q05_brief_advice",
+        "category": "Recommendations",
+        "query_text": "WHO recommendations for brief advice duration in health-care settings",
+        "relevant_target_count": 3,
+        "retrieved_top_5": [
+          {
+            "chunk_id": "chunk_node_L2_brief_advice",
+            "score": 15.3695,
+            "section": null,
+            "page": 65,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_3_1_1",
+            "score": 14.246,
+            "section": "3.1.1",
+            "page": 29,
+            "hit": true
+          },
+          {
+            "chunk_id": "chunk_sec_3_7_4_2",
+            "score": 13.0962,
+            "section": "3.7.4.2",
+            "page": 46,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_node_L3_behavioural_support_deliv",
+            "score": 12.8778,
+            "section": null,
+            "page": 17,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_2_2_p03",
+            "score": 12.4523,
+            "section": "2.2",
+            "page": 24,
+            "hit": false
+          }
+        ],
+        "hit_at_5": true,
+        "hit_at_10": true,
+        "first_hit_rank": 2,
+        "reciprocal_rank": 0.5
+      },
+      {
+        "query_id": "Q06_intensive_counselling",
+        "category": "Recommendations",
+        "query_text": "Intensive behavioural support options including individual and group counselling",
+        "relevant_target_count": 6,
+        "retrieved_top_5": [
+          {
+            "chunk_id": "chunk_node_L3_behavioural_support_deliv",
+            "score": 18.233,
+            "section": null,
+            "page": 17,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_3_1_1",
+            "score": 18.0145,
+            "section": "3.1.1",
+            "page": 29,
+            "hit": true
+          },
+          {
+            "chunk_id": "chunk_sec_3_4_1",
+            "score": 15.4005,
+            "section": "3.4.1",
+            "page": 40,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_node_L3_interventions_for_smokele",
+            "score": 15.2722,
+            "section": null,
+            "page": 18,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_3_1_4",
+            "score": 14.332,
+            "section": "3.1.4",
+            "page": 31,
+            "hit": false
+          }
+        ],
+        "hit_at_5": true,
+        "hit_at_10": true,
+        "first_hit_rank": 2,
+        "reciprocal_rank": 0.5
+      },
+      {
+        "query_id": "Q07_digital_interventions",
+        "category": "Recommendations",
+        "query_text": "Digital interventions text messaging and smartphone apps for cessation",
+        "relevant_target_count": 5,
+        "retrieved_top_5": [
+          {
+            "chunk_id": "chunk_sec_3_2_1",
+            "score": 20.2645,
+            "section": "3.2.1",
+            "page": 32,
+            "hit": true
+          },
+          {
+            "chunk_id": "chunk_node_L1_glossary_of_terms_p08",
+            "score": 19.6126,
+            "section": null,
+            "page": 11,
+            "hit": true
+          },
+          {
+            "chunk_id": "chunk_sec_3_2_3_p02",
+            "score": 18.2107,
+            "section": "3.2.3",
+            "page": 32,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_node_L3_digital_tobacco_cessation",
+            "score": 17.6071,
+            "section": null,
+            "page": 17,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_3_2_3_p03",
+            "score": 16.5017,
+            "section": "3.2.3",
+            "page": 32,
+            "hit": false
+          }
+        ],
+        "hit_at_5": true,
+        "hit_at_10": true,
+        "first_hit_rank": 1,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "query_id": "Q08_smokeless_tobacco",
+        "category": "Recommendations",
+        "query_text": "Interventions for smokeless tobacco use cessation",
+        "relevant_target_count": 3,
+        "retrieved_top_5": [
+          {
+            "chunk_id": "chunk_node_L3_interventions_for_smokele",
+            "score": 8.1177,
+            "section": null,
+            "page": 18,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_3_4_4",
+            "score": 7.1633,
+            "section": "3.4.4",
+            "page": 41,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_3_4_2",
+            "score": 6.7388,
+            "section": "3.4.2",
+            "page": 40,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_3_4_3_p02",
+            "score": 6.7276,
+            "section": "3.4.3",
+            "page": 40,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_3_4_3_p03",
+            "score": 6.3076,
+            "section": "3.4.3",
+            "page": 40,
+            "hit": false
+          }
+        ],
+        "hit_at_5": false,
+        "hit_at_10": true,
+        "first_hit_rank": 7,
+        "reciprocal_rank": 0.14285714285714285
+      },
+      {
+        "query_id": "Q09_system_interventions",
+        "category": "Recommendations",
+        "query_text": "System-level interventions and financial coverage for cessation treatments",
+        "relevant_target_count": 3,
+        "retrieved_top_5": [
+          {
+            "chunk_id": "chunk_sec_2_1",
+            "score": 14.7441,
+            "section": "2.1",
+            "page": 23,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_3_7_3_p03",
+            "score": 13.6219,
+            "section": "3.7.3",
+            "page": 44,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_4_4_p02",
+            "score": 12.7247,
+            "section": "4.4",
+            "page": 50,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_node_L3_system_level_intervention",
+            "score": 12.6431,
+            "section": null,
+            "page": 18,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_1_2_p02",
+            "score": 11.9537,
+            "section": "1.2",
+            "page": 20,
+            "hit": false
+          }
+        ],
+        "hit_at_5": false,
+        "hit_at_10": false,
+        "first_hit_rank": null,
+        "reciprocal_rank": 0.0
+      },
+      {
+        "query_id": "Q10_abstinence_definitions",
+        "category": "Terminology",
+        "query_text": "Definition of continuous abstinence versus point prevalence abstinence",
+        "relevant_target_count": 2,
+        "retrieved_top_5": [
+          {
+            "chunk_id": "chunk_node_L1_glossary_of_terms_p22",
+            "score": 22.7215,
+            "section": null,
+            "page": 11,
+            "hit": true
+          },
+          {
+            "chunk_id": "chunk_sec_2_1",
+            "score": 15.0158,
+            "section": "2.1",
+            "page": 23,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_3_3_3_6_p02",
+            "score": 11.8985,
+            "section": "3.3.3.6",
+            "page": 37,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_3_3_3_6_p03",
+            "score": 11.65,
+            "section": "3.3.3.6",
+            "page": 37,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_3_2_3_p03",
+            "score": 11.1622,
+            "section": "3.2.3",
+            "page": 32,
+            "hit": false
+          }
+        ],
+        "hit_at_5": true,
+        "hit_at_10": true,
+        "first_hit_rank": 1,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "query_id": "Q11_grade_methodology",
+        "category": "Terminology",
+        "query_text": "GRADE criteria for certainty of evidence and strength of recommendations",
+        "relevant_target_count": 3,
+        "retrieved_top_5": [
+          {
+            "chunk_id": "chunk_sec_2_3",
+            "score": 13.4617,
+            "section": "2.3",
+            "page": 26,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_2_4_p01",
+            "score": 12.8411,
+            "section": "2.4",
+            "page": 26,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_node_L3_guideline_development_gro_p03",
+            "score": 12.4675,
+            "section": null,
+            "page": 61,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_2_2_p01",
+            "score": 10.3406,
+            "section": "2.2",
+            "page": 24,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_node_L2_guideline_development_pro",
+            "score": 9.0326,
+            "section": null,
+            "page": 15,
+            "hit": false
+          }
+        ],
+        "hit_at_5": false,
+        "hit_at_10": false,
+        "first_hit_rank": null,
+        "reciprocal_rank": 0.0
+      },
+      {
+        "query_id": "Q12_telephone_quitline",
+        "category": "Terminology",
+        "query_text": "Toll-free telephone quitline remote counselling support",
+        "relevant_target_count": 3,
+        "retrieved_top_5": [
+          {
+            "chunk_id": "chunk_node_L1_glossary_of_terms_p14",
+            "score": 24.9572,
+            "section": null,
+            "page": 11,
+            "hit": true
+          },
+          {
+            "chunk_id": "chunk_node_L2_references",
+            "score": 11.5898,
+            "section": null,
+            "page": 69,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_node_L2_financial_interventions",
+            "score": 11.3865,
+            "section": null,
+            "page": 69,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_4_4_p03",
+            "score": 10.859,
+            "section": "4.4",
+            "page": 50,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_3_7_4_2",
+            "score": 10.3007,
+            "section": "3.7.4.2",
+            "page": 46,
+            "hit": false
+          }
+        ],
+        "hit_at_5": true,
+        "hit_at_10": true,
+        "first_hit_rank": 1,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "query_id": "Q13_pregnant_management",
+        "category": "Paraphrased",
+        "query_text": "How should health providers manage tobacco cessation in pregnant women?",
+        "relevant_target_count": 3,
+        "retrieved_top_5": [
+          {
+            "chunk_id": "chunk_sec_1_1",
+            "score": 14.1327,
+            "section": "1.1",
+            "page": 19,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_3_3_4_p01",
+            "score": 6.4398,
+            "section": "3.3.4",
+            "page": 39,
+            "hit": true
+          },
+          {
+            "chunk_id": "chunk_sec_3_7_4_2",
+            "score": 6.305,
+            "section": "3.7.4.2",
+            "page": 46,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_3_7_2",
+            "score": 5.9623,
+            "section": "3.7.2",
+            "page": 44,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_node_L2_strategies_and_methods",
+            "score": 5.8828,
+            "section": null,
+            "page": 53,
+            "hit": false
+          }
+        ],
+        "hit_at_5": true,
+        "hit_at_10": true,
+        "first_hit_rank": 2,
+        "reciprocal_rank": 0.5
+      },
+      {
+        "query_id": "Q14_non_nicotine_craving_pills",
+        "category": "Paraphrased",
+        "query_text": "What non-nicotine pills are approved to reduce cigarette cravings?",
+        "relevant_target_count": 6,
+        "retrieved_top_5": [
+          {
+            "chunk_id": "chunk_node_L1_glossary_of_terms_p07",
+            "score": 13.7006,
+            "section": null,
+            "page": 11,
+            "hit": true
+          },
+          {
+            "chunk_id": "chunk_node_L1_glossary_of_terms_p27",
+            "score": 8.7358,
+            "section": null,
+            "page": 11,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_node_L1_glossary_of_terms_p17",
+            "score": 8.0775,
+            "section": null,
+            "page": 11,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_node_L1_glossary_of_terms_p04",
+            "score": 7.7047,
+            "section": null,
+            "page": 11,
+            "hit": true
+          },
+          {
+            "chunk_id": "chunk_node_L1_glossary_of_terms_p09",
+            "score": 6.4437,
+            "section": null,
+            "page": 11,
+            "hit": false
+          }
+        ],
+        "hit_at_5": true,
+        "hit_at_10": true,
+        "first_hit_rank": 1,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "query_id": "Q15_alternative_therapies",
+        "category": "Paraphrased",
+        "query_text": "Is acupuncture or hypnosis recommended for stopping smoking?",
+        "relevant_target_count": 3,
+        "retrieved_top_5": [
+          {
+            "chunk_id": "chunk_sec_3_6_3_p01",
+            "score": 7.3459,
+            "section": "3.6.3",
+            "page": 43,
+            "hit": true
+          },
+          {
+            "chunk_id": "chunk_node_L1_glossary_of_terms_p26",
+            "score": 6.7182,
+            "section": null,
+            "page": 11,
+            "hit": true
+          },
+          {
+            "chunk_id": "chunk_node_L2_traditional_complementary",
+            "score": 6.5472,
+            "section": null,
+            "page": 68,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_3_6_3_p02",
+            "score": 6.2173,
+            "section": "3.6.3",
+            "page": 43,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_node_L1_glossary_of_terms_p18",
+            "score": 6.0963,
+            "section": null,
+            "page": 11,
+            "hit": false
+          }
+        ],
+        "hit_at_5": true,
+        "hit_at_10": true,
+        "first_hit_rank": 1,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "query_id": "Q16_ai_chatbots",
+        "category": "Paraphrased",
+        "query_text": "Can chatbots and artificial intelligence help patients quit smoking?",
+        "relevant_target_count": 4,
+        "retrieved_top_5": [
+          {
+            "chunk_id": "chunk_node_L3_digital_tobacco_cessation",
+            "score": 12.895,
+            "section": null,
+            "page": 17,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_3_7_2",
+            "score": 11.3285,
+            "section": "3.7.2",
+            "page": 44,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_node_L1_glossary_of_terms_p06",
+            "score": 11.2939,
+            "section": null,
+            "page": 11,
+            "hit": true
+          },
+          {
+            "chunk_id": "chunk_sec_2_2_p03",
+            "score": 10.2964,
+            "section": "2.2",
+            "page": 24,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_node_L1_abbreviations_and_acronym",
+            "score": 9.473,
+            "section": null,
+            "page": 9,
+            "hit": false
+          }
+        ],
+        "hit_at_5": true,
+        "hit_at_10": true,
+        "first_hit_rank": 3,
+        "reciprocal_rank": 0.3333333333333333
+      },
+      {
+        "query_id": "Q17_mpower_framework",
+        "category": "Acronyms",
+        "query_text": "MPOWER measures for tobacco control",
+        "relevant_target_count": 2,
+        "retrieved_top_5": [
+          {
+            "chunk_id": "chunk_sec_3_8_p01",
+            "score": 11.6161,
+            "section": "3.8",
+            "page": 47,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_1_2_p02",
+            "score": 7.3321,
+            "section": "1.2",
+            "page": 20,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_node_L1_glossary_of_terms_p18",
+            "score": 5.6093,
+            "section": null,
+            "page": 11,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_node_L1_abbreviations_and_acronym",
+            "score": 5.5482,
+            "section": null,
+            "page": 9,
+            "hit": true
+          },
+          {
+            "chunk_id": "chunk_sec_4_4_p02",
+            "score": 4.3454,
+            "section": "4.4",
+            "page": 50,
+            "hit": false
+          }
+        ],
+        "hit_at_5": true,
+        "hit_at_10": true,
+        "first_hit_rank": 4,
+        "reciprocal_rank": 0.25
+      },
+      {
+        "query_id": "Q18_pico_gdg_process",
+        "category": "Acronyms",
+        "query_text": "PICO questions and Guideline Development Group GDG decision making",
+        "relevant_target_count": 3,
+        "retrieved_top_5": [
+          {
+            "chunk_id": "chunk_node_L3_guideline_development_gro_p03",
+            "score": 17.9418,
+            "section": null,
+            "page": 61,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_sec_2_1",
+            "score": 17.007,
+            "section": "2.1",
+            "page": 23,
+            "hit": true
+          },
+          {
+            "chunk_id": "chunk_node_L2_guideline_development_pro",
+            "score": 13.9172,
+            "section": null,
+            "page": 15,
+            "hit": false
+          },
+          {
+            "chunk_id": "chunk_node_L1_abbreviations_and_acronym",
+            "score": 13.7234,
+            "section": null,
+            "page": 9,
+            "hit": true
+          },
+          {
+            "chunk_id": "chunk_node_L3_guideline_development_gro_p02",
+            "score": 10.9772,
+            "section": null,
+            "page": 61,
+            "hit": false
+          }
+        ],
+        "hit_at_5": true,
+        "hit_at_10": true,
+        "first_hit_rank": 2,
+        "reciprocal_rank": 0.5
+      }
+    ]
+  }
+}

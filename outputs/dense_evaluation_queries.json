@@ -1,0 +1,952 @@
+{
+  "dataset_version": "v2.0_dense_benchmark_33q",
+  "guideline_source": "WHO Clinical Treatment Guideline for Tobacco Cessation in Adults (2024)",
+  "total_queries": 33,
+  "queries": [
+    {
+      "query_id": "QA1_varenicline_efficacy",
+      "category": "A) Medical Terminology",
+      "query_text": "Varenicline efficacy and adverse events for tobacco cessation",
+      "language_type": "en_medical",
+      "is_negative_control": false,
+      "gold_evidences": [
+        {
+          "chunk_id": "chunk_sec_3_3_1",
+          "section_number": "3.3.1",
+          "physical_page": 35,
+          "rationale": "Recommendation 5 strongly recommending varenicline"
+        },
+        {
+          "chunk_id": "chunk_sec_3_3_3_3_p01",
+          "section_number": "3.3.3.3",
+          "physical_page": 38,
+          "rationale": "RCT evidence for varenicline efficacy"
+        },
+        {
+          "chunk_id": "chunk_sec_3_3_4_p01",
+          "section_number": "3.3.4",
+          "physical_page": 41,
+          "rationale": "Implementation considerations and adverse events"
+        }
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_3_p01",
+        "chunk_sec_3_3_4_p01"
+      ]
+    },
+    {
+      "query_id": "QA2_cytisine_evidence",
+      "category": "A) Medical Terminology",
+      "query_text": "Cytisine clinical trial certainty of evidence and dosage",
+      "language_type": "en_medical",
+      "is_negative_control": false,
+      "gold_evidences": [
+        {
+          "chunk_id": "chunk_sec_3_3_1",
+          "section_number": "3.3.1",
+          "physical_page": 35,
+          "rationale": "Recommendation 7 strongly recommending cytisine"
+        },
+        {
+          "chunk_id": "chunk_sec_3_3_3_4",
+          "section_number": "3.3.3.4",
+          "physical_page": 39,
+          "rationale": "RCT evidence for cytisine with moderate certainty"
+        }
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_4"
+      ]
+    },
+    {
+      "query_id": "QA3_bupropion_contraindications",
+      "category": "A) Medical Terminology",
+      "query_text": "Bupropion sustained release contraindications seizure history",
+      "language_type": "en_medical",
+      "is_negative_control": false,
+      "gold_evidences": [
+        {
+          "chunk_id": "chunk_sec_3_3_1",
+          "section_number": "3.3.1",
+          "physical_page": 35,
+          "rationale": "Recommendation 6 strongly recommending bupropion SR"
+        },
+        {
+          "chunk_id": "chunk_sec_3_3_3_2",
+          "section_number": "3.3.3.2",
+          "physical_page": 37,
+          "rationale": "Evidence on bupropion efficacy and seizure contraindications"
+        },
+        {
+          "chunk_id": "chunk_sec_3_3_4_p01",
+          "section_number": "3.3.4",
+          "physical_page": 41,
+          "rationale": "Implementation safety considerations for bupropion"
+        }
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_2",
+        "chunk_sec_3_3_4_p01"
+      ]
+    },
+    {
+      "query_id": "QA4_combination_nrt",
+      "category": "A) Medical Terminology",
+      "query_text": "Combination nicotine replacement therapy patch plus short-acting form",
+      "language_type": "en_medical",
+      "is_negative_control": false,
+      "gold_evidences": [
+        {
+          "chunk_id": "chunk_sec_3_3_1",
+          "section_number": "3.3.1",
+          "physical_page": 35,
+          "rationale": "Recommendation 3 on combination NRT superiority"
+        },
+        {
+          "chunk_id": "chunk_sec_3_3_3_5",
+          "section_number": "3.3.3.5",
+          "physical_page": 39,
+          "rationale": "Evidence comparing combination NRT vs single NRT"
+        },
+        {
+          "chunk_id": "chunk_node_L1_glossary_of_terms_p05",
+          "section_number": "Glossary",
+          "physical_page": 11,
+          "rationale": "Definition of combination pharmacotherapy"
+        }
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_5",
+        "chunk_node_L1_glossary_of_terms_p05"
+      ]
+    },
+    {
+      "query_id": "QA5_brief_advice_primary_care",
+      "category": "A) Medical Terminology",
+      "query_text": "Brief advice 30 seconds to 3 minutes routine clinical consultation",
+      "language_type": "en_medical",
+      "is_negative_control": false,
+      "gold_evidences": [
+        {
+          "chunk_id": "chunk_sec_3_1_1",
+          "section_number": "3.1.1",
+          "physical_page": 29,
+          "rationale": "Recommendation 1 on brief advice in routine encounters"
+        },
+        {
+          "chunk_id": "chunk_sec_3_1_3_p01",
+          "section_number": "3.1.3",
+          "physical_page": 29,
+          "rationale": "Evidence supporting brief advice (RR=1.25)"
+        },
+        {
+          "chunk_id": "chunk_node_L1_glossary_of_terms_p03",
+          "section_number": "Glossary",
+          "physical_page": 11,
+          "rationale": "Definition of brief advice"
+        }
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p01",
+        "chunk_node_L1_glossary_of_terms_p03"
+      ]
+    },
+    {
+      "query_id": "QB1_stop_smoking_medications",
+      "category": "B) English Paraphrase",
+      "query_text": "What are the approved medicines that help someone quit cigarettes?",
+      "language_type": "en_paraphrase",
+      "is_negative_control": false,
+      "gold_evidences": [
+        {
+          "chunk_id": "chunk_sec_3_3_1",
+          "section_number": "3.3.1",
+          "physical_page": 35,
+          "rationale": "Summary of first-line pharmacotherapies"
+        },
+        {
+          "chunk_id": "chunk_sec_3_3_3_6_p01",
+          "section_number": "3.3.3.6",
+          "physical_page": 40,
+          "rationale": "General evidence synthesis across pharmacotherapies"
+        }
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_6_p01"
+      ]
+    },
+    {
+      "query_id": "QB2_pills_without_nicotine",
+      "category": "B) English Paraphrase",
+      "query_text": "Are there pills without nicotine that reduce the urge to smoke?",
+      "language_type": "en_paraphrase",
+      "is_negative_control": false,
+      "gold_evidences": [
+        {
+          "chunk_id": "chunk_sec_3_3_1",
+          "section_number": "3.3.1",
+          "physical_page": 35,
+          "rationale": "Recommendations for non-nicotine pills: varenicline, bupropion, cytisine"
+        },
+        {
+          "chunk_id": "chunk_sec_3_3_3_2",
+          "section_number": "3.3.3.2",
+          "physical_page": 37,
+          "rationale": "Bupropion non-nicotine oral medication"
+        },
+        {
+          "chunk_id": "chunk_sec_3_3_3_3_p01",
+          "section_number": "3.3.3.3",
+          "physical_page": 38,
+          "rationale": "Varenicline non-nicotine oral medication"
+        },
+        {
+          "chunk_id": "chunk_sec_3_3_3_4",
+          "section_number": "3.3.3.4",
+          "physical_page": 39,
+          "rationale": "Cytisine non-nicotine oral medication"
+        }
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_2",
+        "chunk_sec_3_3_3_3_p01",
+        "chunk_sec_3_3_3_4"
+      ]
+    },
+    {
+      "query_id": "QB3_doctor_talking_duration",
+      "category": "B) English Paraphrase",
+      "query_text": "How much time should a physician spend talking to a patient about quitting?",
+      "language_type": "en_paraphrase",
+      "is_negative_control": false,
+      "gold_evidences": [
+        {
+          "chunk_id": "chunk_sec_3_1_1",
+          "section_number": "3.1.1",
+          "physical_page": 29,
+          "rationale": "Recommendation 1 specifying 30 seconds to 3 minutes"
+        },
+        {
+          "chunk_id": "chunk_sec_3_1_3_p01",
+          "section_number": "3.1.3",
+          "physical_page": 29,
+          "rationale": "Evidence justifying brief advice timing"
+        }
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p01"
+      ]
+    },
+    {
+      "query_id": "QB4_phone_support_quitting",
+      "category": "B) English Paraphrase",
+      "query_text": "Does calling a telephone helpline really help people quit smoking?",
+      "language_type": "en_paraphrase",
+      "is_negative_control": false,
+      "gold_evidences": [
+        {
+          "chunk_id": "chunk_sec_3_1_1",
+          "section_number": "3.1.1",
+          "physical_page": 29,
+          "rationale": "Recommendation on toll-free telephone counselling"
+        },
+        {
+          "chunk_id": "chunk_sec_3_1_3_p04",
+          "section_number": "3.1.3",
+          "physical_page": 31,
+          "rationale": "Evidence on quitline effectiveness"
+        },
+        {
+          "chunk_id": "chunk_node_L1_glossary_of_terms_p14",
+          "section_number": "Glossary",
+          "physical_page": 12,
+          "rationale": "Definition of toll-free quitline"
+        }
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p04",
+        "chunk_node_L1_glossary_of_terms_p14"
+      ]
+    },
+    {
+      "query_id": "QB5_digital_text_apps",
+      "category": "B) English Paraphrase",
+      "query_text": "Can text messages or smartphone apps assist in stopping tobacco use?",
+      "language_type": "en_paraphrase",
+      "is_negative_control": false,
+      "gold_evidences": [
+        {
+          "chunk_id": "chunk_sec_3_2_1",
+          "section_number": "3.2.1",
+          "physical_page": 32,
+          "rationale": "Recommendation 4 on digital interventions and text messaging"
+        },
+        {
+          "chunk_id": "chunk_sec_3_2_3_p01",
+          "section_number": "3.2.3",
+          "physical_page": 32,
+          "rationale": "Evidence on text-messaging programmes"
+        },
+        {
+          "chunk_id": "chunk_node_L1_glossary_of_terms_p16",
+          "section_number": "Glossary",
+          "physical_page": 13,
+          "rationale": "Definition of text messaging support"
+        },
+        {
+          "chunk_id": "chunk_node_L1_glossary_of_terms_p19",
+          "section_number": "Glossary",
+          "physical_page": 13,
+          "rationale": "Definition of smartphone applications"
+        }
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_2_1",
+        "chunk_sec_3_2_3_p01",
+        "chunk_node_L1_glossary_of_terms_p16",
+        "chunk_node_L1_glossary_of_terms_p19"
+      ]
+    },
+    {
+      "query_id": "QC1_ana_ayez_abatal_mosh_qader",
+      "category": "C) Egyptian Arabic",
+      "query_text": "أنا عايز أبطل السجاير ومش عارف أبدأ منين",
+      "language_type": "ar_egyptian",
+      "is_negative_control": false,
+      "gold_evidences": [
+        {
+          "chunk_id": "chunk_sec_3_1_1",
+          "section_number": "3.1.1",
+          "physical_page": 29,
+          "rationale": "Core recommendations for brief advice and behavioural support"
+        },
+        {
+          "chunk_id": "chunk_sec_3_3_1",
+          "section_number": "3.3.1",
+          "physical_page": 35,
+          "rationale": "Core recommendations for first-line medications"
+        },
+        {
+          "chunk_id": "chunk_sec_3_5_1",
+          "section_number": "3.5.1",
+          "physical_page": 44,
+          "rationale": "Recommendation 9 on combined behavioural support and medication"
+        }
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_5_1"
+      ]
+    },
+    {
+      "query_id": "QC2_doctor_followup_ar",
+      "category": "C) Egyptian Arabic",
+      "query_text": "في حد أو دكتور ممكن يساعدني خطوة بخطوة وأنا بحاول أبطل؟",
+      "language_type": "ar_egyptian",
+      "is_negative_control": false,
+      "gold_evidences": [
+        {
+          "chunk_id": "chunk_sec_3_1_1",
+          "section_number": "3.1.1",
+          "physical_page": 29,
+          "rationale": "Recommendation 2 on individual intensive counselling"
+        },
+        {
+          "chunk_id": "chunk_sec_3_1_3_p02",
+          "section_number": "3.1.3",
+          "physical_page": 30,
+          "rationale": "Evidence supporting individual face-to-face counselling"
+        },
+        {
+          "chunk_id": "chunk_sec_3_5_1",
+          "section_number": "3.5.1",
+          "physical_page": 44,
+          "rationale": "Recommendation 9 on combined counselling and medical support"
+        }
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p02",
+        "chunk_sec_3_5_1"
+      ]
+    },
+    {
+      "query_id": "QC3_quitline_ar",
+      "category": "C) Egyptian Arabic",
+      "query_text": "في خط ساخن مجاني بالتليفون ممكن يساعدني في تبطيل السجاير؟",
+      "language_type": "ar_egyptian",
+      "is_negative_control": false,
+      "gold_evidences": [
+        {
+          "chunk_id": "chunk_sec_3_1_1",
+          "section_number": "3.1.1",
+          "physical_page": 29,
+          "rationale": "Recommendation for toll-free telephone counselling"
+        },
+        {
+          "chunk_id": "chunk_sec_3_1_3_p04",
+          "section_number": "3.1.3",
+          "physical_page": 31,
+          "rationale": "Evidence on quitline effectiveness"
+        },
+        {
+          "chunk_id": "chunk_node_L1_glossary_of_terms_p14",
+          "section_number": "Glossary",
+          "physical_page": 12,
+          "rationale": "Definition of toll-free quitline"
+        }
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p04",
+        "chunk_node_L1_glossary_of_terms_p14"
+      ]
+    },
+    {
+      "query_id": "QC4_group_support_ar",
+      "category": "C) Egyptian Arabic",
+      "query_text": "في جلسات جماعية مع ناس تانية بتحاول تبطل عشان نشجع بعض؟",
+      "language_type": "ar_egyptian",
+      "is_negative_control": false,
+      "gold_evidences": [
+        {
+          "chunk_id": "chunk_sec_3_1_1",
+          "section_number": "3.1.1",
+          "physical_page": 29,
+          "rationale": "Recommendation 2 on group face-to-face behavioural support"
+        },
+        {
+          "chunk_id": "chunk_sec_3_1_3_p03",
+          "section_number": "3.1.3",
+          "physical_page": 30,
+          "rationale": "Evidence on group behavioural counselling"
+        },
+        {
+          "chunk_id": "chunk_node_L1_glossary_of_terms_p13",
+          "section_number": "Glossary",
+          "physical_page": 12,
+          "rationale": "Definition of group behavioural counselling"
+        }
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p03",
+        "chunk_node_L1_glossary_of_terms_p13"
+      ]
+    },
+    {
+      "query_id": "QC5_pills_license_ar",
+      "category": "C) Egyptian Arabic",
+      "query_text": "في حبوب معينة مرخصة بتساعد الواحد يبطل السجاير؟",
+      "language_type": "ar_egyptian",
+      "is_negative_control": false,
+      "gold_evidences": [
+        {
+          "chunk_id": "chunk_sec_3_3_1",
+          "section_number": "3.3.1",
+          "physical_page": 35,
+          "rationale": "Recommendations for prescription oral medications (varenicline, bupropion, cytisine)"
+        },
+        {
+          "chunk_id": "chunk_node_L1_glossary_of_terms_p09",
+          "section_number": "Glossary",
+          "physical_page": 12,
+          "rationale": "Definition of first-line medications"
+        }
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_node_L1_glossary_of_terms_p09"
+      ]
+    },
+    {
+      "query_id": "QD1_craving_reduction_ar",
+      "category": "D) Non-Medical Wording",
+      "query_text": "في حاجة تساعدني أقلل الرغبة في السجاير ومن غير ما أفضل مشتهي أدخن؟",
+      "language_type": "ar_non_medical",
+      "is_negative_control": false,
+      "gold_evidences": [
+        {
+          "chunk_id": "chunk_sec_3_3_1",
+          "section_number": "3.3.1",
+          "physical_page": 35,
+          "rationale": "Pharmacotherapy recommendations to reduce cravings"
+        },
+        {
+          "chunk_id": "chunk_sec_3_3_3_1_p01",
+          "section_number": "3.3.3.1",
+          "physical_page": 36,
+          "rationale": "NRT mechanism reducing nicotine cravings"
+        },
+        {
+          "chunk_id": "chunk_node_L1_glossary_of_terms_p17",
+          "section_number": "Glossary",
+          "physical_page": 13,
+          "rationale": "NRT definition: relieving cravings and withdrawal"
+        }
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_1_p01",
+        "chunk_node_L1_glossary_of_terms_p17"
+      ]
+    },
+    {
+      "query_id": "QD2_patch_gum_ar",
+      "category": "D) Non-Medical Wording",
+      "query_text": "في لزقة أو لبانة نيكوتين تخفف الشغف للتدخين؟",
+      "language_type": "ar_non_medical",
+      "is_negative_control": false,
+      "gold_evidences": [
+        {
+          "chunk_id": "chunk_sec_3_3_1",
+          "section_number": "3.3.1",
+          "physical_page": 35,
+          "rationale": "Recommendation 3 on Nicotine Replacement Therapy"
+        },
+        {
+          "chunk_id": "chunk_sec_3_3_3_1_p01",
+          "section_number": "3.3.3.1",
+          "physical_page": 36,
+          "rationale": "Evidence on nicotine patches and nicotine gum"
+        },
+        {
+          "chunk_id": "chunk_node_L1_glossary_of_terms_p17",
+          "section_number": "Glossary",
+          "physical_page": 13,
+          "rationale": "Definition of NRT products"
+        }
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_1_p01",
+        "chunk_node_L1_glossary_of_terms_p17"
+      ]
+    },
+    {
+      "query_id": "QD3_mobile_sms_ar",
+      "category": "D) Non-Medical Wording",
+      "query_text": "في برنامج على الموبايل أو رسايل تساعد في التبطيل؟",
+      "language_type": "ar_non_medical",
+      "is_negative_control": false,
+      "gold_evidences": [
+        {
+          "chunk_id": "chunk_sec_3_2_1",
+          "section_number": "3.2.1",
+          "physical_page": 32,
+          "rationale": "Recommendation 4 on digital interventions and SMS"
+        },
+        {
+          "chunk_id": "chunk_sec_3_2_3_p01",
+          "section_number": "3.2.3",
+          "physical_page": 32,
+          "rationale": "Evidence on mobile text messaging"
+        },
+        {
+          "chunk_id": "chunk_node_L1_glossary_of_terms_p16",
+          "section_number": "Glossary",
+          "physical_page": 13,
+          "rationale": "Definition of mobile messaging"
+        }
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_2_1",
+        "chunk_sec_3_2_3_p01",
+        "chunk_node_L1_glossary_of_terms_p16"
+      ]
+    },
+    {
+      "query_id": "QD4_withdrawal_symptoms_ar",
+      "category": "D) Non-Medical Wording",
+      "query_text": "جسمي بيتعب وبيجيلي صداع وعصبية أول ما أوقف السجاير، أعمل إيه؟",
+      "language_type": "ar_non_medical",
+      "is_negative_control": false,
+      "gold_evidences": [
+        {
+          "chunk_id": "chunk_sec_3_3_1",
+          "section_number": "3.3.1",
+          "physical_page": 35,
+          "rationale": "Recommendations on pharmacotherapies relieving withdrawal symptoms"
+        },
+        {
+          "chunk_id": "chunk_sec_3_3_3_1_p01",
+          "section_number": "3.3.3.1",
+          "physical_page": 36,
+          "rationale": "Evidence on NRT relieving withdrawal discomfort"
+        },
+        {
+          "chunk_id": "chunk_node_L1_glossary_of_terms_p17",
+          "section_number": "Glossary",
+          "physical_page": 13,
+          "rationale": "Definition of NRT for withdrawal symptoms"
+        }
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_1_p01",
+        "chunk_node_L1_glossary_of_terms_p17"
+      ]
+    },
+    {
+      "query_id": "QD5_combo_patch_gum_ar",
+      "category": "D) Non-Medical Wording",
+      "query_text": "هل ينفع أجمع بين نوعين علاج نيكوتين مع بعض زي اللزقة واللبان؟",
+      "language_type": "ar_non_medical",
+      "is_negative_control": false,
+      "gold_evidences": [
+        {
+          "chunk_id": "chunk_sec_3_3_1",
+          "section_number": "3.3.1",
+          "physical_page": 35,
+          "rationale": "Recommendation 3 approving combination NRT (patch + short-acting)"
+        },
+        {
+          "chunk_id": "chunk_sec_3_3_3_5",
+          "section_number": "3.3.3.5",
+          "physical_page": 39,
+          "rationale": "Evidence confirming superiority of combination NRT"
+        },
+        {
+          "chunk_id": "chunk_node_L1_glossary_of_terms_p05",
+          "section_number": "Glossary",
+          "physical_page": 11,
+          "rationale": "Definition of combination pharmacotherapy"
+        }
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_5",
+        "chunk_node_L1_glossary_of_terms_p05"
+      ]
+    },
+    {
+      "query_id": "QE1_relapse_cycle_ar",
+      "category": "E) Implicit Clinical Intent",
+      "query_text": "كل ما أحاول أبطل برجع أدخن تاني، أعمل إيه؟",
+      "language_type": "ar_implicit",
+      "is_negative_control": false,
+      "gold_evidences": [
+        {
+          "chunk_id": "chunk_sec_3_1_1",
+          "section_number": "3.1.1",
+          "physical_page": 29,
+          "rationale": "Intensive counselling incorporating relapse prevention"
+        },
+        {
+          "chunk_id": "chunk_sec_3_3_1",
+          "section_number": "3.3.1",
+          "physical_page": 35,
+          "rationale": "First-line pharmacotherapy for relapsing smokers"
+        },
+        {
+          "chunk_id": "chunk_sec_3_3_3_5",
+          "section_number": "3.3.3.5",
+          "physical_page": 39,
+          "rationale": "Combination NRT improving long-term abstinence"
+        }
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_5"
+      ]
+    },
+    {
+      "query_id": "QE2_medication_plus_sessions_ar",
+      "category": "E) Implicit Clinical Intent",
+      "query_text": "الدواء لوحده كفاية ولا لازم جلسات ومتابعة عشان النتيجة تبقى أحسن؟",
+      "language_type": "ar_implicit",
+      "is_negative_control": false,
+      "gold_evidences": [
+        {
+          "chunk_id": "chunk_sec_3_5_1",
+          "section_number": "3.5.1",
+          "physical_page": 44,
+          "rationale": "Recommendation 9 strongly recommending combining medication with behavioural support"
+        },
+        {
+          "chunk_id": "chunk_sec_3_5_3_p01",
+          "section_number": "3.5.3",
+          "physical_page": 44,
+          "rationale": "Evidence showing combined support yields highest quit rates"
+        }
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_5_1",
+        "chunk_sec_3_5_3_p01"
+      ]
+    },
+    {
+      "query_id": "QE3_doctor_advice_value_ar",
+      "category": "E) Implicit Clinical Intent",
+      "query_text": "نصيحة الطبيب السريعة اللي في دقيقة أو دقيقتين بتفرق بجد ولا كلام وخلاص؟",
+      "language_type": "ar_implicit",
+      "is_negative_control": false,
+      "gold_evidences": [
+        {
+          "chunk_id": "chunk_sec_3_1_1",
+          "section_number": "3.1.1",
+          "physical_page": 29,
+          "rationale": "Recommendation 1 on brief advice in routine healthcare"
+        },
+        {
+          "chunk_id": "chunk_sec_3_1_3_p01",
+          "section_number": "3.1.3",
+          "physical_page": 29,
+          "rationale": "Evidence proving brief advice increases quit rates (RR=1.25)"
+        },
+        {
+          "chunk_id": "chunk_node_L1_glossary_of_terms_p03",
+          "section_number": "Glossary",
+          "physical_page": 11,
+          "rationale": "Definition of brief advice"
+        }
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p01",
+        "chunk_node_L1_glossary_of_terms_p03"
+      ]
+    },
+    {
+      "query_id": "QE4_heavy_smoker_options_ar",
+      "category": "E) Implicit Clinical Intent",
+      "query_text": "بشرب علبتين سجاير في اليوم من سنين ومش عارف أسيطر على نفسي",
+      "language_type": "ar_implicit",
+      "is_negative_control": false,
+      "gold_evidences": [
+        {
+          "chunk_id": "chunk_sec_3_3_1",
+          "section_number": "3.3.1",
+          "physical_page": 35,
+          "rationale": "First-line pharmacotherapy and combination NRT for heavy dependence"
+        },
+        {
+          "chunk_id": "chunk_sec_3_5_1",
+          "section_number": "3.5.1",
+          "physical_page": 44,
+          "rationale": "Recommendation 9 on combined medication + intensive counselling"
+        },
+        {
+          "chunk_id": "chunk_sec_3_3_3_5",
+          "section_number": "3.3.3.5",
+          "physical_page": 39,
+          "rationale": "Evidence on combination NRT for high dependence"
+        }
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_5_1",
+        "chunk_sec_3_3_3_5"
+      ]
+    },
+    {
+      "query_id": "QE5_ai_chatbot_cessation_ar",
+      "category": "E) Implicit Clinical Intent",
+      "query_text": "هل في ذكاء اصطناعي أو شات بوت معتمد يساعد في الإقلاع عن التدخين؟",
+      "language_type": "ar_implicit",
+      "is_negative_control": false,
+      "gold_evidences": [
+        {
+          "chunk_id": "chunk_sec_3_2_1",
+          "section_number": "3.2.1",
+          "physical_page": 32,
+          "rationale": "Recommendation 4 on digital AI interventions and chatbots"
+        },
+        {
+          "chunk_id": "chunk_sec_3_2_3_p02",
+          "section_number": "3.2.3",
+          "physical_page": 33,
+          "rationale": "Evidence on AI and chatbot cessation interventions"
+        },
+        {
+          "chunk_id": "chunk_node_L1_glossary_of_terms_p01",
+          "section_number": "Glossary",
+          "physical_page": 11,
+          "rationale": "Definition of AI cessation interventions"
+        }
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_2_1",
+        "chunk_sec_3_2_3_p02",
+        "chunk_node_L1_glossary_of_terms_p01"
+      ]
+    },
+    {
+      "query_id": "QF1_pregnant_women_ar",
+      "category": "F) Specific Clinical Situations",
+      "query_text": "أنا حامل وبشرب سجاير، أعمل إيه والدواء أمان ليا ولا لأ؟",
+      "language_type": "ar_clinical_situation",
+      "is_negative_control": false,
+      "gold_evidences": [
+        {
+          "chunk_id": "chunk_sec_3_3_4_p01",
+          "section_number": "3.3.4",
+          "physical_page": 41,
+          "rationale": "Implementation considerations: pharmacotherapy in pregnancy risk-benefit assessment"
+        },
+        {
+          "chunk_id": "chunk_sec_3_1_4",
+          "section_number": "3.1.4",
+          "physical_page": 31,
+          "rationale": "Implementation considerations: behavioural support priority for pregnant women"
+        }
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_3_4_p01",
+        "chunk_sec_3_1_4"
+      ]
+    },
+    {
+      "query_id": "QF2_smokeless_tobacco_shammah_ar",
+      "category": "F) Specific Clinical Situations",
+      "query_text": "الناس اللي بتستخدم الشمة أو التبغ غير المدخن، إيه علاجهم؟",
+      "language_type": "ar_clinical_situation",
+      "is_negative_control": false,
+      "gold_evidences": [
+        {
+          "chunk_id": "chunk_sec_3_4_1",
+          "section_number": "3.4.1",
+          "physical_page": 42,
+          "rationale": "Recommendation 8 for smokeless tobacco cessation"
+        },
+        {
+          "chunk_id": "chunk_sec_3_4_3_p01",
+          "section_number": "3.4.3",
+          "physical_page": 42,
+          "rationale": "Evidence on varenicline and NRT for smokeless tobacco"
+        },
+        {
+          "chunk_id": "chunk_node_L1_glossary_of_terms_p20",
+          "section_number": "Glossary",
+          "physical_page": 13,
+          "rationale": "Definition of smokeless tobacco"
+        }
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_4_1",
+        "chunk_sec_3_4_3_p01",
+        "chunk_node_L1_glossary_of_terms_p20"
+      ]
+    },
+    {
+      "query_id": "QF3_alternative_acupuncture_hypnosis_ar",
+      "category": "F) Specific Clinical Situations",
+      "query_text": "هل جلسات الإبر الصينية أو التنويم المغناطيسي بتنفع في الإقلاع عن التدخين؟",
+      "language_type": "ar_clinical_situation",
+      "is_negative_control": false,
+      "gold_evidences": [
+        {
+          "chunk_id": "chunk_sec_3_6_1",
+          "section_number": "3.6.1",
+          "physical_page": 45,
+          "rationale": "Recommendation 10 NOT to use acupuncture or hypnotherapy"
+        },
+        {
+          "chunk_id": "chunk_sec_3_6_3_p01",
+          "section_number": "3.6.3",
+          "physical_page": 45,
+          "rationale": "Evidence showing lack of efficacy for alternative therapies"
+        },
+        {
+          "chunk_id": "chunk_node_L1_glossary_of_terms_p26",
+          "section_number": "Glossary",
+          "physical_page": 13,
+          "rationale": "Definition of unproven alternative therapies"
+        }
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_6_1",
+        "chunk_sec_3_6_3_p01",
+        "chunk_node_L1_glossary_of_terms_p26"
+      ]
+    },
+    {
+      "query_id": "QF4_adolescents_young_people_ar",
+      "category": "F) Specific Clinical Situations",
+      "query_text": "هل الأدوية دي تنفع للمراهقين والشباب الصغيرين تحت 18 سنة؟",
+      "language_type": "ar_clinical_situation",
+      "is_negative_control": false,
+      "gold_evidences": [
+        {
+          "chunk_id": "chunk_sec_3_3_4_p01",
+          "section_number": "3.3.4",
+          "physical_page": 41,
+          "rationale": "Implementation considerations for adolescents and youth"
+        },
+        {
+          "chunk_id": "chunk_sec_3_1_4",
+          "section_number": "3.1.4",
+          "physical_page": 31,
+          "rationale": "Behavioural support considerations for young populations"
+        }
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_3_4_p01",
+        "chunk_sec_3_1_4"
+      ]
+    },
+    {
+      "query_id": "QF5_tuberculosis_comorbidity_ar",
+      "category": "F) Specific Clinical Situations",
+      "query_text": "مرضى الدرن والسل الرئوي اللي بيدخنوا، إيه توصيات منظمة الصحة العالمية ليهم؟",
+      "language_type": "ar_clinical_situation",
+      "is_negative_control": false,
+      "gold_evidences": [
+        {
+          "chunk_id": "chunk_sec_3_1_4",
+          "section_number": "3.1.4",
+          "physical_page": 31,
+          "rationale": "Implementation considerations for patients with TB/chronic respiratory diseases"
+        },
+        {
+          "chunk_id": "chunk_sec_3_3_4_p01",
+          "section_number": "3.3.4",
+          "physical_page": 41,
+          "rationale": "Pharmacotherapy integration in TB clinical programs"
+        }
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_1_4",
+        "chunk_sec_3_3_4_p01"
+      ]
+    },
+    {
+      "query_id": "QG1_ecigarettes_cessation_control",
+      "category": "G) Control (NO_DIRECT_EVIDENCE)",
+      "query_text": "هل السجائر الإلكترونية والفيب موصى بيها كعلاج رسمي للإقلاع عن التدخين في دليل منظمة الصحة العالمية؟",
+      "language_type": "control",
+      "is_negative_control": true,
+      "gold_evidences": [],
+      "target_chunk_ids": []
+    },
+    {
+      "query_id": "QG2_metformin_diabetes_control",
+      "category": "G) Control (NO_DIRECT_EVIDENCE)",
+      "query_text": "هل دواء الميتفورمين بتاع السكر بيساعد في تبطيل التدخين؟",
+      "language_type": "control",
+      "is_negative_control": true,
+      "gold_evidences": [],
+      "target_chunk_ids": []
+    },
+    {
+      "query_id": "QG3_acupuncture_weight_loss_control",
+      "category": "G) Control (NO_DIRECT_EVIDENCE)",
+      "query_text": "هل الإبر الصينية بتساعد على إنقاص الوزن وحرق الدهون؟",
+      "language_type": "control",
+      "is_negative_control": true,
+      "gold_evidences": [],
+      "target_chunk_ids": []
+    }
+  ]
+}

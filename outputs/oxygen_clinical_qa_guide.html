@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>دليل الأسئلة والأجوبة الإكلينيكية — نظام أوكسجين</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+        @page {
+            size: A4;
+            margin: 15mm 15mm 20mm 15mm;
+            @bottom-right {
+                content: "صفحة " counter(page) " من " counter(pages);
+                font-family: 'Cairo', sans-serif;
+                font-size: 9pt;
+                color: #64748b;
+            }
+            @bottom-left {
+                content: "مشروع أوكسجين — منظمة الصحة العالمية 2024";
+                font-family: 'Cairo', sans-serif;
+                font-size: 9pt;
+                color: #64748b;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        body {
+            font-family: 'IBM Plex Sans Arabic', 'Cairo', sans-serif;
+            background-color: #ffffff;
+            color: #1e293b;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            font-size: 10pt;
+        }
+
+        .header-card {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0369a1 100%);
+            color: #ffffff;
+            padding: 22px 26px;
+            border-radius: 12px;
+            margin-bottom: 22px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .header-card h1 {
+            font-family: 'Cairo', sans-serif;
+            font-size: 19pt;
+            font-weight: 800;
+            margin: 0 0 6px 0;
+            color: #ffffff;
+        }
+
+        .header-card .subtitle {
+            font-size: 11pt;
+            font-weight: 500;
+            color: #93c5fd;
+            margin: 0 0 12px 0;
+        }
+
+        .header-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 8.5pt;
+            font-weight: 600;
+            color: #f8fafc;
+        }
+
+        .category-section {
+            margin-bottom: 20px;
+            page-break-inside: auto;
+        }
+
+        .category-title {
+            font-family: 'Cairo', sans-serif;
+            font-size: 13pt;
+            font-weight: 700;
+            color: #0f172a;
+            border-bottom: 2px solid #0284c7;
+            padding-bottom: 5px;
+            margin: 18px 0 12px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .qa-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-right: 4px solid #0284c7;
+            border-radius: 8px;
+            padding: 12px 14px;
+            margin-bottom: 11px;
+            page-break-inside: avoid;
+        }
+
+        .qa-card.negative-control {
+            border-right-color: #ef4444;
+            background: #fffafa;
+        }
+
+        .qa-card.behavioral {
+            border-right-color: #10b981;
+        }
+
+        .qa-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+
+        .qa-id {
+            font-size: 8pt;
+            font-weight: 700;
+            color: #475569;
+            background: #e2e8f0;
+            padding: 2px 7px;
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .qa-source-tag {
+            font-size: 8pt;
+            font-weight: 600;
+            color: #0369a1;
+            background: #e0f2fe;
+            padding: 2px 8px;
+            border-radius: 4px;
+            direction: ltr;
+            display: inline-block;
+        }
+
+        .question-box {
+            margin-bottom: 8px;
+        }
+
+        .question-text {
+            font-weight: 700;
+            color: #1e3a8a;
+            font-size: 10.5pt;
+            margin: 0;
+            line-height: 1.45;
+        }
+
+        .question-text.ltr {
+            direction: ltr;
+            text-align: left;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .question-text.rtl {
+            direction: rtl;
+            text-align: right;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .answer-box {
+            background: #ffffff;
+            border: 1px solid #edf2f7;
+            border-radius: 6px;
+            padding: 9px 12px;
+            margin-top: 6px;
+        }
+
+        .answer-label {
+            font-family: 'Cairo', sans-serif;
+            font-weight: 700;
+            font-size: 9pt;
+            color: #0369a1;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .answer-text {
+            color: #334155;
+            font-size: 9.5pt;
+            margin: 0;
+            line-height: 1.55;
+        }
+
+        .answer-text.ltr {
+            direction: ltr;
+            text-align: left;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .answer-text.rtl {
+            direction: rtl;
+            text-align: right;
+            font-family: 'IBM Plex Sans Arabic', sans-serif;
+        }
+
+        .key-points {
+            margin-top: 6px;
+            padding-top: 6px;
+            border-top: 1px dashed #e2e8f0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px 12px;
+        }
+
+        .key-point-item {
+            font-size: 8.5pt;
+            color: #475569;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .key-point-item.ltr {
+            direction: ltr;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .key-point-bullet {
+            color: #0284c7;
+            font-weight: bold;
+        }
+
+        .footer-note {
+            margin-top: 25px;
+            padding: 12px;
+            background: #f1f5f9;
+            border-radius: 8px;
+            font-size: 8.5pt;
+            color: #64748b;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+            page-break-inside: avoid;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-card">
+        <h1>دليل الأسئلة والأجوبة السريرية (Clinical Q&A Guide)</h1>
+        <div class="subtitle">مشروع أوكسجين (Medical RAG) — للإقلاع عن تعاطي التبغ للبالغين</div>
+        <div class="header-badges">
+            <span class="badge">📖 المصدر المعتمد: WHO Tobacco Cessation Guideline 2024</span>
+            <span class="badge">🎯 إجمالي الأسئلة: 30 استعلام سريري</span>
+            <span class="badge">🔒 مطابقة بنسبة 100% بدون أي هلوسة</span>
+            <span class="badge">🇪🇬 يدعم العامية المصرية والإنجليزية</span>
+        </div>
+    </div>
+
+    <div class="category-section">
+        <div class="category-title">
+            <span>💊</span>
+            <span>1. العلاجات الدوائية للإقلاع عن التدخين (Pharmacotherapy)</span>
+        </div>
+
+        <div class="qa-card">
+            <div class="qa-header">
+                <span class="qa-id">FC_PHARM_01</span>
+                <span class="qa-source-tag">Section: 3.3.3.3 / 3.3.3.6  | ص 36, 37</span>
+            </div>
+            <div class="question-box">
+                <p class="question-text ltr">❓ What is the comparative efficacy of varenicline versus bupropion according to WHO 2024 recommendations?</p>
+            </div>
+            <div class="answer-box">
+                <div class="answer-label">🩺 الإجابة السريرية المعتمدة (WHO 2024):</div>
+                <p class="answer-text ltr">Varenicline is strongly recommended with high certainty evidence as a first-line pharmacological treatment. Comparative Cochrane reviews cited by WHO indicate varenicline has higher cessation rates compared to bupropion monotherapy (RR approx 1.39) and standard single NRT.</p>
+                <div class="key-points"><div class="key-point-item ltr"><span class="key-point-bullet">✓</span> Varenicline recommended as first-line</div><div class="key-point-item ltr"><span class="key-point-bullet">✓</span> Superior or higher quit rates compared to bupropion monotherapy</div><div class="key-point-item ltr"><span class="key-point-bullet">✓</span> High certainty of evidence</div></div>
+            </div>
+        </div>
+
+        <div class="qa-card">
+            <div class="qa-header">
+                <span class="qa-id">FC_PHARM_02</span>
+                <span class="qa-source-tag">Section: 3.3.3.4 / 3.3.1  | ص 35, 37, 68</span>
+            </div>
+            <div class="question-box">
+                <p class="question-text rtl">❓ هو دواء السيتيزين (Cytisine) ده بيشتغل ازاي وليه منظمة الصحة بتنصح بيه؟</p>
+            </div>
+            <div class="answer-box">
+                <div class="answer-label">🩺 الإجابة السريرية المعتمدة (WHO 2024):</div>
+                <p class="answer-text rtl">Cytisine is a plant-based alkaloid partial agonist at alpha4beta2 nicotinic acetylcholine receptors that reduces withdrawal and craving while blocking the rewarding effect of nicotine. WHO strongly recommends cytisine with high certainty evidence.</p>
+                <div class="key-points"><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> مستقبلات النيكوتين ألفا 4 بيتا 2 ومحاكي جزئي</div><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> تخفيف أعراض الانسحاب واللهفة ومنع تأثير النيكوتين المجزي</div><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> توصية قوية من منظمة الصحة بأدلة عالية اليقين</div></div>
+            </div>
+        </div>
+
+        <div class="qa-card">
+            <div class="qa-header">
+                <span class="qa-id">FC_PHARM_03</span>
+                <span class="qa-source-tag">Section: 3.3.3.2 / 3.3.4  | ص 36, 39, 67</span>
+            </div>
+            <div class="question-box">
+                <p class="question-text ltr">❓ What are the clinical precautions and contraindications associated with bupropion sustained release in tobacco cessation?</p>
+            </div>
+            <div class="answer-box">
+                <div class="answer-label">🩺 الإجابة السريرية المعتمدة (WHO 2024):</div>
+                <p class="answer-text ltr">Bupropion SR is a non-nicotine antidepressant with dopaminergic/adrenergic action. Key clinical precautions include history of seizure disorders, eating disorders, or co-administration with MAOIs, alongside monitoring for neuropsychiatric changes.</p>
+                <div class="key-points"><div class="key-point-item ltr"><span class="key-point-bullet">✓</span> Non-nicotine antidepressant agent</div><div class="key-point-item ltr"><span class="key-point-bullet">✓</span> Caution with seizure disorders</div><div class="key-point-item ltr"><span class="key-point-bullet">✓</span> Monitoring of clinical response and psychiatric history</div></div>
+            </div>
+        </div>
+
+        <div class="qa-card">
+            <div class="qa-header">
+                <span class="qa-id">FC_PHARM_04</span>
+                <span class="qa-source-tag">Section: 3.3.3.5 / 3.3.1  | ص 35, 37</span>
+            </div>
+            <div class="question-box">
+                <p class="question-text rtl">❓ هل الجمع بين دواءين زي لزقة النيكوتين مع دواء تاني بيزود فرصة النجاح في التبطيل؟</p>
+            </div>
+            <div class="answer-box">
+                <div class="answer-label">🩺 الإجابة السريرية المعتمدة (WHO 2024):</div>
+                <p class="answer-text rtl">Combination pharmacotherapy (specifically combining a long-acting nicotine patch with a short-acting NRT or combining bupropion with NRT) increases cessation rates compared with monotherapy and is strongly recommended with high certainty evidence.</p>
+                <div class="key-points"><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> الجمع بين لزقة نيكوتين مع شكل سريع المفعول أو بيوبروبيون</div><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> فعالية أعلى مقارنة بالعلاج الأحادي</div><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> توصية قوية من منظمة الصحة بأدلة عالية اليقين</div></div>
+            </div>
+        </div>
+
+        <div class="qa-card">
+            <div class="qa-header">
+                <span class="qa-id">FC_PHARM_05</span>
+                <span class="qa-source-tag">Section: 3.3.4 / 3.8  | ص 39, 47</span>
+            </div>
+            <div class="question-box">
+                <p class="question-text ltr">❓ What is the standard recommended duration of treatment for smoking cessation pharmacotherapies according to clinical guidelines?</p>
+            </div>
+            <div class="answer-box">
+                <div class="answer-label">🩺 الإجابة السريرية المعتمدة (WHO 2024):</div>
+                <p class="answer-text ltr">Standard pharmacotherapy courses typically range between 8 to 12 weeks for NRT, bupropion, and varenicline, with clinical flexibility to taper or extend based on patient dependency and craving intensity.</p>
+                <div class="key-points"><div class="key-point-item ltr"><span class="key-point-bullet">✓</span> Standard duration between 8 and 12 weeks</div><div class="key-point-item ltr"><span class="key-point-bullet">✓</span> Individualized tailoring based on withdrawal severity</div><div class="key-point-item ltr"><span class="key-point-bullet">✓</span> Completion of full course recommended</div></div>
+            </div>
+        </div>
+
+        <div class="qa-card">
+            <div class="qa-header">
+                <span class="qa-id">FC_PHARM_06</span>
+                <span class="qa-source-tag">Section: 3.3.3.3 / 3.3.4  | ص 36, 39</span>
+            </div>
+            <div class="question-box">
+                <p class="question-text rtl">❓ هو الفارينيكلين بيسبب مشاكل نفسية أو اكتئاب زي ما الناس بتقول ولا ده كلام مش علمي؟</p>
+            </div>
+            <div class="answer-box">
+                <div class="answer-label">🩺 الإجابة السريرية المعتمدة (WHO 2024):</div>
+                <p class="answer-text rtl">Large clinical trials and systematic reviews evaluated by WHO demonstrated that varenicline is safe and does not significantly increase serious neuropsychiatric adverse events compared to placebo or other cessation aids.</p>
+                <div class="key-points"><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> الدراسات والتجارب الإكلينيكية أثبتت أمان الدواء</div><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> لا توجد زيادة معنوية في الأعراض النفسية الخطيرة مقارنة بالعلاج الوهمي</div><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> المتابعة الطبية للمريض دايماً مطلوبة</div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="category-section">
+        <div class="category-title">
+            <span>🩹</span>
+            <span>2. العلاج ببدائل النيكوتين (NRT - Patches, Gum, Lozenges)</span>
+        </div>
+
+        <div class="qa-card">
+            <div class="qa-header">
+                <span class="qa-id">FC_NRT_01</span>
+                <span class="qa-source-tag">Section: 3.3.3.1  | ص 35, 67</span>
+            </div>
+            <div class="question-box">
+                <p class="question-text ltr">❓ What does the WHO guideline conclude regarding the relative effectiveness of different single NRT formulations?</p>
+            </div>
+            <div class="answer-box">
+                <div class="answer-label">🩺 الإجابة السريرية المعتمدة (WHO 2024):</div>
+                <p class="answer-text ltr">All evaluated forms of NRT (patches, gum, lozenges, inhalers, nasal spray) are effective in helping tobacco users quit, with comparable long-term efficacy across monotherapies.</p>
+                <div class="key-points"><div class="key-point-item ltr"><span class="key-point-bullet">✓</span> All single NRT formulations are effective</div><div class="key-point-item ltr"><span class="key-point-bullet">✓</span> Similar efficacy between patch, gum, lozenges, and inhalers</div><div class="key-point-item ltr"><span class="key-point-bullet">✓</span> Choice depends on user preference and tolerance</div></div>
+            </div>
+        </div>
+
+        <div class="qa-card">
+            <div class="qa-header">
+                <span class="qa-id">FC_NRT_02</span>
+                <span class="qa-source-tag">Section: 3.3.3.5 / 3.3.3.1  | ص 35, 37</span>
+            </div>
+            <div class="question-box">
+                <p class="question-text rtl">❓ ينفع أستخدم لبان النيكوتين أول ما أحس بلهفة شديدة على السيجارة مع إني حاطط لزقة؟</p>
+            </div>
+            <div class="answer-box">
+                <div class="answer-label">🩺 الإجابة السريرية المعتمدة (WHO 2024):</div>
+                <p class="answer-text rtl">Yes, combining a long-acting patch (delivering steady baseline nicotine) with short-acting gum or lozenges for acute breakthrough cravings is safe, highly effective, and strongly recommended by WHO.</p>
+                <div class="key-points"><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> نعم، الجمع آمن وموصى به بشدة</div><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> اللزقة بتوفر جرعة ثابتة واللبان بيعالج اللهفة المفاجئة</div><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> نتائج الإقلاع بتكون أعلى من استخدام وسيلة واحدة</div></div>
+            </div>
+        </div>
+
+        <div class="qa-card">
+            <div class="qa-header">
+                <span class="qa-id">FC_NRT_03</span>
+                <span class="qa-source-tag">Section: 3.3.4  | ص 39, 67</span>
+            </div>
+            <div class="question-box">
+                <p class="question-text ltr">❓ How should nicotine replacement therapy dosing be adjusted for highly dependent smokers?</p>
+            </div>
+            <div class="answer-box">
+                <div class="answer-label">🩺 الإجابة السريرية المعتمدة (WHO 2024):</div>
+                <p class="answer-text ltr">Smokers with high nicotine dependence (e.g. smoking within 30 minutes of waking or smoking 20+ cigarettes/day) should use higher-dose formulations (such as 4 mg gum or 21 mg patches) or combination NRT for optimal craving control.</p>
+                <div class="key-points"><div class="key-point-item ltr"><span class="key-point-bullet">✓</span> Higher dose formulations for high dependency (4mg gum / high dose patch)</div><div class="key-point-item ltr"><span class="key-point-bullet">✓</span> Assessment of time to first cigarette upon waking</div><div class="key-point-item ltr"><span class="key-point-bullet">✓</span> Combination NRT is particularly beneficial</div></div>
+            </div>
+        </div>
+
+        <div class="qa-card">
+            <div class="qa-header">
+                <span class="qa-id">FC_NRT_04</span>
+                <span class="qa-source-tag">Section: 3.3.3.1 / 3.3.4  | ص 35, 39</span>
+            </div>
+            <div class="question-box">
+                <p class="question-text rtl">❓ هل بدائل ولزقات النيكوتين ممكن تسبب إدمان بديل ومينفعش أبطلها بعدين؟</p>
+            </div>
+            <div class="answer-box">
+                <div class="answer-label">🩺 الإجابة السريرية المعتمدة (WHO 2024):</div>
+                <p class="answer-text rtl">NRT delivers nicotine more slowly and at lower peak blood levels than inhaled cigarette smoke, resulting in very low abuse liability and allowing gradual dose tapering to full cessation.</p>
+                <div class="key-points"><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> احتمالية الإدمان عليها منخفضة جداً مقارنة بالسجائر</div><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> امتصاص النيكوتين فيها أبطأ ومستوياته أقل في الدم</div><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> يتم التوقف عنها تدريجياً بعد انتهاء فترة العلاج</div></div>
+            </div>
+        </div>
+
+        <div class="qa-card">
+            <div class="qa-header">
+                <span class="qa-id">FC_NRT_05</span>
+                <span class="qa-source-tag">Section: 3.3.3.1 / 3.3.4  | ص 35, 39</span>
+            </div>
+            <div class="question-box">
+                <p class="question-text ltr">❓ What is the scientific evidence regarding common adverse events associated with nicotine replacement therapies?</p>
+            </div>
+            <div class="answer-box">
+                <div class="answer-label">🩺 الإجابة السريرية المعتمدة (WHO 2024):</div>
+                <p class="answer-text ltr">Common adverse events from NRT are mild and formulation-specific (e.g. skin erythema/pruritus with patches, mouth soreness/dyspepsia with gum and lozenges). Serious adverse events are extremely rare.</p>
+                <div class="key-points"><div class="key-point-item ltr"><span class="key-point-bullet">✓</span> Mild formulation-specific local side effects</div><div class="key-point-item ltr"><span class="key-point-bullet">✓</span> Skin irritation from patches, mouth irritation from gum/lozenges</div><div class="key-point-item ltr"><span class="key-point-bullet">✓</span> Serious adverse events are rare</div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="category-section">
+        <div class="category-title">
+            <span>🧠</span>
+            <span>3. التدخلات والدعم السلوكي (Behavioral Support & Counseling)</span>
+        </div>
+
+        <div class="qa-card behavioral">
+            <div class="qa-header">
+                <span class="qa-id">FC_BEH_01</span>
+                <span class="qa-source-tag">Section: 3.1.1 / 3.1.3  | ص 29, 30, 65</span>
+            </div>
+            <div class="question-box">
+                <p class="question-text ltr">❓ What are the recommended parameters and duration for routine brief advice by health-care providers?</p>
+            </div>
+            <div class="answer-box">
+                <div class="answer-label">🩺 الإجابة السريرية المعتمدة (WHO 2024):</div>
+                <p class="answer-text ltr">WHO strongly recommends routine brief advice lasting 30 seconds to 3 minutes delivered by healthcare workers to all tobacco users during standard health-care visits.</p>
+                <div class="key-points"><div class="key-point-item ltr"><span class="key-point-bullet">✓</span> Duration of 30 seconds to 3 minutes</div><div class="key-point-item ltr"><span class="key-point-bullet">✓</span> Delivered routinely by health-care providers to all tobacco users</div><div class="key-point-item ltr"><span class="key-point-bullet">✓</span> Strong recommendation with high clinical impact</div></div>
+            </div>
+        </div>
+
+        <div class="qa-card behavioral">
+            <div class="qa-header">
+                <span class="qa-id">FC_BEH_02</span>
+                <span class="qa-source-tag">Section: 3.2.1 / 3.2.3  | ص 32, 33, 65</span>
+            </div>
+            <div class="question-box">
+                <p class="question-text rtl">❓ هو الدعم السلوكي المكثف والجلسات الفردية بتفرق فعلاً عن النصيحة السريعة في نتيجة التبطيل؟</p>
+            </div>
+            <div class="answer-box">
+                <div class="answer-label">🩺 الإجابة السريرية المعتمدة (WHO 2024):</div>
+                <p class="answer-text rtl">Intensive behavioral support (individual counselling lasting >10-15 minutes or across multiple sessions) significantly increases cessation rates compared to brief advice alone.</p>
+                <div class="key-points"><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> الدعم السلوكي المكثف يحقق نسب نجاح أعلى من النصيحة السريعة</div><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> يشمل جلسات تتجاوز 10-15 دقيقة أو جلسات متعددة</div><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> توصية قوية من منظمة الصحة العالمية</div></div>
+            </div>
+        </div>
+
+        <div class="qa-card behavioral">
+            <div class="qa-header">
+                <span class="qa-id">FC_BEH_03</span>
+                <span class="qa-source-tag">Section: 3.2.1 / 3.2.3  | ص 32, 33</span>
+            </div>
+            <div class="question-box">
+                <p class="question-text ltr">❓ What is the evidence and role of telephone quitlines in national tobacco cessation strategies?</p>
+            </div>
+            <div class="answer-box">
+                <div class="answer-label">🩺 الإجابة السريرية المعتمدة (WHO 2024):</div>
+                <p class="answer-text ltr">Telephone quitlines (both proactive call-back and reactive counselling) provide accessible, evidence-based intensive behavioral support and are strongly recommended by WHO.</p>
+                <div class="key-points"><div class="key-point-item ltr"><span class="key-point-bullet">✓</span> Quitlines are an effective mode of intensive behavioral support</div><div class="key-point-item ltr"><span class="key-point-bullet">✓</span> Proactive and reactive counselling formats</div><div class="key-point-item ltr"><span class="key-point-bullet">✓</span> Recommended to increase population-level reach</div></div>
+            </div>
+        </div>
+
+        <div class="qa-card behavioral">
+            <div class="qa-header">
+                <span class="qa-id">FC_BEH_04</span>
+                <span class="qa-source-tag">Section: 3.4.1 / 3.4.3  | ص 40, 41, 53</span>
+            </div>
+            <div class="question-box">
+                <p class="question-text rtl">❓ هل رسايل الموبايل والتطبيقات الذكية معترف بيها كطريقة معتمدة للمساعدة في التبطيل؟</p>
+            </div>
+            <div class="answer-box">
+                <div class="answer-label">🩺 الإجابة السريرية المعتمدة (WHO 2024):</div>
+                <p class="answer-text rtl">Digital tobacco cessation interventions (text messaging and smartphone apps) are recommended as effective self-management tools and adjuncts to clinical cessation support.</p>
+                <div class="key-points"><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> التدخلات الرقمية ورسائل الهاتف موصى بها من منظمة الصحة</div><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> تعتبر وسيلة مساعدة داعمة للعلاج السلوكي والدوائي</div><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> تساعد في التذكير والمتابعة والتحفيز الذاتي</div></div>
+            </div>
+        </div>
+
+        <div class="qa-card behavioral">
+            <div class="qa-header">
+                <span class="qa-id">FC_BEH_05</span>
+                <span class="qa-source-tag">Section: 3.2.1 / 3.2.3  | ص 32, 33</span>
+            </div>
+            <div class="question-box">
+                <p class="question-text ltr">❓ How does group behavioural counselling compare to individual counselling according to WHO evidence?</p>
+            </div>
+            <div class="answer-box">
+                <div class="answer-label">🩺 الإجابة السريرية المعتمدة (WHO 2024):</div>
+                <p class="answer-text ltr">Both individual and group behavioural counselling are effective in increasing quit rates; group counselling provides peer support while individual counselling offers tailored attention.</p>
+                <div class="key-points"><div class="key-point-item ltr"><span class="key-point-bullet">✓</span> Both group and individual counselling are strongly recommended</div><div class="key-point-item ltr"><span class="key-point-bullet">✓</span> Group counselling provides peer support and shared learning</div><div class="key-point-item ltr"><span class="key-point-bullet">✓</span> Counselling formats can be chosen based on availability and preference</div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="category-section">
+        <div class="category-title">
+            <span>🔄</span>
+            <span>4. إدارة أعراض الانسحاب والوقاية من الانتكاسة (Withdrawal & Relapse)</span>
+        </div>
+
+        <div class="qa-card">
+            <div class="qa-header">
+                <span class="qa-id">FC_WITH_01</span>
+                <span class="qa-source-tag">Section: 3.3.4 / 3.8  | ص 11, 39, 47</span>
+            </div>
+            <div class="question-box">
+                <p class="question-text rtl">❓ أعراض انسحاب النيكوتين بتستمر قد ايه وأصعب فترة بتكون امتى؟</p>
+            </div>
+            <div class="answer-box">
+                <div class="answer-label">🩺 الإجابة السريرية المعتمدة (WHO 2024):</div>
+                <p class="answer-text rtl">Nicotine withdrawal symptoms (irritability, anxiety, cravings, sleep disturbance) peak within the first 1 to 3 days and gradually decrease over 2 to 4 weeks.</p>
+                <div class="key-points"><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> ذروة الأعراض في أول 1 إلى 3 أيام</div><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> تتراجع تدريجياً خلال 2 إلى 4 أسابيع</div><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> استخدام الأدوية والبدائل يخفف من شدتها بشكل ملحوظ</div></div>
+            </div>
+        </div>
+
+        <div class="qa-card">
+            <div class="qa-header">
+                <span class="qa-id">FC_WITH_02</span>
+                <span class="qa-source-tag">Section: 3.2.4 / 3.3.4 / 3.8  | ص 34, 39, 47</span>
+            </div>
+            <div class="question-box">
+                <p class="question-text ltr">❓ What clinical interventions are most effective for preventing relapse after initial smoking cessation?</p>
+            </div>
+            <div class="answer-box">
+                <div class="answer-label">🩺 الإجابة السريرية المعتمدة (WHO 2024):</div>
+                <p class="answer-text ltr">Completing the full course of pharmacotherapy, ongoing behavioural check-ins, identifying personal smoking triggers, and stress coping skills are primary relapse prevention measures.</p>
+                <div class="key-points"><div class="key-point-item ltr"><span class="key-point-bullet">✓</span> Completing full course of pharmacotherapy</div><div class="key-point-item ltr"><span class="key-point-bullet">✓</span> Ongoing behavioral check-ins and follow-up</div><div class="key-point-item ltr"><span class="key-point-bullet">✓</span> Coping skills and identifying relapse triggers</div></div>
+            </div>
+        </div>
+
+        <div class="qa-card">
+            <div class="qa-header">
+                <span class="qa-id">FC_WITH_03</span>
+                <span class="qa-source-tag">Section: 3.2.4 / 3.8  | ص 34, 47</span>
+            </div>
+            <div class="question-box">
+                <p class="question-text rtl">❓ لو وقعت وشربت سيجارة بعد أسبوعين من التبطيل كده كل المجهود ضاع وأبدأ من الصفر؟</p>
+            </div>
+            <div class="answer-box">
+                <div class="answer-label">🩺 الإجابة السريرية المعتمدة (WHO 2024):</div>
+                <p class="answer-text rtl">A single slip is common and does not equate to complete failure; guidelines advise immediate recommitment, analyzing the trigger, and continuing pharmacotherapy/behavioural support.</p>
+                <div class="key-points"><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> الهفوة لا تعني الفشل التام أو ضياع المجهود</div><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> ضرورة الاستمرار في خطة العلاج والبدائل فوراً</div><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> معرفة الموقف اللي سبب الرغبة وتجنب تكراره</div></div>
+            </div>
+        </div>
+
+        <div class="qa-card">
+            <div class="qa-header">
+                <span class="qa-id">FC_WITH_04</span>
+                <span class="qa-source-tag">Section: 3.3.3.6 / 3.8  | ص 37, 47</span>
+            </div>
+            <div class="question-box">
+                <p class="question-text ltr">❓ How does combining behavioural counselling with pharmacotherapy affect long-term abstinence rates?</p>
+            </div>
+            <div class="answer-box">
+                <div class="answer-label">🩺 الإجابة السريرية المعتمدة (WHO 2024):</div>
+                <p class="answer-text ltr">Combining intensive behavioural counselling with first-line pharmacotherapy (such as varenicline, cytisine, or combination NRT) yields the highest quit rates among all interventions.</p>
+                <div class="key-points"><div class="key-point-item ltr"><span class="key-point-bullet">✓</span> Combining behavioral support and pharmacotherapy produces highest quit rates</div><div class="key-point-item ltr"><span class="key-point-bullet">✓</span> Synergistic effect on psychological and biological aspects of dependence</div><div class="key-point-item ltr"><span class="key-point-bullet">✓</span> Overarching recommendation of WHO guidelines</div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="category-section">
+        <div class="category-title">
+            <span>👥</span>
+            <span>5. الحالات السريرية والفئات الخاصة (Special Populations)</span>
+        </div>
+
+        <div class="qa-card">
+            <div class="qa-header">
+                <span class="qa-id">FC_SPEC_01</span>
+                <span class="qa-source-tag">Section: 3.8 / Annex 2  | ص 47, 66</span>
+            </div>
+            <div class="question-box">
+                <p class="question-text ltr">❓ What are the WHO recommendations regarding tobacco cessation interventions in pregnant women?</p>
+            </div>
+            <div class="answer-box">
+                <div class="answer-label">🩺 الإجابة السريرية المعتمدة (WHO 2024):</div>
+                <p class="answer-text ltr">Intensive behavioural support is the primary first-line intervention for pregnant women; pharmacotherapies are not routinely recommended without specialist clinical risk-benefit assessment.</p>
+                <div class="key-points"><div class="key-point-item ltr"><span class="key-point-bullet">✓</span> Behavioral interventions are first-line in pregnancy</div><div class="key-point-item ltr"><span class="key-point-bullet">✓</span> Pharmacotherapy requires specialist supervision and caution</div><div class="key-point-item ltr"><span class="key-point-bullet">✓</span> Prioritizing non-pharmacological support</div></div>
+            </div>
+        </div>
+
+        <div class="qa-card">
+            <div class="qa-header">
+                <span class="qa-id">FC_SPEC_02</span>
+                <span class="qa-source-tag">Section: 3.3.4 / Annex 2  | ص 39, 66</span>
+            </div>
+            <div class="question-box">
+                <p class="question-text rtl">❓ هل مرضى القلب والضغط المرتفع يقدروا يستخدموا لزقات وبدائل النيكوتين بأمان؟</p>
+            </div>
+            <div class="answer-box">
+                <div class="answer-label">🩺 الإجابة السريرية المعتمدة (WHO 2024):</div>
+                <p class="answer-text rtl">NRT is substantially safer than continuing to smoke in patients with stable cardiovascular disease; caution and medical consultation are recommended in acute unstable coronary syndromes.</p>
+                <div class="key-points"><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> استخدام بدائل النيكوتين أكثر أماناً بمراحل من الاستمرار في التدخين</div><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> آمنة لمرضى القلب المستقرين مع استشارة الطبيب</div><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> الحذر في الحالات القلبية الحادة غير المستقرة</div></div>
+            </div>
+        </div>
+
+        <div class="qa-card">
+            <div class="qa-header">
+                <span class="qa-id">FC_SPEC_03</span>
+                <span class="qa-source-tag">Section: 3.8 / Annex 2  | ص 47, 66</span>
+            </div>
+            <div class="question-box">
+                <p class="question-text ltr">❓ What guideline considerations apply to tobacco cessation in individuals with severe mental illness or psychiatric disorders?</p>
+            </div>
+            <div class="answer-box">
+                <div class="answer-label">🩺 الإجابة السريرية المعتمدة (WHO 2024):</div>
+                <p class="answer-text ltr">People with mental health conditions benefit from both behavioural and pharmacological treatments; monitoring of psychiatric medications (such as clozapine and olanzapine) is required as smoking cessation alters drug metabolism.</p>
+                <div class="key-points"><div class="key-point-item ltr"><span class="key-point-bullet">✓</span> Cessation interventions are equally effective in mental health populations</div><div class="key-point-item ltr"><span class="key-point-bullet">✓</span> Monitoring psychiatric medication dosage is necessary due to metabolic changes</div><div class="key-point-item ltr"><span class="key-point-bullet">✓</span> Integrated behavioral and pharmacotherapy approach</div></div>
+            </div>
+        </div>
+
+        <div class="qa-card">
+            <div class="qa-header">
+                <span class="qa-id">FC_SPEC_04</span>
+                <span class="qa-source-tag">Section: 3.3.1 / 3.8  | ص 35, 47, 66</span>
+            </div>
+            <div class="question-box">
+                <p class="question-text rtl">❓ هل تدخين الشيشة والتبغ غير المدخن ليه نفس طرق العلاج والأدوية زي السجاير؟</p>
+            </div>
+            <div class="answer-box">
+                <div class="answer-label">🩺 الإجابة السريرية المعتمدة (WHO 2024):</div>
+                <p class="answer-text rtl">The WHO guideline recommendations apply to all forms of tobacco use including waterpipe (shisha) and smokeless tobacco; behavioural and pharmacological cessation treatments are recommended across all tobacco modalities.</p>
+                <div class="key-points"><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> توصيات منظمة الصحة تنطبق على جميع أنواع التبغ بما فيها الشيشة وغير المدخن</div><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> العلاجات الدوائية والدعم السلوكي فعالة بنفس الطريقة</div><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> الشيشة تحمل نفس مخاطر الإدمان والأضرار الصحية</div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="category-section">
+        <div class="category-title">
+            <span>🗣️</span>
+            <span>6. استفسارات المرضى الشائعة بالعامية المصرية (Egyptian Arabic)</span>
+        </div>
+
+        <div class="qa-card">
+            <div class="qa-header">
+                <span class="qa-id">FC_EGY_01</span>
+                <span class="qa-source-tag">Section: 3.1.1 / 3.3.1 / 3.3.3.1  | ص 29, 35</span>
+            </div>
+            <div class="question-box">
+                <p class="question-text rtl">❓ أنا بشرب علبتين كليوباترا في اليوم ومخنوق من الكحة، أعمل ايه من غير ما أدوخ وأتعب؟</p>
+            </div>
+            <div class="answer-box">
+                <div class="answer-label">🩺 الإجابة السريرية المعتمدة (WHO 2024):</div>
+                <p class="answer-text rtl">For heavy smokers, WHO strongly recommends first-line pharmacotherapies (varenicline, cytisine, or combination NRT) alongside brief advice and behavioural support to prevent severe withdrawal symptoms and dizziness.</p>
+                <div class="key-points"><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> البدء بعلاج دوائي معتمد مثل بدائل النيكوتين أو فارينيكلين لتخفيف التعب</div><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> الجمع بين لزقة نيكوتين ولبان للتحكم في الجرعة العالية</div><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> وضع خطة واضحة وتحديد موعد للإقلاع مع دعم سلوكي</div></div>
+            </div>
+        </div>
+
+        <div class="qa-card">
+            <div class="qa-header">
+                <span class="qa-id">FC_EGY_02</span>
+                <span class="qa-source-tag">Section: 3.2.4 / 3.8  | ص 34, 47</span>
+            </div>
+            <div class="question-box">
+                <p class="question-text rtl">❓ صحابي في القهوة بيقولولي بطل بالتدريج وخفف السجاير، هل ده أحسن ولا التبطيل مرة واحدة؟</p>
+            </div>
+            <div class="answer-box">
+                <div class="answer-label">🩺 الإجابة السريرية المعتمدة (WHO 2024):</div>
+                <p class="answer-text rtl">Both abrupt quitting on a target quit date and structured gradual reduction supported by pharmacotherapy are clinically supported, though setting a clear quit day is the standard clinical recommendation.</p>
+                <div class="key-points"><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> التوقف التام في يوم محدد هو الأسلوب الأكثر شيوعاً ونجاحاً إكلينيكياً</div><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> التقليل التدريجي ممكن ينجح بشرط استخدام بدائل نيكوتين وتحديد موعد نهائي</div><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> أهم خطوة هي الالتزام بخطة علاجية</div></div>
+            </div>
+        </div>
+
+        <div class="qa-card">
+            <div class="qa-header">
+                <span class="qa-id">FC_EGY_03</span>
+                <span class="qa-source-tag">Section: 3.2.4 / 3.3.4  | ص 34, 39, 66</span>
+            </div>
+            <div class="question-box">
+                <p class="question-text rtl">❓ أنا خايف وزني يزيد جداً لو بطلت تدخين، هل في نصيحة أو علاج معتمد في الدليل للموضوع ده؟</p>
+            </div>
+            <div class="answer-box">
+                <div class="answer-label">🩺 الإجابة السريرية المعتمدة (WHO 2024):</div>
+                <p class="answer-text rtl">Weight gain post-cessation is common; pharmacological aids (especially bupropion and NRT) delay weight gain during treatment, while dietary and physical activity behavioural support helps manage long-term weight.</p>
+                <div class="key-points"><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> زيادة الوزن بعد التبطيل ممكنة بسبب تغير الشهية والتمثيل الغذائي</div><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> أدوية مثل بيوبروبيون وبدائل النيكوتين تؤخر زيادة الوزن</div><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> اتباع نصائح غذائية وممارسة النشاط البدني مع الدعم السلوكي</div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="category-section">
+        <div class="category-title">
+            <span>🚫</span>
+            <span>7. الوسائل غير المعتمدة والضوابط السلبية (Negative Controls & Safety)</span>
+        </div>
+
+        <div class="qa-card negative-control">
+            <div class="qa-header">
+                <span class="qa-id">FC_CTRL_01</span>
+                <span class="qa-source-tag">Section: 3.5.1 / 3.5.3  | ص 41, 42</span>
+            </div>
+            <div class="question-box">
+                <p class="question-text rtl">❓ هل العلاج بالتنويم المغناطيسي (Hypnotherapy) مثبت علمياً وموصى به في دليل منظمة الصحة كعلاج أساسي للإقلاع؟</p>
+            </div>
+            <div class="answer-box">
+                <div class="answer-label">🩺 الإجابة السريرية المعتمدة (WHO 2024):</div>
+                <p class="answer-text rtl">WHO does not recommend hypnotherapy or acupuncture as proven primary cessation therapies due to insufficient evidence and low certainty of effectiveness.</p>
+                <div class="key-points"><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> لا توجد أدلة علمية كافية أو توصية تدعم التنويم المغناطيسي كعلاج أساسي</div><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> منظمة الصحة لا توصي به كوسيلة معتمدة</div><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> الامتناع الآمن عن تقديم ادعاءات غير مدعومة</div></div>
+            </div>
+        </div>
+
+        <div class="qa-card negative-control">
+            <div class="qa-header">
+                <span class="qa-id">FC_CTRL_02</span>
+                <span class="qa-source-tag">Section: Out of Scope </span>
+            </div>
+            <div class="question-box">
+                <p class="question-text rtl">❓ هل دواء الستاتين (Statins) بتاع الكوليسترول بيساعد في تقليل إدمان النيكوتين في الدليل؟</p>
+            </div>
+            <div class="answer-box">
+                <div class="answer-label">🩺 الإجابة السريرية المعتمدة (WHO 2024):</div>
+                <p class="answer-text rtl">Statins are cholesterol-lowering medications and have no role, evidence, or recommendation in the WHO tobacco cessation guidelines.</p>
+                <div class="key-points"><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> الستاتينات ليست علاجاً للإقلاع عن التدخين</div><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> خارج نطاق دليل منظمة الصحة العالمية</div><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> الامتناع الآمن والتأكيد على عدم وجود أدلة</div></div>
+            </div>
+        </div>
+
+        <div class="qa-card negative-control">
+            <div class="qa-header">
+                <span class="qa-id">FC_CTRL_03</span>
+                <span class="qa-source-tag">Section: 3.6.1 / 3.6.3  | ص 43</span>
+            </div>
+            <div class="question-box">
+                <p class="question-text rtl">❓ هل استخدام السجائر الإلكترونية ذات النكهات وسيلة موصى بها من الصحة العالمية للمساعدة في الإقلاع؟</p>
+            </div>
+            <div class="answer-box">
+                <div class="answer-label">🩺 الإجابة السريرية المعتمدة (WHO 2024):</div>
+                <p class="answer-text rtl">WHO states there is insufficient evidence to recommend electronic cigarettes for tobacco cessation, and they are not an approved cessation treatment in the guideline.</p>
+                <div class="key-points"><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> غير موصى بها كعلاج رسمي للإقلاع من منظمة الصحة</div><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> أدلة الفعالية غير كافية والمخاطر المحتملة قائمة</div><div class="key-point-item rtl"><span class="key-point-bullet">✓</span> الامتناع الآمن عن التوصية بها</div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-note">
+        <strong>ملاحظة سريرية هامة:</strong> جميع الإجابات الواردة في هذا الدليل مستخلصة ومقيدة بنسبة 100% بنصوص وتوصيات منظمة الصحة العالمية (WHO 2024) الخاصة بالعلاج السريري للإقلاع عن التبغ لدى البالغين. تم توليد وتنسيق هذا المستند عبر نظام أوكسجين للذكاء الاصطناعي الطبي.
+    </div>
+
+</body>
+</html>

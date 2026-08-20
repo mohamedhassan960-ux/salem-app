@@ -1,0 +1,36 @@
+[
+  {
+    "id": "eval_04",
+    "type": "CORRECTION",
+    "reason": "Removed unsupported '1.3 million second-hand smoke deaths' metric. Replaced with corpus-confirmed '1.25 billion tobacco users' and '8 million deaths/year'. Both confirmed in chunk_node_L2_background, page 15.",
+    "fields_changed": [
+      "question",
+      "expected_answer",
+      "required_claims",
+      "required_metrics"
+    ]
+  },
+  {
+    "id": "eval_25",
+    "type": "CORRECTION",
+    "reason": "Removed seizure contraindication claim (absent from all 171 indexed chunks). Replaced with corpus-confirmed bupropion SAE profile from chunk_sec_3_3_3_6_p01 (p.37) and chunk_node_L4_bupropion (p.67). All new required_metrics verified exact-match.",
+    "fields_changed": [
+      "question",
+      "expected_answer",
+      "required_claims",
+      "required_metrics",
+      "source_section",
+      "source_page"
+    ]
+  },
+  {
+    "id": "eval_10",
+    "type": "ANNOTATION_UPDATE",
+    "reason": "Source annotation updated from '3.1.1' to '3.1.1 / 3.1.3'. Quitlines confirmed in 3.1.1; 'proactive' counselling term confirmed in chunk_sec_3_1_3_p06. Expected_answer refined to correctly cite both sections. Content validity confirmed — no ground truth error.",
+    "fields_changed": [
+      "source_section",
+      "expected_answer",
+      "required_claims"
+    ]
+  }
+]

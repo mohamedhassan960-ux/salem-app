@@ -1,0 +1,857 @@
+{
+  "audit_timestamp": "2026-08-17",
+  "document_id": "who_tobacco_cessation_2024",
+  "source_file": "data/who_extracted.txt",
+  "chunks_file": "outputs/semantic_chunks.json",
+  "verdict": "FAIL — REQUIRES FULL VERBATIM INGESTION",
+  "raw_textual_coverage_percentage": 23.0,
+  "clinical_knowledge_coverage_percentage": 70.4,
+  "total_source_words": 28137,
+  "total_chunk_words": 6472,
+  "total_structural_blocks": 52,
+  "block_status_counts": {
+    "FULL": 21,
+    "PARTIAL": 27,
+    "MISSING": 1,
+    "INTENTIONALLY_EXCLUDED": 3
+  },
+  "canonical_recommendations_verified": 12,
+  "canonical_recommendations_integrity": "100% COMPLETE & VERIFIED",
+  "glossary_terms_verified": 27,
+  "glossary_integrity": "100% COMPLETE & VERIFIED",
+  "block_audit_details": [
+    {
+      "block_id": "FM_01_COVER_COPYRIGHT",
+      "section": "Front Matter: Cover & Copyright",
+      "physical_pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "block_type": "narrative_background",
+      "clinical_relevance": "Administrative",
+      "status": "FULL",
+      "severity": "NONE",
+      "source_words": 564,
+      "chunk_words": 616,
+      "word_coverage_ratio": 109.2,
+      "notes": "Preserved in full."
+    },
+    {
+      "block_id": "FM_02_TOC",
+      "section": "Front Matter: Table of Contents",
+      "physical_pages": [
+        5,
+        6
+      ],
+      "block_type": "structured_table",
+      "clinical_relevance": "Structural",
+      "status": "FULL",
+      "severity": "NONE",
+      "source_words": 437,
+      "chunk_words": 597,
+      "word_coverage_ratio": 136.6,
+      "notes": "Preserved in full."
+    },
+    {
+      "block_id": "FM_03_ACK",
+      "section": "Front Matter: Acknowledgements",
+      "physical_pages": [
+        7
+      ],
+      "block_type": "narrative_background",
+      "clinical_relevance": "Administrative",
+      "status": "FULL",
+      "severity": "NONE",
+      "source_words": 460,
+      "chunk_words": 494,
+      "word_coverage_ratio": 107.4,
+      "notes": "Preserved in full."
+    },
+    {
+      "block_id": "FM_04_BLANK_P8",
+      "section": "Front Matter: Blank Page 8",
+      "physical_pages": [
+        8
+      ],
+      "block_type": "blank_page",
+      "clinical_relevance": "None",
+      "status": "INTENTIONALLY_EXCLUDED",
+      "severity": "NONE",
+      "source_words": 0,
+      "chunk_words": 0,
+      "word_coverage_ratio": 0.0,
+      "notes": "Blank page in original PDF layout."
+    },
+    {
+      "block_id": "FM_05_ABBR",
+      "section": "Front Matter: Abbreviations and acronyms",
+      "physical_pages": [
+        9
+      ],
+      "block_type": "structured_table",
+      "clinical_relevance": "Terminology",
+      "status": "FULL",
+      "severity": "NONE",
+      "source_words": 147,
+      "chunk_words": 221,
+      "word_coverage_ratio": 150.3,
+      "notes": "Preserved in full."
+    },
+    {
+      "block_id": "FM_06_BLANK_P10",
+      "section": "Front Matter: Blank Page 10",
+      "physical_pages": [
+        10
+      ],
+      "block_type": "blank_page",
+      "clinical_relevance": "None",
+      "status": "INTENTIONALLY_EXCLUDED",
+      "severity": "NONE",
+      "source_words": 0,
+      "chunk_words": 0,
+      "word_coverage_ratio": 0.0,
+      "notes": "Blank page in original PDF layout."
+    },
+    {
+      "block_id": "FM_07_GLOSSARY",
+      "section": "Front Matter: Glossary of terms (27 terms)",
+      "physical_pages": [
+        11,
+        12,
+        13
+      ],
+      "block_type": "glossary_definition",
+      "clinical_relevance": "Core Definitions",
+      "status": "FULL",
+      "severity": "NONE",
+      "source_words": 1238,
+      "chunk_words": 1308,
+      "word_coverage_ratio": 105.7,
+      "notes": "All 27 terms and definitions extracted verbatim."
+    },
+    {
+      "block_id": "FM_08_BLANK_P14",
+      "section": "Front Matter: Blank Page 14",
+      "physical_pages": [
+        14
+      ],
+      "block_type": "blank_page",
+      "clinical_relevance": "None",
+      "status": "INTENTIONALLY_EXCLUDED",
+      "severity": "NONE",
+      "source_words": 0,
+      "chunk_words": 0,
+      "word_coverage_ratio": 0.0,
+      "notes": "Blank page in original PDF layout."
+    },
+    {
+      "block_id": "FM_09_EXEC_SUMMARY",
+      "section": "Front Matter: Executive summary",
+      "physical_pages": [
+        15,
+        16,
+        17,
+        18
+      ],
+      "block_type": "narrative_background",
+      "clinical_relevance": "Executive Overview",
+      "status": "PARTIAL",
+      "severity": "MEDIUM",
+      "source_words": 1273,
+      "chunk_words": 377,
+      "word_coverage_ratio": 29.6,
+      "notes": "Summary recs list preserved; full background paragraphs abridged."
+    },
+    {
+      "block_id": "SEC_1_1_EXISTING_GUIDELINES",
+      "section": "1.1 Existing WHO guidelines",
+      "physical_pages": [
+        19,
+        20
+      ],
+      "block_type": "narrative_background",
+      "clinical_relevance": "Policy Context",
+      "status": "PARTIAL",
+      "severity": "MEDIUM",
+      "source_words": 1258,
+      "chunk_words": 100,
+      "word_coverage_ratio": 7.9,
+      "notes": "Background text summarized into concise paragraph."
+    },
+    {
+      "block_id": "SEC_1_2_RATIONALE_OBJECTIVES",
+      "section": "1.2 Rationale and objectives",
+      "physical_pages": [
+        20,
+        21
+      ],
+      "block_type": "narrative_background",
+      "clinical_relevance": "Clinical Objectives",
+      "status": "PARTIAL",
+      "severity": "MEDIUM",
+      "source_words": 703,
+      "chunk_words": 105,
+      "word_coverage_ratio": 14.9,
+      "notes": "Objectives summarized into concise paragraph."
+    },
+    {
+      "block_id": "SEC_1_3_TARGET_AUDIENCE",
+      "section": "1.3 Target audience",
+      "physical_pages": [
+        21,
+        22
+      ],
+      "block_type": "narrative_background",
+      "clinical_relevance": "Target Stakeholders",
+      "status": "PARTIAL",
+      "severity": "MEDIUM",
+      "source_words": 149,
+      "chunk_words": 66,
+      "word_coverage_ratio": 44.3,
+      "notes": "Audience text summarized into concise paragraph."
+    },
+    {
+      "block_id": "SEC_2_1_SCOPE_QUESTIONS",
+      "section": "2.1 Scope of the guideline and questions of interest",
+      "physical_pages": [
+        23,
+        24
+      ],
+      "block_type": "narrative_background",
+      "clinical_relevance": "Methodological Criteria",
+      "status": "PARTIAL",
+      "severity": "MEDIUM",
+      "source_words": 1150,
+      "chunk_words": 52,
+      "word_coverage_ratio": 4.5,
+      "notes": "PICO framework summarized."
+    },
+    {
+      "block_id": "SEC_2_2_EVIDENCE_REVIEWS",
+      "section": "2.2 Evidence reviews",
+      "physical_pages": [
+        24,
+        25
+      ],
+      "block_type": "narrative_background",
+      "clinical_relevance": "Evidence Base",
+      "status": "PARTIAL",
+      "severity": "MEDIUM",
+      "source_words": 1058,
+      "chunk_words": 52,
+      "word_coverage_ratio": 4.9,
+      "notes": "Review methodology summarized."
+    },
+    {
+      "block_id": "SEC_2_3_ASSESSMENT_GRADING",
+      "section": "2.3 Assessment of evidence & Table 1",
+      "physical_pages": [
+        26
+      ],
+      "block_type": "structured_table",
+      "clinical_relevance": "GRADE Certainty Criteria",
+      "status": "FULL",
+      "severity": "NONE",
+      "source_words": 640,
+      "chunk_words": 189,
+      "word_coverage_ratio": 29.5,
+      "notes": "Table 1 GRADE criteria preserved in full Markdown."
+    },
+    {
+      "block_id": "SEC_2_4_EVIDENCE_TO_RECS",
+      "section": "2.4 Going from evidence to recommendations & Table 2",
+      "physical_pages": [
+        26,
+        27,
+        28
+      ],
+      "block_type": "structured_table",
+      "clinical_relevance": "Strength of Recommendation Criteria",
+      "status": "FULL",
+      "severity": "NONE",
+      "source_words": 852,
+      "chunk_words": 344,
+      "word_coverage_ratio": 40.4,
+      "notes": "Table 2 Strength implications preserved in full Markdown."
+    },
+    {
+      "block_id": "SEC_3_1_1_RECS_1_2",
+      "section": "3.1.1 Recommendations (Rec 1 & Rec 2)",
+      "physical_pages": [
+        29
+      ],
+      "block_type": "recommendation",
+      "clinical_relevance": "Core Recommendation",
+      "status": "FULL",
+      "severity": "NONE",
+      "source_words": 502,
+      "chunk_words": 196,
+      "word_coverage_ratio": 39.0,
+      "notes": "Verbatim text, strength, evidence certainty, and provenance verified 100%."
+    },
+    {
+      "block_id": "SEC_3_1_2_QUESTIONS",
+      "section": "3.1.2 Overall questions",
+      "physical_pages": [
+        29
+      ],
+      "block_type": "clinical_question",
+      "clinical_relevance": "PICO Clinical Question",
+      "status": "FULL",
+      "severity": "NONE",
+      "source_words": 502,
+      "chunk_words": 196,
+      "word_coverage_ratio": 39.0,
+      "notes": "Clinical questions preserved."
+    },
+    {
+      "block_id": "SEC_3_1_3_EVIDENCE",
+      "section": "3.1.3 Justification and evidence (Behavioural)",
+      "physical_pages": [
+        29,
+        30,
+        31
+      ],
+      "block_type": "evidence_justification",
+      "clinical_relevance": "Core Clinical Evidence",
+      "status": "PARTIAL",
+      "severity": "HIGH",
+      "source_words": 1684,
+      "chunk_words": 283,
+      "word_coverage_ratio": 16.8,
+      "notes": "Primary pooled effect sizes preserved, but extended subgroup trial narratives omitted."
+    },
+    {
+      "block_id": "SEC_3_1_4_IMPLEMENTATION",
+      "section": "3.1.4 Implementation considerations (Behavioural)",
+      "physical_pages": [
+        31,
+        32
+      ],
+      "block_type": "implementation_guidance",
+      "clinical_relevance": "Clinical Implementation",
+      "status": "PARTIAL",
+      "severity": "HIGH",
+      "source_words": 1081,
+      "chunk_words": 328,
+      "word_coverage_ratio": 30.3,
+      "notes": "Core bullet points preserved, but full narrative paragraphs abridged."
+    },
+    {
+      "block_id": "SEC_3_2_1_REC_3",
+      "section": "3.2.1 Recommendation (Rec 3: Digital)",
+      "physical_pages": [
+        32
+      ],
+      "block_type": "recommendation",
+      "clinical_relevance": "Core Recommendation",
+      "status": "FULL",
+      "severity": "NONE",
+      "source_words": 543,
+      "chunk_words": 236,
+      "word_coverage_ratio": 43.5,
+      "notes": "Verbatim text, strength, evidence certainty verified 100%."
+    },
+    {
+      "block_id": "SEC_3_2_2_QUESTIONS",
+      "section": "3.2.2 Overall questions",
+      "physical_pages": [
+        32
+      ],
+      "block_type": "clinical_question",
+      "clinical_relevance": "PICO Clinical Question",
+      "status": "FULL",
+      "severity": "NONE",
+      "source_words": 543,
+      "chunk_words": 236,
+      "word_coverage_ratio": 43.5,
+      "notes": "Clinical questions preserved."
+    },
+    {
+      "block_id": "SEC_3_2_3_EVIDENCE",
+      "section": "3.2.3 Justification and evidence (Digital)",
+      "physical_pages": [
+        32,
+        33,
+        34
+      ],
+      "block_type": "evidence_justification",
+      "clinical_relevance": "Core Clinical Evidence",
+      "status": "PARTIAL",
+      "severity": "HIGH",
+      "source_words": 1627,
+      "chunk_words": 297,
+      "word_coverage_ratio": 18.3,
+      "notes": "Main trial stats preserved, but full Cochrane study details omitted."
+    },
+    {
+      "block_id": "SEC_3_2_4_IMPLEMENTATION",
+      "section": "3.2.4 Implementation considerations (Digital)",
+      "physical_pages": [
+        34
+      ],
+      "block_type": "implementation_guidance",
+      "clinical_relevance": "Clinical Implementation",
+      "status": "PARTIAL",
+      "severity": "HIGH",
+      "source_words": 488,
+      "chunk_words": 135,
+      "word_coverage_ratio": 27.7,
+      "notes": "Core bullet points preserved, full text abridged."
+    },
+    {
+      "block_id": "SEC_3_3_1_RECS_4_5",
+      "section": "3.3.1 Recommendations (Rec 4 & Rec 5: Pharmacotherapy)",
+      "physical_pages": [
+        35
+      ],
+      "block_type": "recommendation",
+      "clinical_relevance": "Core Recommendation",
+      "status": "FULL",
+      "severity": "NONE",
+      "source_words": 570,
+      "chunk_words": 167,
+      "word_coverage_ratio": 29.3,
+      "notes": "Verbatim text, strength, certainty for all 4 drugs and combinations verified 100%."
+    },
+    {
+      "block_id": "SEC_3_3_2_QUESTIONS",
+      "section": "3.3.2 Overall questions",
+      "physical_pages": [
+        35
+      ],
+      "block_type": "clinical_question",
+      "clinical_relevance": "PICO Clinical Question",
+      "status": "FULL",
+      "severity": "NONE",
+      "source_words": 570,
+      "chunk_words": 167,
+      "word_coverage_ratio": 29.3,
+      "notes": "Clinical questions preserved."
+    },
+    {
+      "block_id": "SEC_3_3_3_EVIDENCE_PHARMA",
+      "section": "3.3.3 Justification and evidence (Pharmacotherapy 3.3.3.1-3.3.3.6)",
+      "physical_pages": [
+        35,
+        36,
+        37,
+        38
+      ],
+      "block_type": "evidence_justification",
+      "clinical_relevance": "Core Clinical Evidence",
+      "status": "PARTIAL",
+      "severity": "HIGH",
+      "source_words": 2559,
+      "chunk_words": 369,
+      "word_coverage_ratio": 14.4,
+      "notes": "Drug-by-drug pooled RRs preserved, but extended trial analyses and dosage comparisons (Patch 21mg vs 14mg) omitted."
+    },
+    {
+      "block_id": "SEC_3_3_4_IMPLEMENTATION",
+      "section": "3.3.4 Implementation consideration (Pharmacotherapy)",
+      "physical_pages": [
+        39
+      ],
+      "block_type": "implementation_guidance",
+      "clinical_relevance": "Clinical Implementation",
+      "status": "PARTIAL",
+      "severity": "HIGH",
+      "source_words": 556,
+      "chunk_words": 84,
+      "word_coverage_ratio": 15.1,
+      "notes": "Core bullet points preserved, full clinical considerations text abridged."
+    },
+    {
+      "block_id": "SEC_3_4_1_RECS_6_7",
+      "section": "3.4.1 Recommendations (Rec 6 & Rec 7: Smokeless)",
+      "physical_pages": [
+        40
+      ],
+      "block_type": "recommendation",
+      "clinical_relevance": "Core Recommendation",
+      "status": "FULL",
+      "severity": "NONE",
+      "source_words": 490,
+      "chunk_words": 124,
+      "word_coverage_ratio": 25.3,
+      "notes": "Verbatim text and metadata verified 100%."
+    },
+    {
+      "block_id": "SEC_3_4_2_QUESTIONS",
+      "section": "3.4.2 Overall questions",
+      "physical_pages": [
+        40
+      ],
+      "block_type": "clinical_question",
+      "clinical_relevance": "PICO Clinical Question",
+      "status": "FULL",
+      "severity": "NONE",
+      "source_words": 490,
+      "chunk_words": 124,
+      "word_coverage_ratio": 25.3,
+      "notes": "Clinical questions preserved."
+    },
+    {
+      "block_id": "SEC_3_4_3_EVIDENCE",
+      "section": "3.4.3 Justification and evidence (Smokeless)",
+      "physical_pages": [
+        40,
+        41
+      ],
+      "block_type": "evidence_justification",
+      "clinical_relevance": "Core Clinical Evidence",
+      "status": "PARTIAL",
+      "severity": "HIGH",
+      "source_words": 957,
+      "chunk_words": 250,
+      "word_coverage_ratio": 26.1,
+      "notes": "Main trial stats preserved, extended discussion omitted."
+    },
+    {
+      "block_id": "SEC_3_4_4_IMPLEMENTATION",
+      "section": "3.4.4 Implementation considerations (Smokeless)",
+      "physical_pages": [
+        41
+      ],
+      "block_type": "implementation_guidance",
+      "clinical_relevance": "Clinical Implementation",
+      "status": "PARTIAL",
+      "severity": "HIGH",
+      "source_words": 467,
+      "chunk_words": 177,
+      "word_coverage_ratio": 37.9,
+      "notes": "Core bullets preserved, extended discussion abridged."
+    },
+    {
+      "block_id": "SEC_3_5_1_REC_8",
+      "section": "3.5.1 Recommendation (Rec 8: Combined)",
+      "physical_pages": [
+        41
+      ],
+      "block_type": "recommendation",
+      "clinical_relevance": "Core Recommendation",
+      "status": "FULL",
+      "severity": "NONE",
+      "source_words": 467,
+      "chunk_words": 177,
+      "word_coverage_ratio": 37.9,
+      "notes": "Verbatim text and metadata verified 100%."
+    },
+    {
+      "block_id": "SEC_3_5_2_QUESTIONS",
+      "section": "3.5.2 Overall questions",
+      "physical_pages": [
+        41
+      ],
+      "block_type": "clinical_question",
+      "clinical_relevance": "PICO Clinical Question",
+      "status": "FULL",
+      "severity": "NONE",
+      "source_words": 467,
+      "chunk_words": 177,
+      "word_coverage_ratio": 37.9,
+      "notes": "Clinical questions preserved."
+    },
+    {
+      "block_id": "SEC_3_5_3_EVIDENCE",
+      "section": "3.5.3 Justification and evidence (Combined)",
+      "physical_pages": [
+        41,
+        42
+      ],
+      "block_type": "evidence_justification",
+      "clinical_relevance": "Core Clinical Evidence",
+      "status": "PARTIAL",
+      "severity": "HIGH",
+      "source_words": 890,
+      "chunk_words": 207,
+      "word_coverage_ratio": 23.3,
+      "notes": "Cochrane pooled RR preserved, detailed setting analysis abridged."
+    },
+    {
+      "block_id": "SEC_3_5_4_IMPLEMENTATION",
+      "section": "3.5.4 Implementation considerations (Combined)",
+      "physical_pages": [
+        42
+      ],
+      "block_type": "implementation_guidance",
+      "clinical_relevance": "Clinical Implementation",
+      "status": "PARTIAL",
+      "severity": "HIGH",
+      "source_words": 423,
+      "chunk_words": 79,
+      "word_coverage_ratio": 18.7,
+      "notes": "Core bullets preserved, full text abridged."
+    },
+    {
+      "block_id": "SEC_3_6_1_REC_9",
+      "section": "3.6.1 Statement (Rec 9 / Statement: Alternative)",
+      "physical_pages": [
+        43
+      ],
+      "block_type": "recommendation",
+      "clinical_relevance": "Core Recommendation",
+      "status": "FULL",
+      "severity": "NONE",
+      "source_words": 489,
+      "chunk_words": 109,
+      "word_coverage_ratio": 22.3,
+      "notes": "Verbatim text and metadata verified 100%."
+    },
+    {
+      "block_id": "SEC_3_6_2_QUESTIONS",
+      "section": "3.6.2 Overall questions",
+      "physical_pages": [
+        43
+      ],
+      "block_type": "clinical_question",
+      "clinical_relevance": "PICO Clinical Question",
+      "status": "FULL",
+      "severity": "NONE",
+      "source_words": 489,
+      "chunk_words": 109,
+      "word_coverage_ratio": 22.3,
+      "notes": "Clinical questions preserved."
+    },
+    {
+      "block_id": "SEC_3_6_3_EVIDENCE",
+      "section": "3.6.3 Justification and evidence (Alternative)",
+      "physical_pages": [
+        43,
+        44
+      ],
+      "block_type": "evidence_justification",
+      "clinical_relevance": "Core Clinical Evidence",
+      "status": "PARTIAL",
+      "severity": "HIGH",
+      "source_words": 1006,
+      "chunk_words": 282,
+      "word_coverage_ratio": 28.0,
+      "notes": "Summary of review conclusions preserved, specific therapy reviews abridged."
+    },
+    {
+      "block_id": "SEC_3_6_4_IMPLEMENTATION",
+      "section": "3.6.4 Implementation considerations (Alternative)",
+      "physical_pages": [
+        43,
+        44
+      ],
+      "block_type": "implementation_guidance",
+      "clinical_relevance": "Clinical Implementation",
+      "status": "PARTIAL",
+      "severity": "HIGH",
+      "source_words": 1006,
+      "chunk_words": 282,
+      "word_coverage_ratio": 28.0,
+      "notes": "Core guidance preserved, full text abridged."
+    },
+    {
+      "block_id": "SEC_3_7_1_RECS_10_11_12",
+      "section": "3.7.1 Recommendations (Rec 10, 11, 12: System-level)",
+      "physical_pages": [
+        44
+      ],
+      "block_type": "recommendation",
+      "clinical_relevance": "Core Recommendation",
+      "status": "FULL",
+      "severity": "NONE",
+      "source_words": 517,
+      "chunk_words": 201,
+      "word_coverage_ratio": 38.9,
+      "notes": "Verbatim text and metadata verified 100%."
+    },
+    {
+      "block_id": "SEC_3_7_2_QUESTIONS",
+      "section": "3.7.2 Overall questions",
+      "physical_pages": [
+        44
+      ],
+      "block_type": "clinical_question",
+      "clinical_relevance": "PICO Clinical Question",
+      "status": "FULL",
+      "severity": "NONE",
+      "source_words": 517,
+      "chunk_words": 201,
+      "word_coverage_ratio": 38.9,
+      "notes": "Clinical questions preserved."
+    },
+    {
+      "block_id": "SEC_3_7_3_EVIDENCE",
+      "section": "3.7.3 Justification and evidence (System-level)",
+      "physical_pages": [
+        44,
+        45,
+        46
+      ],
+      "block_type": "evidence_justification",
+      "clinical_relevance": "Core Clinical Evidence",
+      "status": "PARTIAL",
+      "severity": "HIGH",
+      "source_words": 1713,
+      "chunk_words": 269,
+      "word_coverage_ratio": 15.7,
+      "notes": "Main OR stats preserved, but extensive Cochrane system reviews abridged."
+    },
+    {
+      "block_id": "SEC_3_7_4_IMPLEMENTATION",
+      "section": "3.7.4 Implementation considerations (3.7.4.1-3.7.4.3)",
+      "physical_pages": [
+        46,
+        47
+      ],
+      "block_type": "implementation_guidance",
+      "clinical_relevance": "Clinical Implementation",
+      "status": "PARTIAL",
+      "severity": "HIGH",
+      "source_words": 1102,
+      "chunk_words": 249,
+      "word_coverage_ratio": 22.6,
+      "notes": "Subsections isolated, but extended narrative guidance abridged."
+    },
+    {
+      "block_id": "SEC_3_8_OVERARCHING",
+      "section": "3.8 Overarching guideline implementation considerations",
+      "physical_pages": [
+        47,
+        48
+      ],
+      "block_type": "implementation_guidance",
+      "clinical_relevance": "Policy & Health System",
+      "status": "PARTIAL",
+      "severity": "HIGH",
+      "source_words": 981,
+      "chunk_words": 156,
+      "word_coverage_ratio": 15.9,
+      "notes": "High-level bullet points preserved, full policy considerations text abridged."
+    },
+    {
+      "block_id": "SEC_4_EVIDENCE_TO_RECS",
+      "section": "4. Evidence to recommendations (4.1-4.5)",
+      "physical_pages": [
+        49,
+        50,
+        51
+      ],
+      "block_type": "narrative_background",
+      "clinical_relevance": "Evidence-to-Decision Criteria",
+      "status": "PARTIAL",
+      "severity": "MEDIUM",
+      "source_words": 1938,
+      "chunk_words": 154,
+      "word_coverage_ratio": 7.9,
+      "notes": "Core conclusions preserved, full EtD narrative text abridged."
+    },
+    {
+      "block_id": "SEC_5_RESEARCH_NEEDS",
+      "section": "5. Research needs",
+      "physical_pages": [
+        52,
+        53
+      ],
+      "block_type": "narrative_background",
+      "clinical_relevance": "Research Gaps",
+      "status": "PARTIAL",
+      "severity": "MEDIUM",
+      "source_words": 713,
+      "chunk_words": 76,
+      "word_coverage_ratio": 10.7,
+      "notes": "Bullet points preserved, full narrative abridged."
+    },
+    {
+      "block_id": "SEC_6_ADOPTION_DISSEMINATION",
+      "section": "6. Adoption, dissemination, implementation and evaluation",
+      "physical_pages": [
+        54
+      ],
+      "block_type": "narrative_background",
+      "clinical_relevance": "Dissemination Plan",
+      "status": "PARTIAL",
+      "severity": "MEDIUM",
+      "source_words": 452,
+      "chunk_words": 41,
+      "word_coverage_ratio": 9.1,
+      "notes": "Abridged to single summary paragraph."
+    },
+    {
+      "block_id": "SEC_REFERENCES",
+      "section": "References (Main Guidelines)",
+      "physical_pages": [
+        55,
+        56,
+        57,
+        58,
+        59
+      ],
+      "block_type": "references",
+      "clinical_relevance": "Bibliographic Citations",
+      "status": "MISSING",
+      "severity": "MEDIUM",
+      "source_words": 1576,
+      "chunk_words": 20,
+      "word_coverage_ratio": 1.3,
+      "notes": "5 pages of individual citations represented in 1 sentence."
+    },
+    {
+      "block_id": "ANNEX_1_MANAGEMENT",
+      "section": "Annex 1: Management of guideline development process",
+      "physical_pages": [
+        60,
+        61,
+        62,
+        63,
+        64
+      ],
+      "block_type": "structured_table",
+      "clinical_relevance": "Methodology & Transparency",
+      "status": "PARTIAL",
+      "severity": "LOW",
+      "source_words": 1783,
+      "chunk_words": 32,
+      "word_coverage_ratio": 1.8,
+      "notes": "Summary paragraph preserved; full member tables not extracted row-by-row."
+    },
+    {
+      "block_id": "ANNEX_2_IMPLEMENTATION_INFO",
+      "section": "Annex 2: Additional information for implementing recommendations",
+      "physical_pages": [
+        65,
+        66,
+        67,
+        68,
+        69
+      ],
+      "block_type": "implementation_guidance",
+      "clinical_relevance": "Detailed Clinical Implementation",
+      "status": "PARTIAL",
+      "severity": "HIGH",
+      "source_words": 2207,
+      "chunk_words": 272,
+      "word_coverage_ratio": 12.3,
+      "notes": "Subsections isolated, but 5 pages of detailed operational text abridged into 5 brief chunks."
+    },
+    {
+      "block_id": "ANNEX_3_DOI",
+      "section": "Annex 3: Summary of declarations of interest",
+      "physical_pages": [
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76
+      ],
+      "block_type": "structured_table",
+      "clinical_relevance": "Transparency & COI",
+      "status": "PARTIAL",
+      "severity": "LOW",
+      "source_words": 541,
+      "chunk_words": 35,
+      "word_coverage_ratio": 6.5,
+      "notes": "Summary paragraph preserved; full tables not extracted row-by-row."
+    }
+  ]
+}

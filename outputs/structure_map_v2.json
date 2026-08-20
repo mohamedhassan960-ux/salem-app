@@ -1,0 +1,2155 @@
+{
+  "schema_version": "2.0",
+  "document": {
+    "document_id": "who_tobacco_cessation_2024",
+    "title": "WHO clinical treatment guideline for tobacco cessation in adults",
+    "document_type": "clinical_guideline",
+    "publisher": "World Health Organization",
+    "publication_year": 2024,
+    "language": "en"
+  },
+  "source": {
+    "file_type": "pdf",
+    "file_name": "الاقلاع عن التدخبن.pdf",
+    "total_physical_pages": 76,
+    "page_offset_rule": "Physical Page = Printed Page + 18 (for main body from physical page 19 to 76)"
+  },
+  "nodes": [
+    {
+      "node_id": "node_L1_acknowledgements",
+      "parent_id": "root",
+      "level": 1,
+      "section_number": null,
+      "title": "Acknowledgements",
+      "physical_page_start": 7,
+      "physical_page_end": 9,
+      "printed_page_start": null,
+      "printed_page_end": null,
+      "content_type": "narrative",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*Acknowledgements",
+        "end_heading_pattern": "^\\s*Abbreviations\\ and\\ acronyms"
+      }
+    },
+    {
+      "node_id": "node_L1_abbreviations_and_acronym",
+      "parent_id": "root",
+      "level": 1,
+      "section_number": null,
+      "title": "Abbreviations and acronyms",
+      "physical_page_start": 9,
+      "physical_page_end": 11,
+      "printed_page_start": null,
+      "printed_page_end": null,
+      "content_type": "narrative",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*Abbreviations\\ and\\ acronyms",
+        "end_heading_pattern": "^\\s*Glossary\\ of\\ terms"
+      }
+    },
+    {
+      "node_id": "node_L1_glossary_of_terms",
+      "parent_id": "root",
+      "level": 1,
+      "section_number": null,
+      "title": "Glossary of terms",
+      "physical_page_start": 11,
+      "physical_page_end": 15,
+      "printed_page_start": null,
+      "printed_page_end": null,
+      "content_type": "glossary",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*Glossary\\ of\\ terms",
+        "end_heading_pattern": "^\\s*Executive\\ summary"
+      }
+    },
+    {
+      "node_id": "node_L1_executive_summary",
+      "parent_id": "root",
+      "level": 1,
+      "section_number": null,
+      "title": "Executive summary",
+      "physical_page_start": 15,
+      "physical_page_end": 19,
+      "printed_page_start": null,
+      "printed_page_end": 1,
+      "content_type": "narrative",
+      "boundary_confidence": "high",
+      "children": [
+        "node_L2_background",
+        "node_L2_rationale_and_objectives",
+        "node_L2_guideline_development_pro",
+        "node_L2_target_audience",
+        "node_L2_summary_of_recommendation"
+      ],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*Executive\\ summary",
+        "end_heading_pattern": "^\\s*1\\.\\ Introduction"
+      }
+    },
+    {
+      "node_id": "node_L2_background",
+      "parent_id": "node_L1_executive_summary",
+      "level": 2,
+      "section_number": null,
+      "title": "Background",
+      "physical_page_start": 15,
+      "physical_page_end": 15,
+      "printed_page_start": null,
+      "printed_page_end": null,
+      "content_type": "narrative",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*Background",
+        "end_heading_pattern": "^\\s*Rationale\\ and\\ objectives"
+      }
+    },
+    {
+      "node_id": "node_L2_rationale_and_objectives",
+      "parent_id": "node_L1_executive_summary",
+      "level": 2,
+      "section_number": null,
+      "title": "Rationale and objectives",
+      "physical_page_start": 15,
+      "physical_page_end": 15,
+      "printed_page_start": null,
+      "printed_page_end": null,
+      "content_type": "narrative",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*Rationale\\ and\\ objectives",
+        "end_heading_pattern": "^\\s*Guideline\\ development\\ process\\ and\\ m"
+      }
+    },
+    {
+      "node_id": "node_L2_guideline_development_pro",
+      "parent_id": "node_L1_executive_summary",
+      "level": 2,
+      "section_number": null,
+      "title": "Guideline development process and methods",
+      "physical_page_start": 15,
+      "physical_page_end": 15,
+      "printed_page_start": null,
+      "printed_page_end": null,
+      "content_type": "methods",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*Guideline\\ development\\ process\\ and\\ m",
+        "end_heading_pattern": "^\\s*Target\\ audience"
+      }
+    },
+    {
+      "node_id": "node_L2_target_audience",
+      "parent_id": "node_L1_executive_summary",
+      "level": 2,
+      "section_number": null,
+      "title": "Target audience",
+      "physical_page_start": 15,
+      "physical_page_end": 16,
+      "printed_page_start": null,
+      "printed_page_end": null,
+      "content_type": "narrative",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*Target\\ audience",
+        "end_heading_pattern": "^\\s*Summary\\ of\\ recommendations"
+      }
+    },
+    {
+      "node_id": "node_L2_summary_of_recommendation",
+      "parent_id": "node_L1_executive_summary",
+      "level": 2,
+      "section_number": null,
+      "title": "Summary of recommendations",
+      "physical_page_start": 16,
+      "physical_page_end": 19,
+      "printed_page_start": null,
+      "printed_page_end": 1,
+      "content_type": "recommendation",
+      "boundary_confidence": "high",
+      "children": [
+        "node_L3_behavioural_support_deliv",
+        "node_L3_digital_tobacco_cessation",
+        "node_L3_pharmacological_intervent",
+        "node_L3_interventions_for_smokele",
+        "node_L3_combination_of_behavioura",
+        "node_L3_traditional_complementary",
+        "node_L3_system_level_intervention"
+      ],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*Summary\\ of\\ recommendations",
+        "end_heading_pattern": "^\\s*1\\.\\ Introduction"
+      }
+    },
+    {
+      "node_id": "node_L3_behavioural_support_deliv",
+      "parent_id": "node_L2_summary_of_recommendation",
+      "level": 3,
+      "section_number": null,
+      "title": "Behavioural support delivered in both clinical and community settings",
+      "physical_page_start": 17,
+      "physical_page_end": 17,
+      "printed_page_start": null,
+      "printed_page_end": null,
+      "content_type": "unknown",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*Behavioural\\ support\\ delivered\\ in\\ bo",
+        "end_heading_pattern": "^\\s*Digital\\ tobacco\\ cessation\\ intervent"
+      }
+    },
+    {
+      "node_id": "node_L3_digital_tobacco_cessation",
+      "parent_id": "node_L2_summary_of_recommendation",
+      "level": 3,
+      "section_number": null,
+      "title": "Digital tobacco cessation interventions",
+      "physical_page_start": 17,
+      "physical_page_end": 17,
+      "printed_page_start": null,
+      "printed_page_end": null,
+      "content_type": "unknown",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*Digital\\ tobacco\\ cessation\\ intervent",
+        "end_heading_pattern": "^\\s*Pharmacological\\ interventions\\ deliv"
+      }
+    },
+    {
+      "node_id": "node_L3_pharmacological_intervent",
+      "parent_id": "node_L2_summary_of_recommendation",
+      "level": 3,
+      "section_number": null,
+      "title": "Pharmacological interventions delivered in both clinical and community settings",
+      "physical_page_start": 17,
+      "physical_page_end": 18,
+      "printed_page_start": null,
+      "printed_page_end": null,
+      "content_type": "unknown",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*Pharmacological\\ interventions\\ deliv",
+        "end_heading_pattern": "^\\s*Interventions\\ for\\ smokeless\\ tobacco"
+      }
+    },
+    {
+      "node_id": "node_L3_interventions_for_smokele",
+      "parent_id": "node_L2_summary_of_recommendation",
+      "level": 3,
+      "section_number": null,
+      "title": "Interventions for smokeless tobacco use cessation",
+      "physical_page_start": 18,
+      "physical_page_end": 18,
+      "printed_page_start": null,
+      "printed_page_end": null,
+      "content_type": "unknown",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*Interventions\\ for\\ smokeless\\ tobacco",
+        "end_heading_pattern": "^\\s*Combination\\ of\\ behavioural\\ and\\ phar"
+      }
+    },
+    {
+      "node_id": "node_L3_combination_of_behavioura",
+      "parent_id": "node_L2_summary_of_recommendation",
+      "level": 3,
+      "section_number": null,
+      "title": "Combination of behavioural and pharmacological treatments",
+      "physical_page_start": 18,
+      "physical_page_end": 18,
+      "printed_page_start": null,
+      "printed_page_end": null,
+      "content_type": "unknown",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*Combination\\ of\\ behavioural\\ and\\ phar",
+        "end_heading_pattern": "^\\s*Traditional,\\ complementary\\ and\\ alte"
+      }
+    },
+    {
+      "node_id": "node_L3_traditional_complementary",
+      "parent_id": "node_L2_summary_of_recommendation",
+      "level": 3,
+      "section_number": null,
+      "title": "Traditional, complementary and alternative therapies",
+      "physical_page_start": 18,
+      "physical_page_end": 18,
+      "printed_page_start": null,
+      "printed_page_end": null,
+      "content_type": "unknown",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*Traditional,\\ complementary\\ and\\ alte",
+        "end_heading_pattern": "^\\s*System\\-level\\ interventions\\ and\\ poli"
+      }
+    },
+    {
+      "node_id": "node_L3_system_level_intervention",
+      "parent_id": "node_L2_summary_of_recommendation",
+      "level": 3,
+      "section_number": null,
+      "title": "System-level interventions and policies",
+      "physical_page_start": 18,
+      "physical_page_end": 19,
+      "printed_page_start": null,
+      "printed_page_end": 1,
+      "content_type": "unknown",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*System\\-level\\ interventions\\ and\\ poli",
+        "end_heading_pattern": "^\\s*1\\.\\ Introduction"
+      }
+    },
+    {
+      "node_id": "sec_1",
+      "parent_id": "root",
+      "level": 1,
+      "section_number": "1",
+      "title": "1. Introduction",
+      "physical_page_start": 19,
+      "physical_page_end": 23,
+      "printed_page_start": 1,
+      "printed_page_end": 5,
+      "content_type": "narrative",
+      "boundary_confidence": "high",
+      "children": [
+        "sec_1_1",
+        "sec_1_2",
+        "sec_1_3"
+      ],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*1\\.\\ Introduction",
+        "end_heading_pattern": "^\\s*2\\.\\ Methods"
+      }
+    },
+    {
+      "node_id": "sec_1_1",
+      "parent_id": "sec_1",
+      "level": 2,
+      "section_number": "1.1",
+      "title": "1.1. Existing WHO guidelines",
+      "physical_page_start": 19,
+      "physical_page_end": 20,
+      "printed_page_start": 1,
+      "printed_page_end": 2,
+      "content_type": "narrative",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*1\\.1\\.\\ Existing\\ WHO\\ guidelines",
+        "end_heading_pattern": "^\\s*1\\.2\\.\\ Rationale\\ and\\ objectives"
+      }
+    },
+    {
+      "node_id": "sec_1_2",
+      "parent_id": "sec_1",
+      "level": 2,
+      "section_number": "1.2",
+      "title": "1.2. Rationale and objectives",
+      "physical_page_start": 20,
+      "physical_page_end": 21,
+      "printed_page_start": 2,
+      "printed_page_end": 3,
+      "content_type": "narrative",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*1\\.2\\.\\ Rationale\\ and\\ objectives",
+        "end_heading_pattern": "^\\s*1\\.3\\.\\ Target\\ audience"
+      }
+    },
+    {
+      "node_id": "sec_1_3",
+      "parent_id": "sec_1",
+      "level": 2,
+      "section_number": "1.3",
+      "title": "1.3. Target audience",
+      "physical_page_start": 21,
+      "physical_page_end": 23,
+      "printed_page_start": 3,
+      "printed_page_end": 5,
+      "content_type": "narrative",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*1\\.3\\.\\ Target\\ audience",
+        "end_heading_pattern": "^\\s*2\\.\\ Methods"
+      }
+    },
+    {
+      "node_id": "sec_2",
+      "parent_id": "root",
+      "level": 1,
+      "section_number": "2",
+      "title": "2. Methods",
+      "physical_page_start": 23,
+      "physical_page_end": 29,
+      "printed_page_start": 5,
+      "printed_page_end": 11,
+      "content_type": "methods",
+      "boundary_confidence": "high",
+      "children": [
+        "sec_2_1",
+        "sec_2_2",
+        "sec_2_3",
+        "sec_2_4"
+      ],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*2\\.\\ Methods",
+        "end_heading_pattern": "^\\s*3\\.\\ Recommendations"
+      }
+    },
+    {
+      "node_id": "sec_2_1",
+      "parent_id": "sec_2",
+      "level": 2,
+      "section_number": "2.1",
+      "title": "2.1. Scope of the guideline and questions of interest",
+      "physical_page_start": 23,
+      "physical_page_end": 24,
+      "printed_page_start": 5,
+      "printed_page_end": 6,
+      "content_type": "methods",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*2\\.1\\.\\ Scope\\ of\\ the\\ guideline\\ and\\ que",
+        "end_heading_pattern": "^\\s*2\\.2\\.\\ Evidence\\ reviews"
+      }
+    },
+    {
+      "node_id": "sec_2_2",
+      "parent_id": "sec_2",
+      "level": 2,
+      "section_number": "2.2",
+      "title": "2.2. Evidence reviews",
+      "physical_page_start": 24,
+      "physical_page_end": 26,
+      "printed_page_start": 6,
+      "printed_page_end": 8,
+      "content_type": "evidence",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*2\\.2\\.\\ Evidence\\ reviews",
+        "end_heading_pattern": "^\\s*2\\.3\\.\\ Assessment\\ of\\ evidence\\ and\\ its"
+      }
+    },
+    {
+      "node_id": "sec_2_3",
+      "parent_id": "sec_2",
+      "level": 2,
+      "section_number": "2.3",
+      "title": "2.3. Assessment of evidence and its grading",
+      "physical_page_start": 26,
+      "physical_page_end": 26,
+      "printed_page_start": 8,
+      "printed_page_end": 8,
+      "content_type": "evidence",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*2\\.3\\.\\ Assessment\\ of\\ evidence\\ and\\ its",
+        "end_heading_pattern": "^\\s*2\\.4\\.\\ Going\\ from\\ evidence\\ to\\ recomme"
+      }
+    },
+    {
+      "node_id": "sec_2_4",
+      "parent_id": "sec_2",
+      "level": 2,
+      "section_number": "2.4",
+      "title": "2.4. Going from evidence to recommendations",
+      "physical_page_start": 26,
+      "physical_page_end": 29,
+      "printed_page_start": 8,
+      "printed_page_end": 11,
+      "content_type": "recommendation",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*2\\.4\\.\\ Going\\ from\\ evidence\\ to\\ recomme",
+        "end_heading_pattern": "^\\s*3\\.\\ Recommendations"
+      }
+    },
+    {
+      "node_id": "sec_3",
+      "parent_id": "root",
+      "level": 1,
+      "section_number": "3",
+      "title": "3. Recommendations",
+      "physical_page_start": 29,
+      "physical_page_end": 49,
+      "printed_page_start": 11,
+      "printed_page_end": 31,
+      "content_type": "recommendation",
+      "boundary_confidence": "high",
+      "children": [
+        "sec_3_1",
+        "sec_3_2",
+        "sec_3_3",
+        "sec_3_4",
+        "sec_3_5",
+        "sec_3_6",
+        "sec_3_7",
+        "sec_3_8"
+      ],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.\\ Recommendations",
+        "end_heading_pattern": "^\\s*4\\.\\ Evidence\\ to\\ recommendations"
+      }
+    },
+    {
+      "node_id": "sec_3_1",
+      "parent_id": "sec_3",
+      "level": 2,
+      "section_number": "3.1",
+      "title": "3.1. Behavioural support delivered in both clinical and community settings",
+      "physical_page_start": 29,
+      "physical_page_end": 32,
+      "printed_page_start": 11,
+      "printed_page_end": 14,
+      "content_type": "narrative",
+      "boundary_confidence": "high",
+      "children": [
+        "sec_3_1_1",
+        "sec_3_1_2",
+        "sec_3_1_3",
+        "sec_3_1_4"
+      ],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.1\\.\\ Behavioural\\ support\\ delivered\\ ",
+        "end_heading_pattern": "^\\s*3\\.2\\.\\ Digital\\ tobacco\\ cessation\\ inte"
+      }
+    },
+    {
+      "node_id": "sec_3_1_1",
+      "parent_id": "sec_3_1",
+      "level": 3,
+      "section_number": "3.1.1",
+      "title": "3.1.1. Recommendations",
+      "physical_page_start": 29,
+      "physical_page_end": 29,
+      "printed_page_start": 11,
+      "printed_page_end": 11,
+      "content_type": "recommendation",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.1\\.1\\.\\ Recommendations",
+        "end_heading_pattern": "^\\s*3\\.1\\.2\\.\\ Overall\\ questions"
+      }
+    },
+    {
+      "node_id": "sec_3_1_2",
+      "parent_id": "sec_3_1",
+      "level": 3,
+      "section_number": "3.1.2",
+      "title": "3.1.2. Overall questions",
+      "physical_page_start": 29,
+      "physical_page_end": 29,
+      "printed_page_start": 11,
+      "printed_page_end": 11,
+      "content_type": "methods",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.1\\.2\\.\\ Overall\\ questions",
+        "end_heading_pattern": "^\\s*3\\.1\\.3\\.\\ Justification\\ and\\ evidence"
+      }
+    },
+    {
+      "node_id": "sec_3_1_3",
+      "parent_id": "sec_3_1",
+      "level": 3,
+      "section_number": "3.1.3",
+      "title": "3.1.3. Justification and evidence",
+      "physical_page_start": 29,
+      "physical_page_end": 31,
+      "printed_page_start": 11,
+      "printed_page_end": 13,
+      "content_type": "evidence",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.1\\.3\\.\\ Justification\\ and\\ evidence",
+        "end_heading_pattern": "^\\s*3\\.1\\.4\\.\\ Implementation\\ consideration"
+      }
+    },
+    {
+      "node_id": "sec_3_1_4",
+      "parent_id": "sec_3_1",
+      "level": 3,
+      "section_number": "3.1.4",
+      "title": "3.1.4. Implementation considerations",
+      "physical_page_start": 31,
+      "physical_page_end": 32,
+      "printed_page_start": 13,
+      "printed_page_end": 14,
+      "content_type": "discussion",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.1\\.4\\.\\ Implementation\\ consideration",
+        "end_heading_pattern": "^\\s*3\\.2\\.\\ Digital\\ tobacco\\ cessation\\ inte"
+      }
+    },
+    {
+      "node_id": "sec_3_2",
+      "parent_id": "sec_3",
+      "level": 2,
+      "section_number": "3.2",
+      "title": "3.2. Digital tobacco cessation interventions",
+      "physical_page_start": 32,
+      "physical_page_end": 35,
+      "printed_page_start": 14,
+      "printed_page_end": 17,
+      "content_type": "narrative",
+      "boundary_confidence": "high",
+      "children": [
+        "sec_3_2_1",
+        "sec_3_2_2",
+        "sec_3_2_3",
+        "sec_3_2_4"
+      ],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.2\\.\\ Digital\\ tobacco\\ cessation\\ inte",
+        "end_heading_pattern": "^\\s*3\\.3\\.\\ Pharmacological\\ interventions\\ "
+      }
+    },
+    {
+      "node_id": "sec_3_2_1",
+      "parent_id": "sec_3_2",
+      "level": 3,
+      "section_number": "3.2.1",
+      "title": "3.2.1. Recommendation",
+      "physical_page_start": 32,
+      "physical_page_end": 32,
+      "printed_page_start": 14,
+      "printed_page_end": 14,
+      "content_type": "recommendation",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.2\\.1\\.\\ Recommendation",
+        "end_heading_pattern": "^\\s*3\\.2\\.2\\.\\ Overall\\ questions"
+      }
+    },
+    {
+      "node_id": "sec_3_2_2",
+      "parent_id": "sec_3_2",
+      "level": 3,
+      "section_number": "3.2.2",
+      "title": "3.2.2. Overall questions",
+      "physical_page_start": 32,
+      "physical_page_end": 32,
+      "printed_page_start": 14,
+      "printed_page_end": 14,
+      "content_type": "methods",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.2\\.2\\.\\ Overall\\ questions",
+        "end_heading_pattern": "^\\s*3\\.2\\.3\\.\\ Justification\\ and\\ evidence"
+      }
+    },
+    {
+      "node_id": "sec_3_2_3",
+      "parent_id": "sec_3_2",
+      "level": 3,
+      "section_number": "3.2.3",
+      "title": "3.2.3. Justification and evidence",
+      "physical_page_start": 32,
+      "physical_page_end": 34,
+      "printed_page_start": 14,
+      "printed_page_end": 16,
+      "content_type": "evidence",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.2\\.3\\.\\ Justification\\ and\\ evidence",
+        "end_heading_pattern": "^\\s*3\\.2\\.4\\.\\ Implementation\\ consideration"
+      }
+    },
+    {
+      "node_id": "sec_3_2_4",
+      "parent_id": "sec_3_2",
+      "level": 3,
+      "section_number": "3.2.4",
+      "title": "3.2.4. Implementation considerations",
+      "physical_page_start": 34,
+      "physical_page_end": 35,
+      "printed_page_start": 16,
+      "printed_page_end": 17,
+      "content_type": "discussion",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.2\\.4\\.\\ Implementation\\ consideration",
+        "end_heading_pattern": "^\\s*3\\.3\\.\\ Pharmacological\\ interventions\\ "
+      }
+    },
+    {
+      "node_id": "sec_3_3",
+      "parent_id": "sec_3",
+      "level": 2,
+      "section_number": "3.3",
+      "title": "3.3. Pharmacological interventions delivered in both clinical and community settings",
+      "physical_page_start": 35,
+      "physical_page_end": 40,
+      "printed_page_start": 17,
+      "printed_page_end": 22,
+      "content_type": "narrative",
+      "boundary_confidence": "high",
+      "children": [
+        "sec_3_3_1",
+        "sec_3_3_2",
+        "sec_3_3_3",
+        "sec_3_3_4"
+      ],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.3\\.\\ Pharmacological\\ interventions\\ ",
+        "end_heading_pattern": "^\\s*3\\.4\\.\\ Interventions\\ for\\ smokeless\\ to"
+      }
+    },
+    {
+      "node_id": "sec_3_3_1",
+      "parent_id": "sec_3_3",
+      "level": 3,
+      "section_number": "3.3.1",
+      "title": "3.3.1. Recommendations",
+      "physical_page_start": 35,
+      "physical_page_end": 35,
+      "printed_page_start": 17,
+      "printed_page_end": 17,
+      "content_type": "recommendation",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.3\\.1\\.\\ Recommendations",
+        "end_heading_pattern": "^\\s*3\\.3\\.2\\.\\ Overall\\ questions"
+      }
+    },
+    {
+      "node_id": "sec_3_3_2",
+      "parent_id": "sec_3_3",
+      "level": 3,
+      "section_number": "3.3.2",
+      "title": "3.3.2. Overall questions",
+      "physical_page_start": 35,
+      "physical_page_end": 35,
+      "printed_page_start": 17,
+      "printed_page_end": 17,
+      "content_type": "methods",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.3\\.2\\.\\ Overall\\ questions",
+        "end_heading_pattern": "^\\s*3\\.3\\.3\\.\\ Justification\\ and\\ evidence"
+      }
+    },
+    {
+      "node_id": "sec_3_3_3",
+      "parent_id": "sec_3_3",
+      "level": 3,
+      "section_number": "3.3.3",
+      "title": "3.3.3. Justification and evidence",
+      "physical_page_start": 35,
+      "physical_page_end": 39,
+      "printed_page_start": 17,
+      "printed_page_end": 21,
+      "content_type": "evidence",
+      "boundary_confidence": "high",
+      "children": [
+        "sec_3_3_3_1",
+        "sec_3_3_3_2",
+        "sec_3_3_3_3",
+        "sec_3_3_3_4",
+        "sec_3_3_3_5",
+        "sec_3_3_3_6"
+      ],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.3\\.3\\.\\ Justification\\ and\\ evidence",
+        "end_heading_pattern": "^\\s*3\\.3\\.4\\.\\ Implementation\\ consideration"
+      }
+    },
+    {
+      "node_id": "sec_3_3_3_1",
+      "parent_id": "sec_3_3_3",
+      "level": 4,
+      "section_number": "3.3.3.1",
+      "title": "3.3.3.1. NRT",
+      "physical_page_start": 35,
+      "physical_page_end": 36,
+      "printed_page_start": 17,
+      "printed_page_end": 18,
+      "content_type": "unknown",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.3\\.3\\.1\\.\\ NRT",
+        "end_heading_pattern": "^\\s*3\\.3\\.3\\.2\\.\\ Bupropion"
+      }
+    },
+    {
+      "node_id": "sec_3_3_3_2",
+      "parent_id": "sec_3_3_3",
+      "level": 4,
+      "section_number": "3.3.3.2",
+      "title": "3.3.3.2. Bupropion",
+      "physical_page_start": 36,
+      "physical_page_end": 36,
+      "printed_page_start": 18,
+      "printed_page_end": 18,
+      "content_type": "unknown",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.3\\.3\\.2\\.\\ Bupropion",
+        "end_heading_pattern": "^\\s*3\\.3\\.3\\.3\\.\\ Varenicline"
+      }
+    },
+    {
+      "node_id": "sec_3_3_3_3",
+      "parent_id": "sec_3_3_3",
+      "level": 4,
+      "section_number": "3.3.3.3",
+      "title": "3.3.3.3. Varenicline",
+      "physical_page_start": 36,
+      "physical_page_end": 37,
+      "printed_page_start": 18,
+      "printed_page_end": 19,
+      "content_type": "unknown",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.3\\.3\\.3\\.\\ Varenicline",
+        "end_heading_pattern": "^\\s*3\\.3\\.3\\.4\\.\\ Cytisine"
+      }
+    },
+    {
+      "node_id": "sec_3_3_3_4",
+      "parent_id": "sec_3_3_3",
+      "level": 4,
+      "section_number": "3.3.3.4",
+      "title": "3.3.3.4. Cytisine",
+      "physical_page_start": 37,
+      "physical_page_end": 37,
+      "printed_page_start": 19,
+      "printed_page_end": 19,
+      "content_type": "unknown",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.3\\.3\\.4\\.\\ Cytisine",
+        "end_heading_pattern": "^\\s*3\\.3\\.3\\.5\\.\\ Combination\\ pharmacotherap"
+      }
+    },
+    {
+      "node_id": "sec_3_3_3_5",
+      "parent_id": "sec_3_3_3",
+      "level": 4,
+      "section_number": "3.3.3.5",
+      "title": "3.3.3.5. Combination pharmacotherapy",
+      "physical_page_start": 37,
+      "physical_page_end": 37,
+      "printed_page_start": 19,
+      "printed_page_end": 19,
+      "content_type": "unknown",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.3\\.3\\.5\\.\\ Combination\\ pharmacotherap",
+        "end_heading_pattern": "^\\s*3\\.3\\.3\\.6\\.\\ Conclusions"
+      }
+    },
+    {
+      "node_id": "sec_3_3_3_6",
+      "parent_id": "sec_3_3_3",
+      "level": 4,
+      "section_number": "3.3.3.6",
+      "title": "3.3.3.6. Conclusions",
+      "physical_page_start": 37,
+      "physical_page_end": 39,
+      "printed_page_start": 19,
+      "printed_page_end": 21,
+      "content_type": "unknown",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.3\\.3\\.6\\.\\ Conclusions",
+        "end_heading_pattern": "^\\s*3\\.3\\.4\\.\\ Implementation\\ consideration"
+      }
+    },
+    {
+      "node_id": "sec_3_3_4",
+      "parent_id": "sec_3_3",
+      "level": 3,
+      "section_number": "3.3.4",
+      "title": "3.3.4. Implementation consideration",
+      "physical_page_start": 39,
+      "physical_page_end": 40,
+      "printed_page_start": 21,
+      "printed_page_end": 22,
+      "content_type": "discussion",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.3\\.4\\.\\ Implementation\\ consideration",
+        "end_heading_pattern": "^\\s*3\\.4\\.\\ Interventions\\ for\\ smokeless\\ to"
+      }
+    },
+    {
+      "node_id": "sec_3_4",
+      "parent_id": "sec_3",
+      "level": 2,
+      "section_number": "3.4",
+      "title": "3.4. Interventions for smokeless tobacco use cessation",
+      "physical_page_start": 40,
+      "physical_page_end": 41,
+      "printed_page_start": 22,
+      "printed_page_end": 23,
+      "content_type": "narrative",
+      "boundary_confidence": "high",
+      "children": [
+        "sec_3_4_1",
+        "sec_3_4_2",
+        "sec_3_4_3",
+        "sec_3_4_4"
+      ],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.4\\.\\ Interventions\\ for\\ smokeless\\ to",
+        "end_heading_pattern": "^\\s*3\\.5\\.\\ Combination\\ of\\ behavioural\\ and"
+      }
+    },
+    {
+      "node_id": "sec_3_4_1",
+      "parent_id": "sec_3_4",
+      "level": 3,
+      "section_number": "3.4.1",
+      "title": "3.4.1. Recommendations",
+      "physical_page_start": 40,
+      "physical_page_end": 40,
+      "printed_page_start": 22,
+      "printed_page_end": 22,
+      "content_type": "recommendation",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.4\\.1\\.\\ Recommendations",
+        "end_heading_pattern": "^\\s*3\\.4\\.2\\.\\ Overall\\ questions"
+      }
+    },
+    {
+      "node_id": "sec_3_4_2",
+      "parent_id": "sec_3_4",
+      "level": 3,
+      "section_number": "3.4.2",
+      "title": "3.4.2. Overall questions",
+      "physical_page_start": 40,
+      "physical_page_end": 40,
+      "printed_page_start": 22,
+      "printed_page_end": 22,
+      "content_type": "methods",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.4\\.2\\.\\ Overall\\ questions",
+        "end_heading_pattern": "^\\s*3\\.4\\.3\\.\\ Justification\\ and\\ evidence"
+      }
+    },
+    {
+      "node_id": "sec_3_4_3",
+      "parent_id": "sec_3_4",
+      "level": 3,
+      "section_number": "3.4.3",
+      "title": "3.4.3. Justification and evidence",
+      "physical_page_start": 40,
+      "physical_page_end": 41,
+      "printed_page_start": 22,
+      "printed_page_end": 23,
+      "content_type": "evidence",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.4\\.3\\.\\ Justification\\ and\\ evidence",
+        "end_heading_pattern": "^\\s*3\\.4\\.4\\.\\ Implementation\\ consideration"
+      }
+    },
+    {
+      "node_id": "sec_3_4_4",
+      "parent_id": "sec_3_4",
+      "level": 3,
+      "section_number": "3.4.4",
+      "title": "3.4.4. Implementation considerations",
+      "physical_page_start": 41,
+      "physical_page_end": 41,
+      "printed_page_start": 23,
+      "printed_page_end": 23,
+      "content_type": "discussion",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.4\\.4\\.\\ Implementation\\ consideration",
+        "end_heading_pattern": "^\\s*3\\.5\\.\\ Combination\\ of\\ behavioural\\ and"
+      }
+    },
+    {
+      "node_id": "sec_3_5",
+      "parent_id": "sec_3",
+      "level": 2,
+      "section_number": "3.5",
+      "title": "3.5. Combination of behavioural and pharmacological treatments",
+      "physical_page_start": 41,
+      "physical_page_end": 43,
+      "printed_page_start": 23,
+      "printed_page_end": 25,
+      "content_type": "narrative",
+      "boundary_confidence": "high",
+      "children": [
+        "sec_3_5_1",
+        "sec_3_5_2",
+        "sec_3_5_3",
+        "sec_3_5_4"
+      ],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.5\\.\\ Combination\\ of\\ behavioural\\ and",
+        "end_heading_pattern": "^\\s*3\\.6\\.\\ Traditional,\\ complementary\\ and"
+      }
+    },
+    {
+      "node_id": "sec_3_5_1",
+      "parent_id": "sec_3_5",
+      "level": 3,
+      "section_number": "3.5.1",
+      "title": "3.5.1. Recommendation",
+      "physical_page_start": 41,
+      "physical_page_end": 41,
+      "printed_page_start": 23,
+      "printed_page_end": 23,
+      "content_type": "recommendation",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.5\\.1\\.\\ Recommendation",
+        "end_heading_pattern": "^\\s*3\\.5\\.2\\.\\ Overall\\ questions"
+      }
+    },
+    {
+      "node_id": "sec_3_5_2",
+      "parent_id": "sec_3_5",
+      "level": 3,
+      "section_number": "3.5.2",
+      "title": "3.5.2. Overall questions",
+      "physical_page_start": 41,
+      "physical_page_end": 41,
+      "printed_page_start": 23,
+      "printed_page_end": 23,
+      "content_type": "methods",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.5\\.2\\.\\ Overall\\ questions",
+        "end_heading_pattern": "^\\s*3\\.5\\.3\\.\\ Justification\\ and\\ evidence"
+      }
+    },
+    {
+      "node_id": "sec_3_5_3",
+      "parent_id": "sec_3_5",
+      "level": 3,
+      "section_number": "3.5.3",
+      "title": "3.5.3. Justification and evidence",
+      "physical_page_start": 41,
+      "physical_page_end": 42,
+      "printed_page_start": 23,
+      "printed_page_end": 24,
+      "content_type": "evidence",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.5\\.3\\.\\ Justification\\ and\\ evidence",
+        "end_heading_pattern": "^\\s*3\\.5\\.4\\.\\ Implementation\\ consideration"
+      }
+    },
+    {
+      "node_id": "sec_3_5_4",
+      "parent_id": "sec_3_5",
+      "level": 3,
+      "section_number": "3.5.4",
+      "title": "3.5.4. Implementation considerations",
+      "physical_page_start": 42,
+      "physical_page_end": 43,
+      "printed_page_start": 24,
+      "printed_page_end": 25,
+      "content_type": "discussion",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.5\\.4\\.\\ Implementation\\ consideration",
+        "end_heading_pattern": "^\\s*3\\.6\\.\\ Traditional,\\ complementary\\ and"
+      }
+    },
+    {
+      "node_id": "sec_3_6",
+      "parent_id": "sec_3",
+      "level": 2,
+      "section_number": "3.6",
+      "title": "3.6. Traditional, complementary and alternative therapies",
+      "physical_page_start": 43,
+      "physical_page_end": 44,
+      "printed_page_start": 25,
+      "printed_page_end": 26,
+      "content_type": "narrative",
+      "boundary_confidence": "high",
+      "children": [
+        "sec_3_6_1",
+        "sec_3_6_2",
+        "sec_3_6_3",
+        "sec_3_6_4"
+      ],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.6\\.\\ Traditional,\\ complementary\\ and",
+        "end_heading_pattern": "^\\s*3\\.7\\.\\ System\\-level\\ interventions\\ and"
+      }
+    },
+    {
+      "node_id": "sec_3_6_1",
+      "parent_id": "sec_3_6",
+      "level": 3,
+      "section_number": "3.6.1",
+      "title": "3.6.1. Statement",
+      "physical_page_start": 43,
+      "physical_page_end": 43,
+      "printed_page_start": 25,
+      "printed_page_end": 25,
+      "content_type": "unknown",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.6\\.1\\.\\ Statement",
+        "end_heading_pattern": "^\\s*3\\.6\\.2\\.\\ Overall\\ questions"
+      }
+    },
+    {
+      "node_id": "sec_3_6_2",
+      "parent_id": "sec_3_6",
+      "level": 3,
+      "section_number": "3.6.2",
+      "title": "3.6.2. Overall questions",
+      "physical_page_start": 43,
+      "physical_page_end": 43,
+      "printed_page_start": 25,
+      "printed_page_end": 25,
+      "content_type": "methods",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.6\\.2\\.\\ Overall\\ questions",
+        "end_heading_pattern": "^\\s*3\\.6\\.3\\.\\ Justification\\ and\\ evidence"
+      }
+    },
+    {
+      "node_id": "sec_3_6_3",
+      "parent_id": "sec_3_6",
+      "level": 3,
+      "section_number": "3.6.3",
+      "title": "3.6.3. Justification and evidence",
+      "physical_page_start": 43,
+      "physical_page_end": 43,
+      "printed_page_start": 25,
+      "printed_page_end": 25,
+      "content_type": "evidence",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.6\\.3\\.\\ Justification\\ and\\ evidence",
+        "end_heading_pattern": "^\\s*3\\.6\\.4\\.\\ Implementation\\ consideration"
+      }
+    },
+    {
+      "node_id": "sec_3_6_4",
+      "parent_id": "sec_3_6",
+      "level": 3,
+      "section_number": "3.6.4",
+      "title": "3.6.4. Implementation considerations",
+      "physical_page_start": 43,
+      "physical_page_end": 44,
+      "printed_page_start": 25,
+      "printed_page_end": 26,
+      "content_type": "discussion",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.6\\.4\\.\\ Implementation\\ consideration",
+        "end_heading_pattern": "^\\s*3\\.7\\.\\ System\\-level\\ interventions\\ and"
+      }
+    },
+    {
+      "node_id": "sec_3_7",
+      "parent_id": "sec_3",
+      "level": 2,
+      "section_number": "3.7",
+      "title": "3.7. System-level interventions and policies",
+      "physical_page_start": 44,
+      "physical_page_end": 47,
+      "printed_page_start": 26,
+      "printed_page_end": 29,
+      "content_type": "narrative",
+      "boundary_confidence": "high",
+      "children": [
+        "sec_3_7_1",
+        "sec_3_7_2",
+        "sec_3_7_3",
+        "sec_3_7_4"
+      ],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.7\\.\\ System\\-level\\ interventions\\ and",
+        "end_heading_pattern": "^\\s*3\\.8\\.\\ Overarching\\ guideline\\ implemen"
+      }
+    },
+    {
+      "node_id": "sec_3_7_1",
+      "parent_id": "sec_3_7",
+      "level": 3,
+      "section_number": "3.7.1",
+      "title": "3.7.1. Recommendations",
+      "physical_page_start": 44,
+      "physical_page_end": 44,
+      "printed_page_start": 26,
+      "printed_page_end": 26,
+      "content_type": "recommendation",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.7\\.1\\.\\ Recommendations",
+        "end_heading_pattern": "^\\s*3\\.7\\.2\\.\\ Overall\\ questions"
+      }
+    },
+    {
+      "node_id": "sec_3_7_2",
+      "parent_id": "sec_3_7",
+      "level": 3,
+      "section_number": "3.7.2",
+      "title": "3.7.2. Overall questions",
+      "physical_page_start": 44,
+      "physical_page_end": 44,
+      "printed_page_start": 26,
+      "printed_page_end": 26,
+      "content_type": "methods",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.7\\.2\\.\\ Overall\\ questions",
+        "end_heading_pattern": "^\\s*3\\.7\\.3\\.\\ Justification\\ and\\ evidence"
+      }
+    },
+    {
+      "node_id": "sec_3_7_3",
+      "parent_id": "sec_3_7",
+      "level": 3,
+      "section_number": "3.7.3",
+      "title": "3.7.3. Justification and evidence",
+      "physical_page_start": 44,
+      "physical_page_end": 46,
+      "printed_page_start": 26,
+      "printed_page_end": 28,
+      "content_type": "evidence",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.7\\.3\\.\\ Justification\\ and\\ evidence",
+        "end_heading_pattern": "^\\s*3\\.7\\.4\\.\\ Implementation\\ consideration"
+      }
+    },
+    {
+      "node_id": "sec_3_7_4",
+      "parent_id": "sec_3_7",
+      "level": 3,
+      "section_number": "3.7.4",
+      "title": "3.7.4. Implementation considerations",
+      "physical_page_start": 46,
+      "physical_page_end": 47,
+      "printed_page_start": 28,
+      "printed_page_end": 29,
+      "content_type": "discussion",
+      "boundary_confidence": "high",
+      "children": [
+        "sec_3_7_4_1",
+        "sec_3_7_4_2",
+        "sec_3_7_4_3"
+      ],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.7\\.4\\.\\ Implementation\\ consideration",
+        "end_heading_pattern": "^\\s*3\\.8\\.\\ Overarching\\ guideline\\ implemen"
+      }
+    },
+    {
+      "node_id": "sec_3_7_4_1",
+      "parent_id": "sec_3_7_4",
+      "level": 4,
+      "section_number": "3.7.4.1",
+      "title": "3.7.4.1. Using medical records",
+      "physical_page_start": 46,
+      "physical_page_end": 46,
+      "printed_page_start": 28,
+      "printed_page_end": 28,
+      "content_type": "unknown",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.7\\.4\\.1\\.\\ Using\\ medical\\ records",
+        "end_heading_pattern": "^\\s*3\\.7\\.4\\.2\\.\\ Training\\ health\\-care\\ provi"
+      }
+    },
+    {
+      "node_id": "sec_3_7_4_2",
+      "parent_id": "sec_3_7_4",
+      "level": 4,
+      "section_number": "3.7.4.2",
+      "title": "3.7.4.2. Training health-care providers",
+      "physical_page_start": 46,
+      "physical_page_end": 47,
+      "printed_page_start": 28,
+      "printed_page_end": 29,
+      "content_type": "unknown",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.7\\.4\\.2\\.\\ Training\\ health\\-care\\ provi",
+        "end_heading_pattern": "^\\s*3\\.7\\.4\\.3\\.\\ Reducing\\ tobacco\\ user\\ trea"
+      }
+    },
+    {
+      "node_id": "sec_3_7_4_3",
+      "parent_id": "sec_3_7_4",
+      "level": 4,
+      "section_number": "3.7.4.3",
+      "title": "3.7.4.3. Reducing tobacco user treatment cost",
+      "physical_page_start": 47,
+      "physical_page_end": 47,
+      "printed_page_start": 29,
+      "printed_page_end": 29,
+      "content_type": "unknown",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.7\\.4\\.3\\.\\ Reducing\\ tobacco\\ user\\ trea",
+        "end_heading_pattern": "^\\s*3\\.8\\.\\ Overarching\\ guideline\\ implemen"
+      }
+    },
+    {
+      "node_id": "sec_3_8",
+      "parent_id": "sec_3",
+      "level": 2,
+      "section_number": "3.8",
+      "title": "3.8. Overarching guideline implementation considerations",
+      "physical_page_start": 47,
+      "physical_page_end": 49,
+      "printed_page_start": 29,
+      "printed_page_end": 31,
+      "content_type": "discussion",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*3\\.8\\.\\ Overarching\\ guideline\\ implemen",
+        "end_heading_pattern": "^\\s*4\\.\\ Evidence\\ to\\ recommendations"
+      }
+    },
+    {
+      "node_id": "sec_4",
+      "parent_id": "root",
+      "level": 1,
+      "section_number": "4",
+      "title": "4. Evidence to recommendations",
+      "physical_page_start": 49,
+      "physical_page_end": 52,
+      "printed_page_start": 31,
+      "printed_page_end": 34,
+      "content_type": "recommendation",
+      "boundary_confidence": "high",
+      "children": [
+        "sec_4_1",
+        "sec_4_2",
+        "sec_4_3",
+        "sec_4_4",
+        "sec_4_5"
+      ],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*4\\.\\ Evidence\\ to\\ recommendations",
+        "end_heading_pattern": "^\\s*5\\.\\ Research\\ needs"
+      }
+    },
+    {
+      "node_id": "sec_4_1",
+      "parent_id": "sec_4",
+      "level": 2,
+      "section_number": "4.1",
+      "title": "4.1. Assessment of the certainty of evidence",
+      "physical_page_start": 49,
+      "physical_page_end": 49,
+      "printed_page_start": 31,
+      "printed_page_end": 31,
+      "content_type": "evidence",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*4\\.1\\.\\ Assessment\\ of\\ the\\ certainty\\ of",
+        "end_heading_pattern": "^\\s*4\\.2\\.\\ Benefits\\ and\\ harms"
+      }
+    },
+    {
+      "node_id": "sec_4_2",
+      "parent_id": "sec_4",
+      "level": 2,
+      "section_number": "4.2",
+      "title": "4.2. Benefits and harms",
+      "physical_page_start": 49,
+      "physical_page_end": 50,
+      "printed_page_start": 31,
+      "printed_page_end": 32,
+      "content_type": "narrative",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*4\\.2\\.\\ Benefits\\ and\\ harms",
+        "end_heading_pattern": "^\\s*4\\.3\\.\\ Values\\ and\\ preferences"
+      }
+    },
+    {
+      "node_id": "sec_4_3",
+      "parent_id": "sec_4",
+      "level": 2,
+      "section_number": "4.3",
+      "title": "4.3. Values and preferences",
+      "physical_page_start": 50,
+      "physical_page_end": 50,
+      "printed_page_start": 32,
+      "printed_page_end": 32,
+      "content_type": "references",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*4\\.3\\.\\ Values\\ and\\ preferences",
+        "end_heading_pattern": "^\\s*4\\.4\\.\\ Cost\\-effectiveness\\ and\\ resourc"
+      }
+    },
+    {
+      "node_id": "sec_4_4",
+      "parent_id": "sec_4",
+      "level": 2,
+      "section_number": "4.4",
+      "title": "4.4. Cost-effectiveness and resource requirements",
+      "physical_page_start": 50,
+      "physical_page_end": 51,
+      "printed_page_start": 32,
+      "printed_page_end": 33,
+      "content_type": "narrative",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*4\\.4\\.\\ Cost\\-effectiveness\\ and\\ resourc",
+        "end_heading_pattern": "^\\s*4\\.5\\.\\ Equity,\\ acceptability\\ and\\ feas"
+      }
+    },
+    {
+      "node_id": "sec_4_5",
+      "parent_id": "sec_4",
+      "level": 2,
+      "section_number": "4.5",
+      "title": "4.5. Equity, acceptability and feasibility",
+      "physical_page_start": 51,
+      "physical_page_end": 52,
+      "printed_page_start": 33,
+      "printed_page_end": 34,
+      "content_type": "narrative",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*4\\.5\\.\\ Equity,\\ acceptability\\ and\\ feas",
+        "end_heading_pattern": "^\\s*5\\.\\ Research\\ needs"
+      }
+    },
+    {
+      "node_id": "sec_5",
+      "parent_id": "root",
+      "level": 1,
+      "section_number": "5",
+      "title": "5. Research needs",
+      "physical_page_start": 52,
+      "physical_page_end": 54,
+      "printed_page_start": 34,
+      "printed_page_end": 36,
+      "content_type": "discussion",
+      "boundary_confidence": "high",
+      "children": [
+        "node_L2_general",
+        "node_L2_policy",
+        "node_L2_systems",
+        "node_L2_counselling_interventions",
+        "node_L2_digital_interventions",
+        "node_L2_medications",
+        "node_L2_cost_and_cost_effectivene",
+        "node_L2_strategies_and_methods",
+        "node_L2_products"
+      ],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*5\\.\\ Research\\ needs",
+        "end_heading_pattern": "^\\s*6\\.\\ Adoption,\\ dissemination,\\ impleme"
+      }
+    },
+    {
+      "node_id": "node_L2_general",
+      "parent_id": "sec_5",
+      "level": 2,
+      "section_number": null,
+      "title": "General",
+      "physical_page_start": 52,
+      "physical_page_end": 52,
+      "printed_page_start": 34,
+      "printed_page_end": 34,
+      "content_type": "narrative",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*General",
+        "end_heading_pattern": "^\\s*Policy"
+      }
+    },
+    {
+      "node_id": "node_L2_policy",
+      "parent_id": "sec_5",
+      "level": 2,
+      "section_number": null,
+      "title": "Policy",
+      "physical_page_start": 52,
+      "physical_page_end": 52,
+      "printed_page_start": 34,
+      "printed_page_end": 34,
+      "content_type": "narrative",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*Policy",
+        "end_heading_pattern": "^\\s*Systems"
+      }
+    },
+    {
+      "node_id": "node_L2_systems",
+      "parent_id": "sec_5",
+      "level": 2,
+      "section_number": null,
+      "title": "Systems",
+      "physical_page_start": 52,
+      "physical_page_end": 52,
+      "printed_page_start": 34,
+      "printed_page_end": 34,
+      "content_type": "narrative",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*Systems",
+        "end_heading_pattern": "^\\s*Counselling\\ interventions"
+      }
+    },
+    {
+      "node_id": "node_L2_counselling_interventions",
+      "parent_id": "sec_5",
+      "level": 2,
+      "section_number": null,
+      "title": "Counselling interventions",
+      "physical_page_start": 52,
+      "physical_page_end": 53,
+      "printed_page_start": 34,
+      "printed_page_end": 35,
+      "content_type": "narrative",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*Counselling\\ interventions",
+        "end_heading_pattern": "^\\s*Digital\\ interventions"
+      }
+    },
+    {
+      "node_id": "node_L2_digital_interventions",
+      "parent_id": "sec_5",
+      "level": 2,
+      "section_number": null,
+      "title": "Digital interventions",
+      "physical_page_start": 53,
+      "physical_page_end": 53,
+      "printed_page_start": 35,
+      "printed_page_end": 35,
+      "content_type": "narrative",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*Digital\\ interventions",
+        "end_heading_pattern": "^\\s*Medications"
+      }
+    },
+    {
+      "node_id": "node_L2_medications",
+      "parent_id": "sec_5",
+      "level": 2,
+      "section_number": null,
+      "title": "Medications",
+      "physical_page_start": 53,
+      "physical_page_end": 53,
+      "printed_page_start": 35,
+      "printed_page_end": 35,
+      "content_type": "narrative",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*Medications",
+        "end_heading_pattern": "^\\s*Cost\\ and\\ cost\\-effectiveness"
+      }
+    },
+    {
+      "node_id": "node_L2_cost_and_cost_effectivene",
+      "parent_id": "sec_5",
+      "level": 2,
+      "section_number": null,
+      "title": "Cost and cost-effectiveness",
+      "physical_page_start": 53,
+      "physical_page_end": 53,
+      "printed_page_start": 35,
+      "printed_page_end": 35,
+      "content_type": "narrative",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*Cost\\ and\\ cost\\-effectiveness",
+        "end_heading_pattern": "^\\s*Strategies\\ and\\ methods"
+      }
+    },
+    {
+      "node_id": "node_L2_strategies_and_methods",
+      "parent_id": "sec_5",
+      "level": 2,
+      "section_number": null,
+      "title": "Strategies and methods",
+      "physical_page_start": 53,
+      "physical_page_end": 53,
+      "printed_page_start": 35,
+      "printed_page_end": 35,
+      "content_type": "methods",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*Strategies\\ and\\ methods",
+        "end_heading_pattern": "^\\s*Products"
+      }
+    },
+    {
+      "node_id": "node_L2_products",
+      "parent_id": "sec_5",
+      "level": 2,
+      "section_number": null,
+      "title": "Products",
+      "physical_page_start": 53,
+      "physical_page_end": 54,
+      "printed_page_start": 35,
+      "printed_page_end": 36,
+      "content_type": "narrative",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*Products",
+        "end_heading_pattern": "^\\s*6\\.\\ Adoption,\\ dissemination,\\ impleme"
+      }
+    },
+    {
+      "node_id": "sec_6",
+      "parent_id": "root",
+      "level": 1,
+      "section_number": "6",
+      "title": "6. Adoption, dissemination, implementation and evaluation",
+      "physical_page_start": 54,
+      "physical_page_end": 55,
+      "printed_page_start": 36,
+      "printed_page_end": 37,
+      "content_type": "discussion",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*6\\.\\ Adoption,\\ dissemination,\\ impleme",
+        "end_heading_pattern": "^\\s*References"
+      }
+    },
+    {
+      "node_id": "node_L1_references",
+      "parent_id": "root",
+      "level": 1,
+      "section_number": null,
+      "title": "References",
+      "physical_page_start": 55,
+      "physical_page_end": 60,
+      "printed_page_start": 37,
+      "printed_page_end": 42,
+      "content_type": "references",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*References",
+        "end_heading_pattern": "^\\s*Annex\\ 1:\\ Management\\ of\\ guideline\\ de"
+      }
+    },
+    {
+      "node_id": "annex_1",
+      "parent_id": "root",
+      "level": 1,
+      "section_number": null,
+      "title": "Annex 1: Management of guideline development process",
+      "physical_page_start": 60,
+      "physical_page_end": 65,
+      "printed_page_start": 42,
+      "printed_page_end": 47,
+      "content_type": "appendix",
+      "boundary_confidence": "high",
+      "children": [
+        "node_L2_contributors_to_guideline",
+        "node_L2_declarations_of_interest"
+      ],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*Annex\\ 1:\\ Management\\ of\\ guideline\\ de",
+        "end_heading_pattern": "^\\s*Annex\\ 2:\\ Additional\\ information\\ for"
+      }
+    },
+    {
+      "node_id": "node_L2_contributors_to_guideline",
+      "parent_id": "annex_1",
+      "level": 2,
+      "section_number": null,
+      "title": "Contributors to guideline development",
+      "physical_page_start": 60,
+      "physical_page_end": 64,
+      "printed_page_start": 42,
+      "printed_page_end": 46,
+      "content_type": "appendix",
+      "boundary_confidence": "high",
+      "children": [
+        "node_L3_who_steering_group",
+        "node_L3_guideline_development_gro",
+        "node_L3_systematic_review_team",
+        "node_L3_external_review_group"
+      ],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*Contributors\\ to\\ guideline\\ developme",
+        "end_heading_pattern": "^\\s*Declarations\\ of\\ interest"
+      }
+    },
+    {
+      "node_id": "node_L3_who_steering_group",
+      "parent_id": "node_L2_contributors_to_guideline",
+      "level": 3,
+      "section_number": null,
+      "title": "WHO Steering Group",
+      "physical_page_start": 60,
+      "physical_page_end": 61,
+      "printed_page_start": 42,
+      "printed_page_end": 43,
+      "content_type": "unknown",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*WHO\\ Steering\\ Group",
+        "end_heading_pattern": "^\\s*Guideline\\ Development\\ Group"
+      }
+    },
+    {
+      "node_id": "node_L3_guideline_development_gro",
+      "parent_id": "node_L2_contributors_to_guideline",
+      "level": 3,
+      "section_number": null,
+      "title": "Guideline Development Group",
+      "physical_page_start": 61,
+      "physical_page_end": 62,
+      "printed_page_start": 43,
+      "printed_page_end": 44,
+      "content_type": "unknown",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*Guideline\\ Development\\ Group",
+        "end_heading_pattern": "^\\s*Systematic\\ review\\ team"
+      }
+    },
+    {
+      "node_id": "node_L3_systematic_review_team",
+      "parent_id": "node_L2_contributors_to_guideline",
+      "level": 3,
+      "section_number": null,
+      "title": "Systematic review team",
+      "physical_page_start": 62,
+      "physical_page_end": 63,
+      "printed_page_start": 44,
+      "printed_page_end": 45,
+      "content_type": "unknown",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*Systematic\\ review\\ team",
+        "end_heading_pattern": "^\\s*External\\ Review\\ Group"
+      }
+    },
+    {
+      "node_id": "node_L3_external_review_group",
+      "parent_id": "node_L2_contributors_to_guideline",
+      "level": 3,
+      "section_number": null,
+      "title": "External Review Group",
+      "physical_page_start": 63,
+      "physical_page_end": 64,
+      "printed_page_start": 45,
+      "printed_page_end": 46,
+      "content_type": "unknown",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*External\\ Review\\ Group",
+        "end_heading_pattern": "^\\s*Declarations\\ of\\ interest"
+      }
+    },
+    {
+      "node_id": "node_L2_declarations_of_interest",
+      "parent_id": "annex_1",
+      "level": 2,
+      "section_number": null,
+      "title": "Declarations of interest",
+      "physical_page_start": 64,
+      "physical_page_end": 65,
+      "printed_page_start": 46,
+      "printed_page_end": 47,
+      "content_type": "appendix",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*Declarations\\ of\\ interest",
+        "end_heading_pattern": "^\\s*Annex\\ 2:\\ Additional\\ information\\ for"
+      }
+    },
+    {
+      "node_id": "annex_2",
+      "parent_id": "root",
+      "level": 1,
+      "section_number": null,
+      "title": "Annex 2: Additional information for implementing the recommendations",
+      "physical_page_start": 65,
+      "physical_page_end": 70,
+      "printed_page_start": 47,
+      "printed_page_end": 52,
+      "content_type": "recommendation",
+      "boundary_confidence": "high",
+      "children": [
+        "node_L2_brief_advice",
+        "node_L2_intensive_behavioural_sup",
+        "node_L2_digital_tobacco_cessation",
+        "node_L2_pharmacological_intervent",
+        "node_L2_traditional_complementary",
+        "node_L2_financial_interventions",
+        "node_L2_references"
+      ],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*Annex\\ 2:\\ Additional\\ information\\ for",
+        "end_heading_pattern": "^\\s*Annex\\ 3:\\ Summary\\ of\\ declarations\\ of"
+      }
+    },
+    {
+      "node_id": "node_L2_brief_advice",
+      "parent_id": "annex_2",
+      "level": 2,
+      "section_number": null,
+      "title": "Brief advice",
+      "physical_page_start": 65,
+      "physical_page_end": 65,
+      "printed_page_start": 47,
+      "printed_page_end": 47,
+      "content_type": "narrative",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*Brief\\ advice",
+        "end_heading_pattern": "^\\s*Intensive\\ behavioural\\ support"
+      }
+    },
+    {
+      "node_id": "node_L2_intensive_behavioural_sup",
+      "parent_id": "annex_2",
+      "level": 2,
+      "section_number": null,
+      "title": "Intensive behavioural support",
+      "physical_page_start": 65,
+      "physical_page_end": 66,
+      "printed_page_start": 47,
+      "printed_page_end": 48,
+      "content_type": "narrative",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*Intensive\\ behavioural\\ support",
+        "end_heading_pattern": "^\\s*Digital\\ tobacco\\ cessation\\ intervent"
+      }
+    },
+    {
+      "node_id": "node_L2_digital_tobacco_cessation",
+      "parent_id": "annex_2",
+      "level": 2,
+      "section_number": null,
+      "title": "Digital tobacco cessation interventions",
+      "physical_page_start": 66,
+      "physical_page_end": 66,
+      "printed_page_start": 48,
+      "printed_page_end": 48,
+      "content_type": "narrative",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*Digital\\ tobacco\\ cessation\\ intervent",
+        "end_heading_pattern": "^\\s*Pharmacological\\ interventions"
+      }
+    },
+    {
+      "node_id": "node_L2_pharmacological_intervent",
+      "parent_id": "annex_2",
+      "level": 2,
+      "section_number": null,
+      "title": "Pharmacological interventions",
+      "physical_page_start": 66,
+      "physical_page_end": 68,
+      "printed_page_start": 48,
+      "printed_page_end": 50,
+      "content_type": "narrative",
+      "boundary_confidence": "high",
+      "children": [
+        "node_L3_general",
+        "node_L3_specific_pharmacotherapy"
+      ],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*Pharmacological\\ interventions",
+        "end_heading_pattern": "^\\s*Traditional,\\ complementary\\ and\\ alte"
+      }
+    },
+    {
+      "node_id": "node_L3_general",
+      "parent_id": "node_L2_pharmacological_intervent",
+      "level": 3,
+      "section_number": null,
+      "title": "General",
+      "physical_page_start": 66,
+      "physical_page_end": 67,
+      "printed_page_start": 48,
+      "printed_page_end": 49,
+      "content_type": "unknown",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*General",
+        "end_heading_pattern": "^\\s*Specific\\ pharmacotherapy"
+      }
+    },
+    {
+      "node_id": "node_L3_specific_pharmacotherapy",
+      "parent_id": "node_L2_pharmacological_intervent",
+      "level": 3,
+      "section_number": null,
+      "title": "Specific pharmacotherapy",
+      "physical_page_start": 67,
+      "physical_page_end": 68,
+      "printed_page_start": 49,
+      "printed_page_end": 50,
+      "content_type": "unknown",
+      "boundary_confidence": "high",
+      "children": [
+        "node_L4_nrt",
+        "node_L4_bupropion",
+        "node_L4_varenicline_and_cytisine_"
+      ],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*Specific\\ pharmacotherapy",
+        "end_heading_pattern": "^\\s*Traditional,\\ complementary\\ and\\ alte"
+      }
+    },
+    {
+      "node_id": "node_L4_nrt",
+      "parent_id": "node_L3_specific_pharmacotherapy",
+      "level": 4,
+      "section_number": null,
+      "title": "NRT",
+      "physical_page_start": 67,
+      "physical_page_end": 67,
+      "printed_page_start": 49,
+      "printed_page_end": 49,
+      "content_type": "unknown",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*NRT",
+        "end_heading_pattern": "^\\s*Bupropion"
+      }
+    },
+    {
+      "node_id": "node_L4_bupropion",
+      "parent_id": "node_L3_specific_pharmacotherapy",
+      "level": 4,
+      "section_number": null,
+      "title": "Bupropion",
+      "physical_page_start": 67,
+      "physical_page_end": 68,
+      "printed_page_start": 49,
+      "printed_page_end": 50,
+      "content_type": "unknown",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*Bupropion",
+        "end_heading_pattern": "^\\s*Varenicline\\ and\\ cytisine\\ \\(partial\\ a"
+      }
+    },
+    {
+      "node_id": "node_L4_varenicline_and_cytisine_",
+      "parent_id": "node_L3_specific_pharmacotherapy",
+      "level": 4,
+      "section_number": null,
+      "title": "Varenicline and cytisine (partial agonists of a4b2 nicotinic receptors)",
+      "physical_page_start": 68,
+      "physical_page_end": 68,
+      "printed_page_start": 50,
+      "printed_page_end": 50,
+      "content_type": "unknown",
+      "boundary_confidence": "high",
+      "children": [
+        "node_L5_varenicline",
+        "node_L5_cytisine"
+      ],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*Varenicline\\ and\\ cytisine\\ \\(partial\\ a",
+        "end_heading_pattern": "^\\s*Traditional,\\ complementary\\ and\\ alte"
+      }
+    },
+    {
+      "node_id": "node_L5_varenicline",
+      "parent_id": "node_L4_varenicline_and_cytisine_",
+      "level": 5,
+      "section_number": null,
+      "title": "Varenicline",
+      "physical_page_start": 68,
+      "physical_page_end": 68,
+      "printed_page_start": 50,
+      "printed_page_end": 50,
+      "content_type": "unknown",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*Varenicline",
+        "end_heading_pattern": "^\\s*Cytisine"
+      }
+    },
+    {
+      "node_id": "node_L5_cytisine",
+      "parent_id": "node_L4_varenicline_and_cytisine_",
+      "level": 5,
+      "section_number": null,
+      "title": "Cytisine",
+      "physical_page_start": 68,
+      "physical_page_end": 68,
+      "printed_page_start": 50,
+      "printed_page_end": 50,
+      "content_type": "unknown",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*Cytisine",
+        "end_heading_pattern": "^\\s*Traditional,\\ complementary\\ and\\ alte"
+      }
+    },
+    {
+      "node_id": "node_L2_traditional_complementary",
+      "parent_id": "annex_2",
+      "level": 2,
+      "section_number": null,
+      "title": "Traditional, complementary and alternative therapies",
+      "physical_page_start": 68,
+      "physical_page_end": 69,
+      "printed_page_start": 50,
+      "printed_page_end": 51,
+      "content_type": "narrative",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*Traditional,\\ complementary\\ and\\ alte",
+        "end_heading_pattern": "^\\s*Financial\\ interventions"
+      }
+    },
+    {
+      "node_id": "node_L2_financial_interventions",
+      "parent_id": "annex_2",
+      "level": 2,
+      "section_number": null,
+      "title": "Financial interventions",
+      "physical_page_start": 69,
+      "physical_page_end": 69,
+      "printed_page_start": 51,
+      "printed_page_end": 51,
+      "content_type": "narrative",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*Financial\\ interventions",
+        "end_heading_pattern": "^\\s*References"
+      }
+    },
+    {
+      "node_id": "node_L2_references",
+      "parent_id": "annex_2",
+      "level": 2,
+      "section_number": null,
+      "title": "References",
+      "physical_page_start": 69,
+      "physical_page_end": 70,
+      "printed_page_start": 51,
+      "printed_page_end": 52,
+      "content_type": "references",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*References",
+        "end_heading_pattern": "^\\s*Annex\\ 3:\\ Summary\\ of\\ declarations\\ of"
+      }
+    },
+    {
+      "node_id": "annex_3",
+      "parent_id": "root",
+      "level": 1,
+      "section_number": null,
+      "title": "Annex 3: Summary of declarations of interest and how these were managed",
+      "physical_page_start": 70,
+      "physical_page_end": 76,
+      "printed_page_start": 52,
+      "printed_page_end": 58,
+      "content_type": "appendix",
+      "boundary_confidence": "high",
+      "children": [],
+      "text_boundary": {
+        "start_heading_pattern": "^\\s*Annex\\ 3:\\ Summary\\ of\\ declarations\\ of",
+        "end_heading_pattern": null
+      }
+    }
+  ]
+}

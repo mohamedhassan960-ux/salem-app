@@ -1,0 +1,322 @@
+[
+  {
+    "test_id": "TEST-01",
+    "name": "Basic Medical Explanation",
+    "query": "هل الفارينيكلين فعال في الإقلاع عن التدخين؟",
+    "retrieval_status": "PASS",
+    "rule_coverage": "PASS",
+    "retrieved_rules": [
+      "RULE-SAFE-004",
+      "RULE-SAFE-002",
+      "RULE-SAFE-001",
+      "RULE-SAFE-003",
+      "RULE-SAFE-005",
+      "RULE-ACT-006",
+      "RULE-ACT-002",
+      "RULE-ACT-001",
+      "RULE-ACT-003"
+    ],
+    "rule_categories": [
+      "Claim preservation",
+      "Dosage integrity",
+      "Uncertainty",
+      "Association vs Causation",
+      "Contraindications & Warnings",
+      "Numbers",
+      "Medical terminology",
+      "Plain language",
+      "Main-point prioritization"
+    ],
+    "firewall_status": "PASS",
+    "preservation_status": "PASS",
+    "final_status": "PASS"
+  },
+  {
+    "test_id": "TEST-02",
+    "name": "Safety Preservation",
+    "query": "مين مينفعش ياخد الدواء ده؟",
+    "retrieval_status": "PASS",
+    "rule_coverage": "PASS",
+    "retrieved_rules": [
+      "RULE-SAFE-005",
+      "RULE-SAFE-004",
+      "RULE-SAFE-002",
+      "RULE-SAFE-001",
+      "RULE-SAFE-003",
+      "RULE-ACT-006",
+      "RULE-ACT-002",
+      "RULE-ACT-001",
+      "RULE-ACT-003"
+    ],
+    "rule_categories": [
+      "Contraindications & Warnings",
+      "Claim preservation",
+      "Dosage integrity",
+      "Uncertainty",
+      "Association vs Causation",
+      "Numbers",
+      "Medical terminology",
+      "Plain language",
+      "Main-point prioritization"
+    ],
+    "firewall_status": "PASS",
+    "preservation_status": "PASS",
+    "final_status": "PASS"
+  },
+  {
+    "test_id": "TEST-03",
+    "name": "Dosage and Numerical Integrity",
+    "query": "الجرعة كام؟",
+    "retrieval_status": "PASS",
+    "rule_coverage": "PASS",
+    "retrieved_rules": [
+      "RULE-SAFE-002",
+      "RULE-SAFE-004",
+      "RULE-SAFE-001",
+      "RULE-SAFE-003",
+      "RULE-SAFE-005",
+      "RULE-ACT-006",
+      "RULE-ACT-008",
+      "RULE-ACT-002",
+      "RULE-ACT-004"
+    ],
+    "rule_categories": [
+      "Dosage integrity",
+      "Claim preservation",
+      "Uncertainty",
+      "Association vs Causation",
+      "Contraindications & Warnings",
+      "Numbers",
+      "Behavioral instructions",
+      "Medical terminology",
+      "Sentence structure"
+    ],
+    "firewall_status": "PASS",
+    "preservation_status": "PASS",
+    "final_status": "PASS"
+  },
+  {
+    "test_id": "TEST-04",
+    "name": "Uncertainty Preservation",
+    "query": "هل فيه دواء يضمن إني أبطل التدخين 100%؟",
+    "retrieval_status": "PASS",
+    "rule_coverage": "PASS",
+    "retrieved_rules": [
+      "RULE-SAFE-004",
+      "RULE-SAFE-002",
+      "RULE-SAFE-001",
+      "RULE-SAFE-003",
+      "RULE-SAFE-005",
+      "RULE-ACT-006",
+      "RULE-ACT-008",
+      "RULE-ACT-002",
+      "RULE-ACT-004"
+    ],
+    "rule_categories": [
+      "Claim preservation",
+      "Dosage integrity",
+      "Uncertainty",
+      "Association vs Causation",
+      "Contraindications & Warnings",
+      "Numbers",
+      "Behavioral instructions",
+      "Medical terminology",
+      "Sentence structure"
+    ],
+    "firewall_status": "PASS",
+    "preservation_status": "PASS",
+    "final_status": "PASS"
+  },
+  {
+    "test_id": "TEST-05",
+    "name": "Association vs Causation",
+    "query": "هل التدخين بيسبب المشكلة دي؟",
+    "retrieval_status": "PASS",
+    "rule_coverage": "PASS",
+    "retrieved_rules": [
+      "RULE-SAFE-003",
+      "RULE-SAFE-004",
+      "RULE-SAFE-002",
+      "RULE-SAFE-001",
+      "RULE-SAFE-005",
+      "RULE-ACT-006",
+      "RULE-ACT-001",
+      "RULE-ACT-003",
+      "RULE-ACT-007"
+    ],
+    "rule_categories": [
+      "Association vs Causation",
+      "Claim preservation",
+      "Dosage integrity",
+      "Uncertainty",
+      "Contraindications & Warnings",
+      "Numbers",
+      "Plain language",
+      "Main-point prioritization",
+      "Risk communication"
+    ],
+    "firewall_status": "PASS",
+    "preservation_status": "PASS",
+    "final_status": "PASS"
+  },
+  {
+    "test_id": "TEST-06",
+    "name": "Empathy + Egyptian Arabic",
+    "query": "أنا خايف أبطل وأرجع للسجاير تاني لما أتعرض لضغط.",
+    "retrieval_status": "PASS",
+    "rule_coverage": "PASS",
+    "retrieved_rules": [
+      "RULE-SAFE-004",
+      "RULE-SAFE-002",
+      "RULE-SAFE-001",
+      "RULE-SAFE-003",
+      "RULE-SAFE-005",
+      "RULE-ACT-006",
+      "RULE-ACT-008",
+      "RULE-ACT-004",
+      "RULE-ACT-001"
+    ],
+    "rule_categories": [
+      "Claim preservation",
+      "Dosage integrity",
+      "Uncertainty",
+      "Association vs Causation",
+      "Contraindications & Warnings",
+      "Numbers",
+      "Behavioral instructions",
+      "Sentence structure",
+      "Plain language"
+    ],
+    "firewall_status": "PASS",
+    "preservation_status": "PASS",
+    "final_status": "PASS"
+  },
+  {
+    "test_id": "TEST-07",
+    "name": "Medical Terminology Simplification",
+    "query": "يعني إيه nicotine withdrawal؟",
+    "retrieval_status": "PASS",
+    "rule_coverage": "PASS",
+    "retrieved_rules": [
+      "RULE-SAFE-004",
+      "RULE-SAFE-002",
+      "RULE-SAFE-001",
+      "RULE-SAFE-003",
+      "RULE-SAFE-005",
+      "RULE-ACT-006",
+      "RULE-ACT-001",
+      "RULE-ACT-003",
+      "RULE-ACT-007"
+    ],
+    "rule_categories": [
+      "Claim preservation",
+      "Dosage integrity",
+      "Uncertainty",
+      "Association vs Causation",
+      "Contraindications & Warnings",
+      "Numbers",
+      "Plain language",
+      "Main-point prioritization",
+      "Risk communication"
+    ],
+    "firewall_status": "PASS",
+    "preservation_status": "PASS",
+    "final_status": "PASS"
+  },
+  {
+    "test_id": "TEST-08",
+    "name": "Negative Simplification Control",
+    "query": "هل الفيب علاج معتمد للإقلاع عن التدخين؟",
+    "retrieval_status": "PASS",
+    "rule_coverage": "PASS",
+    "retrieved_rules": [
+      "RULE-SAFE-004",
+      "RULE-SAFE-001",
+      "RULE-SAFE-002",
+      "RULE-SAFE-003",
+      "RULE-SAFE-005",
+      "RULE-ACT-001",
+      "RULE-ACT-003",
+      "RULE-ACT-005",
+      "RULE-ACT-006"
+    ],
+    "rule_categories": [
+      "Claim preservation",
+      "Uncertainty",
+      "Dosage integrity",
+      "Association vs Causation",
+      "Contraindications & Warnings",
+      "Plain language",
+      "Main-point prioritization",
+      "Chunking",
+      "Numbers"
+    ],
+    "firewall_status": "PASS",
+    "preservation_status": "PASS",
+    "final_status": "PASS"
+  },
+  {
+    "test_id": "TEST-09",
+    "name": "Multi-Constraint Query",
+    "query": "هل الفارينيكلين فعال وآمن وإيه الجرعة؟",
+    "retrieval_status": "PASS",
+    "rule_coverage": "PASS",
+    "retrieved_rules": [
+      "RULE-SAFE-002",
+      "RULE-SAFE-004",
+      "RULE-SAFE-001",
+      "RULE-SAFE-003",
+      "RULE-SAFE-005",
+      "RULE-ACT-006",
+      "RULE-ACT-008",
+      "RULE-ACT-002",
+      "RULE-ACT-004"
+    ],
+    "rule_categories": [
+      "Dosage integrity",
+      "Claim preservation",
+      "Uncertainty",
+      "Association vs Causation",
+      "Contraindications & Warnings",
+      "Numbers",
+      "Behavioral instructions",
+      "Medical terminology",
+      "Sentence structure"
+    ],
+    "firewall_status": "PASS",
+    "preservation_status": "PASS",
+    "final_status": "PASS"
+  },
+  {
+    "test_id": "TEST-10",
+    "name": "No Medical Evidence",
+    "query": "هل الدواء X مناسب لحالتي؟",
+    "retrieval_status": "PASS",
+    "rule_coverage": "PASS",
+    "retrieved_rules": [
+      "RULE-SAFE-004",
+      "RULE-SAFE-001",
+      "RULE-SAFE-002",
+      "RULE-SAFE-003",
+      "RULE-SAFE-005",
+      "RULE-ACT-001",
+      "RULE-ACT-003",
+      "RULE-ACT-005",
+      "RULE-ACT-006"
+    ],
+    "rule_categories": [
+      "Claim preservation",
+      "Uncertainty",
+      "Dosage integrity",
+      "Association vs Causation",
+      "Contraindications & Warnings",
+      "Plain language",
+      "Main-point prioritization",
+      "Chunking",
+      "Numbers"
+    ],
+    "firewall_status": "PASS",
+    "preservation_status": "PASS",
+    "final_status": "PASS"
+  }
+]

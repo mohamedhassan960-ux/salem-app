@@ -1,0 +1,1052 @@
+[
+  {
+    "question_id": "real_01",
+    "question": "How long should a standard brief tobacco cessation talk take during a clinical appointment?",
+    "category": "direct_factual",
+    "what_it_tests": "Retrieval of routine brief intervention duration (30 seconds to 3 minutes).",
+    "must_abstain": false,
+    "gold_chunk_ids": [
+      "chunk_sec_3_1_1"
+    ],
+    "gold_chunks_admitted": [
+      "chunk_sec_3_1_1"
+    ],
+    "missing_gold_chunks": [],
+    "gold_coverage_ratio": 1.0,
+    "context_sufficient": true,
+    "grounding_risk": "SAFE_TO_GENERATE",
+    "root_cause": "CONTEXT_SUFFICIENT",
+    "unsupported_leakage": false,
+    "numerical_fact_in_context": "PRESENT_VERBATIM",
+    "multi_chunk_detail": null,
+    "raw_retrieval_top5": [
+      "chunk_node_L2_brief_advice",
+      "chunk_node_L1_glossary_of_terms_p03",
+      "chunk_sec_3_7_4_2",
+      "chunk_sec_3_1_1",
+      "chunk_sec_3_1_3_p01"
+    ],
+    "reranked_top5": [
+      "chunk_sec_3_1_1",
+      "chunk_sec_3_1_3_p01",
+      "chunk_sec_3_1_3_p04",
+      "chunk_sec_3_1_3_p02",
+      "chunk_sec_3_5_3_p02"
+    ],
+    "gated_chunk_ids": [
+      "chunk_sec_3_1_1",
+      "chunk_sec_3_1_3_p01",
+      "chunk_sec_3_1_3_p04",
+      "chunk_sec_3_1_3_p02",
+      "chunk_sec_3_5_3_p02"
+    ],
+    "safety_flag": null,
+    "assembled_context_char_len": 9856,
+    "oracle_gold_evidence": [
+      {
+        "chunk_id": "chunk_sec_3_1_1",
+        "section": "3.1.1",
+        "page": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question_id": "real_02",
+    "question": "Which medications are officially recommended by WHO as main pharmacological options for quitting smoking?",
+    "category": "direct_factual",
+    "what_it_tests": "Retrieval of the 4 approved first-line cessation drugs (varenicline, NRT, bupropion, cytisine).",
+    "must_abstain": false,
+    "gold_chunk_ids": [
+      "chunk_sec_3_3_1"
+    ],
+    "gold_chunks_admitted": [
+      "chunk_sec_3_3_1"
+    ],
+    "missing_gold_chunks": [],
+    "gold_coverage_ratio": 1.0,
+    "context_sufficient": true,
+    "grounding_risk": "SAFE_TO_GENERATE",
+    "root_cause": "CONTEXT_SUFFICIENT",
+    "unsupported_leakage": false,
+    "numerical_fact_in_context": "NOT_APPLICABLE",
+    "multi_chunk_detail": null,
+    "raw_retrieval_top5": [
+      "chunk_sec_3_4_3_p03",
+      "chunk_node_L3_combination_of_behavioura",
+      "chunk_node_L3_pharmacological_intervent",
+      "chunk_sec_3_3_1",
+      "chunk_node_L3_general_p02"
+    ],
+    "reranked_top5": [
+      "chunk_sec_3_3_1",
+      "chunk_sec_3_3_3_3_p01",
+      "chunk_sec_3_3_3_2",
+      "chunk_sec_3_3_3_6_p04",
+      "chunk_sec_3_4_3_p03"
+    ],
+    "gated_chunk_ids": [
+      "chunk_sec_3_3_1",
+      "chunk_sec_3_3_3_3_p01",
+      "chunk_sec_3_3_3_2",
+      "chunk_sec_3_3_3_6_p04",
+      "chunk_sec_3_4_3_p03"
+    ],
+    "safety_flag": null,
+    "assembled_context_char_len": 7544,
+    "oracle_gold_evidence": [
+      {
+        "chunk_id": "chunk_sec_3_3_1",
+        "section": "3.3.1",
+        "page": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question_id": "real_03",
+    "question": "What health system intervention is recommended regarding recording a patient's tobacco use in clinic records?",
+    "category": "direct_factual",
+    "what_it_tests": "Retrieval of system-level EHR/medical record documentation recommendation.",
+    "must_abstain": false,
+    "gold_chunk_ids": [
+      "chunk_sec_3_7_1"
+    ],
+    "gold_chunks_admitted": [
+      "chunk_sec_3_7_1"
+    ],
+    "missing_gold_chunks": [],
+    "gold_coverage_ratio": 1.0,
+    "context_sufficient": true,
+    "grounding_risk": "SAFE_TO_GENERATE",
+    "root_cause": "CONTEXT_SUFFICIENT",
+    "unsupported_leakage": false,
+    "numerical_fact_in_context": "NOT_APPLICABLE",
+    "multi_chunk_detail": null,
+    "raw_retrieval_top5": [
+      "chunk_sec_3_7_4_1",
+      "chunk_sec_3_7_2",
+      "chunk_node_L2_brief_advice",
+      "chunk_sec_3_7_4_2",
+      "chunk_node_L3_system_level_intervention"
+    ],
+    "reranked_top5": [
+      "chunk_sec_3_7_2",
+      "chunk_sec_3_7_4_1",
+      "chunk_node_L2_brief_advice",
+      "chunk_sec_3_7_4_2",
+      "chunk_sec_3_7_1"
+    ],
+    "gated_chunk_ids": [
+      "chunk_sec_3_7_2",
+      "chunk_sec_3_7_4_1",
+      "chunk_node_L2_brief_advice",
+      "chunk_sec_3_7_4_2",
+      "chunk_sec_3_7_1"
+    ],
+    "safety_flag": null,
+    "assembled_context_char_len": 7681,
+    "oracle_gold_evidence": [
+      {
+        "chunk_id": "chunk_sec_3_7_1",
+        "section": "3.7.1",
+        "page": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question_id": "real_04",
+    "question": "What does the WHO guideline say about using alternative therapies like acupuncture or laser therapy to quit smoking?",
+    "category": "direct_factual",
+    "what_it_tests": "Retrieval of WHO position on traditional/alternative therapies (insufficient evidence).",
+    "must_abstain": false,
+    "gold_chunk_ids": [
+      "chunk_sec_3_6_1"
+    ],
+    "gold_chunks_admitted": [
+      "chunk_sec_3_6_1"
+    ],
+    "missing_gold_chunks": [],
+    "gold_coverage_ratio": 1.0,
+    "context_sufficient": true,
+    "grounding_risk": "SAFE_TO_GENERATE",
+    "root_cause": "CONTEXT_SUFFICIENT",
+    "unsupported_leakage": false,
+    "numerical_fact_in_context": "NOT_APPLICABLE",
+    "multi_chunk_detail": null,
+    "raw_retrieval_top5": [
+      "chunk_node_L1_glossary_of_terms_p26",
+      "chunk_sec_3_6_3_p01",
+      "chunk_sec_3_6_3_p02",
+      "chunk_sec_3_6_4",
+      "chunk_node_L2_traditional_complementary"
+    ],
+    "reranked_top5": [
+      "chunk_sec_3_6_3_p02",
+      "chunk_sec_3_6_1",
+      "chunk_sec_3_6_3_p01",
+      "chunk_sec_3_6_4",
+      "chunk_node_L2_traditional_complementary"
+    ],
+    "gated_chunk_ids": [
+      "chunk_sec_3_6_3_p02",
+      "chunk_sec_3_6_1",
+      "chunk_sec_3_6_3_p01",
+      "chunk_sec_3_6_4",
+      "chunk_sec_3_6_2"
+    ],
+    "safety_flag": "NO_GROUNDED_EVIDENCE_IN_WHO_GUIDELINE",
+    "assembled_context_char_len": 5487,
+    "oracle_gold_evidence": [
+      {
+        "chunk_id": "chunk_sec_3_6_1",
+        "section": "3.6.1",
+        "page": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question_id": "real_05",
+    "question": "How many studies and total participants formed the evidence base for single NRT monotherapy in the Cochrane review?",
+    "category": "direct_factual",
+    "what_it_tests": "Retrieval of specific systematic review study counts (133 studies, 64,640 participants).",
+    "must_abstain": false,
+    "gold_chunk_ids": [
+      "chunk_sec_3_3_3_1_p01"
+    ],
+    "gold_chunks_admitted": [
+      "chunk_sec_3_3_3_1_p01"
+    ],
+    "missing_gold_chunks": [],
+    "gold_coverage_ratio": 1.0,
+    "context_sufficient": true,
+    "grounding_risk": "SAFE_TO_GENERATE",
+    "root_cause": "CONTEXT_SUFFICIENT",
+    "unsupported_leakage": false,
+    "numerical_fact_in_context": "PARTIALLY_PRESENT",
+    "multi_chunk_detail": null,
+    "raw_retrieval_top5": [
+      "chunk_sec_3_3_3_1_p01",
+      "chunk_sec_3_3_3_6_p03",
+      "chunk_sec_3_3_3_5",
+      "chunk_node_L1_glossary_of_terms_p17",
+      "chunk_sec_3_3_3_1_p03"
+    ],
+    "reranked_top5": [
+      "chunk_sec_3_3_3_1_p01",
+      "chunk_sec_3_3_3_5",
+      "chunk_sec_3_3_3_1_p03",
+      "chunk_sec_3_3_1",
+      "chunk_node_L1_glossary_of_terms_p17"
+    ],
+    "gated_chunk_ids": [
+      "chunk_sec_3_3_3_1_p01",
+      "chunk_sec_3_3_3_5",
+      "chunk_sec_3_3_3_1_p03",
+      "chunk_sec_3_3_1",
+      "chunk_node_L1_glossary_of_terms_p17"
+    ],
+    "safety_flag": null,
+    "assembled_context_char_len": 7682,
+    "oracle_gold_evidence": [
+      {
+        "chunk_id": "chunk_sec_3_3_3_1_p01",
+        "section": "3.3.3.1",
+        "page": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question_id": "real_06",
+    "question": "Is it more effective to use quit-smoking pills alongside talking therapy rather than trying pills alone?",
+    "category": "semantic_paraphrased",
+    "what_it_tests": "Semantic mapping from 'quit-smoking pills alongside talking therapy' to 'combining pharmacotherapy and behavioural interventions'.",
+    "must_abstain": false,
+    "gold_chunk_ids": [
+      "chunk_sec_3_5_1"
+    ],
+    "gold_chunks_admitted": [
+      "chunk_sec_3_5_1"
+    ],
+    "missing_gold_chunks": [],
+    "gold_coverage_ratio": 1.0,
+    "context_sufficient": true,
+    "grounding_risk": "SAFE_TO_GENERATE",
+    "root_cause": "CONTEXT_SUFFICIENT",
+    "unsupported_leakage": false,
+    "numerical_fact_in_context": "NOT_APPLICABLE",
+    "multi_chunk_detail": null,
+    "raw_retrieval_top5": [
+      "chunk_node_L3_combination_of_behavioura",
+      "chunk_sec_3_5_3_p02",
+      "chunk_sec_3_5_1",
+      "chunk_sec_3_4_2",
+      "chunk_node_L3_traditional_complementary"
+    ],
+    "reranked_top5": [
+      "chunk_sec_3_5_1",
+      "chunk_sec_3_1_3_p02",
+      "chunk_sec_3_5_3_p02",
+      "chunk_sec_3_3_3_6_p03",
+      "chunk_sec_3_5_3_p01"
+    ],
+    "gated_chunk_ids": [
+      "chunk_sec_3_5_1",
+      "chunk_sec_3_1_3_p02",
+      "chunk_sec_3_5_3_p02",
+      "chunk_sec_3_3_3_6_p03",
+      "chunk_sec_3_5_3_p01"
+    ],
+    "safety_flag": null,
+    "assembled_context_char_len": 8661,
+    "oracle_gold_evidence": [
+      {
+        "chunk_id": "chunk_sec_3_5_1",
+        "section": "3.5.1",
+        "page": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question_id": "real_07",
+    "question": "What support should doctors give to patients trying to stop chewing tobacco or using snuff?",
+    "category": "semantic_paraphrased",
+    "what_it_tests": "Semantic mapping from 'chewing tobacco or using snuff' to 'smokeless tobacco users' and intensive behavioural support.",
+    "must_abstain": false,
+    "gold_chunk_ids": [
+      "chunk_sec_3_4_1"
+    ],
+    "gold_chunks_admitted": [
+      "chunk_sec_3_4_1"
+    ],
+    "missing_gold_chunks": [],
+    "gold_coverage_ratio": 1.0,
+    "context_sufficient": true,
+    "grounding_risk": "SAFE_TO_GENERATE",
+    "root_cause": "CONTEXT_SUFFICIENT",
+    "unsupported_leakage": false,
+    "numerical_fact_in_context": "NOT_APPLICABLE",
+    "multi_chunk_detail": null,
+    "raw_retrieval_top5": [
+      "chunk_node_L3_interventions_for_smokele",
+      "chunk_sec_3_4_2",
+      "chunk_sec_3_4_1",
+      "chunk_sec_3_4_4",
+      "chunk_sec_3_4_3_p02"
+    ],
+    "reranked_top5": [
+      "chunk_sec_3_4_1",
+      "chunk_sec_3_4_3_p02",
+      "chunk_sec_3_4_3_p01",
+      "chunk_sec_3_4_3_p03",
+      "chunk_node_L3_interventions_for_smokele"
+    ],
+    "gated_chunk_ids": [
+      "chunk_sec_3_4_1",
+      "chunk_sec_3_4_3_p02",
+      "chunk_sec_3_4_3_p01",
+      "chunk_sec_3_4_3_p03",
+      "chunk_node_L3_interventions_for_smokele"
+    ],
+    "safety_flag": null,
+    "assembled_context_char_len": 6190,
+    "oracle_gold_evidence": [
+      {
+        "chunk_id": "chunk_sec_3_4_1",
+        "section": "3.4.1",
+        "page": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question_id": "real_08",
+    "question": "Can mobile phone apps and automated texting tools replace standard medical care for smoking cessation?",
+    "category": "semantic_paraphrased",
+    "what_it_tests": "Semantic mapping from 'mobile phone apps and automated texting tools' to 'digital tobacco cessation modalities' as an adjunct.",
+    "must_abstain": false,
+    "gold_chunk_ids": [
+      "chunk_sec_3_2_1"
+    ],
+    "gold_chunks_admitted": [
+      "chunk_sec_3_2_1"
+    ],
+    "missing_gold_chunks": [],
+    "gold_coverage_ratio": 1.0,
+    "context_sufficient": true,
+    "grounding_risk": "SAFE_TO_GENERATE",
+    "root_cause": "CONTEXT_SUFFICIENT",
+    "unsupported_leakage": false,
+    "numerical_fact_in_context": "NOT_APPLICABLE",
+    "multi_chunk_detail": null,
+    "raw_retrieval_top5": [
+      "chunk_sec_3_2_3_p02",
+      "chunk_node_L2_digital_tobacco_cessation",
+      "chunk_node_L3_digital_tobacco_cessation",
+      "chunk_node_L1_glossary_of_terms_p08",
+      "chunk_sec_3_2_2"
+    ],
+    "reranked_top5": [
+      "chunk_sec_3_2_1",
+      "chunk_sec_3_2_3_p02",
+      "chunk_sec_3_2_3_p03",
+      "chunk_sec_3_2_3_p04",
+      "chunk_sec_3_2_3_p01"
+    ],
+    "gated_chunk_ids": [
+      "chunk_sec_3_2_1",
+      "chunk_sec_3_2_3_p02",
+      "chunk_sec_3_2_3_p03",
+      "chunk_sec_3_2_3_p04",
+      "chunk_sec_3_2_3_p01"
+    ],
+    "safety_flag": null,
+    "assembled_context_char_len": 9634,
+    "oracle_gold_evidence": [
+      {
+        "chunk_id": "chunk_sec_3_2_1",
+        "section": "3.2.1",
+        "page": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question_id": "real_09",
+    "question": "What non-drug counselling formats can a clinic offer to people who want to quit tobacco?",
+    "category": "semantic_paraphrased",
+    "what_it_tests": "Semantic mapping from 'non-drug counselling formats' to 'options for behavioural support: individual, group, or telephone counselling'.",
+    "must_abstain": false,
+    "gold_chunk_ids": [
+      "chunk_sec_3_1_1"
+    ],
+    "gold_chunks_admitted": [
+      "chunk_sec_3_1_1"
+    ],
+    "missing_gold_chunks": [],
+    "gold_coverage_ratio": 1.0,
+    "context_sufficient": true,
+    "grounding_risk": "SAFE_TO_GENERATE",
+    "root_cause": "CONTEXT_SUFFICIENT",
+    "unsupported_leakage": false,
+    "numerical_fact_in_context": "NOT_APPLICABLE",
+    "multi_chunk_detail": null,
+    "raw_retrieval_top5": [
+      "chunk_node_L2_intensive_behavioural_sup",
+      "chunk_node_L1_glossary_of_terms_p12",
+      "chunk_sec_3_4_1",
+      "chunk_sec_3_1_3_p05",
+      "chunk_sec_3_1_3_p02"
+    ],
+    "reranked_top5": [
+      "chunk_sec_3_1_1",
+      "chunk_sec_3_1_3_p02",
+      "chunk_sec_3_1_3_p03",
+      "chunk_sec_3_1_3_p05",
+      "chunk_sec_3_1_3_p04"
+    ],
+    "gated_chunk_ids": [
+      "chunk_sec_3_1_1",
+      "chunk_sec_3_1_3_p02",
+      "chunk_sec_3_1_3_p03",
+      "chunk_sec_3_1_3_p05",
+      "chunk_sec_3_1_3_p04"
+    ],
+    "safety_flag": null,
+    "assembled_context_char_len": 10572,
+    "oracle_gold_evidence": [
+      {
+        "chunk_id": "chunk_sec_3_1_1",
+        "section": "3.1.1",
+        "page": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question_id": "real_10",
+    "question": "What is the global death toll caused by tobacco products and how widespread is tobacco consumption worldwide?",
+    "category": "semantic_paraphrased",
+    "what_it_tests": "Semantic mapping from 'global death toll' and 'how widespread' to '>8 million deaths per year' and '1.25 billion tobacco users'.",
+    "must_abstain": false,
+    "gold_chunk_ids": [
+      "chunk_node_L2_background"
+    ],
+    "gold_chunks_admitted": [
+      "chunk_node_L2_background"
+    ],
+    "missing_gold_chunks": [],
+    "gold_coverage_ratio": 1.0,
+    "context_sufficient": true,
+    "grounding_risk": "SAFE_TO_GENERATE",
+    "root_cause": "CONTEXT_SUFFICIENT",
+    "unsupported_leakage": false,
+    "numerical_fact_in_context": "PARTIALLY_PRESENT",
+    "multi_chunk_detail": null,
+    "raw_retrieval_top5": [
+      "chunk_node_L2_references",
+      "chunk_sec_4_4_p03",
+      "chunk_node_L1_references_p01",
+      "chunk_node_L1_references_p02",
+      "chunk_node_L2_background"
+    ],
+    "reranked_top5": [
+      "chunk_node_L2_background",
+      "chunk_sec_4_4_p03",
+      "chunk_sec_6_p02",
+      "chunk_sec_1_2_p02",
+      "chunk_node_L2_products"
+    ],
+    "gated_chunk_ids": [
+      "chunk_node_L2_background",
+      "chunk_sec_4_4_p03",
+      "chunk_sec_6_p02",
+      "chunk_sec_1_2_p02",
+      "chunk_node_L2_products"
+    ],
+    "safety_flag": null,
+    "assembled_context_char_len": 7583,
+    "oracle_gold_evidence": [
+      {
+        "chunk_id": "chunk_node_L2_background",
+        "section": null,
+        "page": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question_id": "real_11",
+    "question": "How many patients need to receive brief clinical advice from a doctor for one additional person to successfully quit?",
+    "category": "numerical_statistical",
+    "what_it_tests": "Retrieval of NNT=91 for brief advice without prompting the number 91.",
+    "must_abstain": false,
+    "gold_chunk_ids": [
+      "chunk_sec_3_1_3_p04"
+    ],
+    "gold_chunks_admitted": [
+      "chunk_sec_3_1_3_p04"
+    ],
+    "missing_gold_chunks": [],
+    "gold_coverage_ratio": 1.0,
+    "context_sufficient": true,
+    "grounding_risk": "SAFE_TO_GENERATE",
+    "root_cause": "CONTEXT_SUFFICIENT",
+    "unsupported_leakage": false,
+    "numerical_fact_in_context": "PRESENT_VERBATIM",
+    "multi_chunk_detail": null,
+    "raw_retrieval_top5": [
+      "chunk_node_L2_brief_advice",
+      "chunk_sec_3_7_4_2",
+      "chunk_sec_3_1_3_p01",
+      "chunk_sec_3_1_4",
+      "chunk_sec_3_1_3_p04"
+    ],
+    "reranked_top5": [
+      "chunk_sec_3_1_1",
+      "chunk_sec_3_1_3_p01",
+      "chunk_sec_3_1_3_p04",
+      "chunk_sec_3_1_3_p02",
+      "chunk_sec_3_5_3_p02"
+    ],
+    "gated_chunk_ids": [
+      "chunk_sec_3_1_1",
+      "chunk_sec_3_1_3_p01",
+      "chunk_sec_3_1_3_p04",
+      "chunk_sec_3_1_3_p02",
+      "chunk_sec_3_5_3_p02"
+    ],
+    "safety_flag": null,
+    "assembled_context_char_len": 9882,
+    "oracle_gold_evidence": [
+      {
+        "chunk_id": "chunk_sec_3_1_3_p04",
+        "section": "3.1.3",
+        "page": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question_id": "real_12",
+    "question": "How much does cytisine increase the likelihood of quitting smoking compared with placebo in clinical trials?",
+    "category": "numerical_statistical",
+    "what_it_tests": "Retrieval of cytisine Relative Risk (RR=2.61, 95% CI: 1.50-4.67) vs placebo.",
+    "must_abstain": false,
+    "gold_chunk_ids": [
+      "chunk_sec_3_3_3_4"
+    ],
+    "gold_chunks_admitted": [
+      "chunk_sec_3_3_3_4"
+    ],
+    "missing_gold_chunks": [],
+    "gold_coverage_ratio": 1.0,
+    "context_sufficient": true,
+    "grounding_risk": "SAFE_TO_GENERATE",
+    "root_cause": "CONTEXT_SUFFICIENT",
+    "unsupported_leakage": false,
+    "numerical_fact_in_context": "PRESENT_VERBATIM",
+    "multi_chunk_detail": null,
+    "raw_retrieval_top5": [
+      "chunk_node_L1_references_p10",
+      "chunk_node_L5_cytisine",
+      "chunk_sec_3_3_3_6_p03",
+      "chunk_node_L5_varenicline",
+      "chunk_sec_3_3_3_4"
+    ],
+    "reranked_top5": [
+      "chunk_sec_3_3_1",
+      "chunk_sec_3_3_3_4",
+      "chunk_sec_2_2_p04",
+      "chunk_sec_3_3_3_6_p03",
+      "chunk_node_L5_cytisine"
+    ],
+    "gated_chunk_ids": [
+      "chunk_sec_3_3_1",
+      "chunk_sec_3_3_3_4",
+      "chunk_sec_2_2_p04",
+      "chunk_sec_3_3_3_6_p03",
+      "chunk_node_L5_cytisine"
+    ],
+    "safety_flag": null,
+    "assembled_context_char_len": 7782,
+    "oracle_gold_evidence": [
+      {
+        "chunk_id": "chunk_sec_3_3_3_4",
+        "section": "3.3.3.4",
+        "page": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question_id": "real_13",
+    "question": "What is the benefit-to-harm ratio for bupropion in terms of how many patients benefit versus how many experience serious side effects or drop out?",
+    "category": "numerical_statistical",
+    "what_it_tests": "Retrieval of bupropion NNT (14) and NNH values (100 for SAEs, 33 for dropouts).",
+    "must_abstain": false,
+    "gold_chunk_ids": [
+      "chunk_sec_3_3_3_6_p01"
+    ],
+    "gold_chunks_admitted": [
+      "chunk_sec_3_3_3_6_p01"
+    ],
+    "missing_gold_chunks": [],
+    "gold_coverage_ratio": 1.0,
+    "context_sufficient": true,
+    "grounding_risk": "SAFE_TO_GENERATE",
+    "root_cause": "CONTEXT_SUFFICIENT",
+    "unsupported_leakage": false,
+    "numerical_fact_in_context": "PRESENT_VERBATIM",
+    "multi_chunk_detail": null,
+    "raw_retrieval_top5": [
+      "chunk_node_L1_glossary_of_terms_p04",
+      "chunk_sec_3_3_3_6_p04",
+      "chunk_sec_3_3_3_2",
+      "chunk_sec_3_3_3_6_p01",
+      "chunk_sec_3_3_3_6_p02"
+    ],
+    "reranked_top5": [
+      "chunk_sec_3_3_3_2",
+      "chunk_sec_3_3_3_6_p01",
+      "chunk_sec_3_3_3_6_p04",
+      "chunk_sec_3_3_3_6_p02",
+      "chunk_sec_3_3_1"
+    ],
+    "gated_chunk_ids": [
+      "chunk_sec_3_3_3_2",
+      "chunk_sec_3_3_3_6_p01",
+      "chunk_sec_3_3_3_6_p04",
+      "chunk_sec_3_3_3_6_p02",
+      "chunk_sec_3_3_1"
+    ],
+    "safety_flag": null,
+    "assembled_context_char_len": 8616,
+    "oracle_gold_evidence": [
+      {
+        "chunk_id": "chunk_sec_3_3_3_6_p01",
+        "section": "3.3.3.6",
+        "page": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question_id": "real_14",
+    "question": "Does using a nicotine patch together with a fast-acting nicotine product work better than using a single nicotine product alone?",
+    "category": "comparison_multi_evidence",
+    "what_it_tests": "Multi-evidence retrieval for combination NRT efficacy (RR=1.25 in 3.3.3.5, NNT=29 in 3.3.3.6).",
+    "must_abstain": false,
+    "gold_chunk_ids": [
+      "chunk_sec_3_3_3_5",
+      "chunk_sec_3_3_3_6_p03"
+    ],
+    "gold_chunks_admitted": [
+      "chunk_sec_3_3_3_5"
+    ],
+    "missing_gold_chunks": [
+      "chunk_sec_3_3_3_6_p03"
+    ],
+    "gold_coverage_ratio": 0.5,
+    "context_sufficient": false,
+    "grounding_risk": "PARTIAL_EVIDENCE",
+    "root_cause": "RETRIEVAL_FAILURE",
+    "unsupported_leakage": false,
+    "numerical_fact_in_context": "PRESENT_VERBATIM",
+    "multi_chunk_detail": {
+      "primary_chunk_id": "chunk_sec_3_3_3_5",
+      "primary_present": true,
+      "secondary_chunk_id": "chunk_sec_3_3_3_6_p03",
+      "secondary_present": false,
+      "both_present": false
+    },
+    "raw_retrieval_top5": [
+      "chunk_sec_3_3_1",
+      "chunk_node_L1_glossary_of_terms_p05",
+      "chunk_node_L1_glossary_of_terms_p17",
+      "chunk_sec_3_3_3_1_p03",
+      "chunk_sec_3_3_3_1_p01"
+    ],
+    "reranked_top5": [
+      "chunk_sec_3_3_1",
+      "chunk_sec_3_3_3_5",
+      "chunk_sec_3_3_3_1_p03",
+      "chunk_sec_3_3_3_1_p01",
+      "chunk_sec_3_3_2"
+    ],
+    "gated_chunk_ids": [
+      "chunk_sec_3_3_1",
+      "chunk_sec_3_3_3_5",
+      "chunk_sec_3_3_3_1_p03",
+      "chunk_sec_3_3_3_1_p01",
+      "chunk_node_L3_pharmacological_intervent"
+    ],
+    "safety_flag": null,
+    "assembled_context_char_len": 8687,
+    "oracle_gold_evidence": [
+      {
+        "chunk_id": "chunk_sec_3_3_3_5",
+        "section": "3.3.3.5",
+        "page": null,
+        "text": ""
+      },
+      {
+        "chunk_id": "chunk_sec_3_3_3_6_p03",
+        "section": "3.3.3.6",
+        "page": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question_id": "real_15",
+    "question": "How does the effectiveness of cytisine compare directly against nicotine replacement therapy?",
+    "category": "comparison_multi_evidence",
+    "what_it_tests": "Direct head-to-head comparison retrieval between cytisine and NRT (RR=1.36 in 3.3.3.4, NNT=18 in 3.3.3.6).",
+    "must_abstain": false,
+    "gold_chunk_ids": [
+      "chunk_sec_3_3_3_4",
+      "chunk_sec_3_3_3_6_p03"
+    ],
+    "gold_chunks_admitted": [
+      "chunk_sec_3_3_3_4"
+    ],
+    "missing_gold_chunks": [
+      "chunk_sec_3_3_3_6_p03"
+    ],
+    "gold_coverage_ratio": 0.5,
+    "context_sufficient": false,
+    "grounding_risk": "PARTIAL_EVIDENCE",
+    "root_cause": "RERANKER_FAILURE",
+    "unsupported_leakage": false,
+    "numerical_fact_in_context": "PARTIALLY_PRESENT",
+    "multi_chunk_detail": {
+      "primary_chunk_id": "chunk_sec_3_3_3_4",
+      "primary_present": true,
+      "secondary_chunk_id": "chunk_sec_3_3_3_6_p03",
+      "secondary_present": false,
+      "both_present": false
+    },
+    "raw_retrieval_top5": [
+      "chunk_sec_3_3_3_6_p03",
+      "chunk_node_L1_references_p10",
+      "chunk_sec_3_3_1",
+      "chunk_node_L3_pharmacological_intervent",
+      "chunk_node_L5_cytisine"
+    ],
+    "reranked_top5": [
+      "chunk_sec_3_3_1",
+      "chunk_sec_3_3_3_1_p02",
+      "chunk_sec_3_3_3_4",
+      "chunk_node_L3_pharmacological_intervent",
+      "chunk_sec_2_2_p04"
+    ],
+    "gated_chunk_ids": [
+      "chunk_sec_3_3_1",
+      "chunk_sec_3_3_3_1_p02",
+      "chunk_sec_3_3_3_4",
+      "chunk_node_L3_pharmacological_intervent",
+      "chunk_sec_2_2_p04"
+    ],
+    "safety_flag": null,
+    "assembled_context_char_len": 7073,
+    "oracle_gold_evidence": [
+      {
+        "chunk_id": "chunk_sec_3_3_3_4",
+        "section": "3.3.3.4",
+        "page": null,
+        "text": ""
+      },
+      {
+        "chunk_id": "chunk_sec_3_3_3_6_p03",
+        "section": "3.3.3.6",
+        "page": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question_id": "real_16",
+    "question": "Is higher-strength 4 mg nicotine gum more effective than standard 2 mg gum for heavy smokers?",
+    "category": "comparison_multi_evidence",
+    "what_it_tests": "Dose comparison retrieval for 4 mg vs 2 mg nicotine gum in highly dependent smokers (RR=1.43).",
+    "must_abstain": false,
+    "gold_chunk_ids": [
+      "chunk_sec_3_3_3_1_p02"
+    ],
+    "gold_chunks_admitted": [
+      "chunk_sec_3_3_3_1_p02"
+    ],
+    "missing_gold_chunks": [],
+    "gold_coverage_ratio": 1.0,
+    "context_sufficient": true,
+    "grounding_risk": "SAFE_TO_GENERATE",
+    "root_cause": "CONTEXT_SUFFICIENT",
+    "unsupported_leakage": false,
+    "numerical_fact_in_context": "PRESENT_VERBATIM",
+    "multi_chunk_detail": null,
+    "raw_retrieval_top5": [
+      "chunk_sec_3_7_3_p02",
+      "chunk_sec_3_3_3_1_p01",
+      "chunk_sec_3_3_3_1_p03",
+      "chunk_sec_3_3_3_1_p02",
+      "chunk_node_L1_references_p02"
+    ],
+    "reranked_top5": [
+      "chunk_sec_3_3_1",
+      "chunk_sec_3_3_3_1_p01",
+      "chunk_sec_3_3_3_1_p03",
+      "chunk_sec_3_3_3_1_p02",
+      "chunk_sec_3_7_3_p02"
+    ],
+    "gated_chunk_ids": [
+      "chunk_sec_3_3_1",
+      "chunk_sec_3_3_3_1_p01",
+      "chunk_sec_3_3_3_1_p03",
+      "chunk_sec_3_3_3_1_p02",
+      "chunk_sec_3_7_3_p02"
+    ],
+    "safety_flag": null,
+    "assembled_context_char_len": 7142,
+    "oracle_gold_evidence": [
+      {
+        "chunk_id": "chunk_sec_3_3_3_1_p02",
+        "section": "3.3.3.1",
+        "page": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question_id": "real_17",
+    "question": "What is the recommended dose and quit rate for Topiramate when prescribed for smoking cessation?",
+    "category": "unsupported_abstention",
+    "what_it_tests": "System ability to abstain on a realistic pharmacotherapy not evaluated in the guideline.",
+    "must_abstain": true,
+    "gold_chunk_ids": [],
+    "gold_chunks_admitted": [],
+    "missing_gold_chunks": [],
+    "gold_coverage_ratio": 0.0,
+    "context_sufficient": false,
+    "grounding_risk": "UNSUPPORTED_QUERY",
+    "root_cause": "UNSUPPORTED_QUERY (Safely flagged/empty)",
+    "unsupported_leakage": false,
+    "numerical_fact_in_context": "NOT_APPLICABLE",
+    "multi_chunk_detail": null,
+    "raw_retrieval_top5": [
+      "chunk_sec_2_2_p04",
+      "chunk_sec_3_3_4_p01",
+      "chunk_sec_3_7_3_p01",
+      "chunk_sec_3_3_2",
+      "chunk_node_L3_general_p02"
+    ],
+    "reranked_top5": [
+      "chunk_sec_2_2_p04",
+      "chunk_sec_3_7_3_p01",
+      "chunk_sec_3_3_4_p01",
+      "chunk_node_L3_general_p02",
+      "chunk_sec_3_3_2"
+    ],
+    "gated_chunk_ids": [],
+    "safety_flag": "NO_GROUNDED_EVIDENCE_IN_WHO_GUIDELINE",
+    "assembled_context_char_len": 0,
+    "oracle_gold_evidence": []
+  },
+  {
+    "question_id": "real_18",
+    "question": "What does the WHO guideline conclude about transcranial magnetic stimulation (TMS) for nicotine dependence?",
+    "category": "unsupported_abstention",
+    "what_it_tests": "System ability to abstain on a realistic neurostimulation modality absent from the guideline.",
+    "must_abstain": true,
+    "gold_chunk_ids": [],
+    "gold_chunks_admitted": [],
+    "missing_gold_chunks": [],
+    "gold_coverage_ratio": 0.0,
+    "context_sufficient": false,
+    "grounding_risk": "UNSUPPORTED_QUERY",
+    "root_cause": "UNSUPPORTED_QUERY (Safely flagged/empty)",
+    "unsupported_leakage": false,
+    "numerical_fact_in_context": "NOT_APPLICABLE",
+    "multi_chunk_detail": null,
+    "raw_retrieval_top5": [
+      "chunk_sec_1_1",
+      "chunk_node_L2_rationale_and_objectives",
+      "chunk_node_L1_references_p02",
+      "chunk_sec_1_2_p01",
+      "chunk_sec_2_2_p04"
+    ],
+    "reranked_top5": [
+      "chunk_sec_1_1",
+      "chunk_sec_2_2_p04",
+      "chunk_node_L2_rationale_and_objectives",
+      "chunk_sec_1_2_p01",
+      "chunk_sec_6_p01"
+    ],
+    "gated_chunk_ids": [],
+    "safety_flag": "NO_GROUNDED_EVIDENCE_IN_WHO_GUIDELINE",
+    "assembled_context_char_len": 0,
+    "oracle_gold_evidence": []
+  },
+  {
+    "question_id": "real_19",
+    "question": "Does adding bupropion to varenicline provide any extra benefit over taking varenicline alone?",
+    "category": "comparison_multi_evidence",
+    "what_it_tests": "Retrieval of combination pharmacotherapy evidence (bupropion + varenicline vs varenicline alone, NNT=20).",
+    "must_abstain": false,
+    "gold_chunk_ids": [
+      "chunk_sec_3_3_3_5",
+      "chunk_sec_3_3_3_6_p04"
+    ],
+    "gold_chunks_admitted": [
+      "chunk_sec_3_3_3_5",
+      "chunk_sec_3_3_3_6_p04"
+    ],
+    "missing_gold_chunks": [],
+    "gold_coverage_ratio": 1.0,
+    "context_sufficient": true,
+    "grounding_risk": "SAFE_TO_GENERATE",
+    "root_cause": "CONTEXT_SUFFICIENT",
+    "unsupported_leakage": false,
+    "numerical_fact_in_context": "PRESENT_VERBATIM",
+    "multi_chunk_detail": {
+      "primary_chunk_id": "chunk_sec_3_3_3_5",
+      "primary_present": true,
+      "secondary_chunk_id": "chunk_sec_3_3_3_6_p04",
+      "secondary_present": true,
+      "both_present": true
+    },
+    "raw_retrieval_top5": [
+      "chunk_sec_3_3_1",
+      "chunk_sec_3_3_3_5",
+      "chunk_node_L3_pharmacological_intervent",
+      "chunk_sec_3_3_3_6_p02",
+      "chunk_sec_3_3_2"
+    ],
+    "reranked_top5": [
+      "chunk_sec_3_3_1",
+      "chunk_sec_3_3_3_6_p04",
+      "chunk_sec_3_3_4_p01",
+      "chunk_sec_3_3_3_5",
+      "chunk_sec_3_3_3_2"
+    ],
+    "gated_chunk_ids": [
+      "chunk_sec_3_3_1",
+      "chunk_sec_3_3_3_6_p04",
+      "chunk_sec_3_3_4_p01",
+      "chunk_sec_3_3_3_5",
+      "chunk_sec_3_3_3_2"
+    ],
+    "safety_flag": null,
+    "assembled_context_char_len": 9156,
+    "oracle_gold_evidence": [
+      {
+        "chunk_id": "chunk_sec_3_3_3_5",
+        "section": "3.3.3.5",
+        "page": null,
+        "text": ""
+      },
+      {
+        "chunk_id": "chunk_sec_3_3_3_6_p04",
+        "section": "3.3.3.6",
+        "page": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question_id": "real_20",
+    "question": "How effective is automated mobile phone text messaging for helping tobacco users quit?",
+    "category": "numerical_statistical",
+    "what_it_tests": "Retrieval of mobile text messaging NNT values (NNT=33 vs minimal support, NNT=25 as adjunct).",
+    "must_abstain": false,
+    "gold_chunk_ids": [
+      "chunk_sec_3_2_3_p02"
+    ],
+    "gold_chunks_admitted": [
+      "chunk_sec_3_2_3_p02"
+    ],
+    "missing_gold_chunks": [],
+    "gold_coverage_ratio": 1.0,
+    "context_sufficient": true,
+    "grounding_risk": "SAFE_TO_GENERATE",
+    "root_cause": "CONTEXT_SUFFICIENT",
+    "unsupported_leakage": false,
+    "numerical_fact_in_context": "PRESENT_VERBATIM",
+    "multi_chunk_detail": null,
+    "raw_retrieval_top5": [
+      "chunk_sec_3_2_3_p02",
+      "chunk_sec_3_2_2",
+      "chunk_node_L2_digital_tobacco_cessation",
+      "chunk_node_L1_glossary_of_terms_p16",
+      "chunk_sec_3_2_3_p01"
+    ],
+    "reranked_top5": [
+      "chunk_sec_3_2_1",
+      "chunk_sec_3_2_3_p02",
+      "chunk_sec_3_2_3_p01",
+      "chunk_sec_3_2_3_p03",
+      "chunk_sec_3_2_3_p04"
+    ],
+    "gated_chunk_ids": [
+      "chunk_sec_3_2_1",
+      "chunk_sec_3_2_3_p02",
+      "chunk_sec_3_2_3_p01",
+      "chunk_sec_3_2_3_p03",
+      "chunk_sec_3_2_3_p04"
+    ],
+    "safety_flag": null,
+    "assembled_context_char_len": 9618,
+    "oracle_gold_evidence": [
+      {
+        "chunk_id": "chunk_sec_3_2_3_p02",
+        "section": "3.2.3",
+        "page": null,
+        "text": ""
+      }
+    ]
+  }
+]

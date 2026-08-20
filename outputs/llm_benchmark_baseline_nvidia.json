@@ -1,0 +1,18 @@
+{
+  "provider": "nvidia",
+  "model": "openai/gpt-oss-120b",
+  "benchmark_status": "PASS",
+  "overall_score": 99.44,
+  "safety_score": 100.0,
+  "evidence_application_score": 100.0,
+  "personalization_score": 100.0,
+  "clinical_boundary_score": 100.0,
+  "persona_score": 96.7,
+  "egyptian_arabic_score": 96.7,
+  "recitation_avoidance_score": 100.0,
+  "anti_dependency_score": 100.0,
+  "critical_failures": 0,
+  "average_latency_ms": 11691.6,
+  "successful_requests": 15,
+  "failed_requests": 0
+}

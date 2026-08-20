@@ -1,0 +1,370 @@
+[
+  {
+    "question_id": "real_01",
+    "question": "How long should a standard brief tobacco cessation talk take during a clinical appointment?",
+    "category": "direct_factual",
+    "gold_chunk_ids": [
+      "chunk_sec_3_1_1"
+    ],
+    "gold_section": "3.1.1",
+    "gold_page": 29,
+    "what_it_tests": "Retrieval of routine brief intervention duration (30 seconds to 3 minutes).",
+    "expected_claims": [
+      "Brief advice delivered by health-care providers should take between 30 seconds and 3 minutes per encounter."
+    ],
+    "expected_metric": {
+      "metric_type": "duration",
+      "value": "30 seconds to 3 minutes",
+      "outcome": "encounter duration for brief advice"
+    },
+    "must_abstain": false
+  },
+  {
+    "question_id": "real_02",
+    "question": "Which medications are officially recommended by WHO as main pharmacological options for quitting smoking?",
+    "category": "direct_factual",
+    "gold_chunk_ids": [
+      "chunk_sec_3_3_1"
+    ],
+    "gold_section": "3.3.1",
+    "gold_page": 35,
+    "what_it_tests": "Retrieval of the 4 approved first-line cessation drugs (varenicline, NRT, bupropion, cytisine).",
+    "expected_claims": [
+      "WHO recommends varenicline, nicotine replacement therapy (NRT), bupropion, and cytisine as pharmacological treatments for tobacco cessation."
+    ],
+    "expected_metric": null,
+    "must_abstain": false
+  },
+  {
+    "question_id": "real_03",
+    "question": "What health system intervention is recommended regarding recording a patient's tobacco use in clinic records?",
+    "category": "direct_factual",
+    "gold_chunk_ids": [
+      "chunk_sec_3_7_1"
+    ],
+    "gold_section": "3.7.1",
+    "gold_page": 44,
+    "what_it_tests": "Retrieval of system-level EHR/medical record documentation recommendation.",
+    "expected_claims": [
+      "WHO recommends that health-care facilities routinely record tobacco use status and cessation interventions in medical records (including EHRs)."
+    ],
+    "expected_metric": null,
+    "must_abstain": false
+  },
+  {
+    "question_id": "real_04",
+    "question": "What does the WHO guideline say about using alternative therapies like acupuncture or laser therapy to quit smoking?",
+    "category": "direct_factual",
+    "gold_chunk_ids": [
+      "chunk_sec_3_6_1"
+    ],
+    "gold_section": "3.6.1",
+    "gold_page": 43,
+    "what_it_tests": "Retrieval of WHO position on traditional/alternative therapies (insufficient evidence).",
+    "expected_claims": [
+      "Evidence is insufficient to make a recommendation for or against traditional, complementary, and alternative therapies (such as acupuncture, acupressure, or laser therapy)."
+    ],
+    "expected_metric": null,
+    "must_abstain": false
+  },
+  {
+    "question_id": "real_05",
+    "question": "How many studies and total participants formed the evidence base for single NRT monotherapy in the Cochrane review?",
+    "category": "direct_factual",
+    "gold_chunk_ids": [
+      "chunk_sec_3_3_3_1_p01"
+    ],
+    "gold_section": "3.3.3.1",
+    "gold_page": 35,
+    "what_it_tests": "Retrieval of specific systematic review study counts (133 studies, 64,640 participants).",
+    "expected_claims": [
+      "The Cochrane systematic review of NRT monotherapy evaluated 133 studies that included 64,640 participants."
+    ],
+    "expected_metric": {
+      "metric_type": "study_counts",
+      "value": "133 studies, 64640 participants",
+      "outcome": "evidence base size for NRT monotherapy"
+    },
+    "must_abstain": false
+  },
+  {
+    "question_id": "real_06",
+    "question": "Is it more effective to use quit-smoking pills alongside talking therapy rather than trying pills alone?",
+    "category": "semantic_paraphrased",
+    "gold_chunk_ids": [
+      "chunk_sec_3_5_1"
+    ],
+    "gold_section": "3.5.1",
+    "gold_page": 41,
+    "what_it_tests": "Semantic mapping from 'quit-smoking pills alongside talking therapy' to 'combining pharmacotherapy and behavioural interventions'.",
+    "expected_claims": [
+      "WHO recommends combining pharmacotherapy and behavioural interventions rather than using either intervention alone."
+    ],
+    "expected_metric": null,
+    "must_abstain": false
+  },
+  {
+    "question_id": "real_07",
+    "question": "What support should doctors give to patients trying to stop chewing tobacco or using snuff?",
+    "category": "semantic_paraphrased",
+    "gold_chunk_ids": [
+      "chunk_sec_3_4_1"
+    ],
+    "gold_section": "3.4.1",
+    "gold_page": 40,
+    "what_it_tests": "Semantic mapping from 'chewing tobacco or using snuff' to 'smokeless tobacco users' and intensive behavioural support.",
+    "expected_claims": [
+      "WHO strongly recommends providing intensive behavioural support interventions (individual, group, or telephone counselling) for smokeless tobacco users."
+    ],
+    "expected_metric": null,
+    "must_abstain": false
+  },
+  {
+    "question_id": "real_08",
+    "question": "Can mobile phone apps and automated texting tools replace standard medical care for smoking cessation?",
+    "category": "semantic_paraphrased",
+    "gold_chunk_ids": [
+      "chunk_sec_3_2_1"
+    ],
+    "gold_section": "3.2.1",
+    "gold_page": 32,
+    "what_it_tests": "Semantic mapping from 'mobile phone apps and automated texting tools' to 'digital tobacco cessation modalities' as an adjunct.",
+    "expected_claims": [
+      "Digital modalities (texting, apps, AI interventions) are recommended as an adjunct to other tobacco cessation support or for self-management, not as a replacement for standard care."
+    ],
+    "expected_metric": null,
+    "must_abstain": false
+  },
+  {
+    "question_id": "real_09",
+    "question": "What non-drug counselling formats can a clinic offer to people who want to quit tobacco?",
+    "category": "semantic_paraphrased",
+    "gold_chunk_ids": [
+      "chunk_sec_3_1_1"
+    ],
+    "gold_section": "3.1.1",
+    "gold_page": 29,
+    "what_it_tests": "Semantic mapping from 'non-drug counselling formats' to 'options for behavioural support: individual, group, or telephone counselling'.",
+    "expected_claims": [
+      "Options for behavioural support recommended by WHO include individual face-to-face counselling, group face-to-face counselling, and telephone counselling."
+    ],
+    "expected_metric": null,
+    "must_abstain": false
+  },
+  {
+    "question_id": "real_10",
+    "question": "What is the global death toll caused by tobacco products and how widespread is tobacco consumption worldwide?",
+    "category": "semantic_paraphrased",
+    "gold_chunk_ids": [
+      "chunk_node_L2_background"
+    ],
+    "gold_section": "Background",
+    "gold_page": 15,
+    "what_it_tests": "Semantic mapping from 'global death toll' and 'how widespread' to '>8 million deaths per year' and '1.25 billion tobacco users'.",
+    "expected_claims": [
+      "Tobacco kills more than 8 million people per year globally.",
+      "Globally, there are still 1.25 billion people who use tobacco."
+    ],
+    "expected_metric": {
+      "metric_type": "mortality / prevalence",
+      "value": ">8 million deaths / 1.25 billion users",
+      "outcome": "global annual mortality and user count"
+    },
+    "must_abstain": false
+  },
+  {
+    "question_id": "real_11",
+    "question": "How many patients need to receive brief clinical advice from a doctor for one additional person to successfully quit?",
+    "category": "numerical_statistical",
+    "gold_chunk_ids": [
+      "chunk_sec_3_1_3_p04"
+    ],
+    "gold_section": "3.1.3",
+    "gold_page": 29,
+    "what_it_tests": "Retrieval of NNT=91 for brief advice without prompting the number 91.",
+    "expected_claims": [
+      "The Number Needed to Treat (NNT) for brief advice compared with no advice is 91 to achieve one additional case of long-term cessation."
+    ],
+    "expected_metric": {
+      "metric_type": "NNT",
+      "value": "91",
+      "outcome": "long-term cessation vs no advice"
+    },
+    "must_abstain": false
+  },
+  {
+    "question_id": "real_12",
+    "question": "How much does cytisine increase the likelihood of quitting smoking compared with placebo in clinical trials?",
+    "category": "numerical_statistical",
+    "gold_chunk_ids": [
+      "chunk_sec_3_3_3_4"
+    ],
+    "gold_section": "3.3.3.4",
+    "gold_page": 37,
+    "what_it_tests": "Retrieval of cytisine Relative Risk (RR=2.61, 95% CI: 1.50-4.67) vs placebo.",
+    "expected_claims": [
+      "Cytisine increased the likelihood of quitting smoking for 6 months or longer compared with placebo with a Relative Risk (RR) of 2.61 (95% CI: 1.50 to 4.67; 6 trials; 5,194 participants)."
+    ],
+    "expected_metric": {
+      "metric_type": "RR",
+      "value": "2.61 (95% CI: 1.50–4.67)",
+      "outcome": "quitting for 6 months or longer vs placebo"
+    },
+    "must_abstain": false
+  },
+  {
+    "question_id": "real_13",
+    "question": "What is the benefit-to-harm ratio for bupropion in terms of how many patients benefit versus how many experience serious side effects or drop out?",
+    "category": "numerical_statistical",
+    "gold_chunk_ids": [
+      "chunk_sec_3_3_3_6_p01"
+    ],
+    "gold_section": "3.3.3.6",
+    "gold_page": 37,
+    "what_it_tests": "Retrieval of bupropion NNT (14) and NNH values (100 for SAEs, 33 for dropouts).",
+    "expected_claims": [
+      "Bupropion versus placebo has an NNT of 14 for long-term abstinence.",
+      "Bupropion has an NNH of 100 for serious adverse events (SAEs).",
+      "Bupropion has an NNH of 33 for treatment dropouts due to adverse events."
+    ],
+    "expected_metric": {
+      "metric_type": "NNT / NNH",
+      "value": "NNT: 14, NNH (SAE): 100, NNH (dropouts): 33",
+      "outcome": "abstinence benefit vs harm profile"
+    },
+    "must_abstain": false
+  },
+  {
+    "question_id": "real_14",
+    "question": "Does using a nicotine patch together with a fast-acting nicotine product work better than using a single nicotine product alone?",
+    "category": "comparison_multi_evidence",
+    "gold_chunk_ids": [
+      "chunk_sec_3_3_3_5",
+      "chunk_sec_3_3_3_6_p03"
+    ],
+    "gold_section": "3.3.3.5 / 3.3.3.6",
+    "gold_page": 37,
+    "what_it_tests": "Multi-evidence retrieval for combination NRT efficacy (RR=1.25 in 3.3.3.5, NNT=29 in 3.3.3.6).",
+    "expected_claims": [
+      "Combination NRT (fast-acting form plus patch) results in higher quit rates than single NRT (RR: 1.25; 95% CI: 1.15 to 1.36).",
+      "The NNT for combination NRT versus monotherapy is 29 for one additional long-term abstinence."
+    ],
+    "expected_metric": {
+      "metric_type": "RR / NNT",
+      "value": "RR: 1.25 (95% CI: 1.15–1.36), NNT: 29",
+      "outcome": "combination NRT vs single NRT monotherapy"
+    },
+    "must_abstain": false
+  },
+  {
+    "question_id": "real_15",
+    "question": "How does the effectiveness of cytisine compare directly against nicotine replacement therapy?",
+    "category": "comparison_multi_evidence",
+    "gold_chunk_ids": [
+      "chunk_sec_3_3_3_4",
+      "chunk_sec_3_3_3_6_p03"
+    ],
+    "gold_section": "3.3.3.4 / 3.3.3.6",
+    "gold_page": 37,
+    "what_it_tests": "Direct head-to-head comparison retrieval between cytisine and NRT (RR=1.36 in 3.3.3.4, NNT=18 in 3.3.3.6).",
+    "expected_claims": [
+      "Cytisine resulted in higher quit rates than NRT (RR: 1.36; 95% CI: 1.06 to 1.74 across 3 trials).",
+      "The NNT for cytisine versus NRT is 18 for one additional long-term abstinence."
+    ],
+    "expected_metric": {
+      "metric_type": "RR / NNT",
+      "value": "RR: 1.36 (95% CI: 1.06–1.74), NNT: 18",
+      "outcome": "head-to-head cytisine vs NRT"
+    },
+    "must_abstain": false
+  },
+  {
+    "question_id": "real_16",
+    "question": "Is higher-strength 4 mg nicotine gum more effective than standard 2 mg gum for heavy smokers?",
+    "category": "comparison_multi_evidence",
+    "gold_chunk_ids": [
+      "chunk_sec_3_3_3_1_p02"
+    ],
+    "gold_section": "3.3.3.1",
+    "gold_page": 35,
+    "what_it_tests": "Dose comparison retrieval for 4 mg vs 2 mg nicotine gum in highly dependent smokers (RR=1.43).",
+    "expected_claims": [
+      "In highly dependent smokers, 4 mg gum is significantly more effective than 2 mg gum (RR: 1.43; 95% CI: 1.12 to 1.83; 5 studies; 856 participants)."
+    ],
+    "expected_metric": {
+      "metric_type": "RR",
+      "value": "1.43 (95% CI: 1.12–1.83)",
+      "outcome": "4 mg vs 2 mg gum in highly dependent smokers"
+    },
+    "must_abstain": false
+  },
+  {
+    "question_id": "real_17",
+    "question": "What is the recommended dose and quit rate for Topiramate when prescribed for smoking cessation?",
+    "category": "unsupported_abstention",
+    "gold_chunk_ids": [],
+    "gold_section": "None",
+    "gold_page": null,
+    "what_it_tests": "System ability to abstain on a realistic pharmacotherapy not evaluated in the guideline.",
+    "expected_claims": [
+      "The WHO guideline does not evaluate or recommend Topiramate for smoking cessation, and contains no dosing or quit rate data for it."
+    ],
+    "expected_metric": null,
+    "must_abstain": true
+  },
+  {
+    "question_id": "real_18",
+    "question": "What does the WHO guideline conclude about transcranial magnetic stimulation (TMS) for nicotine dependence?",
+    "category": "unsupported_abstention",
+    "gold_chunk_ids": [],
+    "gold_section": "None",
+    "gold_page": null,
+    "what_it_tests": "System ability to abstain on a realistic neurostimulation modality absent from the guideline.",
+    "expected_claims": [
+      "The WHO guideline does not evaluate or provide recommendations regarding transcranial magnetic stimulation (TMS) for nicotine dependence."
+    ],
+    "expected_metric": null,
+    "must_abstain": true
+  },
+  {
+    "question_id": "real_19",
+    "question": "Does adding bupropion to varenicline provide any extra benefit over taking varenicline alone?",
+    "category": "comparison_multi_evidence",
+    "gold_chunk_ids": [
+      "chunk_sec_3_3_3_5",
+      "chunk_sec_3_3_3_6_p04"
+    ],
+    "gold_section": "3.3.3.5 / 3.3.3.6",
+    "gold_page": 37,
+    "what_it_tests": "Retrieval of combination pharmacotherapy evidence (bupropion + varenicline vs varenicline alone, NNT=20).",
+    "expected_claims": [
+      "Bupropion plus varenicline resulted in higher quit rates than varenicline alone (NNT: 20 to achieve one more case of long-term abstinence)."
+    ],
+    "expected_metric": {
+      "metric_type": "NNT",
+      "value": "20",
+      "outcome": "bupropion + varenicline vs varenicline alone"
+    },
+    "must_abstain": false
+  },
+  {
+    "question_id": "real_20",
+    "question": "How effective is automated mobile phone text messaging for helping tobacco users quit?",
+    "category": "numerical_statistical",
+    "gold_chunk_ids": [
+      "chunk_sec_3_2_3_p02"
+    ],
+    "gold_section": "3.2.3",
+    "gold_page": 32,
+    "what_it_tests": "Retrieval of mobile text messaging NNT values (NNT=33 vs minimal support, NNT=25 as adjunct).",
+    "expected_claims": [
+      "Mobile text messaging versus minimal support has an NNT of 33, and text messaging as an adjunct to other support has an NNT of 25."
+    ],
+    "expected_metric": {
+      "metric_type": "NNT",
+      "value": "33 (vs minimal support) / 25 (as adjunct)",
+      "outcome": "smoking cessation"
+    },
+    "must_abstain": false
+  }
+]

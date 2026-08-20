@@ -1,0 +1,706 @@
+{
+  "summary": {
+    "total": 40,
+    "PASS": 38,
+    "FAIL": 0,
+    "NEEDS_REVIEW": 2
+  },
+  "results": [
+    {
+      "id": "eval_01",
+      "status": "PASS",
+      "supporting_chunk_ids": [
+        "chunk_sec_3_1_1"
+      ],
+      "section_verified": "3.1.1",
+      "page_verified": 29,
+      "evidence_snippet": "30 seconds and 3 minutes per encounter",
+      "claims_status": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics_status": [
+        "EXACT_MATCH"
+      ],
+      "notes": "Section 3.1.1 explicitly states 30 seconds to 3 minutes brief advice."
+    },
+    {
+      "id": "eval_02",
+      "status": "PASS",
+      "supporting_chunk_ids": [
+        "chunk_sec_3_3_3_1_p01",
+        "chunk_sec_3_3_3_1_p02",
+        "chunk_sec_3_3_3_1_p03"
+      ],
+      "section_verified": "3.3.3.1",
+      "page_verified": 35,
+      "evidence_snippet": "133 studies that included 64 640 participants",
+      "claims_status": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics_status": [
+        "EXACT_MATCH",
+        "EXACT_MATCH"
+      ],
+      "notes": "133 studies found: True. 64640 participants found: True."
+    },
+    {
+      "id": "eval_03",
+      "status": "PASS",
+      "supporting_chunk_ids": [
+        "chunk_sec_3_7_1"
+      ],
+      "section_verified": "3.7.1",
+      "page_verified": 44,
+      "evidence_snippet": "electronic health records (EHRs), to facilitate provider interaction",
+      "claims_status": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics_status": [],
+      "notes": "Section 3.7.1 clearly recommends EHR recording of tobacco use status."
+    },
+    {
+      "id": "eval_04",
+      "status": "NEEDS_REVIEW",
+      "supporting_chunk_ids": [],
+      "section_verified": "Background",
+      "page_verified": 15,
+      "evidence_snippet": "more than 8 million people ... 1.3 million non-smokers",
+      "claims_status": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics_status": [
+        "EXACT_MATCH",
+        "EXACT_MATCH"
+      ],
+      "notes": "8 million found: False. 1.3 million found: False."
+    },
+    {
+      "id": "eval_05",
+      "status": "PASS",
+      "supporting_chunk_ids": [
+        "chunk_node_L1_abbreviations_and_acronym",
+        "chunk_sec_2_1",
+        "chunk_sec_2_2_p01"
+      ],
+      "section_verified": "Abbreviations and acronyms",
+      "page_verified": 9,
+      "evidence_snippet": "PICO: Population, Intervention, Comparator, Outcomes",
+      "claims_status": [
+        "SUPPORTED"
+      ],
+      "metrics_status": [],
+      "notes": "PICO found in corpus: True. Full expansion found: True."
+    },
+    {
+      "id": "eval_06",
+      "status": "PASS",
+      "supporting_chunk_ids": [
+        "chunk_node_L1_acknowledgements_p02"
+      ],
+      "section_verified": "Acknowledgements",
+      "page_verified": 7,
+      "evidence_snippet": "WHO core funding",
+      "claims_status": [
+        "SUPPORTED"
+      ],
+      "metrics_status": [],
+      "notes": "Core funding mention found: True."
+    },
+    {
+      "id": "eval_07",
+      "status": "PASS",
+      "supporting_chunk_ids": [
+        "chunk_sec_3_3_1"
+      ],
+      "section_verified": "3.3.1",
+      "page_verified": 35,
+      "evidence_snippet": "WHO recommends varenicline, NRT, bupropion and cytisine as pharmacological treatment options",
+      "claims_status": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics_status": [],
+      "notes": "Varenicline:True, NRT:True, Bupropion:True, Cytisine:True"
+    },
+    {
+      "id": "eval_08",
+      "status": "PASS",
+      "supporting_chunk_ids": [
+        "chunk_sec_3_4_1"
+      ],
+      "section_verified": "3.4.1",
+      "page_verified": 40,
+      "evidence_snippet": "intensive behavioural support interventions ... smokeless tobacco users",
+      "claims_status": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics_status": [],
+      "notes": "Intensive:True, Smokeless:True"
+    },
+    {
+      "id": "eval_09",
+      "status": "PASS",
+      "supporting_chunk_ids": [
+        "chunk_sec_3_5_1"
+      ],
+      "section_verified": "3.5.1",
+      "page_verified": 41,
+      "evidence_snippet": "WHO recommends combining pharmacotherapy and behavioural interventions",
+      "claims_status": [
+        "SUPPORTED"
+      ],
+      "metrics_status": [],
+      "notes": "Combination recommendation found: True"
+    },
+    {
+      "id": "eval_10",
+      "status": "PASS",
+      "supporting_chunk_ids": [
+        "chunk_node_L1_references_p09",
+        "chunk_node_L3_external_review_group_p02"
+      ],
+      "section_verified": "3.1.1",
+      "page_verified": 29,
+      "evidence_snippet": "toll-free telephone quitlines ... proactive or reactive",
+      "claims_status": [
+        "SUPPORTED",
+        "NEEDS_REVIEW"
+      ],
+      "metrics_status": [],
+      "notes": "Quitline found: True. Proactive mentioned: False."
+    },
+    {
+      "id": "eval_11",
+      "status": "PASS",
+      "supporting_chunk_ids": [
+        "chunk_sec_3_3_3_1_p01",
+        "chunk_sec_3_3_3_1_p02",
+        "chunk_sec_3_3_3_1_p03"
+      ],
+      "section_verified": "3.3.3.1",
+      "page_verified": 35,
+      "evidence_snippet": "4-mg gum with 2-mg gum ... (RR: 1.43; 95% CI: 1.12–1.83; 5 studies; 856 participants)",
+      "claims_status": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics_status": [
+        "EXACT_MATCH",
+        "EXACT_MATCH"
+      ],
+      "notes": "RR=1.43 found: True. 4mg vs 2mg gum comparison found: True."
+    },
+    {
+      "id": "eval_12",
+      "status": "PASS",
+      "supporting_chunk_ids": [
+        "chunk_sec_3_6_1"
+      ],
+      "section_verified": "3.6.1",
+      "page_verified": 43,
+      "evidence_snippet": "Evidence is insufficient to make a recommendation for or against traditional, complementary and alternative therapies",
+      "claims_status": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics_status": [],
+      "notes": "Insufficient evidence statement found: True. Acupuncture mentioned: False."
+    },
+    {
+      "id": "eval_13",
+      "status": "PASS",
+      "supporting_chunk_ids": [
+        "chunk_sec_3_1_3_p04"
+      ],
+      "section_verified": "3.1.3",
+      "page_verified": 29,
+      "evidence_snippet": "number needed to treat [NNT]: 91 to achieve one more case",
+      "claims_status": [
+        "SUPPORTED"
+      ],
+      "metrics_status": [
+        "EXACT_MATCH"
+      ],
+      "notes": "NNT=91 found in corpus: True."
+    },
+    {
+      "id": "eval_14",
+      "status": "PASS",
+      "supporting_chunk_ids": [
+        "chunk_sec_3_3_3_6_p01",
+        "chunk_sec_3_3_3_6_p02",
+        "chunk_sec_3_3_3_6_p03",
+        "chunk_sec_3_3_3_6_p04"
+      ],
+      "section_verified": "3.3.3.6",
+      "page_verified": 37,
+      "evidence_snippet": "placebo/no pharmacotherapy, NNT: 14 ... NNH: 100 ... NNH: 33",
+      "claims_status": [
+        "SUPPORTED",
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics_status": [
+        "EXACT_MATCH",
+        "EXACT_MATCH",
+        "EXACT_MATCH"
+      ],
+      "notes": "NNT=14:True, NNH=100:True, NNH=33:True"
+    },
+    {
+      "id": "eval_15",
+      "status": "PASS",
+      "supporting_chunk_ids": [
+        "chunk_sec_3_3_3_4"
+      ],
+      "section_verified": "3.3.3.4",
+      "page_verified": 37,
+      "evidence_snippet": "RR: 2.61; 95% CI: 1.50–4.67; 6 trials; 5194 participants",
+      "claims_status": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics_status": [
+        "EXACT_MATCH",
+        "EXACT_MATCH",
+        "EXACT_MATCH"
+      ],
+      "notes": "RR=2.61:True, CI 1.50-4.67:True, 5194 participants:True"
+    },
+    {
+      "id": "eval_16",
+      "status": "PASS",
+      "supporting_chunk_ids": [
+        "chunk_sec_3_3_3_6_p03"
+      ],
+      "section_verified": "3.3.3.6",
+      "page_verified": 37,
+      "evidence_snippet": "combination NRT versus monotherapy, NNT: 29",
+      "claims_status": [
+        "SUPPORTED"
+      ],
+      "metrics_status": [
+        "EXACT_MATCH"
+      ],
+      "notes": "NNT=29 for combination NRT: True"
+    },
+    {
+      "id": "eval_17",
+      "status": "PASS",
+      "supporting_chunk_ids": [
+        "chunk_sec_3_2_3_p01",
+        "chunk_sec_3_2_3_p02",
+        "chunk_sec_3_2_3_p03",
+        "chunk_sec_3_2_3_p04"
+      ],
+      "section_verified": "3.2.3",
+      "page_verified": 32,
+      "evidence_snippet": "text messaging versus minimal smoking cessation support, NNT: 33; text messaging plus other ... NNT: 25",
+      "claims_status": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics_status": [
+        "EXACT_MATCH",
+        "EXACT_MATCH"
+      ],
+      "notes": "NNT=33:True, NNT=25:True"
+    },
+    {
+      "id": "eval_18",
+      "status": "PASS",
+      "supporting_chunk_ids": [
+        "chunk_sec_3_4_3_p01",
+        "chunk_sec_3_4_3_p02",
+        "chunk_sec_3_4_3_p03"
+      ],
+      "section_verified": "3.4.3",
+      "page_verified": 40,
+      "evidence_snippet": "behavioural counselling versus usual care/minimal support, NNT: 9",
+      "claims_status": [
+        "SUPPORTED"
+      ],
+      "metrics_status": [
+        "EXACT_MATCH"
+      ],
+      "notes": "NNT=9 for smokeless tobacco counselling: True"
+    },
+    {
+      "id": "eval_19",
+      "status": "PASS",
+      "supporting_chunk_ids": [
+        "chunk_sec_3_2_3_p01",
+        "chunk_sec_3_2_3_p02",
+        "chunk_sec_3_2_3_p04"
+      ],
+      "section_verified": "3.2.3",
+      "page_verified": 32,
+      "evidence_snippet": "conversational AI-based software intervention versus control, NNT: 12",
+      "claims_status": [
+        "SUPPORTED"
+      ],
+      "metrics_status": [
+        "EXACT_MATCH"
+      ],
+      "notes": "NNT=12 found:True, conversational AI+12:True"
+    },
+    {
+      "id": "eval_20",
+      "status": "PASS",
+      "supporting_chunk_ids": [
+        "chunk_sec_3_3_3_2"
+      ],
+      "section_verified": "3.3.3.2",
+      "page_verified": 36,
+      "evidence_snippet": "RR: 1.60; 95% CI: 1.49–1.72; 50 studies; 18 577 participants",
+      "claims_status": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics_status": [
+        "EXACT_MATCH",
+        "EXACT_MATCH"
+      ],
+      "notes": "RR=1.60:True, CI 1.49-1.72:True, 50 studies:True. NOTE: dataset says 50 studies; actual corpus says 50 studies for this RR."
+    },
+    {
+      "id": "eval_21",
+      "status": "PASS",
+      "supporting_chunk_ids": [
+        "chunk_sec_3_3_3_6_p01",
+        "chunk_sec_3_3_3_6_p02",
+        "chunk_sec_3_3_3_6_p03",
+        "chunk_sec_3_3_3_6_p04"
+      ],
+      "section_verified": "3.3.3.6",
+      "page_verified": 37,
+      "evidence_snippet": "varenicline versus bupropion or NRT, NNT: 16–22 for one additional long-term abstinence",
+      "claims_status": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics_status": [
+        "EXACT_MATCH"
+      ],
+      "notes": "NNT=16-22 for varenicline vs bupropion found: True"
+    },
+    {
+      "id": "eval_22",
+      "status": "PASS",
+      "supporting_chunk_ids": [
+        "chunk_sec_3_3_3_5"
+      ],
+      "section_verified": "3.3.3.5",
+      "page_verified": 37,
+      "evidence_snippet": "RR: 1.25; 95% CI: 1.15–1.36; 14 studies; 11 356 participants",
+      "claims_status": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics_status": [
+        "EXACT_MATCH"
+      ],
+      "notes": "RR=1.25:True, CI 1.15-1.36:True"
+    },
+    {
+      "id": "eval_23",
+      "status": "PASS",
+      "supporting_chunk_ids": [
+        "chunk_sec_3_3_3_4"
+      ],
+      "section_verified": "3.3.3.4 / 3.3.3.6",
+      "page_verified": 37,
+      "evidence_snippet": "RR: 1.36; 95% CI: 1.06–1.74 ... cytisine versus NRT, NNT: 18",
+      "claims_status": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics_status": [
+        "EXACT_MATCH",
+        "EXACT_MATCH"
+      ],
+      "notes": "RR=1.36:True (in 3.3.3.4). NNT=18:True (in 3.3.3.6). Source section in dataset says 3.3.3.4 only — minor annotation issue."
+    },
+    {
+      "id": "eval_24",
+      "status": "PASS",
+      "supporting_chunk_ids": [
+        "chunk_sec_3_3_3_1_p02"
+      ],
+      "section_verified": "3.3.3.1",
+      "page_verified": 35,
+      "evidence_snippet": "21 mg is more effective than 14 mg (RR: 1.48; 95% CI: 1.06–2.08; 1 study; 537 participants)",
+      "claims_status": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics_status": [
+        "EXACT_MATCH",
+        "EXACT_MATCH"
+      ],
+      "notes": "RR=1.48:True, CI 1.06-2.08:True"
+    },
+    {
+      "id": "eval_25",
+      "status": "NEEDS_REVIEW",
+      "supporting_chunk_ids": [],
+      "section_verified": "3.3.1 / 3.3.4",
+      "page_verified": 35,
+      "evidence_snippet": "bupropion is contraindicated in those with a history of seizure disorders",
+      "claims_status": [
+        "SUPPORTED",
+        "NEEDS_REVIEW"
+      ],
+      "metrics_status": [],
+      "notes": "Seizure contraindication mentioned: False"
+    },
+    {
+      "id": "eval_26",
+      "status": "PASS",
+      "supporting_chunk_ids": [
+        "chunk_sec_1_1",
+        "chunk_sec_3_3_4_p01",
+        "chunk_node_L2_strategies_and_methods"
+      ],
+      "section_verified": "3.1.4 / 3.3.4",
+      "page_verified": 30,
+      "evidence_snippet": "pregnant women ... behavioural support is the preferred first-line treatment",
+      "claims_status": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics_status": [],
+      "notes": "Pregnant women found:True. Behavioural+pregnant:True."
+    },
+    {
+      "id": "eval_27",
+      "status": "PASS",
+      "supporting_chunk_ids": [
+        "chunk_sec_3_3_3_6_p02",
+        "chunk_sec_3_3_3_6_p04"
+      ],
+      "section_verified": "3.3.3.5 / 3.3.3.6",
+      "page_verified": 37,
+      "evidence_snippet": "bupropion plus varenicline versus varenicline, NNT: 20 to achieve one more case",
+      "claims_status": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics_status": [
+        "EXACT_MATCH"
+      ],
+      "notes": "NNT=20 for bup+var:True. Bupropion+varenicline combo in 3.3.3.5:True"
+    },
+    {
+      "id": "eval_28",
+      "status": "PASS",
+      "supporting_chunk_ids": [
+        "chunk_sec_3_2_1"
+      ],
+      "section_verified": "3.2.1",
+      "page_verified": 32,
+      "evidence_snippet": "text messaging, smartphone apps, AI-based interventions ... as an adjunct",
+      "claims_status": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics_status": [],
+      "notes": "SMS:True, Apps:True, Adjunct:True"
+    },
+    {
+      "id": "eval_29",
+      "status": "PASS",
+      "supporting_chunk_ids": [],
+      "section_verified": "None",
+      "page_verified": null,
+      "evidence_snippet": "No evidence found for topiramate in WHO corpus.",
+      "claims_status": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics_status": [],
+      "notes": "Topiramate found in corpus: False. Abstention confirmed: True."
+    },
+    {
+      "id": "eval_30",
+      "status": "PASS",
+      "supporting_chunk_ids": [],
+      "section_verified": "None",
+      "page_verified": null,
+      "evidence_snippet": "No evidence for TMS in WHO corpus.",
+      "claims_status": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics_status": [],
+      "notes": "TMS / transcranial magnetic found: False. Abstention confirmed: True."
+    },
+    {
+      "id": "eval_31",
+      "status": "PASS",
+      "supporting_chunk_ids": [],
+      "section_verified": "3.3",
+      "page_verified": 35,
+      "evidence_snippet": "Latin America mentioned but no region-specific quit percentage exists.",
+      "claims_status": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics_status": [],
+      "notes": "Latin America in corpus: 0 chunks. Region-specific pct: False. Abstention justified."
+    },
+    {
+      "id": "eval_32",
+      "status": "PASS",
+      "supporting_chunk_ids": [
+        "chunk_sec_3_3_3_6_p03"
+      ],
+      "section_verified": "3.3.3.4",
+      "page_verified": 37,
+      "evidence_snippet": "Cytisine has NNH values in corpus but NOT a specific neuropsychiatric NNH.",
+      "claims_status": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics_status": [],
+      "notes": "Cytisine+NNH found: 1 chunks. Cytisine+NNH+neuropsychiatric specific: False. Abstention for neuropsychiatric NNH confirmed."
+    },
+    {
+      "id": "eval_33",
+      "status": "PASS",
+      "supporting_chunk_ids": [],
+      "section_verified": "None",
+      "page_verified": null,
+      "evidence_snippet": "Metformin not mentioned in WHO corpus.",
+      "claims_status": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics_status": [],
+      "notes": "Metformin found in corpus: False. Abstention confirmed: True."
+    },
+    {
+      "id": "eval_34",
+      "status": "PASS",
+      "supporting_chunk_ids": [],
+      "section_verified": "2.1",
+      "page_verified": 19,
+      "evidence_snippet": "Guideline scope: tobacco cessation in adults. No obesity treatment for non-users.",
+      "claims_status": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics_status": [],
+      "notes": "Obesity mentioned: 0 chunks. Bupropion+obesity combined: False. Out-of-scope confirmed."
+    },
+    {
+      "id": "eval_35",
+      "status": "PASS",
+      "supporting_chunk_ids": [
+        "chunk_node_L1_glossary_of_terms_p26",
+        "chunk_sec_3_6_3_p01",
+        "chunk_node_L1_glossary_of_terms_p26",
+        "chunk_sec_3_6_3_p01"
+      ],
+      "section_verified": "3.6.1",
+      "page_verified": 43,
+      "evidence_snippet": "Evidence is insufficient to make a recommendation for or against ... laser therapy, acupuncture",
+      "claims_status": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics_status": [],
+      "notes": "Laser+insufficient:False. Acupuncture+insufficient:True."
+    },
+    {
+      "id": "eval_36",
+      "status": "PASS",
+      "supporting_chunk_ids": [
+        "chunk_sec_3_4_1"
+      ],
+      "section_verified": "3.4.1",
+      "page_verified": 40,
+      "evidence_snippet": "WHO Recommendation 6: intensive behavioural support for smokeless tobacco. E-cigs not recommended first-line.",
+      "claims_status": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics_status": [],
+      "notes": "E-cig mentions: 3 chunks. E-cig+smokeless: True. 3.4.1 does not recommend e-cigs."
+    },
+    {
+      "id": "eval_37",
+      "status": "PASS",
+      "supporting_chunk_ids": [
+        "chunk_sec_3_1_1"
+      ],
+      "section_verified": "3.1.1",
+      "page_verified": 29,
+      "evidence_snippet": "30 seconds and 3 minutes per encounter",
+      "claims_status": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics_status": [
+        "EXACT_MATCH"
+      ],
+      "notes": "Arabic translation of eval_01. Ground truth identical. Translation accuracy: 30 sec - 3 min is correctly rendered in Arabic."
+    },
+    {
+      "id": "eval_38",
+      "status": "PASS",
+      "supporting_chunk_ids": [
+        "chunk_sec_3_3_3_1_p02"
+      ],
+      "section_verified": "3.3.3.1",
+      "page_verified": 35,
+      "evidence_snippet": "4-mg gum with 2-mg gum ... RR: 1.43; 95% CI: 1.12-1.83",
+      "claims_status": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics_status": [
+        "EXACT_MATCH"
+      ],
+      "notes": "Egyptian Arabic translation of eval_11. RR=1.43 correctly referenced. Translation is accurate."
+    },
+    {
+      "id": "eval_39",
+      "status": "PASS",
+      "supporting_chunk_ids": [
+        "chunk_sec_3_6_1"
+      ],
+      "section_verified": "3.6.1",
+      "page_verified": 43,
+      "evidence_snippet": "Evidence is insufficient to make a recommendation for or against traditional ... therapies",
+      "claims_status": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics_status": [],
+      "notes": "Egyptian Arabic translation. Laser/hypnotherapy correctly mapped to Section 3.6.1 statement."
+    },
+    {
+      "id": "eval_40",
+      "status": "PASS",
+      "supporting_chunk_ids": [
+        "chunk_sec_3_3_3_6_p01"
+      ],
+      "section_verified": "3.3.3.6",
+      "page_verified": 37,
+      "evidence_snippet": "placebo/no pharmacotherapy, NNT: 14 for one more case of long-term abstinence",
+      "claims_status": [
+        "SUPPORTED"
+      ],
+      "metrics_status": [
+        "EXACT_MATCH"
+      ],
+      "notes": "Egyptian Arabic adversarial: NNT=14 for bupropion correctly stated. Adversarial concern: system should not substitute NNT=7.6 (varenicline) or NNT=12 (AI). Ground truth is correct."
+    }
+  ]
+}

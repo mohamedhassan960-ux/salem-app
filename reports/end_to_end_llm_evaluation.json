@@ -1,0 +1,934 @@
+{
+  "metadata": {
+    "evaluation_name": "WHO_Medical_RAG_End_to_End_Evaluation",
+    "source_guideline": "WHO Clinical Treatment Guideline for Tobacco Cessation in Adults (2024)",
+    "pipeline": "Query Understanding -> Hybrid Top-20 -> Clinical Reranker -> Quality Gate -> Top-5 -> ContextAssembler -> Grounded Generator -> Strict Evaluator",
+    "total_queries": 33,
+    "positive_queries": 30,
+    "control_queries": 3
+  },
+  "stage_a_retrieval_metrics": {
+    "recall_1": 0.7333,
+    "recall_5": 0.8333,
+    "recall_10": 0.8667,
+    "mrr": 0.7778
+  },
+  "stage_b_generation_metrics": {
+    "grounded_answer_success_rate": 0.8333,
+    "successful_answers": 25,
+    "total_positive_queries": 30,
+    "target_threshold": 0.8,
+    "is_target_achieved": true,
+    "avg_correctness_0_to_2": 1.67,
+    "avg_groundedness_0_to_2": 1.83,
+    "avg_citation_accuracy_0_to_2": 1.83,
+    "avg_completeness_0_to_2": 1.67,
+    "negative_control_safety_rate": 1.0,
+    "safe_controls_count": 3,
+    "total_control_queries": 3
+  },
+  "failure_attribution": {
+    "RETRIEVAL_FAILURE": 5
+  },
+  "category_performance": {
+    "A) Medical Terminology": {
+      "query_count": 5,
+      "retrieval_recall_5": 1.0,
+      "grounded_answer_success_rate": 1.0,
+      "avg_correctness": 2.0,
+      "avg_groundedness": 2.0
+    },
+    "B) English Paraphrase": {
+      "query_count": 5,
+      "retrieval_recall_5": 1.0,
+      "grounded_answer_success_rate": 1.0,
+      "avg_correctness": 2.0,
+      "avg_groundedness": 2.0
+    },
+    "C) Egyptian Arabic": {
+      "query_count": 5,
+      "retrieval_recall_5": 0.8,
+      "grounded_answer_success_rate": 0.8,
+      "avg_correctness": 1.6,
+      "avg_groundedness": 1.8
+    },
+    "D) Non-Medical Wording": {
+      "query_count": 5,
+      "retrieval_recall_5": 0.6,
+      "grounded_answer_success_rate": 0.6,
+      "avg_correctness": 1.2,
+      "avg_groundedness": 1.6
+    },
+    "E) Implicit Clinical Intent": {
+      "query_count": 5,
+      "retrieval_recall_5": 0.8,
+      "grounded_answer_success_rate": 0.8,
+      "avg_correctness": 1.6,
+      "avg_groundedness": 1.8
+    },
+    "F) Specific Clinical Situations": {
+      "query_count": 5,
+      "retrieval_recall_5": 0.8,
+      "grounded_answer_success_rate": 0.8,
+      "avg_correctness": 1.6,
+      "avg_groundedness": 1.8
+    }
+  },
+  "query_evaluations": [
+    {
+      "query_id": "QA1_varenicline_efficacy",
+      "query_text": "Varenicline efficacy and adverse events for tobacco cessation",
+      "is_negative_control": false,
+      "generated_answer": "Based on official WHO Clinical Treatment Guidelines (2024):\n\n[SOURCE 1: Section 3.3.1, p. 35 | Chunk: chunk_sec_3_3_1]\nRecommendations\n4.\nWHO recommends varenicline, NRT, bupropion and cytisine4 as pharmacological \ntreatment options for tobacco users who smoke and are interested in quitting. \nVarenicline, NRT or bupropion are recommended as first-line options; combination \nNRT (a patch plus a short-acting form, such as gum or a lozenge) is an option for \ntobacco users interested in quitting who will use NRT.\n Strong recommendation; \n high certainty (varenicline, NRT and bupropion)/ \n moderate certainty (combination NRT, cytisine)\n4\nVarenicline/\nbupropion\ncytisine\n/\nNRT \n5.\nBupropion in combination with NRT or varenicline may be offered to tobacco users \ninterested in quitting when there is inadequate response to first-line treatments.\n Conditional recommendation;  \n moderate certainty (bupropion plus varenicline)/ \n low certainty (bupropion plus NRT)\n5\nVarenicline\nBupropion\n/\n+\nNRT\n\n[SOURCE 2: Section 2.4, p. 26 | Chunk: chunk_sec_2_4_p02]\nFor strong recommendations, the GDG was confident that the desirable effect of following \nthe recommendation outweighed any potential undesirable effects.\n\n[SOURCE 3: Section 3.4.1, p. 40 | Chunk: chunk_sec_3_4_1]\nRecommendations\n6.\nWHO recommends providing intensive behavioural support interventions (individual \nface-to-face counselling, face-to-face group counselling or telephone counselling) for \nsmokeless tobacco users interested in quitting.\n Strong recommendation; \n moderate certainty \n6\n7.\nWHO recommends varenicline or NRT as pharmacological options for smokeless \ntobacco users interested in quitting.\n Strong recommendation;  \n moderate certainty (varenicline)/ \n low certainty (NRT)\n7\nVarenicline/\nNRT",
+      "correctness": 2,
+      "groundedness": 2,
+      "citation_accuracy": 2,
+      "completeness": 2,
+      "safety": "PASS",
+      "primary_success": true,
+      "failure_stage": null,
+      "failure_reason": null,
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_2_4_p02",
+        "chunk_sec_3_4_1",
+        "chunk_sec_3_3_4_p01",
+        "chunk_sec_3_4_3_p02"
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_3_p01",
+        "chunk_sec_3_3_4_p01"
+      ],
+      "retrieval_hit": true
+    },
+    {
+      "query_id": "QA2_cytisine_evidence",
+      "query_text": "Cytisine clinical trial certainty of evidence and dosage",
+      "is_negative_control": false,
+      "generated_answer": "Based on official WHO Clinical Treatment Guidelines (2024):\n\n[SOURCE 1: Section 2.4, p. 26 | Chunk: chunk_sec_2_4_p02]\nFor strong recommendations, the GDG was confident that the desirable effect of following \nthe recommendation outweighed any potential undesirable effects.\n\n[SOURCE 2: Section 3.3.1, p. 35 | Chunk: chunk_sec_3_3_1]\nRecommendations\n4.\nWHO recommends varenicline, NRT, bupropion and cytisine4 as pharmacological \ntreatment options for tobacco users who smoke and are interested in quitting. \nVarenicline, NRT or bupropion are recommended as first-line options; combination \nNRT (a patch plus a short-acting form, such as gum or a lozenge) is an option for \ntobacco users interested in quitting who will use NRT.\n Strong recommendation; \n high certainty (varenicline, NRT and bupropion)/ \n moderate certainty (combination NRT, cytisine)\n4\nVarenicline/\nbupropion\ncytisine\n/\nNRT \n5.\nBupropion in combination with NRT or varenicline may be offered to tobacco users \ninterested in quitting when there is inadequate response to first-line treatments.\n Conditional recommendation;  \n moderate certainty (bupropion plus varenicline)/ \n low certainty (bupropion plus NRT)\n5\nVarenicline\nBupropion\n/\n+\nNRT\n\n[SOURCE 3: Section 2.2, p. 24 | Chunk: chunk_sec_2_2_p04]\nDo the effects vary according \nto the intensity or duration of the intervention, the types of tobacco used, the duration of tobacco use since \ninitiation, quantity of tobacco used, readiness to quit and gender?",
+      "correctness": 2,
+      "groundedness": 2,
+      "citation_accuracy": 2,
+      "completeness": 2,
+      "safety": "PASS",
+      "primary_success": true,
+      "failure_stage": null,
+      "failure_reason": null,
+      "retrieved_chunk_ids": [
+        "chunk_sec_2_4_p02",
+        "chunk_sec_3_3_1",
+        "chunk_sec_2_2_p04",
+        "chunk_sec_3_3_3_4",
+        "chunk_sec_3_3_4_p01"
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_4"
+      ],
+      "retrieval_hit": true
+    },
+    {
+      "query_id": "QA3_bupropion_contraindications",
+      "query_text": "Bupropion sustained release contraindications seizure history",
+      "is_negative_control": false,
+      "generated_answer": "Based on official WHO Clinical Treatment Guidelines (2024):\n\n[SOURCE 1: Section 3.3.4, p. 39 | Chunk: chunk_sec_3_3_4_p01]\n\n\n[SOURCE 2: Section 3.3.1, p. 35 | Chunk: chunk_sec_3_3_1]\nRecommendations\n4.\nWHO recommends varenicline, NRT, bupropion and cytisine4 as pharmacological \ntreatment options for tobacco users who smoke and are interested in quitting. \nVarenicline, NRT or bupropion are recommended as first-line options; combination \nNRT (a patch plus a short-acting form, such as gum or a lozenge) is an option for \ntobacco users interested in quitting who will use NRT.\n Strong recommendation; \n high certainty (varenicline, NRT and bupropion)/ \n moderate certainty (combination NRT, cytisine)\n4\nVarenicline/\nbupropion\ncytisine\n/\nNRT \n5.\nBupropion in combination with NRT or varenicline may be offered to tobacco users \ninterested in quitting when there is inadequate response to first-line treatments.\n Conditional recommendation;  \n moderate certainty (bupropion plus varenicline)/ \n low certainty (bupropion plus NRT)\n5\nVarenicline\nBupropion\n/\n+\nNRT\n\n[SOURCE 3: Section 3.3.3.2, p. 36 | Chunk: chunk_sec_3_3_3_2]\nBupropion\nIn terms of the evidence for bupropion regarding long-term tobacco cessation, a Cochrane systematic review \nof 124 studies that included 48 832 participants demonstrated that there was high-certainty evidence that \nbupropion increased smoking cessation rates when compared with placebo or no pharmacological treatment \n(RR: 1.60; 95% CI: 1.49–1.72; 50 studies; 18 577 participants) (34). Bupropion resulted in inferior smoking \ncessation rates when compared with varenicline (RR: 0.73; 95% CI: 0.67–0.80; 9 studies; 7564 participants) \nand with combination NRT (RR: 0.74; 95% CI: 0.55–0.98; 2 studies; 720 participants). However, there was no \nclear evidence of a difference in efficacy between bupropion and single-form NRT (RR: 1.03; 95% CI: 0.93–1.13; \n10 studies; 7613 participants).\nThere was moderate-certainty evidence that participants taking bupropion were more likely to report SAEs \nthan those taking placebo or receiving no pharmacological treatment. However, results were not significantly \ndifferent (RR: 1.16; 95% CI: 0.90–1.48; I2 = 0%; 23 studies; 10 958 participants). There was high-certainty \nevidence that bupropion resulted in more trial dropouts due to AEs than placebo or no pharmacological \ntreatment (RR: 1.44; 95% CI: 1.27–1.65; 25 studies; 12 346 participants).",
+      "correctness": 2,
+      "groundedness": 2,
+      "citation_accuracy": 2,
+      "completeness": 2,
+      "safety": "PASS",
+      "primary_success": true,
+      "failure_stage": null,
+      "failure_reason": null,
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_3_4_p01",
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_2",
+        "chunk_sec_2_4_p02",
+        "chunk_sec_3_7_1"
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_2",
+        "chunk_sec_3_3_4_p01"
+      ],
+      "retrieval_hit": true
+    },
+    {
+      "query_id": "QA4_combination_nrt",
+      "query_text": "Combination nicotine replacement therapy patch plus short-acting form",
+      "is_negative_control": false,
+      "generated_answer": "Based on official WHO Clinical Treatment Guidelines (2024):\n\n[SOURCE 1: Section 3.3.1, p. 35 | Chunk: chunk_sec_3_3_1]\nRecommendations\n4.\nWHO recommends varenicline, NRT, bupropion and cytisine4 as pharmacological \ntreatment options for tobacco users who smoke and are interested in quitting. \nVarenicline, NRT or bupropion are recommended as first-line options; combination \nNRT (a patch plus a short-acting form, such as gum or a lozenge) is an option for \ntobacco users interested in quitting who will use NRT.\n Strong recommendation; \n high certainty (varenicline, NRT and bupropion)/ \n moderate certainty (combination NRT, cytisine)\n4\nVarenicline/\nbupropion\ncytisine\n/\nNRT \n5.\nBupropion in combination with NRT or varenicline may be offered to tobacco users \ninterested in quitting when there is inadequate response to first-line treatments.\n Conditional recommendation;  \n moderate certainty (bupropion plus varenicline)/ \n low certainty (bupropion plus NRT)\n5\nVarenicline\nBupropion\n/\n+\nNRT\n\n[SOURCE 2: Section 3.3.3.5, p. 37 | Chunk: chunk_sec_3_3_3_5]\nCombination pharmacotherapy\nThere was high-certainty evidence that combination NRT (a fast-acting form plus a patch) results in higher \nlong-term quit rates than single-form NRT (RR: 1.25; 95% CI: 1.15–1.36; 14 studies; 11 356 participants) (33). \nThe authors found no evidence of an effect of duration of combination NRT use. There was moderate-certainty \nevidence that a combination of bupropion and varenicline may have resulted in superior quit rates compared \nwith varenicline alone (RR: 1.21; 95% CI: 0.95–1.55; 3 studies; 1057 participants) (34). However, there was \ninsufficient evidence to establish whether a combination of bupropion and NRT resulted in superior quit rates \ncompared with NRT alone (RR: 1.17; 95% CI: 0.95–1.44; 15 studies; 4117 participants) (34).\nThere was no evidence of an effect on cardiac AEs, and all SAEs and withdrawals when combination NRT was \ncompared with single-form NRT (33). Results were also imprecise when comparing SAEs between people \nrandomized to a combination of bupropion and NRT versus NRT alone (RR: 1.52; 95% CI: 0.26–8.89; 4 studies; \n657 participants), and randomized to bupropion plus varenicline versus varenicline alone (RR: 1.23; 95% \nCI: 0.63–2.42; 5 studies; 1268 participants) (34). However, there was insufficient evidence that bupropion \ncombined with NRT versus NRT alone, or bupropion combined with varenicline versus varenicline alone, had \nan impact on the number of dropouts due to treatment (34).\n\n[SOURCE 3: Section 3.3.3.1, p. 35 | Chunk: chunk_sec_3_3_3_1_p01]\nNRT\nFor the effects of NRT as monotherapy compared with a placebo or non-NRT control group, a Cochrane \nsystematic review of 133 studies that included 64 640 participants showed that the RR of long-term abstinence \nfor any form of NRT relative to control was 1.55 (95% CI: 1.49–1.61) (32). The pooled RRs for each type were",
+      "correctness": 2,
+      "groundedness": 2,
+      "citation_accuracy": 2,
+      "completeness": 2,
+      "safety": "PASS",
+      "primary_success": true,
+      "failure_stage": null,
+      "failure_reason": null,
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_5",
+        "chunk_sec_3_3_3_1_p01",
+        "chunk_sec_3_3_3_1_p03",
+        "chunk_sec_3_7_3_p02"
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_5",
+        "chunk_node_L1_glossary_of_terms_p05"
+      ],
+      "retrieval_hit": true
+    },
+    {
+      "query_id": "QA5_brief_advice_primary_care",
+      "query_text": "Brief advice 30 seconds to 3 minutes routine clinical consultation",
+      "is_negative_control": false,
+      "generated_answer": "Based on official WHO Clinical Treatment Guidelines (2024):\n\n[SOURCE 1: Section 3.1.1, p. 29 | Chunk: chunk_sec_3_1_1]\nRecommendations\n1.\nWHO recommends brief advice (between 30 seconds and 3 minutes per encounter)\nbe consistently provided by health-care providers as a routine practice to all tobacco\nusers accessing any health-care settings.\n Strong recommendation; \n moderate certainty\n1\n30 sec – 3 min\n2.\nWHO recommends more-intensive behavioural support be offered to all tobacco\nusers interested in quitting. Options for behavioural support are individual face-to-\nface counselling, group face-to-face counselling or telephone counselling; multiple\nbehavioural support options should be provided.\n Strong recommendation;  \n high certainty (individual counselling)/ \n moderate certainty (group counselling and telephone counselling)\n2\n\n[SOURCE 2: Section 3.1.3, p. 29 | Chunk: chunk_sec_3_1_3_p05]\nRecommendations\n\n[SOURCE 3: Section 3.1.3, p. 29 | Chunk: chunk_sec_3_1_3_p04]\n2602 participants). Subgroup analysis identified no evidence that the effect of telephone counselling depended \nupon whether or not other interventions were provided, that more-intensive support was more effective than \nless-intensive support, or that the effect of telephone support depended upon whether or not people were \nactively trying to quit smoking. However, meta-regression demonstrated that telephone support was more \neffective for people who were motivated to try to quit smoking; telephone counselling was associated with \ngreater effectiveness when provided as an adjunct to self-help written support or to a brief intervention from \na health-care provider; and telephone counselling was less effective when provided as an adjunct to more-\nintensive counselling. Separately, another Cochrane systematic review compared real-time video counselling \nwith telephone counselling (30). The review indicated that there was no statistically significant difference \nregarding the treatment effect between video counselling and telephone counselling in assisting people to \nquit smoking (RR: 2.15; 95% CI: 0.38–12.04; 2 studies; 608 participants).\nThe GDG reached the following conclusions.\n·\t There is moderate-certainty evidence that brief advice increases long-term abstinence, and high-certainty \nevidence for short-term abstinence; long-term abstinence was considered the more important clinical \noutcome.\n·\t The balance of benefits against harms favours brief advice on the basis of:\n–\t small benefits at the individual level (number needed to treat [NNT]: 91 to achieve one more case of \nlong-term abstinence), moderate to large population-level benefits of brief advice (given the low cost, \nfeasibility, acceptability and the high number of individuals potentially impacted); and\n–\t trivial harms (judged according to the nature of the intervention and the absence of harms reported in \nthe trials).\n·\t Decisions regarding brief advice are not preference sensitive (due to trivial harms), and brief advice is low \ncost, feasible and acceptable, with potential positive impact on equity.\n·\t There is high-certainty evidence for long-term abstinence following individual behavioural counselling \ndelivered without pharmacotherapy, and moderate-certainty evidence when delivered with \npharmacotherapy (this applies to the incremental added benefit, even though the overall benefit of \ncombining the two is greater). There is high-certainty evidence that more-intensive individual behavioural \ncounselling is more effective than less-intensive individual behavioural counselling.",
+      "correctness": 2,
+      "groundedness": 2,
+      "citation_accuracy": 2,
+      "completeness": 2,
+      "safety": "PASS",
+      "primary_success": true,
+      "failure_stage": null,
+      "failure_reason": null,
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p05",
+        "chunk_sec_3_1_3_p04",
+        "chunk_sec_3_1_3_p01",
+        "chunk_sec_3_1_3_p02"
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p01",
+        "chunk_node_L1_glossary_of_terms_p03"
+      ],
+      "retrieval_hit": true
+    },
+    {
+      "query_id": "QB1_stop_smoking_medications",
+      "query_text": "What are the approved medicines that help someone quit cigarettes?",
+      "is_negative_control": false,
+      "generated_answer": "Based on official WHO Clinical Treatment Guidelines (2024):\n\n[SOURCE 1: Section 3.3.1, p. 35 | Chunk: chunk_sec_3_3_1]\nRecommendations\n4.\nWHO recommends varenicline, NRT, bupropion and cytisine4 as pharmacological \ntreatment options for tobacco users who smoke and are interested in quitting. \nVarenicline, NRT or bupropion are recommended as first-line options; combination \nNRT (a patch plus a short-acting form, such as gum or a lozenge) is an option for \ntobacco users interested in quitting who will use NRT.\n Strong recommendation; \n high certainty (varenicline, NRT and bupropion)/ \n moderate certainty (combination NRT, cytisine)\n4\nVarenicline/\nbupropion\ncytisine\n/\nNRT \n5.\nBupropion in combination with NRT or varenicline may be offered to tobacco users \ninterested in quitting when there is inadequate response to first-line treatments.\n Conditional recommendation;  \n moderate certainty (bupropion plus varenicline)/ \n low certainty (bupropion plus NRT)\n5\nVarenicline\nBupropion\n/\n+\nNRT\n\n[SOURCE 2: Section 3.4.1, p. 40 | Chunk: chunk_sec_3_4_1]\nRecommendations\n6.\nWHO recommends providing intensive behavioural support interventions (individual \nface-to-face counselling, face-to-face group counselling or telephone counselling) for \nsmokeless tobacco users interested in quitting.\n Strong recommendation; \n moderate certainty \n6\n7.\nWHO recommends varenicline or NRT as pharmacological options for smokeless \ntobacco users interested in quitting.\n Strong recommendation;  \n moderate certainty (varenicline)/ \n low certainty (NRT)\n7\nVarenicline/\nNRT\n\n[SOURCE 3: Section 2.4, p. 26 | Chunk: chunk_sec_2_4_p02]\nFor strong recommendations, the GDG was confident that the desirable effect of following \nthe recommendation outweighed any potential undesirable effects.",
+      "correctness": 2,
+      "groundedness": 2,
+      "citation_accuracy": 2,
+      "completeness": 2,
+      "safety": "PASS",
+      "primary_success": true,
+      "failure_stage": null,
+      "failure_reason": null,
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_4_1",
+        "chunk_sec_2_4_p02",
+        "chunk_sec_3_2_1",
+        "chunk_sec_3_3_3_3_p01"
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_6_p01"
+      ],
+      "retrieval_hit": true
+    },
+    {
+      "query_id": "QB2_pills_without_nicotine",
+      "query_text": "Are there pills without nicotine that reduce the urge to smoke?",
+      "is_negative_control": false,
+      "generated_answer": "Based on official WHO Clinical Treatment Guidelines (2024):\n\n[SOURCE 1: Section 3.3.1, p. 35 | Chunk: chunk_sec_3_3_1]\nRecommendations\n4.\nWHO recommends varenicline, NRT, bupropion and cytisine4 as pharmacological \ntreatment options for tobacco users who smoke and are interested in quitting. \nVarenicline, NRT or bupropion are recommended as first-line options; combination \nNRT (a patch plus a short-acting form, such as gum or a lozenge) is an option for \ntobacco users interested in quitting who will use NRT.\n Strong recommendation; \n high certainty (varenicline, NRT and bupropion)/ \n moderate certainty (combination NRT, cytisine)\n4\nVarenicline/\nbupropion\ncytisine\n/\nNRT \n5.\nBupropion in combination with NRT or varenicline may be offered to tobacco users \ninterested in quitting when there is inadequate response to first-line treatments.\n Conditional recommendation;  \n moderate certainty (bupropion plus varenicline)/ \n low certainty (bupropion plus NRT)\n5\nVarenicline\nBupropion\n/\n+\nNRT\n\n[SOURCE 2: Section 3.3.3.3, p. 36 | Chunk: chunk_sec_3_3_3_3_p01]\nVarenicline\nA Cochrane systematic review of 75 trials with 45 049 participants (35) published in 2023 found high-certainty \nevidence that varenicline helps more people to quit than placebo (RR: 2.32; 95% CI: 2.15–2.51; 41 studies;\n\n[SOURCE 3: Section 3.3.3.4, p. 37 | Chunk: chunk_sec_3_3_3_4]\nCytisine\nA systematic review of 14 studies commissioned by WHO showed that participants who received cytisine \nwere significantly more likely to quit smoking for at least 6 months than those who received placebo/no \nintervention/usual care (RR: 2.61; 95% CI: 1.50–4.67; 6 trials; 5194 participants) and significantly more likely \nto have higher long-term abstinence rates than participants who received NRT (RR: 1.36; 95% CI: 1.06–1.73; \n2 trials; 1511 participants). There was no significant difference in the likelihood of quitting tobacco use between \nparticipants taking cytisine and varenicline (RR: 0.96; 95% CI: 0.63–1.45; 3 trials; 2127 participants). Two trials \nthat examined the impact of longer versus shorter treatment durations of cytisine found high abstinence rates \nwith longer treatment (RR: 1.29; 95% CI: 1.02–1.63; 1009 participants).\nWhile seven studies reported more AEs among those receiving cytisine compared with those who received \nplacebo, NRT or counselling, there was little evidence of SAEs associated with cytisine use.",
+      "correctness": 2,
+      "groundedness": 2,
+      "citation_accuracy": 2,
+      "completeness": 2,
+      "safety": "PASS",
+      "primary_success": true,
+      "failure_stage": null,
+      "failure_reason": null,
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_3_p01",
+        "chunk_sec_3_3_3_4",
+        "chunk_sec_3_3_3_6_p03",
+        "chunk_sec_3_3_3_6_p02"
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_2",
+        "chunk_sec_3_3_3_3_p01",
+        "chunk_sec_3_3_3_4"
+      ],
+      "retrieval_hit": true
+    },
+    {
+      "query_id": "QB3_doctor_talking_duration",
+      "query_text": "How much time should a physician spend talking to a patient about quitting?",
+      "is_negative_control": false,
+      "generated_answer": "Based on official WHO Clinical Treatment Guidelines (2024):\n\n[SOURCE 1: Section 3.1.1, p. 29 | Chunk: chunk_sec_3_1_1]\nRecommendations\n1.\nWHO recommends brief advice (between 30 seconds and 3 minutes per encounter)\nbe consistently provided by health-care providers as a routine practice to all tobacco\nusers accessing any health-care settings.\n Strong recommendation; \n moderate certainty\n1\n30 sec – 3 min\n2.\nWHO recommends more-intensive behavioural support be offered to all tobacco\nusers interested in quitting. Options for behavioural support are individual face-to-\nface counselling, group face-to-face counselling or telephone counselling; multiple\nbehavioural support options should be provided.\n Strong recommendation;  \n high certainty (individual counselling)/ \n moderate certainty (group counselling and telephone counselling)\n2\n\n[SOURCE 2: Section 3.5.1, p. 41 | Chunk: chunk_sec_3_5_1]\nRecommendation\n8.\nWHO recommends combining pharmacotherapy and behavioural interventions to \nsupport tobacco users interested in quitting. \n Strong recommendation;  \n high certainty\n8\n+\n\n[SOURCE 3: Section 3.4.1, p. 40 | Chunk: chunk_sec_3_4_1]\nRecommendations\n6.\nWHO recommends providing intensive behavioural support interventions (individual \nface-to-face counselling, face-to-face group counselling or telephone counselling) for \nsmokeless tobacco users interested in quitting.\n Strong recommendation; \n moderate certainty \n6\n7.\nWHO recommends varenicline or NRT as pharmacological options for smokeless \ntobacco users interested in quitting.\n Strong recommendation;  \n moderate certainty (varenicline)/ \n low certainty (NRT)\n7\nVarenicline/\nNRT",
+      "correctness": 2,
+      "groundedness": 2,
+      "citation_accuracy": 2,
+      "completeness": 2,
+      "safety": "PASS",
+      "primary_success": true,
+      "failure_stage": null,
+      "failure_reason": null,
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_5_1",
+        "chunk_sec_3_4_1",
+        "chunk_sec_3_1_3_p04",
+        "chunk_sec_3_1_3_p02"
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p01"
+      ],
+      "retrieval_hit": true
+    },
+    {
+      "query_id": "QB4_phone_support_quitting",
+      "query_text": "Does calling a telephone helpline really help people quit smoking?",
+      "is_negative_control": false,
+      "generated_answer": "Based on official WHO Clinical Treatment Guidelines (2024):\n\n[SOURCE 1: Section 3.1.1, p. 29 | Chunk: chunk_sec_3_1_1]\nRecommendations\n1.\nWHO recommends brief advice (between 30 seconds and 3 minutes per encounter)\nbe consistently provided by health-care providers as a routine practice to all tobacco\nusers accessing any health-care settings.\n Strong recommendation; \n moderate certainty\n1\n30 sec – 3 min\n2.\nWHO recommends more-intensive behavioural support be offered to all tobacco\nusers interested in quitting. Options for behavioural support are individual face-to-\nface counselling, group face-to-face counselling or telephone counselling; multiple\nbehavioural support options should be provided.\n Strong recommendation;  \n high certainty (individual counselling)/ \n moderate certainty (group counselling and telephone counselling)\n2\n\n[SOURCE 2: Section 3.1.3, p. 29 | Chunk: chunk_sec_3_1_3_p04]\n2602 participants). Subgroup analysis identified no evidence that the effect of telephone counselling depended \nupon whether or not other interventions were provided, that more-intensive support was more effective than \nless-intensive support, or that the effect of telephone support depended upon whether or not people were \nactively trying to quit smoking. However, meta-regression demonstrated that telephone support was more \neffective for people who were motivated to try to quit smoking; telephone counselling was associated with \ngreater effectiveness when provided as an adjunct to self-help written support or to a brief intervention from \na health-care provider; and telephone counselling was less effective when provided as an adjunct to more-\nintensive counselling. Separately, another Cochrane systematic review compared real-time video counselling \nwith telephone counselling (30). The review indicated that there was no statistically significant difference \nregarding the treatment effect between video counselling and telephone counselling in assisting people to \nquit smoking (RR: 2.15; 95% CI: 0.38–12.04; 2 studies; 608 participants).\nThe GDG reached the following conclusions.\n·\t There is moderate-certainty evidence that brief advice increases long-term abstinence, and high-certainty \nevidence for short-term abstinence; long-term abstinence was considered the more important clinical \noutcome.\n·\t The balance of benefits against harms favours brief advice on the basis of:\n–\t small benefits at the individual level (number needed to treat [NNT]: 91 to achieve one more case of \nlong-term abstinence), moderate to large population-level benefits of brief advice (given the low cost, \nfeasibility, acceptability and the high number of individuals potentially impacted); and\n–\t trivial harms (judged according to the nature of the intervention and the absence of harms reported in \nthe trials).\n·\t Decisions regarding brief advice are not preference sensitive (due to trivial harms), and brief advice is low \ncost, feasible and acceptable, with potential positive impact on equity.\n·\t There is high-certainty evidence for long-term abstinence following individual behavioural counselling \ndelivered without pharmacotherapy, and moderate-certainty evidence when delivered with \npharmacotherapy (this applies to the incremental added benefit, even though the overall benefit of \ncombining the two is greater). There is high-certainty evidence that more-intensive individual behavioural \ncounselling is more effective than less-intensive individual behavioural counselling.\n\n[SOURCE 3: Section 3.1.3, p. 29 | Chunk: chunk_sec_3_1_3_p03]\n95% CI: 1.03–1.43; 7286 participants); and there was also low-quality evidence of benefit of a group programme \ncompared with no-intervention controls (RR: 2.60; 95% CI: 1.80–3.76; 9 trials; 1098 participants). The review \ndid not identify evidence that group therapy was more effective than individual counselling of similar intensity \n(RR: 0.99; 95% CI: 0.76–1.28; 6 trials; 980 participants). Programmes that included components to increase \ncognitive and behavioural skills were not shown to be more effective than same-length or shorter programmes \nwithout these components.\nA Cochrane systematic review of 104 trials, which included 111 653 participants, evaluated the effect of \ntelephone counselling to help people quit smoking cigarettes (29). The review showed that, compared with \na control condition in which self-help materials or brief counselling in a single call were provided, multiple \nsessions of proactive counselling increased long-term quit rates for people who contacted helplines (RR: 1.38;",
+      "correctness": 2,
+      "groundedness": 2,
+      "citation_accuracy": 2,
+      "completeness": 2,
+      "safety": "PASS",
+      "primary_success": true,
+      "failure_stage": null,
+      "failure_reason": null,
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p04",
+        "chunk_sec_3_1_3_p03",
+        "chunk_sec_3_1_3_p05",
+        "chunk_sec_3_4_1"
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p04",
+        "chunk_node_L1_glossary_of_terms_p14"
+      ],
+      "retrieval_hit": true
+    },
+    {
+      "query_id": "QB5_digital_text_apps",
+      "query_text": "Can text messages or smartphone apps assist in stopping tobacco use?",
+      "is_negative_control": false,
+      "generated_answer": "Based on official WHO Clinical Treatment Guidelines (2024):\n\n[SOURCE 1: Section 3.2.1, p. 32 | Chunk: chunk_sec_3_2_1]\nRecommendation\n3.\nDigital tobacco cessation modalities3 (text messaging, smartphone apps, AI-based \ninterventions or internet-based interventions), individually or combined, can be \nmade available for tobacco users interested in quitting, as an adjunct to other tobacco \ncessation support or as a self-management tool.\n Conditional recommendation;  \n moderate certainty (text messaging)/ \n low certainty (smartphone apps/AI-based interventions)/ \n very low certainty (internet-based interventions)\n3\nAI\n+\n100%\nMONTH\n\n[SOURCE 2: Section 3.2.3, p. 32 | Chunk: chunk_sec_3_2_3_p02]\nRecommendations\n\n[SOURCE 3: Section 3.2.3, p. 32 | Chunk: chunk_sec_3_2_3_p03]\n·\t Decisions regarding cessation interventions delivered via text messaging are not preference sensitive (due \nto no known harms), text-messaging interventions require small to moderate cost, and they are probably \nfeasible and acceptable, with the impact on equity varying (if digital access varies).",
+      "correctness": 2,
+      "groundedness": 2,
+      "citation_accuracy": 2,
+      "completeness": 2,
+      "safety": "PASS",
+      "primary_success": true,
+      "failure_stage": null,
+      "failure_reason": null,
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_2_1",
+        "chunk_sec_3_2_3_p02",
+        "chunk_sec_3_2_3_p03",
+        "chunk_sec_3_2_3_p01",
+        "chunk_sec_3_2_3_p04"
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_2_1",
+        "chunk_sec_3_2_3_p01",
+        "chunk_node_L1_glossary_of_terms_p16",
+        "chunk_node_L1_glossary_of_terms_p19"
+      ],
+      "retrieval_hit": true
+    },
+    {
+      "query_id": "QC1_ana_ayez_abatal_mosh_qader",
+      "query_text": "أنا عايز أبطل السجاير ومش عارف أبدأ منين",
+      "is_negative_control": false,
+      "generated_answer": "بناءً على الأدلة والتوصيات الرسمية لمنظمة الصحة العالمية (WHO 2024):\n\n[SOURCE 1: Section 2.2, p. 24 | Chunk: chunk_sec_2_2_p03]\n2014 conducted another Cochrane system review with 16 studies to assess the effectiveness of electronic \nhealth record (EHR)-facilitated interventions on smoking cessation support actions by clinicians, clinics \nand health-care delivery systems, and on patient smoking cessation outcomes (39).\n\n[SOURCE 2: Section 2.2, p. 24 | Chunk: chunk_sec_2_2_p04]\nDo the effects vary according \nto the intensity or duration of the intervention, the types of tobacco used, the duration of tobacco use since \ninitiation, quantity of tobacco used, readiness to quit and gender?\n\n[SOURCE 3: Section 2.2, p. 24 | Chunk: chunk_sec_2_2_p01]\n",
+      "correctness": 0,
+      "groundedness": 1,
+      "citation_accuracy": 1,
+      "completeness": 0,
+      "safety": "PASS",
+      "primary_success": false,
+      "failure_stage": "RETRIEVAL_FAILURE",
+      "failure_reason": "Target evidence chunks ['chunk_sec_3_1_1', 'chunk_sec_3_3_1', 'chunk_sec_3_5_1'] not present in final Top-5 admitted evidence",
+      "retrieved_chunk_ids": [
+        "chunk_sec_2_2_p03",
+        "chunk_sec_2_2_p04",
+        "chunk_sec_2_2_p01",
+        "chunk_node_L1_glossary_of_terms_p26",
+        "chunk_node_L1_glossary_of_terms_p22"
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_5_1"
+      ],
+      "retrieval_hit": false
+    },
+    {
+      "query_id": "QC2_doctor_followup_ar",
+      "query_text": "في حد أو دكتور ممكن يساعدني خطوة بخطوة وأنا بحاول أبطل؟",
+      "is_negative_control": false,
+      "generated_answer": "بناءً على الأدلة والتوصيات الرسمية لمنظمة الصحة العالمية (WHO 2024):\n\n[SOURCE 1: Section 3.1.1, p. 29 | Chunk: chunk_sec_3_1_1]\nRecommendations\n1.\nWHO recommends brief advice (between 30 seconds and 3 minutes per encounter)\nbe consistently provided by health-care providers as a routine practice to all tobacco\nusers accessing any health-care settings.\n Strong recommendation; \n moderate certainty\n1\n30 sec – 3 min\n2.\nWHO recommends more-intensive behavioural support be offered to all tobacco\nusers interested in quitting. Options for behavioural support are individual face-to-\nface counselling, group face-to-face counselling or telephone counselling; multiple\nbehavioural support options should be provided.\n Strong recommendation;  \n high certainty (individual counselling)/ \n moderate certainty (group counselling and telephone counselling)\n2\n\n[SOURCE 2: Section 3.1.3, p. 29 | Chunk: chunk_sec_3_1_3_p05]\nRecommendations\n\n[SOURCE 3: Section 3.1.3, p. 29 | Chunk: chunk_sec_3_1_3_p01]\nJustification and evidence\nFor these recommendations on behavioural support delivered in both clinical and community settings, one \nnewly commissioned systematic review, which is now published (43), and four Cochrane systematic reviews \n(27–30) were used. Full details of the EtD tables can be found in the Web Annex: Evidence profiles.\nA systematic review and meta-analysis, which included 24 352 participants in 13 RCTs, conducted by Cheng \net al. showed that, in comparison with no advice being given, the average treatment effect of brief advice for \nlong-term tobacco abstinence was modest and significant (risk ratio/relative risk [RR]: 1.17; 95% confidence \ninterval [CI]: 1.07–1.27) (43). The average treatment effect of brief advice for short-term tobacco abstinence \nwas also modest and significant (RR: 1.22; 95% CI: 1.01–1.47). The average treatment effect of brief advice for a \nquit attempt was insignificant when only studies with lower risk of bias were included (RR: 1.03; 95% CI: 0.97–",
+      "correctness": 2,
+      "groundedness": 2,
+      "citation_accuracy": 2,
+      "completeness": 2,
+      "safety": "PASS",
+      "primary_success": true,
+      "failure_stage": null,
+      "failure_reason": null,
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p05",
+        "chunk_sec_3_1_3_p01",
+        "chunk_sec_3_1_3_p02",
+        "chunk_sec_2_4_p02"
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p02",
+        "chunk_sec_3_5_1"
+      ],
+      "retrieval_hit": true
+    },
+    {
+      "query_id": "QC3_quitline_ar",
+      "query_text": "في خط ساخن مجاني بالتليفون ممكن يساعدني في تبطيل السجاير؟",
+      "is_negative_control": false,
+      "generated_answer": "بناءً على الأدلة والتوصيات الرسمية لمنظمة الصحة العالمية (WHO 2024):\n\n[SOURCE 1: Section 3.1.1, p. 29 | Chunk: chunk_sec_3_1_1]\nRecommendations\n1.\nWHO recommends brief advice (between 30 seconds and 3 minutes per encounter)\nbe consistently provided by health-care providers as a routine practice to all tobacco\nusers accessing any health-care settings.\n Strong recommendation; \n moderate certainty\n1\n30 sec – 3 min\n2.\nWHO recommends more-intensive behavioural support be offered to all tobacco\nusers interested in quitting. Options for behavioural support are individual face-to-\nface counselling, group face-to-face counselling or telephone counselling; multiple\nbehavioural support options should be provided.\n Strong recommendation;  \n high certainty (individual counselling)/ \n moderate certainty (group counselling and telephone counselling)\n2\n\n[SOURCE 2: Section 3.1.3, p. 29 | Chunk: chunk_sec_3_1_3_p05]\nRecommendations\n\n[SOURCE 3: Section 3.1.3, p. 29 | Chunk: chunk_sec_3_1_3_p04]\n2602 participants). Subgroup analysis identified no evidence that the effect of telephone counselling depended \nupon whether or not other interventions were provided, that more-intensive support was more effective than \nless-intensive support, or that the effect of telephone support depended upon whether or not people were \nactively trying to quit smoking. However, meta-regression demonstrated that telephone support was more \neffective for people who were motivated to try to quit smoking; telephone counselling was associated with \ngreater effectiveness when provided as an adjunct to self-help written support or to a brief intervention from \na health-care provider; and telephone counselling was less effective when provided as an adjunct to more-\nintensive counselling. Separately, another Cochrane systematic review compared real-time video counselling \nwith telephone counselling (30). The review indicated that there was no statistically significant difference \nregarding the treatment effect between video counselling and telephone counselling in assisting people to \nquit smoking (RR: 2.15; 95% CI: 0.38–12.04; 2 studies; 608 participants).\nThe GDG reached the following conclusions.\n·\t There is moderate-certainty evidence that brief advice increases long-term abstinence, and high-certainty \nevidence for short-term abstinence; long-term abstinence was considered the more important clinical \noutcome.\n·\t The balance of benefits against harms favours brief advice on the basis of:\n–\t small benefits at the individual level (number needed to treat [NNT]: 91 to achieve one more case of \nlong-term abstinence), moderate to large population-level benefits of brief advice (given the low cost, \nfeasibility, acceptability and the high number of individuals potentially impacted); and\n–\t trivial harms (judged according to the nature of the intervention and the absence of harms reported in \nthe trials).\n·\t Decisions regarding brief advice are not preference sensitive (due to trivial harms), and brief advice is low \ncost, feasible and acceptable, with potential positive impact on equity.\n·\t There is high-certainty evidence for long-term abstinence following individual behavioural counselling \ndelivered without pharmacotherapy, and moderate-certainty evidence when delivered with \npharmacotherapy (this applies to the incremental added benefit, even though the overall benefit of \ncombining the two is greater). There is high-certainty evidence that more-intensive individual behavioural \ncounselling is more effective than less-intensive individual behavioural counselling.",
+      "correctness": 2,
+      "groundedness": 2,
+      "citation_accuracy": 2,
+      "completeness": 2,
+      "safety": "PASS",
+      "primary_success": true,
+      "failure_stage": null,
+      "failure_reason": null,
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p05",
+        "chunk_sec_3_1_3_p04",
+        "chunk_sec_3_4_1",
+        "chunk_sec_3_4_3_p02"
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p04",
+        "chunk_node_L1_glossary_of_terms_p14"
+      ],
+      "retrieval_hit": true
+    },
+    {
+      "query_id": "QC4_group_support_ar",
+      "query_text": "في جلسات جماعية مع ناس تانية بتحاول تبطل عشان نشجع بعض؟",
+      "is_negative_control": false,
+      "generated_answer": "بناءً على الأدلة والتوصيات الرسمية لمنظمة الصحة العالمية (WHO 2024):\n\n[SOURCE 1: Section 3.1.3, p. 29 | Chunk: chunk_sec_3_1_3_p05]\nRecommendations\n\n[SOURCE 2: Section 3.1.3, p. 29 | Chunk: chunk_sec_3_1_3_p02]\n08). Subgroup analyses on age, high- versus low-income countries, types of health-care providers, clinical \nversus community settings and outcome characteristics (for example, duration of follow-up) were conducted. \nNo significant heterogeneity of treatment effects on long-term or short-term abstinence was detected between \nthe subgroups. \nThe evidence relating to individual behavioural counselling was based on a Cochrane systematic review \npublished by Lancaster et al. (27). The evidence showed that: there was high-quality evidence that individual \ncounselling was more effective than a minimal contact control (which included brief advice, usual care or \nprovision of self-help materials) when pharmacotherapy was not offered to any of the participants (RR: 1.57; 95% \nCI: 1.40–1.77; 27 studies; 11 100 participants); there was moderate-quality evidence of a benefit of counselling \nwhen all participants received pharmacotherapy (RR: 1.24; 95% CI: 1.01–1.51; 6 studies; 2662 participants); \nand there was moderate-quality evidence for a small benefit of more-intensive counselling when compared \nwith brief counselling (RR: 1.29; 95% CI: 1.09–1.53; 11 studies; 2920 participants). No significant differences \nwere reported by five studies that compared different types of counselling.\n\n[SOURCE 3: Section 3.1.1, p. 29 | Chunk: chunk_sec_3_1_1]\nRecommendations\n1.\nWHO recommends brief advice (between 30 seconds and 3 minutes per encounter)\nbe consistently provided by health-care providers as a routine practice to all tobacco\nusers accessing any health-care settings.\n Strong recommendation; \n moderate certainty\n1\n30 sec – 3 min\n2.\nWHO recommends more-intensive behavioural support be offered to all tobacco\nusers interested in quitting. Options for behavioural support are individual face-to-\nface counselling, group face-to-face counselling or telephone counselling; multiple\nbehavioural support options should be provided.\n Strong recommendation;  \n high certainty (individual counselling)/ \n moderate certainty (group counselling and telephone counselling)\n2",
+      "correctness": 2,
+      "groundedness": 2,
+      "citation_accuracy": 2,
+      "completeness": 2,
+      "safety": "PASS",
+      "primary_success": true,
+      "failure_stage": null,
+      "failure_reason": null,
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_1_3_p05",
+        "chunk_sec_3_1_3_p02",
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_4_3_p02",
+        "chunk_sec_3_5_1"
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p03",
+        "chunk_node_L1_glossary_of_terms_p13"
+      ],
+      "retrieval_hit": true
+    },
+    {
+      "query_id": "QC5_pills_license_ar",
+      "query_text": "في حبوب معينة مرخصة بتساعد الواحد يبطل السجاير؟",
+      "is_negative_control": false,
+      "generated_answer": "بناءً على الأدلة والتوصيات الرسمية لمنظمة الصحة العالمية (WHO 2024):\n\n[SOURCE 1: Section 3.3.1, p. 35 | Chunk: chunk_sec_3_3_1]\nRecommendations\n4.\nWHO recommends varenicline, NRT, bupropion and cytisine4 as pharmacological \ntreatment options for tobacco users who smoke and are interested in quitting. \nVarenicline, NRT or bupropion are recommended as first-line options; combination \nNRT (a patch plus a short-acting form, such as gum or a lozenge) is an option for \ntobacco users interested in quitting who will use NRT.\n Strong recommendation; \n high certainty (varenicline, NRT and bupropion)/ \n moderate certainty (combination NRT, cytisine)\n4\nVarenicline/\nbupropion\ncytisine\n/\nNRT \n5.\nBupropion in combination with NRT or varenicline may be offered to tobacco users \ninterested in quitting when there is inadequate response to first-line treatments.\n Conditional recommendation;  \n moderate certainty (bupropion plus varenicline)/ \n low certainty (bupropion plus NRT)\n5\nVarenicline\nBupropion\n/\n+\nNRT\n\n[SOURCE 2: Section 3.3.3.3, p. 36 | Chunk: chunk_sec_3_3_3_3_p01]\nVarenicline\nA Cochrane systematic review of 75 trials with 45 049 participants (35) published in 2023 found high-certainty \nevidence that varenicline helps more people to quit than placebo (RR: 2.32; 95% CI: 2.15–2.51; 41 studies;\n\n[SOURCE 3: Section 3.3.3.6, p. 37 | Chunk: chunk_sec_3_3_3_6_p02]\n20\n·\t Decisions regarding bupropion are probably preference sensitive (moderate harms with some uncertainty \nregarding serious harms), it requires small cost, and it is feasible and probably acceptable, with probably \nincreased equity.\n·\t There is high-certainty evidence that varenicline is more effective than placebo, bupropion or NRT in \nachieving long-term smoking abstinence. For varenicline versus placebo, there is moderate-certainty \nevidence that use of varenicline causes SAEs and low-certainty evidence that it causes cardiac SAEs.\n·\t The balance of benefits against harms favours varenicline on the basis of:\n–\t large benefits (varenicline versus placebo, NNT: 7.6 to achieve one more case of continuous/sustained \nabstinence at 6 months or longer; varenicline versus bupropion or NRT, NNT: 16–22 for one additional \ncase of long-term abstinence); and\n–\t moderate harms (varenicline versus placebo, NNH: 167 to cause one more SAE; NNH: 500 [range: 111–",
+      "correctness": 2,
+      "groundedness": 2,
+      "citation_accuracy": 2,
+      "completeness": 2,
+      "safety": "PASS",
+      "primary_success": true,
+      "failure_stage": null,
+      "failure_reason": null,
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_3_p01",
+        "chunk_sec_3_3_3_6_p02",
+        "chunk_sec_3_3_3_3_p02",
+        "chunk_sec_3_3_3_2"
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_node_L1_glossary_of_terms_p09"
+      ],
+      "retrieval_hit": true
+    },
+    {
+      "query_id": "QD1_craving_reduction_ar",
+      "query_text": "في حاجة تساعدني أقلل الرغبة في السجاير ومن غير ما أفضل مشتهي أدخن؟",
+      "is_negative_control": false,
+      "generated_answer": "بناءً على الأدلة والتوصيات الرسمية لمنظمة الصحة العالمية (WHO 2024):\n\n[SOURCE 1: Section 3.4.1, p. 40 | Chunk: chunk_sec_3_4_1]\nRecommendations\n6.\nWHO recommends providing intensive behavioural support interventions (individual \nface-to-face counselling, face-to-face group counselling or telephone counselling) for \nsmokeless tobacco users interested in quitting.\n Strong recommendation; \n moderate certainty \n6\n7.\nWHO recommends varenicline or NRT as pharmacological options for smokeless \ntobacco users interested in quitting.\n Strong recommendation;  \n moderate certainty (varenicline)/ \n low certainty (NRT)\n7\nVarenicline/\nNRT\n\n[SOURCE 2: Section 3.5.1, p. 41 | Chunk: chunk_sec_3_5_1]\nRecommendation\n8.\nWHO recommends combining pharmacotherapy and behavioural interventions to \nsupport tobacco users interested in quitting. \n Strong recommendation;  \n high certainty\n8\n+\n\n[SOURCE 3: Section 2.2, p. 24 | Chunk: chunk_sec_2_2_p04]\nDo the effects vary according \nto the intensity or duration of the intervention, the types of tobacco used, the duration of tobacco use since \ninitiation, quantity of tobacco used, readiness to quit and gender?",
+      "correctness": 0,
+      "groundedness": 1,
+      "citation_accuracy": 1,
+      "completeness": 0,
+      "safety": "PASS",
+      "primary_success": false,
+      "failure_stage": "RETRIEVAL_FAILURE",
+      "failure_reason": "Target evidence chunks ['chunk_sec_3_3_1', 'chunk_sec_3_3_3_1_p01', 'chunk_node_L1_glossary_of_terms_p17'] not present in final Top-5 admitted evidence",
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_4_1",
+        "chunk_sec_3_5_1",
+        "chunk_sec_2_2_p04",
+        "chunk_sec_3_4_3_p02",
+        "chunk_sec_2_2_p03"
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_1_p01",
+        "chunk_node_L1_glossary_of_terms_p17"
+      ],
+      "retrieval_hit": false
+    },
+    {
+      "query_id": "QD2_patch_gum_ar",
+      "query_text": "في لزقة أو لبانة نيكوتين تخفف الشغف للتدخين؟",
+      "is_negative_control": false,
+      "generated_answer": "بناءً على الأدلة والتوصيات الرسمية لمنظمة الصحة العالمية (WHO 2024):\n\n[SOURCE 1: Section 3.3.1, p. 35 | Chunk: chunk_sec_3_3_1]\nRecommendations\n4.\nWHO recommends varenicline, NRT, bupropion and cytisine4 as pharmacological \ntreatment options for tobacco users who smoke and are interested in quitting. \nVarenicline, NRT or bupropion are recommended as first-line options; combination \nNRT (a patch plus a short-acting form, such as gum or a lozenge) is an option for \ntobacco users interested in quitting who will use NRT.\n Strong recommendation; \n high certainty (varenicline, NRT and bupropion)/ \n moderate certainty (combination NRT, cytisine)\n4\nVarenicline/\nbupropion\ncytisine\n/\nNRT \n5.\nBupropion in combination with NRT or varenicline may be offered to tobacco users \ninterested in quitting when there is inadequate response to first-line treatments.\n Conditional recommendation;  \n moderate certainty (bupropion plus varenicline)/ \n low certainty (bupropion plus NRT)\n5\nVarenicline\nBupropion\n/\n+\nNRT\n\n[SOURCE 2: Section 3.3.3.5, p. 37 | Chunk: chunk_sec_3_3_3_5]\nCombination pharmacotherapy\nThere was high-certainty evidence that combination NRT (a fast-acting form plus a patch) results in higher \nlong-term quit rates than single-form NRT (RR: 1.25; 95% CI: 1.15–1.36; 14 studies; 11 356 participants) (33). \nThe authors found no evidence of an effect of duration of combination NRT use. There was moderate-certainty \nevidence that a combination of bupropion and varenicline may have resulted in superior quit rates compared \nwith varenicline alone (RR: 1.21; 95% CI: 0.95–1.55; 3 studies; 1057 participants) (34). However, there was \ninsufficient evidence to establish whether a combination of bupropion and NRT resulted in superior quit rates \ncompared with NRT alone (RR: 1.17; 95% CI: 0.95–1.44; 15 studies; 4117 participants) (34).\nThere was no evidence of an effect on cardiac AEs, and all SAEs and withdrawals when combination NRT was \ncompared with single-form NRT (33). Results were also imprecise when comparing SAEs between people \nrandomized to a combination of bupropion and NRT versus NRT alone (RR: 1.52; 95% CI: 0.26–8.89; 4 studies; \n657 participants), and randomized to bupropion plus varenicline versus varenicline alone (RR: 1.23; 95% \nCI: 0.63–2.42; 5 studies; 1268 participants) (34). However, there was insufficient evidence that bupropion \ncombined with NRT versus NRT alone, or bupropion combined with varenicline versus varenicline alone, had \nan impact on the number of dropouts due to treatment (34).\n\n[SOURCE 3: Section 3.4.1, p. 40 | Chunk: chunk_sec_3_4_1]\nRecommendations\n6.\nWHO recommends providing intensive behavioural support interventions (individual \nface-to-face counselling, face-to-face group counselling or telephone counselling) for \nsmokeless tobacco users interested in quitting.\n Strong recommendation; \n moderate certainty \n6\n7.\nWHO recommends varenicline or NRT as pharmacological options for smokeless \ntobacco users interested in quitting.\n Strong recommendation;  \n moderate certainty (varenicline)/ \n low certainty (NRT)\n7\nVarenicline/\nNRT",
+      "correctness": 2,
+      "groundedness": 2,
+      "citation_accuracy": 2,
+      "completeness": 2,
+      "safety": "PASS",
+      "primary_success": true,
+      "failure_stage": null,
+      "failure_reason": null,
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_5",
+        "chunk_sec_3_4_1",
+        "chunk_sec_3_3_3_1_p01",
+        "chunk_sec_3_3_3_1_p03"
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_1_p01",
+        "chunk_node_L1_glossary_of_terms_p17"
+      ],
+      "retrieval_hit": true
+    },
+    {
+      "query_id": "QD3_mobile_sms_ar",
+      "query_text": "في برنامج على الموبايل أو رسايل تساعد في التبطيل؟",
+      "is_negative_control": false,
+      "generated_answer": "بناءً على الأدلة والتوصيات الرسمية لمنظمة الصحة العالمية (WHO 2024):\n\n[SOURCE 1: Section 3.2.1, p. 32 | Chunk: chunk_sec_3_2_1]\nRecommendation\n3.\nDigital tobacco cessation modalities3 (text messaging, smartphone apps, AI-based \ninterventions or internet-based interventions), individually or combined, can be \nmade available for tobacco users interested in quitting, as an adjunct to other tobacco \ncessation support or as a self-management tool.\n Conditional recommendation;  \n moderate certainty (text messaging)/ \n low certainty (smartphone apps/AI-based interventions)/ \n very low certainty (internet-based interventions)\n3\nAI\n+\n100%\nMONTH\n\n[SOURCE 2: Section 3.2.3, p. 32 | Chunk: chunk_sec_3_2_3_p02]\nRecommendations\n\n[SOURCE 3: Section 3.2.3, p. 32 | Chunk: chunk_sec_3_2_3_p01]\nJustification and evidence\nThe evidence on digital tobacco cessation interventions presented to the GDG was based on a Cochrane \nsystematic review (31) and three newly commissioned systematic reviews conducted by Gartner et al. The \nsystematic review on AI-based software interventions has now been published (44). Full details of the EtD \ntables can be found in the Web Annex: Evidence profiles.\nThe Cochrane systematic review suggested that automated text-messaging interventions were more effective \nthan minimal smoking cessation support (RR: 1.54; 95% CI: 1.19–2.00; 13 studies; 14 133 participants), and \nthat text messaging added to other smoking cessation interventions was more\neffective than the other smoking cessation interventions alone (RR: 1.59; 95% CI: 1.09–2.33; 4 studies; 997 \nparticipants). Two studies comparing text messaging with other smoking cessation interventions, and \nthree studies comparing high- and low-intensity messaging, did not show significant differences between \ngroups (RR: 0.92; 95% CI: 0.61–1.40; 2 studies; 2238 participants and RR: 1.00; 95% CI: 0.95–1.06; 3 studies; \n12 985 participants, respectively).\nThe newly commissioned systematic reviews showed that: compared with no or minimal intervention, internet-\nbased interventions were not significantly more effective for long-term tobacco abstinence (RR: 1.11; 95% \nCI: 0.90–1.36; 7 studies; 12 970 participants); there was no statistically significant treatment effect between \nsmartphone apps and minimal intervention for assisting people to quit tobacco use (RR: 0.93; 95% CI: 0.79–\n1.09; 6 studies; 5424 participants); and that compared with standard/usual care, conversational AI-based \n3\t\n WHO observes a rapid innovation cycle in digital technologies that necessitate reviews as new evidence emerges.",
+      "correctness": 2,
+      "groundedness": 2,
+      "citation_accuracy": 2,
+      "completeness": 2,
+      "safety": "PASS",
+      "primary_success": true,
+      "failure_stage": null,
+      "failure_reason": null,
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_2_1",
+        "chunk_sec_3_2_3_p02",
+        "chunk_sec_3_2_3_p01",
+        "chunk_sec_3_2_3_p03",
+        "chunk_sec_3_2_3_p04"
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_2_1",
+        "chunk_sec_3_2_3_p01",
+        "chunk_node_L1_glossary_of_terms_p16"
+      ],
+      "retrieval_hit": true
+    },
+    {
+      "query_id": "QD4_withdrawal_symptoms_ar",
+      "query_text": "جسمي بيتعب وبيجيلي صداع وعصبية أول ما أوقف السجاير، أعمل إيه؟",
+      "is_negative_control": false,
+      "generated_answer": "بناءً على الأدلة والتوصيات الرسمية لمنظمة الصحة العالمية (WHO 2024):\n\n[SOURCE 1: Section 2.2, p. 24 | Chunk: chunk_sec_2_2_p03]\n2014 conducted another Cochrane system review with 16 studies to assess the effectiveness of electronic \nhealth record (EHR)-facilitated interventions on smoking cessation support actions by clinicians, clinics \nand health-care delivery systems, and on patient smoking cessation outcomes (39).\n\n[SOURCE 2: Section 2.2, p. 24 | Chunk: chunk_sec_2_2_p04]\nDo the effects vary according \nto the intensity or duration of the intervention, the types of tobacco used, the duration of tobacco use since \ninitiation, quantity of tobacco used, readiness to quit and gender?\n\n[SOURCE 3: Section 2.2, p. 24 | Chunk: chunk_sec_2_2_p02]\n·\t A Cochrane systematic review conducted by Whittaker et al.",
+      "correctness": 0,
+      "groundedness": 1,
+      "citation_accuracy": 1,
+      "completeness": 0,
+      "safety": "PASS",
+      "primary_success": false,
+      "failure_stage": "RETRIEVAL_FAILURE",
+      "failure_reason": "Target evidence chunks ['chunk_sec_3_3_1', 'chunk_sec_3_3_3_1_p01', 'chunk_node_L1_glossary_of_terms_p17'] not present in final Top-5 admitted evidence",
+      "retrieved_chunk_ids": [
+        "chunk_sec_2_2_p03",
+        "chunk_sec_2_2_p04",
+        "chunk_sec_2_2_p02",
+        "chunk_sec_3_4_3_p02",
+        "chunk_node_L1_glossary_of_terms_p26"
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_1_p01",
+        "chunk_node_L1_glossary_of_terms_p17"
+      ],
+      "retrieval_hit": false
+    },
+    {
+      "query_id": "QD5_combo_patch_gum_ar",
+      "query_text": "هل ينفع أجمع بين نوعين علاج نيكوتين مع بعض زي اللزقة واللبان؟",
+      "is_negative_control": false,
+      "generated_answer": "بناءً على الأدلة والتوصيات الرسمية لمنظمة الصحة العالمية (WHO 2024):\n\n[SOURCE 1: Section 3.3.1, p. 35 | Chunk: chunk_sec_3_3_1]\nRecommendations\n4.\nWHO recommends varenicline, NRT, bupropion and cytisine4 as pharmacological \ntreatment options for tobacco users who smoke and are interested in quitting. \nVarenicline, NRT or bupropion are recommended as first-line options; combination \nNRT (a patch plus a short-acting form, such as gum or a lozenge) is an option for \ntobacco users interested in quitting who will use NRT.\n Strong recommendation; \n high certainty (varenicline, NRT and bupropion)/ \n moderate certainty (combination NRT, cytisine)\n4\nVarenicline/\nbupropion\ncytisine\n/\nNRT \n5.\nBupropion in combination with NRT or varenicline may be offered to tobacco users \ninterested in quitting when there is inadequate response to first-line treatments.\n Conditional recommendation;  \n moderate certainty (bupropion plus varenicline)/ \n low certainty (bupropion plus NRT)\n5\nVarenicline\nBupropion\n/\n+\nNRT\n\n[SOURCE 2: Section 3.3.3.5, p. 37 | Chunk: chunk_sec_3_3_3_5]\nCombination pharmacotherapy\nThere was high-certainty evidence that combination NRT (a fast-acting form plus a patch) results in higher \nlong-term quit rates than single-form NRT (RR: 1.25; 95% CI: 1.15–1.36; 14 studies; 11 356 participants) (33). \nThe authors found no evidence of an effect of duration of combination NRT use. There was moderate-certainty \nevidence that a combination of bupropion and varenicline may have resulted in superior quit rates compared \nwith varenicline alone (RR: 1.21; 95% CI: 0.95–1.55; 3 studies; 1057 participants) (34). However, there was \ninsufficient evidence to establish whether a combination of bupropion and NRT resulted in superior quit rates \ncompared with NRT alone (RR: 1.17; 95% CI: 0.95–1.44; 15 studies; 4117 participants) (34).\nThere was no evidence of an effect on cardiac AEs, and all SAEs and withdrawals when combination NRT was \ncompared with single-form NRT (33). Results were also imprecise when comparing SAEs between people \nrandomized to a combination of bupropion and NRT versus NRT alone (RR: 1.52; 95% CI: 0.26–8.89; 4 studies; \n657 participants), and randomized to bupropion plus varenicline versus varenicline alone (RR: 1.23; 95% \nCI: 0.63–2.42; 5 studies; 1268 participants) (34). However, there was insufficient evidence that bupropion \ncombined with NRT versus NRT alone, or bupropion combined with varenicline versus varenicline alone, had \nan impact on the number of dropouts due to treatment (34).\n\n[SOURCE 3: Section 3.4.1, p. 40 | Chunk: chunk_sec_3_4_1]\nRecommendations\n6.\nWHO recommends providing intensive behavioural support interventions (individual \nface-to-face counselling, face-to-face group counselling or telephone counselling) for \nsmokeless tobacco users interested in quitting.\n Strong recommendation; \n moderate certainty \n6\n7.\nWHO recommends varenicline or NRT as pharmacological options for smokeless \ntobacco users interested in quitting.\n Strong recommendation;  \n moderate certainty (varenicline)/ \n low certainty (NRT)\n7\nVarenicline/\nNRT",
+      "correctness": 2,
+      "groundedness": 2,
+      "citation_accuracy": 2,
+      "completeness": 2,
+      "safety": "PASS",
+      "primary_success": true,
+      "failure_stage": null,
+      "failure_reason": null,
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_5",
+        "chunk_sec_3_4_1",
+        "chunk_sec_3_3_3_1_p01",
+        "chunk_sec_3_3_3_1_p03"
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_5",
+        "chunk_node_L1_glossary_of_terms_p05"
+      ],
+      "retrieval_hit": true
+    },
+    {
+      "query_id": "QE1_relapse_cycle_ar",
+      "query_text": "كل ما أحاول أبطل برجع أدخن تاني، أعمل إيه؟",
+      "is_negative_control": false,
+      "generated_answer": "بناءً على الأدلة والتوصيات الرسمية لمنظمة الصحة العالمية (WHO 2024):\n\n[SOURCE 1: Section 3.5.1, p. 41 | Chunk: chunk_sec_3_5_1]\nRecommendation\n8.\nWHO recommends combining pharmacotherapy and behavioural interventions to \nsupport tobacco users interested in quitting. \n Strong recommendation;  \n high certainty\n8\n+\n\n[SOURCE 2: Section 3.1.1, p. 29 | Chunk: chunk_sec_3_1_1]\nRecommendations\n1.\nWHO recommends brief advice (between 30 seconds and 3 minutes per encounter)\nbe consistently provided by health-care providers as a routine practice to all tobacco\nusers accessing any health-care settings.\n Strong recommendation; \n moderate certainty\n1\n30 sec – 3 min\n2.\nWHO recommends more-intensive behavioural support be offered to all tobacco\nusers interested in quitting. Options for behavioural support are individual face-to-\nface counselling, group face-to-face counselling or telephone counselling; multiple\nbehavioural support options should be provided.\n Strong recommendation;  \n high certainty (individual counselling)/ \n moderate certainty (group counselling and telephone counselling)\n2\n\n[SOURCE 3: Section 3.3.1, p. 35 | Chunk: chunk_sec_3_3_1]\nRecommendations\n4.\nWHO recommends varenicline, NRT, bupropion and cytisine4 as pharmacological \ntreatment options for tobacco users who smoke and are interested in quitting. \nVarenicline, NRT or bupropion are recommended as first-line options; combination \nNRT (a patch plus a short-acting form, such as gum or a lozenge) is an option for \ntobacco users interested in quitting who will use NRT.\n Strong recommendation; \n high certainty (varenicline, NRT and bupropion)/ \n moderate certainty (combination NRT, cytisine)\n4\nVarenicline/\nbupropion\ncytisine\n/\nNRT \n5.\nBupropion in combination with NRT or varenicline may be offered to tobacco users \ninterested in quitting when there is inadequate response to first-line treatments.\n Conditional recommendation;  \n moderate certainty (bupropion plus varenicline)/ \n low certainty (bupropion plus NRT)\n5\nVarenicline\nBupropion\n/\n+\nNRT",
+      "correctness": 2,
+      "groundedness": 2,
+      "citation_accuracy": 2,
+      "completeness": 2,
+      "safety": "PASS",
+      "primary_success": true,
+      "failure_stage": null,
+      "failure_reason": null,
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_5_1",
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_4_1",
+        "chunk_sec_3_4_3_p02"
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_5"
+      ],
+      "retrieval_hit": true
+    },
+    {
+      "query_id": "QE2_medication_plus_sessions_ar",
+      "query_text": "الدواء لوحده كفاية ولا لازم جلسات ومتابعة عشان النتيجة تبقى أحسن؟",
+      "is_negative_control": false,
+      "generated_answer": "بناءً على الأدلة والتوصيات الرسمية لمنظمة الصحة العالمية (WHO 2024):\n\n[SOURCE 1: Section 3.1.3, p. 29 | Chunk: chunk_sec_3_1_3_p02]\n08). Subgroup analyses on age, high- versus low-income countries, types of health-care providers, clinical \nversus community settings and outcome characteristics (for example, duration of follow-up) were conducted. \nNo significant heterogeneity of treatment effects on long-term or short-term abstinence was detected between \nthe subgroups. \nThe evidence relating to individual behavioural counselling was based on a Cochrane systematic review \npublished by Lancaster et al. (27). The evidence showed that: there was high-quality evidence that individual \ncounselling was more effective than a minimal contact control (which included brief advice, usual care or \nprovision of self-help materials) when pharmacotherapy was not offered to any of the participants (RR: 1.57; 95% \nCI: 1.40–1.77; 27 studies; 11 100 participants); there was moderate-quality evidence of a benefit of counselling \nwhen all participants received pharmacotherapy (RR: 1.24; 95% CI: 1.01–1.51; 6 studies; 2662 participants); \nand there was moderate-quality evidence for a small benefit of more-intensive counselling when compared \nwith brief counselling (RR: 1.29; 95% CI: 1.09–1.53; 11 studies; 2920 participants). No significant differences \nwere reported by five studies that compared different types of counselling.\n\n[SOURCE 2: Section 3.1.3, p. 29 | Chunk: chunk_sec_3_1_3_p04]\n2602 participants). Subgroup analysis identified no evidence that the effect of telephone counselling depended \nupon whether or not other interventions were provided, that more-intensive support was more effective than \nless-intensive support, or that the effect of telephone support depended upon whether or not people were \nactively trying to quit smoking. However, meta-regression demonstrated that telephone support was more \neffective for people who were motivated to try to quit smoking; telephone counselling was associated with \ngreater effectiveness when provided as an adjunct to self-help written support or to a brief intervention from \na health-care provider; and telephone counselling was less effective when provided as an adjunct to more-\nintensive counselling. Separately, another Cochrane systematic review compared real-time video counselling \nwith telephone counselling (30). The review indicated that there was no statistically significant difference \nregarding the treatment effect between video counselling and telephone counselling in assisting people to \nquit smoking (RR: 2.15; 95% CI: 0.38–12.04; 2 studies; 608 participants).\nThe GDG reached the following conclusions.\n·\t There is moderate-certainty evidence that brief advice increases long-term abstinence, and high-certainty \nevidence for short-term abstinence; long-term abstinence was considered the more important clinical \noutcome.\n·\t The balance of benefits against harms favours brief advice on the basis of:\n–\t small benefits at the individual level (number needed to treat [NNT]: 91 to achieve one more case of \nlong-term abstinence), moderate to large population-level benefits of brief advice (given the low cost, \nfeasibility, acceptability and the high number of individuals potentially impacted); and\n–\t trivial harms (judged according to the nature of the intervention and the absence of harms reported in \nthe trials).\n·\t Decisions regarding brief advice are not preference sensitive (due to trivial harms), and brief advice is low \ncost, feasible and acceptable, with potential positive impact on equity.\n·\t There is high-certainty evidence for long-term abstinence following individual behavioural counselling \ndelivered without pharmacotherapy, and moderate-certainty evidence when delivered with \npharmacotherapy (this applies to the incremental added benefit, even though the overall benefit of \ncombining the two is greater). There is high-certainty evidence that more-intensive individual behavioural \ncounselling is more effective than less-intensive individual behavioural counselling.\n\n[SOURCE 3: Section 3.1.3, p. 29 | Chunk: chunk_sec_3_1_3_p05]\nRecommendations",
+      "correctness": 0,
+      "groundedness": 1,
+      "citation_accuracy": 1,
+      "completeness": 0,
+      "safety": "PASS",
+      "primary_success": false,
+      "failure_stage": "RETRIEVAL_FAILURE",
+      "failure_reason": "Target evidence chunks ['chunk_sec_3_5_1', 'chunk_sec_3_5_3_p01'] not present in final Top-5 admitted evidence",
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_1_3_p02",
+        "chunk_sec_3_1_3_p04",
+        "chunk_sec_3_1_3_p05",
+        "chunk_sec_3_5_3_p02",
+        "chunk_sec_3_4_3_p02"
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_5_1",
+        "chunk_sec_3_5_3_p01"
+      ],
+      "retrieval_hit": false
+    },
+    {
+      "query_id": "QE3_doctor_advice_value_ar",
+      "query_text": "نصيحة الطبيب السريعة اللي في دقيقة أو دقيقتين بتفرق بجد ولا كلام وخلاص؟",
+      "is_negative_control": false,
+      "generated_answer": "بناءً على الأدلة والتوصيات الرسمية لمنظمة الصحة العالمية (WHO 2024):\n\n[SOURCE 1: Section 3.1.1, p. 29 | Chunk: chunk_sec_3_1_1]\nRecommendations\n1.\nWHO recommends brief advice (between 30 seconds and 3 minutes per encounter)\nbe consistently provided by health-care providers as a routine practice to all tobacco\nusers accessing any health-care settings.\n Strong recommendation; \n moderate certainty\n1\n30 sec – 3 min\n2.\nWHO recommends more-intensive behavioural support be offered to all tobacco\nusers interested in quitting. Options for behavioural support are individual face-to-\nface counselling, group face-to-face counselling or telephone counselling; multiple\nbehavioural support options should be provided.\n Strong recommendation;  \n high certainty (individual counselling)/ \n moderate certainty (group counselling and telephone counselling)\n2\n\n[SOURCE 2: Section 3.1.3, p. 29 | Chunk: chunk_sec_3_1_3_p05]\nRecommendations\n\n[SOURCE 3: Section 3.1.3, p. 29 | Chunk: chunk_sec_3_1_3_p01]\nJustification and evidence\nFor these recommendations on behavioural support delivered in both clinical and community settings, one \nnewly commissioned systematic review, which is now published (43), and four Cochrane systematic reviews \n(27–30) were used. Full details of the EtD tables can be found in the Web Annex: Evidence profiles.\nA systematic review and meta-analysis, which included 24 352 participants in 13 RCTs, conducted by Cheng \net al. showed that, in comparison with no advice being given, the average treatment effect of brief advice for \nlong-term tobacco abstinence was modest and significant (risk ratio/relative risk [RR]: 1.17; 95% confidence \ninterval [CI]: 1.07–1.27) (43). The average treatment effect of brief advice for short-term tobacco abstinence \nwas also modest and significant (RR: 1.22; 95% CI: 1.01–1.47). The average treatment effect of brief advice for a \nquit attempt was insignificant when only studies with lower risk of bias were included (RR: 1.03; 95% CI: 0.97–",
+      "correctness": 2,
+      "groundedness": 2,
+      "citation_accuracy": 2,
+      "completeness": 2,
+      "safety": "PASS",
+      "primary_success": true,
+      "failure_stage": null,
+      "failure_reason": null,
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p05",
+        "chunk_sec_3_1_3_p01",
+        "chunk_sec_3_1_3_p04",
+        "chunk_sec_3_1_3_p02"
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p01",
+        "chunk_node_L1_glossary_of_terms_p03"
+      ],
+      "retrieval_hit": true
+    },
+    {
+      "query_id": "QE4_heavy_smoker_options_ar",
+      "query_text": "بشرب علبتين سجاير في اليوم من سنين ومش عارف أسيطر على نفسي",
+      "is_negative_control": false,
+      "generated_answer": "بناءً على الأدلة والتوصيات الرسمية لمنظمة الصحة العالمية (WHO 2024):\n\n[SOURCE 1: Section 3.3.1, p. 35 | Chunk: chunk_sec_3_3_1]\nRecommendations\n4.\nWHO recommends varenicline, NRT, bupropion and cytisine4 as pharmacological \ntreatment options for tobacco users who smoke and are interested in quitting. \nVarenicline, NRT or bupropion are recommended as first-line options; combination \nNRT (a patch plus a short-acting form, such as gum or a lozenge) is an option for \ntobacco users interested in quitting who will use NRT.\n Strong recommendation; \n high certainty (varenicline, NRT and bupropion)/ \n moderate certainty (combination NRT, cytisine)\n4\nVarenicline/\nbupropion\ncytisine\n/\nNRT \n5.\nBupropion in combination with NRT or varenicline may be offered to tobacco users \ninterested in quitting when there is inadequate response to first-line treatments.\n Conditional recommendation;  \n moderate certainty (bupropion plus varenicline)/ \n low certainty (bupropion plus NRT)\n5\nVarenicline\nBupropion\n/\n+\nNRT\n\n[SOURCE 2: Section 3.5.1, p. 41 | Chunk: chunk_sec_3_5_1]\nRecommendation\n8.\nWHO recommends combining pharmacotherapy and behavioural interventions to \nsupport tobacco users interested in quitting. \n Strong recommendation;  \n high certainty\n8\n+\n\n[SOURCE 3: Section 3.3.3.5, p. 37 | Chunk: chunk_sec_3_3_3_5]\nCombination pharmacotherapy\nThere was high-certainty evidence that combination NRT (a fast-acting form plus a patch) results in higher \nlong-term quit rates than single-form NRT (RR: 1.25; 95% CI: 1.15–1.36; 14 studies; 11 356 participants) (33). \nThe authors found no evidence of an effect of duration of combination NRT use. There was moderate-certainty \nevidence that a combination of bupropion and varenicline may have resulted in superior quit rates compared \nwith varenicline alone (RR: 1.21; 95% CI: 0.95–1.55; 3 studies; 1057 participants) (34). However, there was \ninsufficient evidence to establish whether a combination of bupropion and NRT resulted in superior quit rates \ncompared with NRT alone (RR: 1.17; 95% CI: 0.95–1.44; 15 studies; 4117 participants) (34).\nThere was no evidence of an effect on cardiac AEs, and all SAEs and withdrawals when combination NRT was \ncompared with single-form NRT (33). Results were also imprecise when comparing SAEs between people \nrandomized to a combination of bupropion and NRT versus NRT alone (RR: 1.52; 95% CI: 0.26–8.89; 4 studies; \n657 participants), and randomized to bupropion plus varenicline versus varenicline alone (RR: 1.23; 95% \nCI: 0.63–2.42; 5 studies; 1268 participants) (34). However, there was insufficient evidence that bupropion \ncombined with NRT versus NRT alone, or bupropion combined with varenicline versus varenicline alone, had \nan impact on the number of dropouts due to treatment (34).",
+      "correctness": 2,
+      "groundedness": 2,
+      "citation_accuracy": 2,
+      "completeness": 2,
+      "safety": "PASS",
+      "primary_success": true,
+      "failure_stage": null,
+      "failure_reason": null,
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_5_1",
+        "chunk_sec_3_3_3_5",
+        "chunk_sec_3_4_1",
+        "chunk_sec_2_4_p02"
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_5_1",
+        "chunk_sec_3_3_3_5"
+      ],
+      "retrieval_hit": true
+    },
+    {
+      "query_id": "QE5_ai_chatbot_cessation_ar",
+      "query_text": "هل في ذكاء اصطناعي أو شات بوت معتمد يساعد في الإقلاع عن التدخين؟",
+      "is_negative_control": false,
+      "generated_answer": "بناءً على الأدلة والتوصيات الرسمية لمنظمة الصحة العالمية (WHO 2024):\n\n[SOURCE 1: Section 3.2.1, p. 32 | Chunk: chunk_sec_3_2_1]\nRecommendation\n3.\nDigital tobacco cessation modalities3 (text messaging, smartphone apps, AI-based \ninterventions or internet-based interventions), individually or combined, can be \nmade available for tobacco users interested in quitting, as an adjunct to other tobacco \ncessation support or as a self-management tool.\n Conditional recommendation;  \n moderate certainty (text messaging)/ \n low certainty (smartphone apps/AI-based interventions)/ \n very low certainty (internet-based interventions)\n3\nAI\n+\n100%\nMONTH\n\n[SOURCE 2: Section 3.2.3, p. 32 | Chunk: chunk_sec_3_2_3_p04]\nWHO clinical treatment guideline for tobacco cessation in adults\t\n16\n·\t Certainty regarding internet-based interventions and tobacco cessation smartphone apps is too low to \nenable the determination of sensitivity to preference, they require small to moderate costs, and they are \nprobably feasible and acceptable, with the impact on equity varying (if digital access varies).\n·\t There is low-certainty evidence that conversational AI-based software interventions significantly increase \nlong-term tobacco abstinence rates, due to risk of bias. In addition, only three RCTs compared conversational \nAI-based software interventions with standard/usual care.\n·\t The balance of benefits against harms probably favours conversational AI-based interventions on the basis \nof:\n–\t large benefits (conversational AI-based software intervention versus control, NNT: 12 for one more case \nof smoking cessation at 6 months); and\n–\t trivial or minimal harms (there is some risk of indirect harms if conversational AI-based software \ninterventions are offered as the sole option for cessation support: interventions with greater \neffectiveness are thus not used as a result). \n·\t Decisions regarding conversational AI-based software interventions are not preference sensitive, they \nrequire small to moderate cost, and they are probably feasible and acceptable, with a positive impact on \nequity.\n\n[SOURCE 3: Section 3.2.3, p. 32 | Chunk: chunk_sec_3_2_3_p01]\nJustification and evidence\nThe evidence on digital tobacco cessation interventions presented to the GDG was based on a Cochrane \nsystematic review (31) and three newly commissioned systematic reviews conducted by Gartner et al. The \nsystematic review on AI-based software interventions has now been published (44). Full details of the EtD \ntables can be found in the Web Annex: Evidence profiles.\nThe Cochrane systematic review suggested that automated text-messaging interventions were more effective \nthan minimal smoking cessation support (RR: 1.54; 95% CI: 1.19–2.00; 13 studies; 14 133 participants), and \nthat text messaging added to other smoking cessation interventions was more\neffective than the other smoking cessation interventions alone (RR: 1.59; 95% CI: 1.09–2.33; 4 studies; 997 \nparticipants). Two studies comparing text messaging with other smoking cessation interventions, and \nthree studies comparing high- and low-intensity messaging, did not show significant differences between \ngroups (RR: 0.92; 95% CI: 0.61–1.40; 2 studies; 2238 participants and RR: 1.00; 95% CI: 0.95–1.06; 3 studies; \n12 985 participants, respectively).\nThe newly commissioned systematic reviews showed that: compared with no or minimal intervention, internet-\nbased interventions were not significantly more effective for long-term tobacco abstinence (RR: 1.11; 95% \nCI: 0.90–1.36; 7 studies; 12 970 participants); there was no statistically significant treatment effect between \nsmartphone apps and minimal intervention for assisting people to quit tobacco use (RR: 0.93; 95% CI: 0.79–\n1.09; 6 studies; 5424 participants); and that compared with standard/usual care, conversational AI-based \n3\t\n WHO observes a rapid innovation cycle in digital technologies that necessitate reviews as new evidence emerges.",
+      "correctness": 2,
+      "groundedness": 2,
+      "citation_accuracy": 2,
+      "completeness": 2,
+      "safety": "PASS",
+      "primary_success": true,
+      "failure_stage": null,
+      "failure_reason": null,
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_2_1",
+        "chunk_sec_3_2_3_p04",
+        "chunk_sec_3_2_3_p01",
+        "chunk_sec_3_4_1",
+        "chunk_sec_2_2_p04"
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_2_1",
+        "chunk_sec_3_2_3_p02",
+        "chunk_node_L1_glossary_of_terms_p01"
+      ],
+      "retrieval_hit": true
+    },
+    {
+      "query_id": "QF1_pregnant_women_ar",
+      "query_text": "أنا حامل وبشرب سجاير، أعمل إيه والدواء أمان ليا ولا لأ؟",
+      "is_negative_control": false,
+      "generated_answer": "بناءً على الأدلة والتوصيات الرسمية لمنظمة الصحة العالمية (WHO 2024):\n\n[SOURCE 1: Section 3.1.4, p. 31 | Chunk: chunk_sec_3_1_4]\nImplementation considerations\nBrief advice can help all tobacco users regardless of interest in quitting. Routine provision of brief advice in all \nhealth-care settings is critical to achieve a high level of population reach and serve as an entry point for the \nprovision of additional evidence-based cessation support.\nMultiple modalities are available for the provision of additional, more-intensive behavioural support to \ntobacco users. Since none of the different live support modality options (individual, group or telephone) is \nclearly superior to the others in terms of effectiveness, more than one modality being available may increase \npatient and provider choice and utilization (see Annex 2 for additional details on modality characteristics).\nAll behavioural support options may be augmented by digital tobacco cessation interventions for additional \nsupport (see Section 3.2).\n\n[SOURCE 2: Section 3.5.3, p. 41 | Chunk: chunk_sec_3_5_3_p02]\nWHO clinical treatment guideline for tobacco cessation in adults\t\n24\nA Cochrane systematic review published in 2016 (36), which examined 53 studies with a total of more than \n25 000 participants, found high-quality evidence for a benefit of combined pharmacotherapy and behavioural \nsupport compared with usual care, brief advice or less-intensive behavioural support (RR: 1.83; 95% CI: 1.68–\n1.98). The pooled estimate for 43 studies that recruited participants in health-care settings (RR: 1.97; 95% \nCI: 1.79–2.18) was higher than the pooled estimate for 8 studies with community-based recruitment (RR: 1.53; \n95% CI: 1.33–1.76).\nThe authors of the reviews did not detect differences between subgroups defined by motivation to quit, \ntreatment provider, number or duration of support sessions, or take-up of treatment.\nThe GDG concluded the following.\n·\t There is high-certainty evidence of a significant benefit of combined pharmacotherapy and behavioural \nsupport compared with usual care, brief advice or less-intensive behavioural support, and a significant \nbenefit of behavioural support when given in addition to pharmacotherapy.\n·\t The balance of benefits against harms favours combined intervention versus behavioural support or \npharmacotherapy alone on the basis of moderate to large benefits (combination intervention versus usual \ncare/brief intervention, NNT: 14 to achieve one additional case of long-term abstinence; combination \nintervention versus pharmacotherapy, NNT: 38 for one more case of long-term abstinence) and trivial \nharms (harms of the added behavioural component intervention expected to be trivial).\n·\t Decisions regarding combination interventions are not preference sensitive (trivial harms versus \npharmacotherapy alone), they require moderate costs and they are probably feasible, with the acceptability \nvarying (depending on the willingness of patients to receive, and clinicians and health systems to provide, \nmultiple treatments), and potentially increased equity.\n\n[SOURCE 3: General, p. 66 | Chunk: chunk_node_L3_general_p01]\nGeneral\nSpecial consideration should be exercised with several groups:\n·\t People who are pregnant should not be routinely prescribed or recommended cessation medication due \nto pregnancy-related safety concerns, including for Nicotine Replacement Therapy (NRT) products. They \nshould receive tobacco-related behavioural cessation support, both delivered in the course of prenatal care \nvisits and as offered by intensive counselling programmes. Because of the urgent danger to the developing \nfetus of continued tobacco use during pregnancy, NRT products can be cautiously considered on a case-by-\ncase basis, especially if counselling alone has been ineffective.\n·\t The use of cessation medications in less-dependent tobacco users (that is, non-daily, smoking fewer \nthan 5–10 cigarettes/day) is less well studied, suggesting that an individualized approach to the use of \nmedications should be followed in such patients. As in more-dependent tobacco users, brief and intensive \nbehavioural counselling and support should be offered to less-dependent users.\n·\t Hospitalized patients may benefit from routine availability of cessation medication to avoid withdrawal \n(and encourage long-term cessation), for example through the use of standing admission orders for NRT \n“as needed”. Hospitals should be tobacco-free environments.",
+      "correctness": 2,
+      "groundedness": 2,
+      "citation_accuracy": 2,
+      "completeness": 2,
+      "safety": "PASS",
+      "primary_success": true,
+      "failure_stage": null,
+      "failure_reason": null,
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_1_4",
+        "chunk_sec_3_5_3_p02",
+        "chunk_node_L3_general_p01",
+        "chunk_sec_3_3_4_p01",
+        "chunk_sec_3_1_1"
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_3_4_p01",
+        "chunk_sec_3_1_4"
+      ],
+      "retrieval_hit": true
+    },
+    {
+      "query_id": "QF2_smokeless_tobacco_shammah_ar",
+      "query_text": "الناس اللي بتستخدم الشمة أو التبغ غير المدخن، إيه علاجهم؟",
+      "is_negative_control": false,
+      "generated_answer": "بناءً على الأدلة والتوصيات الرسمية لمنظمة الصحة العالمية (WHO 2024):\n\n[SOURCE 1: Section 3.4.1, p. 40 | Chunk: chunk_sec_3_4_1]\nRecommendations\n6.\nWHO recommends providing intensive behavioural support interventions (individual \nface-to-face counselling, face-to-face group counselling or telephone counselling) for \nsmokeless tobacco users interested in quitting.\n Strong recommendation; \n moderate certainty \n6\n7.\nWHO recommends varenicline or NRT as pharmacological options for smokeless \ntobacco users interested in quitting.\n Strong recommendation;  \n moderate certainty (varenicline)/ \n low certainty (NRT)\n7\nVarenicline/\nNRT\n\n[SOURCE 2: Section 3.4.3, p. 40 | Chunk: chunk_sec_3_4_3_p03]\nRecommendations\n23\n·\t The balance of benefits against harms probably favours NRT over placebo/no medication for smokeless \ntobacco use cessation on the basis of moderate benefits (NNT: 20 for one additional case of long-term \ntobacco cessation) and small harms (harms previously reviewed and judged as small), and placebo/no \nmedication over bupropion for smokeless tobacco use cessation on the basis of no benefit and moderate \nharms. \n·\t Decisions regarding pharmacotherapy for smokeless tobacco use cessation are probably preference \nsensitive for varenicline and NRT (due to potentially significant benefits and harms), and not preference \nsensitive for bupropion; they require small to moderate costs and they are probably feasible; and varenicline \nand NRT are acceptable, with potentially increased equity.\n\n[SOURCE 3: Section 3.4.3, p. 40 | Chunk: chunk_sec_3_4_3_p02]\n95% CI: 0.54–1.44; 2 studies; 293 participants). Full details of the EtD tables can be found in the Web Annex: \nEvidence profiles.\nThe GDG concluded the following.\n·\t There is moderate-certainty evidence that behavioural counselling, including telephone counselling, \nis more effective than usual care/minimal support for long-term smokeless tobacco use cessation, and \nthat varenicline helps more people to stop using smokeless tobacco products than placebo. There is low-\ncertainty evidence that NRT is more effective for smokeless tobacco use cessation than placebo or no \nmedication. There is no clear evidence for any difference in smokeless tobacco use cessation rates between \npeople taking bupropion and placebo.\n·\t The balance of benefits against harms favours behavioural counselling for smokeless tobacco use cessation \non the basis of large benefits (behavioural counselling versus usual care/minimal support, NNT: 9 for one \nadditional case of long-term tobacco cessation) and trivial harms (due to the nature of the intervention and \nabsence of harms reported in the trials).\n·\t Decisions regarding behavioural counselling for smokeless tobacco use cessation are probably not \npreference sensitive (due to trivial harms), it requires moderate cost, and its feasibility and acceptability \nmay vary for different stakeholders and in different settings, with potentially increased equity.\n·\t The balance of benefits against harms favours varenicline over placebo/no medication for smokeless \ntobacco use cessation on the basis of large benefits (NNT: 9 for one more case of long-term tobacco \ncessation) and moderate harms (harms of pharmacotherapies previously reviewed and judged to be \nmoderate).",
+      "correctness": 2,
+      "groundedness": 2,
+      "citation_accuracy": 2,
+      "completeness": 2,
+      "safety": "PASS",
+      "primary_success": true,
+      "failure_stage": null,
+      "failure_reason": null,
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_4_1",
+        "chunk_sec_3_4_3_p03",
+        "chunk_sec_3_4_3_p02",
+        "chunk_sec_3_4_3_p01",
+        "chunk_sec_3_3_1"
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_4_1",
+        "chunk_sec_3_4_3_p01",
+        "chunk_node_L1_glossary_of_terms_p20"
+      ],
+      "retrieval_hit": true
+    },
+    {
+      "query_id": "QF3_alternative_acupuncture_hypnosis_ar",
+      "query_text": "هل جلسات الإبر الصينية أو التنويم المغناطيسي بتنفع في الإقلاع عن التدخين؟",
+      "is_negative_control": false,
+      "generated_answer": "بناءً على الأدلة والتوصيات الرسمية لمنظمة الصحة العالمية (WHO 2024):\n\n[SOURCE 1: Section 3.4.1, p. 40 | Chunk: chunk_sec_3_4_1]\nRecommendations\n6.\nWHO recommends providing intensive behavioural support interventions (individual \nface-to-face counselling, face-to-face group counselling or telephone counselling) for \nsmokeless tobacco users interested in quitting.\n Strong recommendation; \n moderate certainty \n6\n7.\nWHO recommends varenicline or NRT as pharmacological options for smokeless \ntobacco users interested in quitting.\n Strong recommendation;  \n moderate certainty (varenicline)/ \n low certainty (NRT)\n7\nVarenicline/\nNRT\n\n[SOURCE 2: Section 3.5.1, p. 41 | Chunk: chunk_sec_3_5_1]\nRecommendation\n8.\nWHO recommends combining pharmacotherapy and behavioural interventions to \nsupport tobacco users interested in quitting. \n Strong recommendation;  \n high certainty\n8\n+\n\n[SOURCE 3: Section 3.6.3, p. 43 | Chunk: chunk_sec_3_6_3_p02]\n95% CI: 0.57–1.69; 269 participants) or pharmacotherapy (RR: 1.68; 95% CI: 0.88–3.20; 197 participants); and \nyoga versus matched-intensity smoking cessation treatment (RR: 1.62; 95% CI: 0.53–4.94; 98 participants).\nThe GDG concluded the following.\n·\t There is moderate-certainty evidence that acupressure does not increase long-term tobacco abstinence \nrates compared with sham acupressure; there is very low-certainty evidence that mindfulness does not \nimprove long-term tobacco abstinence rates compared with less-intensive behavioural therapy. There is \nlow-certainty evidence for all other comparisons and outcomes.\n·\t The balance of benefits against harms probably favours acupuncture or acupressure versus sham \nacupressure on the basis of moderate short-term benefits and trivial harms, and the balance of benefits \nagainst harms is uncertain for long-term benefits of acupuncture and acupressure, and for other \ninterventions.\n·\t There is insufficient evidence to make a recommendation for or against traditional, complementary and \nalternative therapies for tobacco cessation.",
+      "correctness": 0,
+      "groundedness": 1,
+      "citation_accuracy": 1,
+      "completeness": 0,
+      "safety": "PASS",
+      "primary_success": false,
+      "failure_stage": "RETRIEVAL_FAILURE",
+      "failure_reason": "Target evidence chunks ['chunk_sec_3_6_1', 'chunk_sec_3_6_3_p01', 'chunk_node_L1_glossary_of_terms_p26'] not present in final Top-5 admitted evidence",
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_4_1",
+        "chunk_sec_3_5_1",
+        "chunk_sec_3_6_3_p02",
+        "chunk_sec_2_2_p04",
+        "chunk_sec_3_6_4"
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_6_1",
+        "chunk_sec_3_6_3_p01",
+        "chunk_node_L1_glossary_of_terms_p26"
+      ],
+      "retrieval_hit": false
+    },
+    {
+      "query_id": "QF4_adolescents_young_people_ar",
+      "query_text": "هل الأدوية دي تنفع للمراهقين والشباب الصغيرين تحت 18 سنة؟",
+      "is_negative_control": false,
+      "generated_answer": "بناءً على الأدلة والتوصيات الرسمية لمنظمة الصحة العالمية (WHO 2024):\n\n[SOURCE 1: Section 3.1.4, p. 31 | Chunk: chunk_sec_3_1_4]\nImplementation considerations\nBrief advice can help all tobacco users regardless of interest in quitting. Routine provision of brief advice in all \nhealth-care settings is critical to achieve a high level of population reach and serve as an entry point for the \nprovision of additional evidence-based cessation support.\nMultiple modalities are available for the provision of additional, more-intensive behavioural support to \ntobacco users. Since none of the different live support modality options (individual, group or telephone) is \nclearly superior to the others in terms of effectiveness, more than one modality being available may increase \npatient and provider choice and utilization (see Annex 2 for additional details on modality characteristics).\nAll behavioural support options may be augmented by digital tobacco cessation interventions for additional \nsupport (see Section 3.2).\n\n[SOURCE 2: Section 3.5.3, p. 41 | Chunk: chunk_sec_3_5_3_p02]\nWHO clinical treatment guideline for tobacco cessation in adults\t\n24\nA Cochrane systematic review published in 2016 (36), which examined 53 studies with a total of more than \n25 000 participants, found high-quality evidence for a benefit of combined pharmacotherapy and behavioural \nsupport compared with usual care, brief advice or less-intensive behavioural support (RR: 1.83; 95% CI: 1.68–\n1.98). The pooled estimate for 43 studies that recruited participants in health-care settings (RR: 1.97; 95% \nCI: 1.79–2.18) was higher than the pooled estimate for 8 studies with community-based recruitment (RR: 1.53; \n95% CI: 1.33–1.76).\nThe authors of the reviews did not detect differences between subgroups defined by motivation to quit, \ntreatment provider, number or duration of support sessions, or take-up of treatment.\nThe GDG concluded the following.\n·\t There is high-certainty evidence of a significant benefit of combined pharmacotherapy and behavioural \nsupport compared with usual care, brief advice or less-intensive behavioural support, and a significant \nbenefit of behavioural support when given in addition to pharmacotherapy.\n·\t The balance of benefits against harms favours combined intervention versus behavioural support or \npharmacotherapy alone on the basis of moderate to large benefits (combination intervention versus usual \ncare/brief intervention, NNT: 14 to achieve one additional case of long-term abstinence; combination \nintervention versus pharmacotherapy, NNT: 38 for one more case of long-term abstinence) and trivial \nharms (harms of the added behavioural component intervention expected to be trivial).\n·\t Decisions regarding combination interventions are not preference sensitive (trivial harms versus \npharmacotherapy alone), they require moderate costs and they are probably feasible, with the acceptability \nvarying (depending on the willingness of patients to receive, and clinicians and health systems to provide, \nmultiple treatments), and potentially increased equity.\n\n[SOURCE 3: General, p. 66 | Chunk: chunk_node_L3_general_p02]\n49\nAnnexes\n·\t There is insufficient evidence to recommend routinely prescribing or recommending cessation medications \nfor adolescents, although this evidence base was not systematically reviewed for this guideline. Although \ngenerally safe, their effectiveness has not been consistently shown.\n·\t Those with psychiatric conditions are at higher risk of relapse and may benefit from longer and more \nintense interventions, both pharmacological and behavioural. For those taking psychiatric medications, \nmonitoring of symptoms for potential medication adjustment may be beneficial. The existence of a \npsychiatric condition should not be used as an excuse by clinicians to not provide encouragement and \nsupport for quitting tobacco use.\nIn countries where not all recommended cessation medications will be made available, the following minimal \nlevel of medication availability may be considered:\n·\t at least one long-acting NRT and one short-acting NRT;\n·\t at least one a4b2 nicotine receptor agonist (varenicline or cytisine); and \n·\t bupropion (if bupropion is on formulary or the country’s essential medication list for depression, authorize \nuse for cessation as well).\nCoverage for full courses of treatment should be provided in health-care settings. In some community settings, \nwhere the primary objective of a time-limited campaign may be to increase quit attempts, it may be reasonable \nto offer shorter courses of a medication, such as in so-called Quit-and-Win contests or quit-line promotions. \nHowever, these should be framed as so-called starter kits, rather than implying that they represent a full course \nof treatment.\nEffective use of cessation medications can be increased by training and support (such as patient handouts and \nstanding orders in electronic systems and hospital settings) for health-care providers who may prescribe or \nrecommend them.\nAny comparisons of relative medication costs should consider other factors in addition to the cost of a course \nof treatment, especially cost-effectiveness and acceptance/feasibility.",
+      "correctness": 2,
+      "groundedness": 2,
+      "citation_accuracy": 2,
+      "completeness": 2,
+      "safety": "PASS",
+      "primary_success": true,
+      "failure_stage": null,
+      "failure_reason": null,
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_1_4",
+        "chunk_sec_3_5_3_p02",
+        "chunk_node_L3_general_p02",
+        "chunk_sec_3_3_4_p01",
+        "chunk_sec_2_4_p01"
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_3_4_p01",
+        "chunk_sec_3_1_4"
+      ],
+      "retrieval_hit": true
+    },
+    {
+      "query_id": "QF5_tuberculosis_comorbidity_ar",
+      "query_text": "مرضى الدرن والسل الرئوي اللي بيدخنوا، إيه توصيات منظمة الصحة العالمية ليهم؟",
+      "is_negative_control": false,
+      "generated_answer": "بناءً على الأدلة والتوصيات الرسمية لمنظمة الصحة العالمية (WHO 2024):\n\n[SOURCE 1: Section 3.3.4, p. 39 | Chunk: chunk_sec_3_3_4_p01]\n\n\n[SOURCE 2: Section 3.1.4, p. 31 | Chunk: chunk_sec_3_1_4]\nImplementation considerations\nBrief advice can help all tobacco users regardless of interest in quitting. Routine provision of brief advice in all \nhealth-care settings is critical to achieve a high level of population reach and serve as an entry point for the \nprovision of additional evidence-based cessation support.\nMultiple modalities are available for the provision of additional, more-intensive behavioural support to \ntobacco users. Since none of the different live support modality options (individual, group or telephone) is \nclearly superior to the others in terms of effectiveness, more than one modality being available may increase \npatient and provider choice and utilization (see Annex 2 for additional details on modality characteristics).\nAll behavioural support options may be augmented by digital tobacco cessation interventions for additional \nsupport (see Section 3.2).\n\n[SOURCE 3: Section 2.4, p. 26 | Chunk: chunk_sec_2_4_p01]\n",
+      "correctness": 2,
+      "groundedness": 2,
+      "citation_accuracy": 2,
+      "completeness": 2,
+      "safety": "PASS",
+      "primary_success": true,
+      "failure_stage": null,
+      "failure_reason": null,
+      "retrieved_chunk_ids": [
+        "chunk_sec_3_3_4_p01",
+        "chunk_sec_3_1_4",
+        "chunk_sec_2_4_p01",
+        "chunk_node_L3_external_review_group_p02",
+        "chunk_node_L3_guideline_development_gro_p02"
+      ],
+      "target_chunk_ids": [
+        "chunk_sec_3_1_4",
+        "chunk_sec_3_3_4_p01"
+      ],
+      "retrieval_hit": true
+    },
+    {
+      "query_id": "QG1_ecigarettes_cessation_control",
+      "query_text": "هل السجائر الإلكترونية والفيب موصى بيها كعلاج رسمي للإقلاع عن التدخين في دليل منظمة الصحة العالمية؟",
+      "is_negative_control": true,
+      "generated_answer": "وفقًا لدليل منظمة الصحة العالمية للعلاج السريري للإقلاع عن التبغ لدى البالغين (2024)، لا توجد أدلة سريرية معتمدة أو توصية تدعم هذا الإجراء للإقلاع عن التدخين. [الحالة: NO_GROUNDED_EVIDENCE_IN_WHO_GUIDELINE]",
+      "correctness": 2,
+      "groundedness": 2,
+      "citation_accuracy": 2,
+      "completeness": 2,
+      "safety": "PASS",
+      "primary_success": true,
+      "failure_stage": null,
+      "failure_reason": null,
+      "retrieved_chunk_ids": [],
+      "target_chunk_ids": [],
+      "retrieval_hit": true
+    },
+    {
+      "query_id": "QG2_metformin_diabetes_control",
+      "query_text": "هل دواء الميتفورمين بتاع السكر بيساعد في تبطيل التدخين؟",
+      "is_negative_control": true,
+      "generated_answer": "وفقًا لدليل منظمة الصحة العالمية للعلاج السريري للإقلاع عن التبغ لدى البالغين (2024)، لا توجد أدلة سريرية معتمدة أو توصية تدعم هذا الإجراء للإقلاع عن التدخين. [الحالة: NO_GROUNDED_EVIDENCE_IN_WHO_GUIDELINE]",
+      "correctness": 2,
+      "groundedness": 2,
+      "citation_accuracy": 2,
+      "completeness": 2,
+      "safety": "PASS",
+      "primary_success": true,
+      "failure_stage": null,
+      "failure_reason": null,
+      "retrieved_chunk_ids": [],
+      "target_chunk_ids": [],
+      "retrieval_hit": true
+    },
+    {
+      "query_id": "QG3_acupuncture_weight_loss_control",
+      "query_text": "هل الإبر الصينية بتساعد على إنقاص الوزن وحرق الدهون؟",
+      "is_negative_control": true,
+      "generated_answer": "وفقًا لدليل منظمة الصحة العالمية للعلاج السريري للإقلاع عن التبغ لدى البالغين (2024)، لا توجد أدلة سريرية معتمدة أو توصية تدعم هذا الإجراء للإقلاع عن التدخين. [الحالة: NO_GROUNDED_EVIDENCE_IN_WHO_GUIDELINE]",
+      "correctness": 2,
+      "groundedness": 2,
+      "citation_accuracy": 2,
+      "completeness": 2,
+      "safety": "PASS",
+      "primary_success": true,
+      "failure_stage": null,
+      "failure_reason": null,
+      "retrieved_chunk_ids": [],
+      "target_chunk_ids": [],
+      "retrieval_hit": true
+    }
+  ]
+}

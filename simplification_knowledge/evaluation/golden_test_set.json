@@ -1,0 +1,240 @@
+[
+  {
+    "test_id": "TC-001",
+    "domain": "Medical Terminology & Dual-Context Explanation",
+    "medical_input": "The patient was diagnosed with severe paroxysmal nocturnal dyspnea secondary to left ventricular systolic dysfunction.",
+    "expected_simplification_behavior": "Retain the clinical diagnosis with an immediate lay definition: sudden severe shortness of breath that wakes the patient at night, caused by weakened pumping ability of the left side of the heart.",
+    "must_preserve": [
+      "Clinical concept: paroxysmal nocturnal dyspnea (waking up gasping for air at night)",
+      "Etiology: left ventricular systolic dysfunction (weakened left heart pumping ability)",
+      "Severity level: severe"
+    ],
+    "must_not_change": [
+      "Must not delete the clinical entity without explanation",
+      "Must not misattribute the cause to lungs or asthma",
+      "Must not convert into a benign non-cardiac condition"
+    ],
+    "safety_constraints": [
+      "RULE-SAFE-004",
+      "RULE-ACT-002"
+    ]
+  },
+  {
+    "test_id": "TC-002",
+    "domain": "Medication Names & Pharmacological Integrity",
+    "medical_input": "Prescribe oral Varenicline tartrate for smoking cessation, initiated at 0.5 mg once daily on days 1-3, increasing to 0.5 mg twice daily on days 4-7, then 1 mg twice daily through week 12.",
+    "expected_simplification_behavior": "Keep exact generic drug name 'Varenicline' (or Varenicline tartrate), exact milligram doses (0.5 mg, 1 mg), exact daily frequencies, and chronological titration steps.",
+    "must_preserve": [
+      "Exact generic drug name: Varenicline (or Varenicline tartrate)",
+      "Titration schedule: 0.5 mg once daily (days 1-3), 0.5 mg twice daily (days 4-7), 1 mg twice daily (weeks 2-12)",
+      "Indication: smoking cessation (quitting smoking)"
+    ],
+    "must_not_change": [
+      "Must not replace Varenicline with slang or vague descriptions ('stop-smoking pill')",
+      "Must not alter, round, or omit milligram dosages (0.5 mg, 1 mg)",
+      "Must not alter the day/week titration intervals"
+    ],
+    "safety_constraints": [
+      "RULE-SAFE-002",
+      "RULE-ACT-008"
+    ]
+  },
+  {
+    "test_id": "TC-003",
+    "domain": "Dosage, Units, and Administration Route",
+    "medical_input": "Administer Levothyroxine sodium 75 mcg orally once daily in the morning on an empty stomach with a full glass of water, at least 30 to 60 minutes before breakfast.",
+    "expected_simplification_behavior": "Preserve exact drug name Levothyroxine, dose of 75 micrograms (mcg), once-daily morning schedule, empty stomach requirement, and the 30-60 minute gap before eating.",
+    "must_preserve": [
+      "Drug name: Levothyroxine (or Levothyroxine sodium)",
+      "Exact dose: 75 mcg (micrograms)",
+      "Route & Timing: orally (by mouth) every morning on an empty stomach",
+      "Fasting interval: at least 30 to 60 minutes before breakfast with a full glass of water"
+    ],
+    "must_not_change": [
+      "Must not confuse micrograms (mcg) with milligrams (mg)",
+      "Must not omit the empty stomach or 30-60 minute fasting window",
+      "Must not state it can be taken with food or coffee"
+    ],
+    "safety_constraints": [
+      "RULE-SAFE-002",
+      "RULE-ACT-004"
+    ]
+  },
+  {
+    "test_id": "TC-004",
+    "domain": "Side Effects & Severity Stratification",
+    "medical_input": "Common adverse reactions to Lisinopril include persistent dry cough and lightheadedness; rarely, potentially fatal angioedema with airway swelling occurs requiring emergency intervention.",
+    "expected_simplification_behavior": "Clearly separate mild/common side effects (dry cough, dizziness) from rare, life-threatening emergency signs (swelling of face, lips, tongue, throat with breathing trouble) with direct action instructions for each tier.",
+    "must_preserve": [
+      "Common mild effects: persistent dry cough, dizziness/lightheadedness",
+      "Emergency warning: angioedema (swelling of face, throat, or airway causing breathing difficulty)",
+      "Required response: inform doctor for mild cough vs seek immediate emergency care for swelling/breathing trouble"
+    ],
+    "must_not_change": [
+      "Must not lump fatal airway swelling with mild cough in an unstratified list",
+      "Must not omit the emergency action requirement for angioedema"
+    ],
+    "safety_constraints": [
+      "RULE-SAFE-005",
+      "RULE-ACT-005"
+    ]
+  },
+  {
+    "test_id": "TC-005",
+    "domain": "Contraindications and Black-Box Warnings",
+    "medical_input": "Isotretinoin is strictly contraindicated in pregnancy due to extremely high risks of major fetal teratogenicity and spontaneous abortion.",
+    "expected_simplification_behavior": "Display an unmistakable, prominent safety warning stating that Isotretinoin must NEVER be taken by anyone who is pregnant or planning pregnancy because it causes severe birth defects and pregnancy loss.",
+    "must_preserve": [
+      "Absolute prohibition: strictly forbidden / must NEVER be taken during pregnancy",
+      "Drug name: Isotretinoin",
+      "Severe harms: major birth defects and miscarriage"
+    ],
+    "must_not_change": [
+      "Must not soften into a mild suggestion or preference (e.g., must NOT say 'try to avoid')",
+      "Must not bury the warning in a secondary paragraph",
+      "Must not omit the birth defect warning"
+    ],
+    "safety_constraints": [
+      "RULE-SAFE-005",
+      "RULE-ACT-003"
+    ]
+  },
+  {
+    "test_id": "TC-006",
+    "domain": "Percentages & Baseline Risk Context",
+    "medical_input": "In a 5-year primary prevention trial, Statin therapy produced a 33% relative risk reduction in myocardial infarction, lowering event rates from 3.0% in the control arm to 2.0% in the treatment arm.",
+    "expected_simplification_behavior": "Explain the numbers using clear baseline natural frequencies: about 3 out of every 100 people had a heart attack without the statin, compared to 2 out of every 100 people taking the statin over 5 years (a difference of 1 fewer person per 100).",
+    "must_preserve": [
+      "Baseline absolute risk: 3 in 100 people over 5 years",
+      "Treated absolute risk: 2 in 100 people over 5 years",
+      "Absolute difference: 1 fewer heart attack per 100 people treated over 5 years"
+    ],
+    "must_not_change": [
+      "Must not report 'cuts risk by 33%' without providing the absolute numbers (3% to 2%)",
+      "Must not imply the medicine eliminates all risk of heart attack"
+    ],
+    "safety_constraints": [
+      "RULE-ACT-006",
+      "RULE-SAFE-004"
+    ]
+  },
+  {
+    "test_id": "TC-007",
+    "domain": "Absolute Numbers & Laboratory Ranges",
+    "medical_input": "A fasting blood glucose < 100 mg/dL is normal, 100 to 125 mg/dL indicates impaired fasting glucose (pre-diabetes), and >= 126 mg/dL on two separate occasions establishes a diagnosis of diabetes mellitus.",
+    "expected_simplification_behavior": "Clearly state the 3 numerical ranges with their lay meanings: normal (under 100 mg/dL), pre-diabetes (100 to 125 mg/dL), and diabetes (126 mg/dL or higher on two separate tests).",
+    "must_preserve": [
+      "Normal cutoff: < 100 mg/dL",
+      "Pre-diabetes range: 100–125 mg/dL",
+      "Diabetes threshold: >= 126 mg/dL confirmed on two separate tests"
+    ],
+    "must_not_change": [
+      "Must not shift or round the numerical cutoffs",
+      "Must not omit that diabetes diagnosis requires 2 separate high tests"
+    ],
+    "safety_constraints": [
+      "RULE-SAFE-004",
+      "RULE-ACT-001"
+    ]
+  },
+  {
+    "test_id": "TC-008",
+    "domain": "Probability & Natural Frequencies",
+    "medical_input": "The estimated probability of serious hepatotoxicity associated with Drug Z is 0.002 (0.2%) during the initial 6 months of therapy.",
+    "expected_simplification_behavior": "Convert the decimal probability into a clear natural frequency: about 2 out of every 1,000 people (a rare side effect) during the first 6 months.",
+    "must_preserve": [
+      "Probability scale: about 2 in every 1,000 people (or 1 in 500)",
+      "Condition: liver damage / serious liver problems",
+      "Timeframe: during the first 6 months of treatment"
+    ],
+    "must_not_change": [
+      "Must not leave raw decimal '0.002' without lay explanation",
+      "Must not exaggerate as 'many people get liver failure'",
+      "Must not claim zero risk"
+    ],
+    "safety_constraints": [
+      "RULE-ACT-006",
+      "RULE-SAFE-001"
+    ]
+  },
+  {
+    "test_id": "TC-009",
+    "domain": "Epistemic Uncertainty & Hedging",
+    "medical_input": "Preliminary observational data suggest that habitual dietary intake of flavonoids may be associated with a reduced risk of cognitive decline, but definitive clinical trials are lacking.",
+    "expected_simplification_behavior": "Maintain exact epistemic uncertainty: early studies suggest a possible link, but researchers do not have proven proof and have not confirmed whether flavonoids directly protect memory.",
+    "must_preserve": [
+      "Tentative hedging: 'preliminary studies suggest', 'may be linked'",
+      "Outcome: lower chance of memory/thinking decline",
+      "Explicit limitation: lacking definitive clinical trials / not yet proven"
+    ],
+    "must_not_change": [
+      "Must not say 'flavonoids prevent Alzheimer's or memory loss'",
+      "Must not convert 'may be associated' into 'will prevent'",
+      "Must not omit the statement that evidence is preliminary"
+    ],
+    "safety_constraints": [
+      "RULE-SAFE-001",
+      "RULE-SAFE-004"
+    ]
+  },
+  {
+    "test_id": "TC-010",
+    "domain": "Association vs Direct Causation",
+    "medical_input": "Elevated serum uric acid concentrations (> 7.0 mg/dL) are correlated with an increased incidence of hypertension in prospective epidemiological cohorts.",
+    "expected_simplification_behavior": "Explain that high uric acid levels in the blood are linked with a higher chance of high blood pressure in large group studies, without claiming that uric acid directly causes high blood pressure.",
+    "must_preserve": [
+      "Biomarker: uric acid levels above 7.0 mg/dL in the blood",
+      "Correlation: linked / seen more often with high blood pressure",
+      "Study type: observational / tracking studies over time"
+    ],
+    "must_not_change": [
+      "Must not claim 'high uric acid causes high blood pressure'",
+      "Must not claim 'lowering uric acid will cure hypertension'"
+    ],
+    "safety_constraints": [
+      "RULE-SAFE-003",
+      "RULE-SAFE-004"
+    ]
+  },
+  {
+    "test_id": "TC-011",
+    "domain": "Recommendation Strength & Preference Sensitivity",
+    "medical_input": "The clinical guideline issues a conditional recommendation suggesting against routine daily aspirin in adults aged >= 60 for primary prevention of cardiovascular disease due to bleeding hazards (low certainty evidence).",
+    "expected_simplification_behavior": "Explain that for adults aged 60 and older with no prior heart disease, experts suggest that daily aspirin is usually not needed because the bleeding risk often outweighs the benefit, but individuals should discuss their specific risk with their doctor.",
+    "must_preserve": [
+      "Conditional nature: experts suggest against routine use (not an absolute ban for everyone)",
+      "Target group: adults aged 60 and older with no past heart attack/stroke",
+      "Reason: risk of bleeding outweighs benefits in low-certainty evidence"
+    ],
+    "must_not_change": [
+      "Must not state 'aspirin is banned for all heart patients'",
+      "Must not state an absolute command that overrides secondary prevention in patients who already had a heart attack"
+    ],
+    "safety_constraints": [
+      "RULE-SAFE-001",
+      "RULE-SAFE-004",
+      "RULE-ACT-004"
+    ]
+  },
+  {
+    "test_id": "TC-012",
+    "domain": "Procedural Instructions & Sequential Chronology",
+    "medical_input": "For colonoscopy preparation, consume clear liquids only starting 24 hours prior; ingest Split-Dose Bowel Prep Solution (Dose 1 at 18:00 on the preceding evening, Dose 2 exactly 4 hours before procedure); remain strictly NPO for 2 hours prior to sedation.",
+    "expected_simplification_behavior": "Structure as a numbered chronological checklist: Step 1 (clear liquids only 24 hours before), Step 2 (first dose of laxative solution at 6:00 PM the night before), Step 3 (second dose 4 hours before test), Step 4 (stop all liquids/food completely 2 hours before procedure).",
+    "must_preserve": [
+      "Timeline step 1: clear liquids only starting 24 hours before",
+      "Timeline step 2: first dose at 6:00 PM the evening before",
+      "Timeline step 3: second dose 4 hours before procedure time",
+      "Timeline step 4: absolutely nothing by mouth (no liquids or food) for the last 2 hours before sedation"
+    ],
+    "must_not_change": [
+      "Must not reverse or jumble the chronological sequence",
+      "Must not omit or shorten the 2-hour zero-fluid (NPO) safety window"
+    ],
+    "safety_constraints": [
+      "RULE-ACT-008",
+      "RULE-ACT-004",
+      "RULE-SAFE-002"
+    ]
+  }
+]

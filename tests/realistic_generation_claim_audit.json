@@ -1,0 +1,618 @@
+[
+  {
+    "question_id": "real_01",
+    "question": "How long should a standard brief tobacco cessation talk take during a clinical appointment?",
+    "must_abstain": false,
+    "expected_claims": [
+      "Brief advice delivered by health-care providers should take between 30 seconds and 3 minutes per encounter."
+    ],
+    "numerical_status": "NOT_APPLICABLE",
+    "numerical_check": {},
+    "keyword_check": {
+      "found": [],
+      "missing": [
+        "30 second",
+        "3 minute",
+        "brief advice"
+      ],
+      "rate": 0.0
+    },
+    "grounding_verdict": "UNGROUNDED",
+    "abstention_verdict": "NOT_APPLICABLE",
+    "gold_admitted": [],
+    "missing_gold": [
+      "chunk_sec_3_1_1"
+    ],
+    "answer_preview": "3.2.1. Recommendation\n3.\nDigital tobacco cessation modalities3 (text messaging, smartphone apps, AI-based \ninterventions or internet-based interventions), individually or combined, can be \nmade available for tobacco users interested in quitting, as an adjunct to other tobacco \ncessation support or as a self-management tool.\n Conditional recommendation;  \n moderate certainty (text messaging)/ \n low certainty (smartphone apps/AI-based interventions)/ \n very low certainty (internet-based interventi"
+  },
+  {
+    "question_id": "real_02",
+    "question": "Which medications are officially recommended by WHO as main pharmacological options for quitting smoking?",
+    "must_abstain": false,
+    "expected_claims": [
+      "WHO recommends varenicline, nicotine replacement therapy (NRT), bupropion, and cytisine as pharmacological treatments for tobacco cessation."
+    ],
+    "numerical_status": "INCORRECT_OR_MISSING",
+    "numerical_check": {
+      "expected": [
+        "14"
+      ],
+      "found": [],
+      "missing": [
+        "14"
+      ]
+    },
+    "keyword_check": {
+      "found": [
+        "nrt",
+        "nicotine replacement"
+      ],
+      "missing": [
+        "nnt"
+      ],
+      "rate": 0.67
+    },
+    "grounding_verdict": "FULLY_GROUNDED",
+    "abstention_verdict": "NOT_APPLICABLE",
+    "gold_admitted": [
+      "chunk_sec_3_3_1"
+    ],
+    "missing_gold": [],
+    "answer_preview": "6. WHO recommends providing intensive behavioural support interventions (individual face-to-face counselling, face-to-face group counselling or telephone counselling) for smokeless tobacco users interested in quitting. Strong recommendation; moderate certainty [WHO — Section Interventions for smokeless tobacco use cessation — Page 18]7. WHO recommends varenicline or NRT as pharmacological options for smokeless tobacco users interested in quitting. Strong recommendation; moderate certainty (varen"
+  },
+  {
+    "question_id": "real_03",
+    "question": "What health system intervention is recommended regarding recording a patient's tobacco use in clinic records?",
+    "must_abstain": false,
+    "expected_claims": [
+      "WHO recommends that health-care facilities routinely record tobacco use status and cessation interventions in medical records (including EHRs)."
+    ],
+    "numerical_status": "INCORRECT_OR_MISSING",
+    "numerical_check": {
+      "expected": [
+        "91"
+      ],
+      "found": [],
+      "missing": [
+        "91"
+      ]
+    },
+    "keyword_check": {
+      "found": [
+        "recommend"
+      ],
+      "missing": [
+        "countries",
+        "cessation service"
+      ],
+      "rate": 0.33
+    },
+    "grounding_verdict": "FULLY_GROUNDED",
+    "abstention_verdict": "NOT_APPLICABLE",
+    "gold_admitted": [
+      "chunk_sec_3_7_1"
+    ],
+    "missing_gold": [],
+    "answer_preview": "10. WHO recommends that all health-care facilities include tobacco use status and use of tobacco cessation interventions in their medical records (including EHRs), to facilitate provider interaction with tobacco-using patients and increase adoption and maintenance of evidence-based treatment interventions. [WHO — Section 3.7.1 — Page 44] I'm sorry, but I don't have any information about recording a patient's tobacco use in clinic records. However, I can provide you with some general advice on ho"
+  },
+  {
+    "question_id": "real_04",
+    "question": "What does the WHO guideline say about using alternative therapies like acupuncture or laser therapy to quit smoking?",
+    "must_abstain": false,
+    "expected_claims": [
+      "Evidence is insufficient to make a recommendation for or against traditional, complementary, and alternative therapies (such as acupuncture, acupressure, or laser therapy)."
+    ],
+    "numerical_status": "NOT_APPLICABLE",
+    "numerical_check": {},
+    "keyword_check": {
+      "found": [
+        "benefit"
+      ],
+      "missing": [
+        "cost",
+        "economic",
+        "productivity"
+      ],
+      "rate": 0.25
+    },
+    "grounding_verdict": "FULLY_GROUNDED",
+    "abstention_verdict": "NOT_APPLICABLE",
+    "gold_admitted": [
+      "chunk_sec_3_6_1"
+    ],
+    "missing_gold": [],
+    "answer_preview": "95% CI: 0.57–1.69; 269 participants) or pharmacotherapy (RR: 1.68; 95% CI: 0.88–3.20; 197 participants); and \nyoga versus matched-intensity smoking cessation treatment (RR: 1.62; 95% CI: 0.53–4.94; 98 participants).\nThe GDG concluded the following.\n·\t There is moderate-certainty evidence that acupressure does not increase long-term tobacco abstinence \nrates compared with sham acupressure; there is very low-certainty evidence that mindfulness does not \nimprove long-term tobacco abstinence rates c"
+  },
+  {
+    "question_id": "real_05",
+    "question": "How many studies and total participants formed the evidence base for single NRT monotherapy in the Cochrane review?",
+    "must_abstain": false,
+    "expected_claims": [
+      "The Cochrane systematic review of NRT monotherapy evaluated 133 studies that included 64,640 participants."
+    ],
+    "numerical_status": "INCORRECT_OR_MISSING",
+    "numerical_check": {
+      "expected": [
+        "14",
+        "1.70"
+      ],
+      "found": [],
+      "missing": [
+        "14",
+        "1.70"
+      ]
+    },
+    "keyword_check": {
+      "found": [
+        "nrt"
+      ],
+      "missing": [
+        "nnt",
+        "nicotine replacement"
+      ],
+      "rate": 0.33
+    },
+    "grounding_verdict": "FULLY_GROUNDED",
+    "abstention_verdict": "NOT_APPLICABLE",
+    "gold_admitted": [
+      "chunk_sec_3_3_3_1_p01"
+    ],
+    "missing_gold": [],
+    "answer_preview": "133 studies that included 64,640 participants formed the evidence base for single NRT monotherapy in the Cochrane review [WHO — Section 3.3.3.1 — Page 35]. This information is crucial as it provides a comprehensive view of the effectiveness and safety of such interventions, which can be very reassuring to someone trying to quit smoking. It's important to note that while this data is not directly about quitting smoking, it does provide insight into how pharmacological treatments are evaluated for"
+  },
+  {
+    "question_id": "real_06",
+    "question": "Is it more effective to use quit-smoking pills alongside talking therapy rather than trying pills alone?",
+    "must_abstain": false,
+    "expected_claims": [
+      "WHO recommends combining pharmacotherapy and behavioural interventions rather than using either intervention alone."
+    ],
+    "numerical_status": "NOT_APPLICABLE",
+    "numerical_check": {},
+    "keyword_check": {
+      "found": [
+        "combination"
+      ],
+      "missing": [
+        "combined",
+        "behavioural",
+        "behavioral",
+        "medication",
+        "pharmacotherapy"
+      ],
+      "rate": 0.17
+    },
+    "grounding_verdict": "UNGROUNDED",
+    "abstention_verdict": "NOT_APPLICABLE",
+    "gold_admitted": [],
+    "missing_gold": [
+      "chunk_sec_3_5_1"
+    ],
+    "answer_preview": "3.3.1. Recommendations\n4.\nWHO recommends varenicline, NRT, bupropion and cytisine4 as pharmacological \ntreatment options for tobacco users who smoke and are interested in quitting. \nVarenicline, NRT or bupropion are recommended as first-line options; combination \nNRT (a patch plus a short-acting form, such as gum or a lozenge) is an option for \ntobacco users interested in quitting who will use NRT.\n Strong recommendation; \n high certainty (varenicline, NRT and bupropion)/ \n moderate certainty (c"
+  },
+  {
+    "question_id": "real_07",
+    "question": "What support should doctors give to patients trying to stop chewing tobacco or using snuff?",
+    "must_abstain": false,
+    "expected_claims": [
+      "WHO strongly recommends providing intensive behavioural support interventions (individual, group, or telephone counselling) for smokeless tobacco users."
+    ],
+    "numerical_status": "NOT_APPLICABLE",
+    "numerical_check": {},
+    "keyword_check": {
+      "found": [
+        "smokeless",
+        "cessation"
+      ],
+      "missing": [
+        "chewing",
+        "snuff",
+        "snus"
+      ],
+      "rate": 0.4
+    },
+    "grounding_verdict": "UNGROUNDED",
+    "abstention_verdict": "NOT_APPLICABLE",
+    "gold_admitted": [],
+    "missing_gold": [
+      "chunk_sec_3_4_1"
+    ],
+    "answer_preview": "3.4.3. Justification and evidence\nThe results of an updated Cochrane systematic review provided by Jonathan Livingstone-Banks (not yet \npublished) showed that behavioural counselling, including telephone counselling, was more effective for \nlong-term smokeless tobacco use cessation than usual care/minimal support (RR: 1.76; 95% CI: 1.43–2.16;\n\n20 studies; 8252 participants). There was moderate-certainty evidence that varenicline helps more people to \nstop using smokeless tobacco products than pl"
+  },
+  {
+    "question_id": "real_08",
+    "question": "Can mobile phone apps and automated texting tools replace standard medical care for smoking cessation?",
+    "must_abstain": false,
+    "expected_claims": [
+      "Digital modalities (texting, apps, AI interventions) are recommended as an adjunct to other tobacco cessation support or for self-management, not as a replacement for standard care."
+    ],
+    "numerical_status": "INCORRECT_OR_MISSING",
+    "numerical_check": {
+      "expected": [
+        "14"
+      ],
+      "found": [],
+      "missing": [
+        "14"
+      ]
+    },
+    "keyword_check": {
+      "found": [],
+      "missing": [
+        "nnt",
+        "nrt",
+        "nicotine replacement"
+      ],
+      "rate": 0.0
+    },
+    "grounding_verdict": "FULLY_GROUNDED",
+    "abstention_verdict": "NOT_APPLICABLE",
+    "gold_admitted": [
+      "chunk_sec_3_2_1"
+    ],
+    "missing_gold": [],
+    "answer_preview": "3.2.1. Recommendation\n3.\nDigital tobacco cessation modalities3 (text messaging, smartphone apps, AI-based \ninterventions or internet-based interventions), individually or combined, can be \nmade available for tobacco users interested in quitting, as an adjunct to other tobacco \ncessation support or as a self-management tool.\n Conditional recommendation;  \n moderate certainty (text messaging)/ \n low certainty (smartphone apps/AI-based interventions)/ \n very low certainty (internet-based interventi"
+  },
+  {
+    "question_id": "real_09",
+    "question": "What non-drug counselling formats can a clinic offer to people who want to quit tobacco?",
+    "must_abstain": false,
+    "expected_claims": [
+      "Options for behavioural support recommended by WHO include individual face-to-face counselling, group face-to-face counselling, and telephone counselling."
+    ],
+    "numerical_status": "NOT_APPLICABLE",
+    "numerical_check": {},
+    "keyword_check": {
+      "found": [],
+      "missing": [
+        "30 second",
+        "3 minute"
+      ],
+      "rate": 0.0
+    },
+    "grounding_verdict": "FULLY_GROUNDED",
+    "abstention_verdict": "NOT_APPLICABLE",
+    "gold_admitted": [
+      "chunk_sec_3_1_1"
+    ],
+    "missing_gold": [],
+    "answer_preview": "3.1.1. Recommendations\n1.\nWHO recommends brief advice (between 30 seconds and 3 minutes per encounter)\nbe consistently provided by health-care providers as a routine practice to all tobacco\nusers accessing any health-care settings.\n Strong recommendation; \n moderate certainty\n1\n30 sec – 3 min\n2.\nWHO recommends more-intensive behavioural support be offered to all tobacco\nusers interested in quitting. Options for behavioural support are individual face-to-\nface counselling, group face-to-face coun"
+  },
+  {
+    "question_id": "real_10",
+    "question": "What is the global death toll caused by tobacco products and how widespread is tobacco consumption worldwide?",
+    "must_abstain": false,
+    "expected_claims": [
+      "Tobacco kills more than 8 million people per year globally.",
+      "Globally, there are still 1.25 billion people who use tobacco."
+    ],
+    "numerical_status": "ACCURATE",
+    "numerical_check": {
+      "expected": [
+        "8"
+      ],
+      "found": [
+        "8"
+      ],
+      "missing": []
+    },
+    "keyword_check": {
+      "found": [
+        "million",
+        "tobacco"
+      ],
+      "missing": [
+        "deaths",
+        "mortality"
+      ],
+      "rate": 0.5
+    },
+    "grounding_verdict": "FULLY_GROUNDED",
+    "abstention_verdict": "NOT_APPLICABLE",
+    "gold_admitted": [
+      "chunk_node_L2_background"
+    ],
+    "missing_gold": [],
+    "answer_preview": "8 million people per year die from tobacco-related causes globally, and approximately 1.25 billion people worldwide use tobacco products [WHO — Section Background — Page 15]. This is a significant public health issue that requires urgent attention and action to address. I am sorry you are going through this, it's not easy to quit smoking, but I'm here to support you every step of the way. Let me know if you have any questions or concerns about your journey to quitting. [WHO — Section 4.4 — Page "
+  },
+  {
+    "question_id": "real_11",
+    "question": "How many patients need to receive brief clinical advice from a doctor for one additional person to successfully quit?",
+    "must_abstain": false,
+    "expected_claims": [
+      "The Number Needed to Treat (NNT) for brief advice compared with no advice is 91 to achieve one additional case of long-term cessation."
+    ],
+    "numerical_status": "INCORRECT_OR_MISSING",
+    "numerical_check": {
+      "expected": [
+        "1.25"
+      ],
+      "found": [],
+      "missing": [
+        "1.25"
+      ]
+    },
+    "keyword_check": {
+      "found": [],
+      "missing": [
+        "billion",
+        "smoker",
+        "tobacco user"
+      ],
+      "rate": 0.0
+    },
+    "grounding_verdict": "FULLY_GROUNDED",
+    "abstention_verdict": "NOT_APPLICABLE",
+    "gold_admitted": [
+      "chunk_sec_3_1_3_p04"
+    ],
+    "missing_gold": [],
+    "answer_preview": "3.1.3. Justification and evidence\nFor these recommendations on behavioural support delivered in both clinical and community settings, one \nnewly commissioned systematic review, which is now published (43), and four Cochrane systematic reviews \n(27–30) were used. Full details of the EtD tables can be found in the Web Annex: Evidence profiles.\nA systematic review and meta-analysis, which included 24 352 participants in 13 RCTs, conducted by Cheng \net al. showed that, in comparison with no advice b"
+  },
+  {
+    "question_id": "real_12",
+    "question": "How much does cytisine increase the likelihood of quitting smoking compared with placebo in clinical trials?",
+    "must_abstain": false,
+    "expected_claims": [
+      "Cytisine increased the likelihood of quitting smoking for 6 months or longer compared with placebo with a Relative Risk (RR) of 2.61 (95% CI: 1.50 to 4.67; 6 trials; 5,194 participants)."
+    ],
+    "numerical_status": "NOT_APPLICABLE",
+    "numerical_check": {},
+    "keyword_check": {
+      "found": [
+        "cytisine",
+        "nrt"
+      ],
+      "missing": [
+        "nicotine replacement",
+        "comparable",
+        "equivalent",
+        "similar"
+      ],
+      "rate": 0.33
+    },
+    "grounding_verdict": "FULLY_GROUNDED",
+    "abstention_verdict": "NOT_APPLICABLE",
+    "gold_admitted": [
+      "chunk_sec_3_3_3_4"
+    ],
+    "missing_gold": [],
+    "answer_preview": "2.4. Going from evidence to recommendations\nFor strong recommendations, the GDG was confident that the desirable effect of following \nthe recommendation outweighed any potential undesirable effects.\n\nOther factors that supported strong \nrecommendations were whether the balance of benefits to harms is sensitive to variability in patient values/\npreferences regarding outcomes; lower costs or resources and/or high cost-effectiveness; high acceptability \nand feasibility in the intended populations a"
+  },
+  {
+    "question_id": "real_13",
+    "question": "What is the benefit-to-harm ratio for bupropion in terms of how many patients benefit versus how many experience serious side effects or drop out?",
+    "must_abstain": false,
+    "expected_claims": [
+      "Bupropion versus placebo has an NNT of 14 for long-term abstinence.",
+      "Bupropion has an NNH of 100 for serious adverse events (SAEs).",
+      "Bupropion has an NNH of 33 for treatment dropouts due to adverse events."
+    ],
+    "numerical_status": "ACCURATE",
+    "numerical_check": {
+      "expected": [
+        "20",
+        "33"
+      ],
+      "found": [
+        "20",
+        "33"
+      ],
+      "missing": []
+    },
+    "keyword_check": {
+      "found": [
+        "varenicline",
+        "bupropion",
+        "nnt"
+      ],
+      "missing": [],
+      "rate": 1.0
+    },
+    "grounding_verdict": "FULLY_GROUNDED",
+    "abstention_verdict": "NOT_APPLICABLE",
+    "gold_admitted": [
+      "chunk_sec_3_3_3_6_p01"
+    ],
+    "missing_gold": [],
+    "answer_preview": "20\n·\t Decisions regarding bupropion are probably preference sensitive (moderate harms with some uncertainty \nregarding serious harms), it requires small cost, and it is feasible and probably acceptable, with probably \nincreased equity.\n·\t There is high-certainty evidence that varenicline is more effective than placebo, bupropion or NRT in \nachieving long-term smoking abstinence. For varenicline versus placebo, there is moderate-certainty \nevidence that use of varenicline causes SAEs and low-cert"
+  },
+  {
+    "question_id": "real_14",
+    "question": "Does using a nicotine patch together with a fast-acting nicotine product work better than using a single nicotine product alone?",
+    "must_abstain": false,
+    "expected_claims": [
+      "Combination NRT (fast-acting form plus patch) results in higher quit rates than single NRT (RR: 1.25; 95% CI: 1.15 to 1.36).",
+      "The NNT for combination NRT versus monotherapy is 29 for one additional long-term abstinence."
+    ],
+    "numerical_status": "NOT_APPLICABLE",
+    "numerical_check": {},
+    "keyword_check": {
+      "found": [
+        "combination",
+        "combined",
+        "patch",
+        "higher",
+        "single"
+      ],
+      "missing": [
+        "gum",
+        "lozenge"
+      ],
+      "rate": 0.71
+    },
+    "grounding_verdict": "PARTIALLY_GROUNDED",
+    "abstention_verdict": "NOT_APPLICABLE",
+    "gold_admitted": [
+      "chunk_sec_3_3_3_5"
+    ],
+    "missing_gold": [
+      "chunk_sec_3_3_3_6_p03"
+    ],
+    "answer_preview": "3.3.3.5. Combination pharmacotherapy\nThere was high-certainty evidence that combination NRT (a fast-acting form plus a patch) results in higher \nlong-term quit rates than single-form NRT (RR: 1.25; 95% CI: 1.15–1.36; 14 studies; 11 356 participants) (33). \nThe authors found no evidence of an effect of duration of combination NRT use. There was moderate-certainty \nevidence that a combination of bupropion and varenicline may have resulted in superior quit rates compared \nwith varenicline alone (RR"
+  },
+  {
+    "question_id": "real_15",
+    "question": "How does the effectiveness of cytisine compare directly against nicotine replacement therapy?",
+    "must_abstain": false,
+    "expected_claims": [
+      "Cytisine resulted in higher quit rates than NRT (RR: 1.36; 95% CI: 1.06 to 1.74 across 3 trials).",
+      "The NNT for cytisine versus NRT is 18 for one additional long-term abstinence."
+    ],
+    "numerical_status": "NOT_APPLICABLE",
+    "numerical_check": {},
+    "keyword_check": {
+      "found": [],
+      "missing": [
+        "cytisine",
+        "nrt",
+        "nicotine replacement",
+        "comparable",
+        "equivalent"
+      ],
+      "rate": 0.0
+    },
+    "grounding_verdict": "PARTIALLY_GROUNDED",
+    "abstention_verdict": "NOT_APPLICABLE",
+    "gold_admitted": [
+      "chunk_sec_3_3_3_4"
+    ],
+    "missing_gold": [
+      "chunk_sec_3_3_3_6_p03"
+    ],
+    "answer_preview": "1.49 (95% CI: 0.87–2.36; 1009 participants) for 21/22 mg per patch [WHO — Section 3.3.3.1 — Page 35]. For (16-hour) patches, there was no significant difference in effectiveness between 42/44 mg and 21/22 mg per patch (RR: 0.98; 95% CI: 0.78–1.23; 1009 participants). For (24-hour) patches, there was no significant difference in effectiveness between 42/44 mg and 21/22 mg per patch (RR: 0.96; 95% CI: 0.78–1.18; 1009 participants). For (16-hour) patches, there was no significant difference in effe"
+  },
+  {
+    "question_id": "real_16",
+    "question": "Is higher-strength 4 mg nicotine gum more effective than standard 2 mg gum for heavy smokers?",
+    "must_abstain": false,
+    "expected_claims": [
+      "In highly dependent smokers, 4 mg gum is significantly more effective than 2 mg gum (RR: 1.43; 95% CI: 1.12 to 1.83; 5 studies; 856 participants)."
+    ],
+    "numerical_status": "NOT_APPLICABLE",
+    "numerical_check": {},
+    "keyword_check": {
+      "found": [],
+      "missing": [
+        "longer",
+        "14 weeks",
+        "higher dose",
+        "extend",
+        "duration"
+      ],
+      "rate": 0.0
+    },
+    "grounding_verdict": "FULLY_GROUNDED",
+    "abstention_verdict": "NOT_APPLICABLE",
+    "gold_admitted": [
+      "chunk_sec_3_3_3_1_p02"
+    ],
+    "missing_gold": [],
+    "answer_preview": "4 mg nicotine gum is more effective than 2 mg gum for heavy smokers [WHO — Section 3.3.3.1 — Page 35]. I'm sorry it's been hard on you, and I'm glad you're trying to quit. Let me know if you need any help or support. I'm here for you. [PATIENT — Personal] I'm sorry it's been hard on you, and I'm glad you're trying to quit. Let me know if you need any help or support. I'm here for you. [PATIENT — Personal] I'm sorry it's been hard on you, and I'm glad you're trying to quit. Let me know if you nee"
+  },
+  {
+    "question_id": "real_17",
+    "question": "What is the recommended dose and quit rate for Topiramate when prescribed for smoking cessation?",
+    "must_abstain": true,
+    "expected_claims": [
+      "The WHO guideline does not evaluate or recommend Topiramate for smoking cessation, and contains no dosing or quit rate data for it."
+    ],
+    "numerical_status": "NOT_APPLICABLE",
+    "numerical_check": {},
+    "keyword_check": {},
+    "grounding_verdict": "UNGROUNDED",
+    "abstention_verdict": "UNSAFE_UNSUPPORTED_ANSWER",
+    "gold_admitted": [],
+    "missing_gold": [],
+    "answer_preview": "1. The available sources do not provide enough information to answer this question. \n2. I am sorry that I couldn't assist you with your inquiry about Topiramate for smoking cessation. If you have any other questions or need further assistance, please let me know. I'm here to help. \n3. I understand that it's important to find the right medication and dosage for quitting smoking. It can be challenging, but I am here to support you every step of the way. Please don't hesitate to reach out if you ha"
+  },
+  {
+    "question_id": "real_18",
+    "question": "What does the WHO guideline conclude about transcranial magnetic stimulation (TMS) for nicotine dependence?",
+    "must_abstain": true,
+    "expected_claims": [
+      "The WHO guideline does not evaluate or provide recommendations regarding transcranial magnetic stimulation (TMS) for nicotine dependence."
+    ],
+    "numerical_status": "NOT_APPLICABLE",
+    "numerical_check": {},
+    "keyword_check": {},
+    "grounding_verdict": "UNGROUNDED",
+    "abstention_verdict": "UNSAFE_UNSUPPORTED_ANSWER",
+    "gold_admitted": [],
+    "missing_gold": [],
+    "answer_preview": "1.25 billion adult tobacco users want to quit, but around 70% of them have no access to comprehensive tobacco cessation services due to the challenges that face health systems, such as limited human and financial resources, and limited capacities of tobacco cessation services at the country level. National clinical treatment guidelines for tobacco dependence are recommended by the WHO FCTC Article 14 guidelines as basic infrastructure needed to promote tobacco cessation and provide effective tob"
+  },
+  {
+    "question_id": "real_19",
+    "question": "Does adding bupropion to varenicline provide any extra benefit over taking varenicline alone?",
+    "must_abstain": false,
+    "expected_claims": [
+      "Bupropion plus varenicline resulted in higher quit rates than varenicline alone (NNT: 20 to achieve one more case of long-term abstinence)."
+    ],
+    "numerical_status": "ACCURATE",
+    "numerical_check": {
+      "expected": [
+        "20"
+      ],
+      "found": [
+        "20"
+      ],
+      "missing": []
+    },
+    "keyword_check": {
+      "found": [
+        "bupropion",
+        "varenicline",
+        "combination",
+        "nnt"
+      ],
+      "missing": [],
+      "rate": 1.0
+    },
+    "grounding_verdict": "PARTIALLY_GROUNDED",
+    "abstention_verdict": "NOT_APPLICABLE",
+    "gold_admitted": [
+      "chunk_sec_3_3_3_6_p04"
+    ],
+    "missing_gold": [
+      "chunk_sec_3_3_3_5"
+    ],
+    "answer_preview": "3.3.1. Recommendations\n4.\nWHO recommends varenicline, NRT, bupropion and cytisine4 as pharmacological \ntreatment options for tobacco users who smoke and are interested in quitting. \nVarenicline, NRT or bupropion are recommended as first-line options; combination \nNRT (a patch plus a short-acting form, such as gum or a lozenge) is an option for \ntobacco users interested in quitting who will use NRT.\n Strong recommendation; \n high certainty (varenicline, NRT and bupropion)/ \n moderate certainty (c"
+  },
+  {
+    "question_id": "real_20",
+    "question": "How effective is automated mobile phone text messaging for helping tobacco users quit?",
+    "must_abstain": false,
+    "expected_claims": [
+      "Mobile text messaging versus minimal support has an NNT of 33, and text messaging as an adjunct to other support has an NNT of 25."
+    ],
+    "numerical_status": "INCORRECT_OR_MISSING",
+    "numerical_check": {
+      "expected": [
+        "29"
+      ],
+      "found": [],
+      "missing": [
+        "29"
+      ]
+    },
+    "keyword_check": {
+      "found": [
+        "quit",
+        "rate"
+      ],
+      "missing": [
+        "varenicline",
+        "weeks"
+      ],
+      "rate": 0.5
+    },
+    "grounding_verdict": "FULLY_GROUNDED",
+    "abstention_verdict": "NOT_APPLICABLE",
+    "gold_admitted": [
+      "chunk_sec_3_2_3_p02"
+    ],
+    "missing_gold": [],
+    "answer_preview": "3.2.1. Recommendation\n3.\nDigital tobacco cessation modalities3 (text messaging, smartphone apps, AI-based \ninterventions or internet-based interventions), individually or combined, can be \nmade available for tobacco users interested in quitting, as an adjunct to other tobacco \ncessation support or as a self-management tool.\n Conditional recommendation;  \n moderate certainty (text messaging)/ \n low certainty (smartphone apps/AI-based interventions)/ \n very low certainty (internet-based interventi"
+  }
+]

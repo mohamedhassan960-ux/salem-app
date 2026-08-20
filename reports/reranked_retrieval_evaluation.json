@@ -1,0 +1,2071 @@
+{
+  "metadata": {
+    "pipeline_version": "v3.0_Clinical_Query_Understanding_Reranker_Gate",
+    "source_guideline": "WHO Clinical Treatment Guideline for Tobacco Cessation in Adults (2024)",
+    "total_queries": 33,
+    "positive_queries": 30,
+    "control_queries": 3
+  },
+  "stage_d_full_pipeline_metrics": {
+    "recall_1": 0.7333,
+    "recall_5": 0.8333,
+    "recall_10": 0.8667,
+    "mrr": 0.7778,
+    "evidence_grounding_rate": 0.8333,
+    "negative_control_safety_rate": 1.0
+  },
+  "ablation_comparison": {
+    "baseline_bm25_recall5": 0.2,
+    "baseline_dense_recall5": 0.533,
+    "baseline_hybrid_top5_recall5": 0.4,
+    "ablation_a_hybrid_top20_pool_recall": 0.6333,
+    "ablation_b_hybrid_top20_plus_reranker_recall5": 0.6,
+    "ablation_b_hybrid_top20_plus_reranker_mrr": 0.5333,
+    "ablation_c_hybrid_top20_plus_reranker_plus_gate_recall5": 0.6,
+    "stage_d_full_pipeline_recall5": 0.8333,
+    "stage_d_full_pipeline_mrr": 0.7778
+  },
+  "category_performance": {
+    "A) Medical Terminology": {
+      "query_count": 5,
+      "recall_1": 0.8,
+      "recall_5": 1.0,
+      "recall_10": 1.0,
+      "mrr": 0.9
+    },
+    "B) English Paraphrase": {
+      "query_count": 5,
+      "recall_1": 1.0,
+      "recall_5": 1.0,
+      "recall_10": 1.0,
+      "mrr": 1.0
+    },
+    "C) Egyptian Arabic": {
+      "query_count": 5,
+      "recall_1": 0.6,
+      "recall_5": 0.8,
+      "recall_10": 0.8,
+      "mrr": 0.6667
+    },
+    "D) Non-Medical Wording": {
+      "query_count": 5,
+      "recall_1": 0.6,
+      "recall_5": 0.6,
+      "recall_10": 0.6,
+      "mrr": 0.6
+    },
+    "E) Implicit Clinical Intent": {
+      "query_count": 5,
+      "recall_1": 0.6,
+      "recall_5": 0.8,
+      "recall_10": 0.8,
+      "mrr": 0.7
+    },
+    "F) Specific Clinical Situations": {
+      "query_count": 5,
+      "recall_1": 0.8,
+      "recall_5": 0.8,
+      "recall_10": 1.0,
+      "mrr": 0.8
+    }
+  },
+  "control_safety_evaluations": [
+    {
+      "query_id": "QG1_ecigarettes_cessation_control",
+      "query_text": "هل السجائر الإلكترونية والفيب موصى بيها كعلاج رسمي للإقلاع عن التدخين في دليل منظمة الصحة العالمية؟",
+      "is_out_of_scope_detected": true,
+      "safety_flag": "NO_GROUNDED_EVIDENCE_IN_WHO_GUIDELINE",
+      "is_grounded_flag": false,
+      "admitted_count": 0,
+      "is_safe": true
+    },
+    {
+      "query_id": "QG2_metformin_diabetes_control",
+      "query_text": "هل دواء الميتفورمين بتاع السكر بيساعد في تبطيل التدخين؟",
+      "is_out_of_scope_detected": true,
+      "safety_flag": "NO_GROUNDED_EVIDENCE_IN_WHO_GUIDELINE",
+      "is_grounded_flag": false,
+      "admitted_count": 0,
+      "is_safe": true
+    },
+    {
+      "query_id": "QG3_acupuncture_weight_loss_control",
+      "query_text": "هل الإبر الصينية بتساعد على إنقاص الوزن وحرق الدهون؟",
+      "is_out_of_scope_detected": true,
+      "safety_flag": "NO_GROUNDED_EVIDENCE_IN_WHO_GUIDELINE",
+      "is_grounded_flag": false,
+      "admitted_count": 0,
+      "is_safe": true
+    }
+  ],
+  "query_reports": [
+    {
+      "query_id": "QA1_varenicline_efficacy",
+      "category": "A) Medical Terminology",
+      "query_text": "Varenicline efficacy and adverse events for tobacco cessation",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_3_p01",
+        "chunk_sec_3_3_4_p01"
+      ],
+      "first_rank": 1,
+      "hit_1": true,
+      "hit_5": true,
+      "hit_10": true,
+      "admitted_count": 5,
+      "direct_count": 10,
+      "related_count": 6,
+      "admitted_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_sec_3_3_1",
+          "clinical_score": 1.0,
+          "section": "3.3.1",
+          "page": 35,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_sec_2_4_p02",
+          "clinical_score": 0.8358,
+          "section": "2.4",
+          "page": 26,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_sec_3_4_1",
+          "clinical_score": 0.8315,
+          "section": "3.4.1",
+          "page": 40,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_sec_3_3_4_p01",
+          "clinical_score": 0.8257,
+          "section": "3.3.4",
+          "page": 39,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_sec_3_4_3_p02",
+          "clinical_score": 0.7733,
+          "section": "3.4.3",
+          "page": 40,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        }
+      ]
+    },
+    {
+      "query_id": "QA2_cytisine_evidence",
+      "category": "A) Medical Terminology",
+      "query_text": "Cytisine clinical trial certainty of evidence and dosage",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_4"
+      ],
+      "first_rank": 2,
+      "hit_1": false,
+      "hit_5": true,
+      "hit_10": true,
+      "admitted_count": 5,
+      "direct_count": 10,
+      "related_count": 9,
+      "admitted_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_sec_2_4_p02",
+          "clinical_score": 0.8281,
+          "section": "2.4",
+          "page": 26,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_sec_3_3_1",
+          "clinical_score": 0.8125,
+          "section": "3.3.1",
+          "page": 35,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_sec_2_2_p04",
+          "clinical_score": 0.7602,
+          "section": "2.2",
+          "page": 24,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_sec_3_3_3_4",
+          "clinical_score": 0.6941,
+          "section": "3.3.3.4",
+          "page": 37,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_sec_3_3_4_p01",
+          "clinical_score": 0.6577,
+          "section": "3.3.4",
+          "page": 39,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        }
+      ]
+    },
+    {
+      "query_id": "QA3_bupropion_contraindications",
+      "category": "A) Medical Terminology",
+      "query_text": "Bupropion sustained release contraindications seizure history",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_2",
+        "chunk_sec_3_3_4_p01"
+      ],
+      "first_rank": 1,
+      "hit_1": true,
+      "hit_5": true,
+      "hit_10": true,
+      "admitted_count": 5,
+      "direct_count": 3,
+      "related_count": 5,
+      "admitted_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_sec_3_3_4_p01",
+          "clinical_score": 0.9418,
+          "section": "3.3.4",
+          "page": 39,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_sec_3_3_1",
+          "clinical_score": 0.8583,
+          "section": "3.3.1",
+          "page": 35,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_sec_3_3_3_2",
+          "clinical_score": 0.8042,
+          "section": "3.3.3.2",
+          "page": 36,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_sec_2_4_p02",
+          "clinical_score": 0.4907,
+          "section": "2.4",
+          "page": 26,
+          "quality_tier": "RELATED_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_sec_3_7_1",
+          "clinical_score": 0.4904,
+          "section": "3.7.1",
+          "page": 44,
+          "quality_tier": "RELATED_EVIDENCE",
+          "is_target_hit": false
+        }
+      ]
+    },
+    {
+      "query_id": "QA4_combination_nrt",
+      "category": "A) Medical Terminology",
+      "query_text": "Combination nicotine replacement therapy patch plus short-acting form",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_5",
+        "chunk_node_L1_glossary_of_terms_p05"
+      ],
+      "first_rank": 1,
+      "hit_1": true,
+      "hit_5": true,
+      "hit_10": true,
+      "admitted_count": 5,
+      "direct_count": 5,
+      "related_count": 10,
+      "admitted_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_sec_3_3_1",
+          "clinical_score": 1.0,
+          "section": "3.3.1",
+          "page": 35,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_sec_3_3_3_5",
+          "clinical_score": 0.6893,
+          "section": "3.3.3.5",
+          "page": 37,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_sec_3_3_3_1_p01",
+          "clinical_score": 0.6181,
+          "section": "3.3.3.1",
+          "page": 35,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_sec_3_3_3_1_p03",
+          "clinical_score": 0.6114,
+          "section": "3.3.3.1",
+          "page": 35,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_sec_3_7_3_p02",
+          "clinical_score": 0.5859,
+          "section": "3.7.3",
+          "page": 44,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        }
+      ]
+    },
+    {
+      "query_id": "QA5_brief_advice_primary_care",
+      "category": "A) Medical Terminology",
+      "query_text": "Brief advice 30 seconds to 3 minutes routine clinical consultation",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p01",
+        "chunk_node_L1_glossary_of_terms_p03"
+      ],
+      "first_rank": 1,
+      "hit_1": true,
+      "hit_5": true,
+      "hit_10": true,
+      "admitted_count": 5,
+      "direct_count": 10,
+      "related_count": 8,
+      "admitted_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_sec_3_1_1",
+          "clinical_score": 1.0,
+          "section": "3.1.1",
+          "page": 29,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_sec_3_1_3_p05",
+          "clinical_score": 0.9408,
+          "section": "3.1.3",
+          "page": 29,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_sec_3_1_3_p04",
+          "clinical_score": 0.9367,
+          "section": "3.1.3",
+          "page": 29,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_sec_3_1_3_p01",
+          "clinical_score": 0.9348,
+          "section": "3.1.3",
+          "page": 29,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_sec_3_1_3_p02",
+          "clinical_score": 0.9341,
+          "section": "3.1.3",
+          "page": 29,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        }
+      ]
+    },
+    {
+      "query_id": "QB1_stop_smoking_medications",
+      "category": "B) English Paraphrase",
+      "query_text": "What are the approved medicines that help someone quit cigarettes?",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_6_p01"
+      ],
+      "first_rank": 1,
+      "hit_1": true,
+      "hit_5": true,
+      "hit_10": true,
+      "admitted_count": 5,
+      "direct_count": 4,
+      "related_count": 11,
+      "admitted_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_sec_3_3_1",
+          "clinical_score": 0.8537,
+          "section": "3.3.1",
+          "page": 35,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_sec_3_4_1",
+          "clinical_score": 0.6501,
+          "section": "3.4.1",
+          "page": 40,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_sec_2_4_p02",
+          "clinical_score": 0.6477,
+          "section": "2.4",
+          "page": 26,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_sec_3_2_1",
+          "clinical_score": 0.625,
+          "section": "3.2.1",
+          "page": 32,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_sec_3_3_3_3_p01",
+          "clinical_score": 0.5797,
+          "section": "3.3.3.3",
+          "page": 36,
+          "quality_tier": "RELATED_EVIDENCE",
+          "is_target_hit": false
+        }
+      ]
+    },
+    {
+      "query_id": "QB2_pills_without_nicotine",
+      "category": "B) English Paraphrase",
+      "query_text": "Are there pills without nicotine that reduce the urge to smoke?",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_2",
+        "chunk_sec_3_3_3_3_p01",
+        "chunk_sec_3_3_3_4"
+      ],
+      "first_rank": 1,
+      "hit_1": true,
+      "hit_5": true,
+      "hit_10": true,
+      "admitted_count": 5,
+      "direct_count": 8,
+      "related_count": 7,
+      "admitted_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_sec_3_3_1",
+          "clinical_score": 1.0,
+          "section": "3.3.1",
+          "page": 35,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_sec_3_3_3_3_p01",
+          "clinical_score": 0.7062,
+          "section": "3.3.3.3",
+          "page": 36,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_sec_3_3_3_4",
+          "clinical_score": 0.703,
+          "section": "3.3.3.4",
+          "page": 37,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_sec_3_3_3_6_p03",
+          "clinical_score": 0.6993,
+          "section": "3.3.3.6",
+          "page": 37,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_sec_3_3_3_6_p02",
+          "clinical_score": 0.6987,
+          "section": "3.3.3.6",
+          "page": 37,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        }
+      ]
+    },
+    {
+      "query_id": "QB3_doctor_talking_duration",
+      "category": "B) English Paraphrase",
+      "query_text": "How much time should a physician spend talking to a patient about quitting?",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p01"
+      ],
+      "first_rank": 1,
+      "hit_1": true,
+      "hit_5": true,
+      "hit_10": true,
+      "admitted_count": 5,
+      "direct_count": 10,
+      "related_count": 7,
+      "admitted_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_sec_3_1_1",
+          "clinical_score": 0.8125,
+          "section": "3.1.1",
+          "page": 29,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_sec_3_5_1",
+          "clinical_score": 0.8115,
+          "section": "3.5.1",
+          "page": 41,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_sec_3_4_1",
+          "clinical_score": 0.8074,
+          "section": "3.4.1",
+          "page": 40,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_sec_3_1_3_p04",
+          "clinical_score": 0.7475,
+          "section": "3.1.3",
+          "page": 29,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_sec_3_1_3_p02",
+          "clinical_score": 0.7458,
+          "section": "3.1.3",
+          "page": 29,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        }
+      ]
+    },
+    {
+      "query_id": "QB4_phone_support_quitting",
+      "category": "B) English Paraphrase",
+      "query_text": "Does calling a telephone helpline really help people quit smoking?",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p04",
+        "chunk_node_L1_glossary_of_terms_p14"
+      ],
+      "first_rank": 1,
+      "hit_1": true,
+      "hit_5": true,
+      "hit_10": true,
+      "admitted_count": 5,
+      "direct_count": 8,
+      "related_count": 8,
+      "admitted_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_sec_3_1_1",
+          "clinical_score": 1.0,
+          "section": "3.1.1",
+          "page": 29,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_sec_3_1_3_p04",
+          "clinical_score": 0.9527,
+          "section": "3.1.3",
+          "page": 29,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_sec_3_1_3_p03",
+          "clinical_score": 0.9502,
+          "section": "3.1.3",
+          "page": 29,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_sec_3_1_3_p05",
+          "clinical_score": 0.9433,
+          "section": "3.1.3",
+          "page": 29,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_sec_3_4_1",
+          "clinical_score": 0.6581,
+          "section": "3.4.1",
+          "page": 40,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        }
+      ]
+    },
+    {
+      "query_id": "QB5_digital_text_apps",
+      "category": "B) English Paraphrase",
+      "query_text": "Can text messages or smartphone apps assist in stopping tobacco use?",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_2_1",
+        "chunk_sec_3_2_3_p01",
+        "chunk_node_L1_glossary_of_terms_p16",
+        "chunk_node_L1_glossary_of_terms_p19"
+      ],
+      "first_rank": 1,
+      "hit_1": true,
+      "hit_5": true,
+      "hit_10": true,
+      "admitted_count": 5,
+      "direct_count": 6,
+      "related_count": 10,
+      "admitted_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_sec_3_2_1",
+          "clinical_score": 1.0,
+          "section": "3.2.1",
+          "page": 32,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_sec_3_2_3_p02",
+          "clinical_score": 0.9676,
+          "section": "3.2.3",
+          "page": 32,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_sec_3_2_3_p03",
+          "clinical_score": 0.9591,
+          "section": "3.2.3",
+          "page": 32,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_sec_3_2_3_p01",
+          "clinical_score": 0.9533,
+          "section": "3.2.3",
+          "page": 32,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_sec_3_2_3_p04",
+          "clinical_score": 0.9518,
+          "section": "3.2.3",
+          "page": 32,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        }
+      ]
+    },
+    {
+      "query_id": "QC1_ana_ayez_abatal_mosh_qader",
+      "category": "C) Egyptian Arabic",
+      "query_text": "أنا عايز أبطل السجاير ومش عارف أبدأ منين",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_5_1"
+      ],
+      "first_rank": null,
+      "hit_1": false,
+      "hit_5": false,
+      "hit_10": false,
+      "admitted_count": 5,
+      "direct_count": 3,
+      "related_count": 9,
+      "admitted_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_sec_2_2_p03",
+          "clinical_score": 0.7161,
+          "section": "2.2",
+          "page": 24,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_sec_2_2_p04",
+          "clinical_score": 0.7152,
+          "section": "2.2",
+          "page": 24,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_sec_2_2_p01",
+          "clinical_score": 0.7151,
+          "section": "2.2",
+          "page": 24,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_node_L1_glossary_of_terms_p26",
+          "clinical_score": 0.5628,
+          "section": null,
+          "page": 11,
+          "quality_tier": "RELATED_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_node_L1_glossary_of_terms_p22",
+          "clinical_score": 0.561,
+          "section": null,
+          "page": 11,
+          "quality_tier": "RELATED_EVIDENCE",
+          "is_target_hit": false
+        }
+      ]
+    },
+    {
+      "query_id": "QC2_doctor_followup_ar",
+      "category": "C) Egyptian Arabic",
+      "query_text": "في حد أو دكتور ممكن يساعدني خطوة بخطوة وأنا بحاول أبطل؟",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p02",
+        "chunk_sec_3_5_1"
+      ],
+      "first_rank": 1,
+      "hit_1": true,
+      "hit_5": true,
+      "hit_10": true,
+      "admitted_count": 5,
+      "direct_count": 6,
+      "related_count": 9,
+      "admitted_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_sec_3_1_1",
+          "clinical_score": 1.0,
+          "section": "3.1.1",
+          "page": 29,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_sec_3_1_3_p05",
+          "clinical_score": 0.9351,
+          "section": "3.1.3",
+          "page": 29,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_sec_3_1_3_p01",
+          "clinical_score": 0.9345,
+          "section": "3.1.3",
+          "page": 29,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_sec_3_1_3_p02",
+          "clinical_score": 0.9312,
+          "section": "3.1.3",
+          "page": 29,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_sec_2_4_p02",
+          "clinical_score": 0.6374,
+          "section": "2.4",
+          "page": 26,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        }
+      ]
+    },
+    {
+      "query_id": "QC3_quitline_ar",
+      "category": "C) Egyptian Arabic",
+      "query_text": "في خط ساخن مجاني بالتليفون ممكن يساعدني في تبطيل السجاير؟",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p04",
+        "chunk_node_L1_glossary_of_terms_p14"
+      ],
+      "first_rank": 1,
+      "hit_1": true,
+      "hit_5": true,
+      "hit_10": true,
+      "admitted_count": 5,
+      "direct_count": 5,
+      "related_count": 6,
+      "admitted_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_sec_3_1_1",
+          "clinical_score": 1.0,
+          "section": "3.1.1",
+          "page": 29,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_sec_3_1_3_p05",
+          "clinical_score": 0.9358,
+          "section": "3.1.3",
+          "page": 29,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_sec_3_1_3_p04",
+          "clinical_score": 0.9341,
+          "section": "3.1.3",
+          "page": 29,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_sec_3_4_1",
+          "clinical_score": 0.6384,
+          "section": "3.4.1",
+          "page": 40,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_sec_3_4_3_p02",
+          "clinical_score": 0.5882,
+          "section": "3.4.3",
+          "page": 40,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        }
+      ]
+    },
+    {
+      "query_id": "QC4_group_support_ar",
+      "category": "C) Egyptian Arabic",
+      "query_text": "في جلسات جماعية مع ناس تانية بتحاول تبطل عشان نشجع بعض؟",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p03",
+        "chunk_node_L1_glossary_of_terms_p13"
+      ],
+      "first_rank": 3,
+      "hit_1": false,
+      "hit_5": true,
+      "hit_10": true,
+      "admitted_count": 5,
+      "direct_count": 7,
+      "related_count": 8,
+      "admitted_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_sec_3_1_3_p05",
+          "clinical_score": 0.8511,
+          "section": "3.1.3",
+          "page": 29,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_sec_3_1_3_p02",
+          "clinical_score": 0.8395,
+          "section": "3.1.3",
+          "page": 29,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_sec_3_1_1",
+          "clinical_score": 0.8215,
+          "section": "3.1.1",
+          "page": 29,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_sec_3_4_3_p02",
+          "clinical_score": 0.6678,
+          "section": "3.4.3",
+          "page": 40,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_sec_3_5_1",
+          "clinical_score": 0.6324,
+          "section": "3.5.1",
+          "page": 41,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        }
+      ]
+    },
+    {
+      "query_id": "QC5_pills_license_ar",
+      "category": "C) Egyptian Arabic",
+      "query_text": "في حبوب معينة مرخصة بتساعد الواحد يبطل السجاير؟",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_3_1",
+        "chunk_node_L1_glossary_of_terms_p09"
+      ],
+      "first_rank": 1,
+      "hit_1": true,
+      "hit_5": true,
+      "hit_10": true,
+      "admitted_count": 5,
+      "direct_count": 8,
+      "related_count": 8,
+      "admitted_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_sec_3_3_1",
+          "clinical_score": 1.0,
+          "section": "3.3.1",
+          "page": 35,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_sec_3_3_3_3_p01",
+          "clinical_score": 0.7021,
+          "section": "3.3.3.3",
+          "page": 36,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_sec_3_3_3_6_p02",
+          "clinical_score": 0.7,
+          "section": "3.3.3.6",
+          "page": 37,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_sec_3_3_3_3_p02",
+          "clinical_score": 0.6974,
+          "section": "3.3.3.3",
+          "page": 36,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_sec_3_3_3_2",
+          "clinical_score": 0.6966,
+          "section": "3.3.3.2",
+          "page": 36,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        }
+      ]
+    },
+    {
+      "query_id": "QD1_craving_reduction_ar",
+      "category": "D) Non-Medical Wording",
+      "query_text": "في حاجة تساعدني أقلل الرغبة في السجاير ومن غير ما أفضل مشتهي أدخن؟",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_1_p01",
+        "chunk_node_L1_glossary_of_terms_p17"
+      ],
+      "first_rank": null,
+      "hit_1": false,
+      "hit_5": false,
+      "hit_10": false,
+      "admitted_count": 5,
+      "direct_count": 6,
+      "related_count": 6,
+      "admitted_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_sec_3_4_1",
+          "clinical_score": 0.7925,
+          "section": "3.4.1",
+          "page": 40,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_sec_3_5_1",
+          "clinical_score": 0.7851,
+          "section": "3.5.1",
+          "page": 41,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_sec_2_2_p04",
+          "clinical_score": 0.7242,
+          "section": "2.2",
+          "page": 24,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_sec_3_4_3_p02",
+          "clinical_score": 0.7226,
+          "section": "3.4.3",
+          "page": 40,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_sec_2_2_p03",
+          "clinical_score": 0.7222,
+          "section": "2.2",
+          "page": 24,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        }
+      ]
+    },
+    {
+      "query_id": "QD2_patch_gum_ar",
+      "category": "D) Non-Medical Wording",
+      "query_text": "في لزقة أو لبانة نيكوتين تخفف الشغف للتدخين؟",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_1_p01",
+        "chunk_node_L1_glossary_of_terms_p17"
+      ],
+      "first_rank": 1,
+      "hit_1": true,
+      "hit_5": true,
+      "hit_10": true,
+      "admitted_count": 5,
+      "direct_count": 7,
+      "related_count": 6,
+      "admitted_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_sec_3_3_1",
+          "clinical_score": 1.0,
+          "section": "3.3.1",
+          "page": 35,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_sec_3_3_3_5",
+          "clinical_score": 0.6875,
+          "section": "3.3.3.5",
+          "page": 37,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_sec_3_4_1",
+          "clinical_score": 0.6379,
+          "section": "3.4.1",
+          "page": 40,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_sec_3_3_3_1_p01",
+          "clinical_score": 0.6364,
+          "section": "3.3.3.1",
+          "page": 35,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_sec_3_3_3_1_p03",
+          "clinical_score": 0.6312,
+          "section": "3.3.3.1",
+          "page": 35,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        }
+      ]
+    },
+    {
+      "query_id": "QD3_mobile_sms_ar",
+      "category": "D) Non-Medical Wording",
+      "query_text": "في برنامج على الموبايل أو رسايل تساعد في التبطيل؟",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_2_1",
+        "chunk_sec_3_2_3_p01",
+        "chunk_node_L1_glossary_of_terms_p16"
+      ],
+      "first_rank": 1,
+      "hit_1": true,
+      "hit_5": true,
+      "hit_10": true,
+      "admitted_count": 5,
+      "direct_count": 6,
+      "related_count": 7,
+      "admitted_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_sec_3_2_1",
+          "clinical_score": 1.0,
+          "section": "3.2.1",
+          "page": 32,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_sec_3_2_3_p02",
+          "clinical_score": 0.9421,
+          "section": "3.2.3",
+          "page": 32,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_sec_3_2_3_p01",
+          "clinical_score": 0.9374,
+          "section": "3.2.3",
+          "page": 32,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_sec_3_2_3_p03",
+          "clinical_score": 0.9347,
+          "section": "3.2.3",
+          "page": 32,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_sec_3_2_3_p04",
+          "clinical_score": 0.9326,
+          "section": "3.2.3",
+          "page": 32,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        }
+      ]
+    },
+    {
+      "query_id": "QD4_withdrawal_symptoms_ar",
+      "category": "D) Non-Medical Wording",
+      "query_text": "جسمي بيتعب وبيجيلي صداع وعصبية أول ما أوقف السجاير، أعمل إيه؟",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_1_p01",
+        "chunk_node_L1_glossary_of_terms_p17"
+      ],
+      "first_rank": null,
+      "hit_1": false,
+      "hit_5": false,
+      "hit_10": false,
+      "admitted_count": 5,
+      "direct_count": 4,
+      "related_count": 9,
+      "admitted_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_sec_2_2_p03",
+          "clinical_score": 0.7169,
+          "section": "2.2",
+          "page": 24,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_sec_2_2_p04",
+          "clinical_score": 0.7144,
+          "section": "2.2",
+          "page": 24,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_sec_2_2_p02",
+          "clinical_score": 0.7134,
+          "section": "2.2",
+          "page": 24,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_sec_3_4_3_p02",
+          "clinical_score": 0.7132,
+          "section": "3.4.3",
+          "page": 40,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_node_L1_glossary_of_terms_p26",
+          "clinical_score": 0.5595,
+          "section": null,
+          "page": 11,
+          "quality_tier": "RELATED_EVIDENCE",
+          "is_target_hit": false
+        }
+      ]
+    },
+    {
+      "query_id": "QD5_combo_patch_gum_ar",
+      "category": "D) Non-Medical Wording",
+      "query_text": "هل ينفع أجمع بين نوعين علاج نيكوتين مع بعض زي اللزقة واللبان؟",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_5",
+        "chunk_node_L1_glossary_of_terms_p05"
+      ],
+      "first_rank": 1,
+      "hit_1": true,
+      "hit_5": true,
+      "hit_10": true,
+      "admitted_count": 5,
+      "direct_count": 8,
+      "related_count": 6,
+      "admitted_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_sec_3_3_1",
+          "clinical_score": 1.0,
+          "section": "3.3.1",
+          "page": 35,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_sec_3_3_3_5",
+          "clinical_score": 0.6868,
+          "section": "3.3.3.5",
+          "page": 37,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_sec_3_4_1",
+          "clinical_score": 0.6341,
+          "section": "3.4.1",
+          "page": 40,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_sec_3_3_3_1_p01",
+          "clinical_score": 0.6331,
+          "section": "3.3.3.1",
+          "page": 35,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_sec_3_3_3_1_p03",
+          "clinical_score": 0.6299,
+          "section": "3.3.3.1",
+          "page": 35,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        }
+      ]
+    },
+    {
+      "query_id": "QE1_relapse_cycle_ar",
+      "category": "E) Implicit Clinical Intent",
+      "query_text": "كل ما أحاول أبطل برجع أدخن تاني، أعمل إيه؟",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_5"
+      ],
+      "first_rank": 2,
+      "hit_1": false,
+      "hit_5": true,
+      "hit_10": true,
+      "admitted_count": 5,
+      "direct_count": 7,
+      "related_count": 4,
+      "admitted_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_sec_3_5_1",
+          "clinical_score": 0.9855,
+          "section": "3.5.1",
+          "page": 41,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_sec_3_1_1",
+          "clinical_score": 0.7812,
+          "section": "3.1.1",
+          "page": 29,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_sec_3_3_1",
+          "clinical_score": 0.7812,
+          "section": "3.3.1",
+          "page": 35,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_sec_3_4_1",
+          "clinical_score": 0.6726,
+          "section": "3.4.1",
+          "page": 40,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_sec_3_4_3_p02",
+          "clinical_score": 0.6239,
+          "section": "3.4.3",
+          "page": 40,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        }
+      ]
+    },
+    {
+      "query_id": "QE2_medication_plus_sessions_ar",
+      "category": "E) Implicit Clinical Intent",
+      "query_text": "الدواء لوحده كفاية ولا لازم جلسات ومتابعة عشان النتيجة تبقى أحسن؟",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_5_1",
+        "chunk_sec_3_5_3_p01"
+      ],
+      "first_rank": null,
+      "hit_1": false,
+      "hit_5": false,
+      "hit_10": false,
+      "admitted_count": 5,
+      "direct_count": 8,
+      "related_count": 3,
+      "admitted_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_sec_3_1_3_p02",
+          "clinical_score": 0.7306,
+          "section": "3.1.3",
+          "page": 29,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_sec_3_1_3_p04",
+          "clinical_score": 0.729,
+          "section": "3.1.3",
+          "page": 29,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_sec_3_1_3_p05",
+          "clinical_score": 0.7276,
+          "section": "3.1.3",
+          "page": 29,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_sec_3_5_3_p02",
+          "clinical_score": 0.6456,
+          "section": "3.5.3",
+          "page": 41,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_sec_3_4_3_p02",
+          "clinical_score": 0.6427,
+          "section": "3.4.3",
+          "page": 40,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        }
+      ]
+    },
+    {
+      "query_id": "QE3_doctor_advice_value_ar",
+      "category": "E) Implicit Clinical Intent",
+      "query_text": "نصيحة الطبيب السريعة اللي في دقيقة أو دقيقتين بتفرق بجد ولا كلام وخلاص؟",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p01",
+        "chunk_node_L1_glossary_of_terms_p03"
+      ],
+      "first_rank": 1,
+      "hit_1": true,
+      "hit_5": true,
+      "hit_10": true,
+      "admitted_count": 5,
+      "direct_count": 9,
+      "related_count": 7,
+      "admitted_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_sec_3_1_1",
+          "clinical_score": 1.0,
+          "section": "3.1.1",
+          "page": 29,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_sec_3_1_3_p05",
+          "clinical_score": 0.9405,
+          "section": "3.1.3",
+          "page": 29,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_sec_3_1_3_p01",
+          "clinical_score": 0.9346,
+          "section": "3.1.3",
+          "page": 29,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_sec_3_1_3_p04",
+          "clinical_score": 0.9327,
+          "section": "3.1.3",
+          "page": 29,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_sec_3_1_3_p02",
+          "clinical_score": 0.9315,
+          "section": "3.1.3",
+          "page": 29,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        }
+      ]
+    },
+    {
+      "query_id": "QE4_heavy_smoker_options_ar",
+      "category": "E) Implicit Clinical Intent",
+      "query_text": "بشرب علبتين سجاير في اليوم من سنين ومش عارف أسيطر على نفسي",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_5_1",
+        "chunk_sec_3_3_3_5"
+      ],
+      "first_rank": 1,
+      "hit_1": true,
+      "hit_5": true,
+      "hit_10": true,
+      "admitted_count": 5,
+      "direct_count": 7,
+      "related_count": 10,
+      "admitted_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_sec_3_3_1",
+          "clinical_score": 0.9706,
+          "section": "3.3.1",
+          "page": 35,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_sec_3_5_1",
+          "clinical_score": 0.7812,
+          "section": "3.5.1",
+          "page": 41,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_sec_3_3_3_5",
+          "clinical_score": 0.6672,
+          "section": "3.3.3.5",
+          "page": 37,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_sec_3_4_1",
+          "clinical_score": 0.6593,
+          "section": "3.4.1",
+          "page": 40,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_sec_2_4_p02",
+          "clinical_score": 0.6564,
+          "section": "2.4",
+          "page": 26,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        }
+      ]
+    },
+    {
+      "query_id": "QE5_ai_chatbot_cessation_ar",
+      "category": "E) Implicit Clinical Intent",
+      "query_text": "هل في ذكاء اصطناعي أو شات بوت معتمد يساعد في الإقلاع عن التدخين؟",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_2_1",
+        "chunk_sec_3_2_3_p02",
+        "chunk_node_L1_glossary_of_terms_p01"
+      ],
+      "first_rank": 1,
+      "hit_1": true,
+      "hit_5": true,
+      "hit_10": true,
+      "admitted_count": 5,
+      "direct_count": 6,
+      "related_count": 6,
+      "admitted_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_sec_3_2_1",
+          "clinical_score": 1.0,
+          "section": "3.2.1",
+          "page": 32,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_sec_3_2_3_p04",
+          "clinical_score": 0.9391,
+          "section": "3.2.3",
+          "page": 32,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_sec_3_2_3_p01",
+          "clinical_score": 0.9345,
+          "section": "3.2.3",
+          "page": 32,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_sec_3_4_1",
+          "clinical_score": 0.6385,
+          "section": "3.4.1",
+          "page": 40,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_sec_2_2_p04",
+          "clinical_score": 0.5922,
+          "section": "2.2",
+          "page": 24,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        }
+      ]
+    },
+    {
+      "query_id": "QF1_pregnant_women_ar",
+      "category": "F) Specific Clinical Situations",
+      "query_text": "أنا حامل وبشرب سجاير، أعمل إيه والدواء أمان ليا ولا لأ؟",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_3_4_p01",
+        "chunk_sec_3_1_4"
+      ],
+      "first_rank": 1,
+      "hit_1": true,
+      "hit_5": true,
+      "hit_10": true,
+      "admitted_count": 5,
+      "direct_count": 2,
+      "related_count": 5,
+      "admitted_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_sec_3_1_4",
+          "clinical_score": 0.625,
+          "section": "3.1.4",
+          "page": 31,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_sec_3_5_3_p02",
+          "clinical_score": 0.6081,
+          "section": "3.5.3",
+          "page": 41,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_node_L3_general_p01",
+          "clinical_score": 0.5322,
+          "section": null,
+          "page": 66,
+          "quality_tier": "RELATED_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_sec_3_3_4_p01",
+          "clinical_score": 0.475,
+          "section": "3.3.4",
+          "page": 39,
+          "quality_tier": "RELATED_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_sec_3_1_1",
+          "clinical_score": 0.4688,
+          "section": "3.1.1",
+          "page": 29,
+          "quality_tier": "RELATED_EVIDENCE",
+          "is_target_hit": false
+        }
+      ]
+    },
+    {
+      "query_id": "QF2_smokeless_tobacco_shammah_ar",
+      "category": "F) Specific Clinical Situations",
+      "query_text": "الناس اللي بتستخدم الشمة أو التبغ غير المدخن، إيه علاجهم؟",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_4_1",
+        "chunk_sec_3_4_3_p01",
+        "chunk_node_L1_glossary_of_terms_p20"
+      ],
+      "first_rank": 1,
+      "hit_1": true,
+      "hit_5": true,
+      "hit_10": true,
+      "admitted_count": 5,
+      "direct_count": 8,
+      "related_count": 7,
+      "admitted_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_sec_3_4_1",
+          "clinical_score": 1.0,
+          "section": "3.4.1",
+          "page": 40,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_sec_3_4_3_p03",
+          "clinical_score": 0.941,
+          "section": "3.4.3",
+          "page": 40,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_sec_3_4_3_p02",
+          "clinical_score": 0.94,
+          "section": "3.4.3",
+          "page": 40,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_sec_3_4_3_p01",
+          "clinical_score": 0.7475,
+          "section": "3.4.3",
+          "page": 40,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_sec_3_3_1",
+          "clinical_score": 0.6384,
+          "section": "3.3.1",
+          "page": 35,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        }
+      ]
+    },
+    {
+      "query_id": "QF3_alternative_acupuncture_hypnosis_ar",
+      "category": "F) Specific Clinical Situations",
+      "query_text": "هل جلسات الإبر الصينية أو التنويم المغناطيسي بتنفع في الإقلاع عن التدخين؟",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_6_1",
+        "chunk_sec_3_6_3_p01",
+        "chunk_node_L1_glossary_of_terms_p26"
+      ],
+      "first_rank": null,
+      "hit_1": false,
+      "hit_5": false,
+      "hit_10": true,
+      "admitted_count": 5,
+      "direct_count": 2,
+      "related_count": 4,
+      "admitted_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_sec_3_4_1",
+          "clinical_score": 0.6098,
+          "section": "3.4.1",
+          "page": 40,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_sec_3_5_1",
+          "clinical_score": 0.6087,
+          "section": "3.5.1",
+          "page": 41,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_sec_3_6_3_p02",
+          "clinical_score": 0.563,
+          "section": "3.6.3",
+          "page": 43,
+          "quality_tier": "RELATED_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_sec_2_2_p04",
+          "clinical_score": 0.5624,
+          "section": "2.2",
+          "page": 24,
+          "quality_tier": "RELATED_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_sec_3_6_4",
+          "clinical_score": 0.4911,
+          "section": "3.6.4",
+          "page": 43,
+          "quality_tier": "RELATED_EVIDENCE",
+          "is_target_hit": false
+        }
+      ]
+    },
+    {
+      "query_id": "QF4_adolescents_young_people_ar",
+      "category": "F) Specific Clinical Situations",
+      "query_text": "هل الأدوية دي تنفع للمراهقين والشباب الصغيرين تحت 18 سنة؟",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_3_4_p01",
+        "chunk_sec_3_1_4"
+      ],
+      "first_rank": 1,
+      "hit_1": true,
+      "hit_5": true,
+      "hit_10": true,
+      "admitted_count": 5,
+      "direct_count": 2,
+      "related_count": 9,
+      "admitted_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_sec_3_1_4",
+          "clinical_score": 0.625,
+          "section": "3.1.4",
+          "page": 31,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_sec_3_5_3_p02",
+          "clinical_score": 0.6076,
+          "section": "3.5.3",
+          "page": 41,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_node_L3_general_p02",
+          "clinical_score": 0.5317,
+          "section": null,
+          "page": 66,
+          "quality_tier": "RELATED_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_sec_3_3_4_p01",
+          "clinical_score": 0.475,
+          "section": "3.3.4",
+          "page": 39,
+          "quality_tier": "RELATED_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_sec_2_4_p01",
+          "clinical_score": 0.4679,
+          "section": "2.4",
+          "page": 26,
+          "quality_tier": "RELATED_EVIDENCE",
+          "is_target_hit": false
+        }
+      ]
+    },
+    {
+      "query_id": "QF5_tuberculosis_comorbidity_ar",
+      "category": "F) Specific Clinical Situations",
+      "query_text": "مرضى الدرن والسل الرئوي اللي بيدخنوا، إيه توصيات منظمة الصحة العالمية ليهم؟",
+      "is_control": false,
+      "targets": [
+        "chunk_sec_3_1_4",
+        "chunk_sec_3_3_4_p01"
+      ],
+      "first_rank": 1,
+      "hit_1": true,
+      "hit_5": true,
+      "hit_10": true,
+      "admitted_count": 5,
+      "direct_count": 2,
+      "related_count": 4,
+      "admitted_items": [
+        {
+          "rank": 1,
+          "chunk_id": "chunk_sec_3_3_4_p01",
+          "clinical_score": 0.625,
+          "section": "3.3.4",
+          "page": 39,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "chunk_sec_3_1_4",
+          "clinical_score": 0.625,
+          "section": "3.1.4",
+          "page": 31,
+          "quality_tier": "DIRECT_EVIDENCE",
+          "is_target_hit": true
+        },
+        {
+          "rank": 3,
+          "chunk_id": "chunk_sec_2_4_p01",
+          "clinical_score": 0.4688,
+          "section": "2.4",
+          "page": 26,
+          "quality_tier": "RELATED_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "chunk_node_L3_external_review_group_p02",
+          "clinical_score": 0.4565,
+          "section": null,
+          "page": 63,
+          "quality_tier": "RELATED_EVIDENCE",
+          "is_target_hit": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "chunk_node_L3_guideline_development_gro_p02",
+          "clinical_score": 0.4561,
+          "section": null,
+          "page": 61,
+          "quality_tier": "RELATED_EVIDENCE",
+          "is_target_hit": false
+        }
+      ]
+    },
+    {
+      "query_id": "QG1_ecigarettes_cessation_control",
+      "category": "G) Control (NO_DIRECT_EVIDENCE)",
+      "query_text": "هل السجائر الإلكترونية والفيب موصى بيها كعلاج رسمي للإقلاع عن التدخين في دليل منظمة الصحة العالمية؟",
+      "is_control": true,
+      "safety_flag": "NO_GROUNDED_EVIDENCE_IN_WHO_GUIDELINE",
+      "status": "CONTROL_PROTECTED_SAFE"
+    },
+    {
+      "query_id": "QG2_metformin_diabetes_control",
+      "category": "G) Control (NO_DIRECT_EVIDENCE)",
+      "query_text": "هل دواء الميتفورمين بتاع السكر بيساعد في تبطيل التدخين؟",
+      "is_control": true,
+      "safety_flag": "NO_GROUNDED_EVIDENCE_IN_WHO_GUIDELINE",
+      "status": "CONTROL_PROTECTED_SAFE"
+    },
+    {
+      "query_id": "QG3_acupuncture_weight_loss_control",
+      "category": "G) Control (NO_DIRECT_EVIDENCE)",
+      "query_text": "هل الإبر الصينية بتساعد على إنقاص الوزن وحرق الدهون؟",
+      "is_control": true,
+      "safety_flag": "NO_GROUNDED_EVIDENCE_IN_WHO_GUIDELINE",
+      "status": "CONTROL_PROTECTED_SAFE"
+    }
+  ]
+}

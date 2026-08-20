@@ -1,0 +1,53 @@
+{
+  "total_test_cases": 60,
+  "medical_retrieval_hit_rate": "49/60 (81.7%)",
+  "evidence_grounding_rate": "49/60 (81.7%)",
+  "simplification_relevance_rate": "60/60 (100.0%)",
+  "medical_fact_firewall_violations": "0/60 (0.0%)",
+  "claim_preservation": {
+    "system_a_baseline": "60/60 (100.0%)",
+    "system_b_dual_rag": "60/60 (100.0%)"
+  },
+  "entity_dosage_preservation": {
+    "system_a_baseline": "60/60 (100.0%)",
+    "system_b_dual_rag": "60/60 (100.0%)"
+  },
+  "uncertainty_preservation": {
+    "system_a_baseline": "60/60 (100.0%)",
+    "system_b_dual_rag": "60/60 (100.0%)"
+  },
+  "causality_preservation": {
+    "system_a_baseline": "60/60 (100.0%)",
+    "system_b_dual_rag": "60/60 (100.0%)"
+  },
+  "unsupported_claim_rate": {
+    "system_a_baseline": "0/60 (0.0%)",
+    "system_b_dual_rag": "0/60 (0.0%)"
+  },
+  "citation_validity": {
+    "system_a_baseline": "60/60 (100.0%)",
+    "system_b_dual_rag": "60/60 (100.0%)"
+  },
+  "latency_stats_ms": {
+    "medical_retrieval": {
+      "mean": 118.3,
+      "median": 48.41,
+      "p95": 215.85
+    },
+    "simplification_retrieval": {
+      "mean": 2.19,
+      "median": 2.08,
+      "p95": 4.19
+    },
+    "total_system_a": {
+      "mean": 63.03,
+      "median": 48.63,
+      "p95": 177.1
+    },
+    "total_system_b": {
+      "mean": 68.29,
+      "median": 50.29,
+      "p95": 199.99
+    }
+  }
+}

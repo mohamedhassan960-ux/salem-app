@@ -1,0 +1,49 @@
+﻿{
+  baseline_version: v1,
+  date: 2026-08-19,
+  project_name: Oxygen (أوكسجين) Medical RAG,
+  status: BASELINE_FROZEN,
+  test_status: {
+    total_suites: 12,
+    passed_suites: 12,
+    failed_suites: 0,
+    skipped_suites: 0,
+    total_tests: 117,
+    passed_tests: 117,
+    pass_rate_percentage: 100.0
+  },
+  test_suite_breakdown: {
+    test_retrieval_schema: PASS (12/12),
+    test_bm25_retriever: PASS (10/10),
+    test_dense_retriever: PASS (12/12),
+    test_hybrid_retriever: PASS (12/12),
+    test_reranker: PASS (10/10),
+    test_evidence_quality_gate: PASS (10/10),
+    test_llm_answer_evaluator: PASS (10/10),
+    test_llm_judge_evaluation: PASS (10/10),
+    test_llm_generator: PASS (10/10),
+    test_llm_generation_pipeline: PASS (16/16),
+    test_simplification_rag: PASS (15/15),
+    validate_knowledge_base: PASS (14/14 checks)
+  },
+  medical_rag: {
+    source_document: WHO Clinical Treatment Guideline for Tobacco Cessation in Adults (2024),
+    total_chunks: 171,
+    bm25_status: FROZEN_AND_VERIFIED,
+    dense_status: FROZEN_AND_VERIFIED (multilingual-e5-small),
+    hybrid_status: FROZEN_AND_VERIFIED (RRF k=60),
+    reranker_status: FROZEN_AND_VERIFIED (Multi-factor clinical reranking),
+    evidence_quality_gate: FROZEN_AND_VERIFIED (Claim-specific gating & out-of-scope blocking)
+  },
+  safety: {
+    unsupported_evidence_blocking: PASS (100% Negative Control Abstention),
+    dosage_integrity: PASS (100% Entity & Unit Freezing),
+    uncertainty_preservation: PASS (100% Epistemic Modality Maintained),
+    contraindication_preservation: PASS (100% Prominent Red-Flag Placement)
+  },
+  simplification: {
+    current_architecture: rule_based_hybrid_candidate,
+    status: baseline_frozen,
+    golden_scenarios_pass_rate: 100.0% (12/12)
+  }
+}

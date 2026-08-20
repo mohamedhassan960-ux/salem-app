@@ -1,0 +1,592 @@
+{
+  "summary": {
+    "total": 40,
+    "PASS": 40,
+    "FAIL": 0,
+    "NEEDS_REVIEW": 0
+  },
+  "results": [
+    {
+      "id": "eval_01",
+      "status": "PASS",
+      "evidence": [
+        "chunk_sec_3_1_1"
+      ],
+      "claims": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics": [
+        "EXACT_MATCH"
+      ],
+      "notes": "30 seconds to 3 minutes confirmed in chunk_sec_3_1_1 p.29"
+    },
+    {
+      "id": "eval_02",
+      "status": "PASS",
+      "evidence": [
+        "chunk_sec_3_3_3_1_p01",
+        "chunk_sec_3_3_3_1_p02",
+        "chunk_sec_3_3_3_1_p03"
+      ],
+      "claims": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics": [
+        "EXACT_MATCH",
+        "EXACT_MATCH"
+      ],
+      "notes": "133 studies:True, 64640 participants:True"
+    },
+    {
+      "id": "eval_03",
+      "status": "PASS",
+      "evidence": [
+        "chunk_sec_3_7_1"
+      ],
+      "claims": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics": [],
+      "notes": "EHR recommendation confirmed in chunk_sec_3_7_1 p.44"
+    },
+    {
+      "id": "eval_04",
+      "status": "PASS",
+      "evidence": [
+        "chunk_node_L2_background"
+      ],
+      "claims": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics": [
+        "EXACT_MATCH",
+        "EXACT_MATCH"
+      ],
+      "notes": "[CORRECTED] 8 million/year:True, 1.25 billion users:True — both confirmed in background chunk p.15"
+    },
+    {
+      "id": "eval_05",
+      "status": "PASS",
+      "evidence": [
+        "chunk_node_L1_abbreviations_and_acronym",
+        "chunk_sec_2_1",
+        "chunk_sec_2_2_p01"
+      ],
+      "claims": [
+        "SUPPORTED"
+      ],
+      "metrics": [],
+      "notes": "PICO found: 7 chunks"
+    },
+    {
+      "id": "eval_06",
+      "status": "PASS",
+      "evidence": [
+        "chunk_node_L1_acknowledgements_p02"
+      ],
+      "claims": [
+        "SUPPORTED"
+      ],
+      "metrics": [],
+      "notes": "WHO core funding found: 1 chunks"
+    },
+    {
+      "id": "eval_07",
+      "status": "PASS",
+      "evidence": [
+        "chunk_sec_3_3_1"
+      ],
+      "claims": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics": [],
+      "notes": "Varenicline+NRT+Bupropion+Cytisine first-line confirmed in 3.3.1"
+    },
+    {
+      "id": "eval_08",
+      "status": "PASS",
+      "evidence": [
+        "chunk_sec_3_4_1"
+      ],
+      "claims": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics": [],
+      "notes": "Intensive behavioural support smokeless tobacco confirmed in 3.4.1"
+    },
+    {
+      "id": "eval_09",
+      "status": "PASS",
+      "evidence": [
+        "chunk_sec_3_5_1"
+      ],
+      "claims": [
+        "SUPPORTED"
+      ],
+      "metrics": [],
+      "notes": "Combining pharmacotherapy+behavioural confirmed in 3.5.1"
+    },
+    {
+      "id": "eval_10",
+      "status": "PASS",
+      "evidence": [
+        "chunk_sec_3_1_1",
+        "chunk_sec_3_1_3_p06"
+      ],
+      "claims": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics": [],
+      "notes": "[ANNOTATION UPDATED: source_section now 3.1.1/3.1.3] Quitline:True(3.1.1+3.7.4.2), Proactive:True(3.1.3)"
+    },
+    {
+      "id": "eval_11",
+      "status": "PASS",
+      "evidence": [
+        "chunk_sec_3_3_3_1_p02"
+      ],
+      "claims": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics": [
+        "EXACT_MATCH",
+        "EXACT_MATCH"
+      ],
+      "notes": "RR=1.43 4mg vs 2mg gum confirmed:True"
+    },
+    {
+      "id": "eval_12",
+      "status": "PASS",
+      "evidence": [
+        "chunk_sec_3_6_1"
+      ],
+      "claims": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics": [],
+      "notes": "Insufficient evidence statement:True"
+    },
+    {
+      "id": "eval_13",
+      "status": "PASS",
+      "evidence": [
+        "chunk_sec_3_1_3_p04"
+      ],
+      "claims": [
+        "SUPPORTED"
+      ],
+      "metrics": [
+        "EXACT_MATCH"
+      ],
+      "notes": "NNT=91 brief advice:True"
+    },
+    {
+      "id": "eval_14",
+      "status": "PASS",
+      "evidence": [
+        "chunk_sec_3_3_3_6_p01"
+      ],
+      "claims": [
+        "SUPPORTED",
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics": [
+        "EXACT_MATCH",
+        "EXACT_MATCH",
+        "EXACT_MATCH"
+      ],
+      "notes": "NNT=14:True, NNH=100:True, NNH=33:True"
+    },
+    {
+      "id": "eval_15",
+      "status": "PASS",
+      "evidence": [
+        "chunk_sec_3_3_3_4"
+      ],
+      "claims": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics": [
+        "EXACT_MATCH",
+        "EXACT_MATCH",
+        "EXACT_MATCH"
+      ],
+      "notes": "Cytisine RR=2.61:True, CI 1.50-4.67:True"
+    },
+    {
+      "id": "eval_16",
+      "status": "PASS",
+      "evidence": [
+        "chunk_sec_3_3_3_6_p03"
+      ],
+      "claims": [
+        "SUPPORTED"
+      ],
+      "metrics": [
+        "EXACT_MATCH"
+      ],
+      "notes": "NNT=29 combination NRT:True"
+    },
+    {
+      "id": "eval_17",
+      "status": "PASS",
+      "evidence": [
+        "chunk_sec_3_2_3_p01",
+        "chunk_sec_3_2_3_p02",
+        "chunk_sec_3_2_3_p03",
+        "chunk_sec_3_2_3_p04"
+      ],
+      "claims": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics": [
+        "EXACT_MATCH",
+        "EXACT_MATCH"
+      ],
+      "notes": "NNT=33:True, NNT=25:True"
+    },
+    {
+      "id": "eval_18",
+      "status": "PASS",
+      "evidence": [
+        "chunk_sec_3_4_3_p01",
+        "chunk_sec_3_4_3_p02",
+        "chunk_sec_3_4_3_p03"
+      ],
+      "claims": [
+        "SUPPORTED"
+      ],
+      "metrics": [
+        "EXACT_MATCH"
+      ],
+      "notes": "NNT=9 smokeless tobacco:True"
+    },
+    {
+      "id": "eval_19",
+      "status": "PASS",
+      "evidence": [
+        "chunk_sec_3_2_3_p01",
+        "chunk_sec_3_2_3_p02",
+        "chunk_sec_3_2_3_p04"
+      ],
+      "claims": [
+        "SUPPORTED"
+      ],
+      "metrics": [
+        "EXACT_MATCH"
+      ],
+      "notes": "NNT=12 conversational AI:True"
+    },
+    {
+      "id": "eval_20",
+      "status": "PASS",
+      "evidence": [
+        "chunk_sec_3_3_3_2"
+      ],
+      "claims": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics": [
+        "EXACT_MATCH",
+        "EXACT_MATCH"
+      ],
+      "notes": "Bupropion RR=1.60:True, CI 1.49-1.72:True"
+    },
+    {
+      "id": "eval_21",
+      "status": "PASS",
+      "evidence": [
+        "chunk_sec_3_3_3_6_p01",
+        "chunk_sec_3_3_3_6_p02",
+        "chunk_sec_3_3_3_6_p03",
+        "chunk_sec_3_3_3_6_p04"
+      ],
+      "claims": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics": [
+        "EXACT_MATCH"
+      ],
+      "notes": "NNT=16-22 varenicline vs bupropion:True"
+    },
+    {
+      "id": "eval_22",
+      "status": "PASS",
+      "evidence": [
+        "chunk_sec_3_3_3_5"
+      ],
+      "claims": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics": [
+        "EXACT_MATCH"
+      ],
+      "notes": "Combination NRT RR=1.25:True, CI 1.15-1.36:True"
+    },
+    {
+      "id": "eval_23",
+      "status": "PASS",
+      "evidence": [
+        "chunk_sec_3_3_3_4"
+      ],
+      "claims": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics": [
+        "EXACT_MATCH",
+        "EXACT_MATCH"
+      ],
+      "notes": "Cytisine vs NRT: RR=1.36:True(3.3.3.4), NNT=18:True(3.3.3.6)"
+    },
+    {
+      "id": "eval_24",
+      "status": "PASS",
+      "evidence": [
+        "chunk_sec_3_3_3_1_p02"
+      ],
+      "claims": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics": [
+        "EXACT_MATCH",
+        "EXACT_MATCH"
+      ],
+      "notes": "21mg vs 14mg patch: RR=1.48:True, CI 1.06-2.08:True"
+    },
+    {
+      "id": "eval_25",
+      "status": "PASS",
+      "evidence": [
+        "chunk_sec_3_3_1",
+        "chunk_sec_3_3_3_6_p01",
+        "chunk_node_L4_bupropion"
+      ],
+      "claims": [
+        "SUPPORTED",
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics": [
+        "EXACT_MATCH",
+        "EXACT_MATCH",
+        "EXACT_MATCH"
+      ],
+      "notes": "[CORRECTED] Bupropion rec:True, NNT=14:True, NNH=100:True, NNH=33:True, Discont.:True. Seizure claim REMOVED."
+    },
+    {
+      "id": "eval_26",
+      "status": "PASS",
+      "evidence": [
+        "chunk_sec_1_1",
+        "chunk_sec_3_3_4_p01",
+        "chunk_node_L2_strategies_and_methods"
+      ],
+      "claims": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics": [],
+      "notes": "Pregnant women+behavioural:True"
+    },
+    {
+      "id": "eval_27",
+      "status": "PASS",
+      "evidence": [
+        "chunk_sec_3_3_3_6_p02",
+        "chunk_sec_3_3_3_6_p04"
+      ],
+      "claims": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics": [
+        "EXACT_MATCH"
+      ],
+      "notes": "NNT=20 bupropion+varenicline:True"
+    },
+    {
+      "id": "eval_28",
+      "status": "PASS",
+      "evidence": [
+        "chunk_sec_3_2_1"
+      ],
+      "claims": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics": [],
+      "notes": "Digital modalities:True, adjunct:True"
+    },
+    {
+      "id": "eval_29",
+      "status": "PASS",
+      "evidence": [],
+      "claims": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics": [],
+      "notes": "'topiramate' absent from corpus:True. Abstention confirmed."
+    },
+    {
+      "id": "eval_30",
+      "status": "PASS",
+      "evidence": [],
+      "claims": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics": [],
+      "notes": "'transcranial magnetic' absent from corpus:True. Abstention confirmed."
+    },
+    {
+      "id": "eval_31",
+      "status": "PASS",
+      "evidence": [],
+      "claims": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics": [],
+      "notes": "Latin America in corpus:0 chunks; region-specific %:False. Abstention correct."
+    },
+    {
+      "id": "eval_32",
+      "status": "PASS",
+      "evidence": [
+        "chunk_node_L1_glossary_of_terms_p07",
+        "chunk_node_L3_pharmacological_intervent"
+      ],
+      "claims": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics": [],
+      "notes": "Cytisine present BUT neuropsychiatric NNH absent:True. Abstention justified."
+    },
+    {
+      "id": "eval_33",
+      "status": "PASS",
+      "evidence": [],
+      "claims": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics": [],
+      "notes": "'metformin' absent from corpus:True. Abstention confirmed."
+    },
+    {
+      "id": "eval_34",
+      "status": "PASS",
+      "evidence": [],
+      "claims": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics": [],
+      "notes": "Obesity (non-tobacco context) absent from corpus. Out-of-scope confirmed."
+    },
+    {
+      "id": "eval_35",
+      "status": "PASS",
+      "evidence": [
+        "chunk_node_L1_glossary_of_terms_p26",
+        "chunk_sec_3_6_3_p01",
+        "chunk_node_L1_glossary_of_terms_p26"
+      ],
+      "claims": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics": [],
+      "notes": "Laser/acupuncture insufficient evidence confirmed:True"
+    },
+    {
+      "id": "eval_36",
+      "status": "PASS",
+      "evidence": [
+        "chunk_sec_3_4_1"
+      ],
+      "claims": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics": [],
+      "notes": "3.4.1 recommends behavioural support for smokeless tobacco. E-cigs not first-line:False"
+    },
+    {
+      "id": "eval_37",
+      "status": "PASS",
+      "evidence": [
+        "chunk_sec_3_1_1"
+      ],
+      "claims": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics": [
+        "EXACT_MATCH"
+      ],
+      "notes": "Arabic translation of eval_01. 30 sec–3 min confirmed p.29"
+    },
+    {
+      "id": "eval_38",
+      "status": "PASS",
+      "evidence": [
+        "chunk_sec_3_3_3_1_p02"
+      ],
+      "claims": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics": [
+        "EXACT_MATCH"
+      ],
+      "notes": "Egyptian Arabic translation of eval_11. RR=1.43 confirmed p.35"
+    },
+    {
+      "id": "eval_39",
+      "status": "PASS",
+      "evidence": [
+        "chunk_sec_3_6_1"
+      ],
+      "claims": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "metrics": [],
+      "notes": "Egyptian Arabic translation of eval_12. Laser/hypnotherapy insufficient evidence p.43"
+    },
+    {
+      "id": "eval_40",
+      "status": "PASS",
+      "evidence": [
+        "chunk_sec_3_3_3_6_p01"
+      ],
+      "claims": [
+        "SUPPORTED"
+      ],
+      "metrics": [
+        "EXACT_MATCH"
+      ],
+      "notes": "Egyptian Arabic NNT=14 bupropion adversarial:True"
+    }
+  ]
+}

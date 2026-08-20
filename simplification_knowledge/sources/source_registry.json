@@ -1,0 +1,50 @@
+[
+  {
+    "source_id": "SOURCE-001",
+    "title": "Everyday Words for Public Health Communication",
+    "organization": "Centers for Disease Control and Prevention (CDC), U.S. Department of Health and Human Services",
+    "official_url": "https://www.cdc.gov/healthliteracy/researchevaluate/everydaywords.html",
+    "publication_date": "2015-11-01",
+    "update_date": "2022-05-09",
+    "document_version": "CDC Health Literacy Web & Reference Guide Edition",
+    "source_role": "PRIMARY_SIMPLIFICATION_SOURCE",
+    "scope_description": "Primary resource for plain-language vocabulary substitution, medical terminology clarification, lay explanations of clinical terms, and dual-context definitions.",
+    "copyright_status": "U.S. Public Domain (Works of the United States Government, 17 U.S.C. § 105)",
+    "commercial_use": "YES",
+    "adaptation_allowed": "YES",
+    "redistribution_allowed": "YES",
+    "attribution_required": "YES",
+    "share_alike_required": "NO",
+    "third_party_content": {
+      "third_party_content_present": false,
+      "third_party_content_description": "Pure terminology substitution table and plain-language public health glosses created entirely by CDC staff.",
+      "third_party_content_cleared_for_reuse": true
+    },
+    "license_evidence": "Under 17 U.S.C. § 105, works created by CDC federal employees within official duties are in the U.S. public domain. CDC terms: 'Most information on the CDC website is in the public domain and may be reproduced or distributed without cost.' Official CDC agency logos and trademarks are excluded.",
+    "verification_date": "2026-08-18"
+  },
+  {
+    "source_id": "SOURCE-002",
+    "title": "The CDC Clear Communication Index: A Tool for Developing and Assessing Public Communication Products",
+    "organization": "Centers for Disease Control and Prevention (CDC), Office of the Associate Director for Communication",
+    "official_url": "https://www.cdc.gov/ccindex/index.html",
+    "publication_date": "2014-09-15",
+    "update_date": "2022-05-09",
+    "document_version": "Clear Communication Index User Guide & 20-Item Scorecard",
+    "source_role": "SECONDARY_COMMUNICATION_QUALITY_SOURCE",
+    "scope_description": "Secondary quality assessment resource providing operational clarity criteria, information architecture principles, main message placement, active voice usage, numerical framing, and state-of-the-science communication standards.",
+    "copyright_status": "U.S. Public Domain (Works of the United States Government, 17 U.S.C. § 105)",
+    "commercial_use": "YES",
+    "adaptation_allowed": "YES",
+    "redistribution_allowed": "YES",
+    "attribution_required": "YES",
+    "share_alike_required": "NO",
+    "third_party_content": {
+      "third_party_content_present": true,
+      "third_party_content_description": "CDC official logos, HHS agency seals, and third-party stock photos in illustrative examples are protected intellectual property and excluded. The 20 scored criteria and text definitions are public domain government works.",
+      "third_party_content_cleared_for_reuse": false
+    },
+    "license_evidence": "The text, questions, and criteria of the CDC Clear Communication Index User Guide are government-authored works under 17 U.S.C. § 105. Freely reusable for commercial and non-commercial systems, subject to exclusion of agency logos and third-party photography.",
+    "verification_date": "2026-08-18"
+  }
+]

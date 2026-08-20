@@ -1,0 +1,560 @@
+{
+  "real_01": {
+    "question": "How long should a standard brief tobacco cessation talk take during a clinical appointment?",
+    "category": "direct_factual",
+    "must_abstain": false,
+    "query_understanding": {
+      "expanded_search_query": "How long should a standard brief tobacco cessation talk take during a clinical appointment? smartphone apps digital interventions mobile health mHealth Recommendation 4 Section 3.2.1",
+      "detected_intents": [],
+      "detected_interventions": [
+        "digital_smartphone_interventions"
+      ],
+      "detected_populations": [],
+      "is_out_of_scope": false
+    },
+    "gold_tracking": {
+      "chunk_sec_3_1_1": {
+        "in_bm25": true,
+        "bm25_rank": 18,
+        "bm25_score": 11.9591,
+        "in_dense": true,
+        "dense_rank": 1,
+        "dense_score": 0.8994,
+        "in_hybrid": true,
+        "hybrid_rank": 7,
+        "hybrid_score": 0.029214,
+        "in_reranked": true,
+        "reranked_rank": 6,
+        "reranked_score": 0.58,
+        "admitted_in_gate": false,
+        "gate_tier": "REJECTED_OR_CUT_BY_BUDGET"
+      }
+    },
+    "bm25_top5": [
+      "chunk_sec_3_2_1",
+      "chunk_node_L1_glossary_of_terms_p08",
+      "chunk_sec_3_2_3_p02",
+      "chunk_sec_3_2_3_p01",
+      "chunk_sec_3_2_2"
+    ],
+    "dense_top5": [
+      "chunk_sec_3_1_1",
+      "chunk_sec_3_2_4",
+      "chunk_sec_3_1_4",
+      "chunk_node_L3_behavioural_support_deliv",
+      "chunk_sec_3_2_3_p04"
+    ],
+    "hybrid_top5": [
+      "chunk_sec_3_1_4",
+      "chunk_sec_3_2_4",
+      "chunk_sec_3_2_3_p04",
+      "chunk_sec_3_2_3_p02",
+      "chunk_sec_3_2_3_p03"
+    ],
+    "reranked_top5": [
+      "chunk_sec_3_2_3_p04",
+      "chunk_sec_3_2_3_p02",
+      "chunk_sec_3_2_1",
+      "chunk_sec_3_2_3_p03",
+      "chunk_sec_3_2_3_p01"
+    ],
+    "gated_admitted": [
+      "chunk_sec_3_2_3_p04",
+      "chunk_sec_3_2_3_p02",
+      "chunk_sec_3_2_1",
+      "chunk_sec_3_2_3_p03",
+      "chunk_sec_3_2_3_p01"
+    ],
+    "safety_flag": null
+  },
+  "real_06": {
+    "question": "Is it more effective to use quit-smoking pills alongside talking therapy rather than trying pills alone?",
+    "category": "semantic_paraphrased",
+    "must_abstain": false,
+    "query_understanding": {
+      "expanded_search_query": "Is it more effective to use quit-smoking pills alongside talking therapy rather than trying pills alone? varenicline bupropion SR cytisine prescription medications Recommendation 5 Recommendation 6 Recommendation 7",
+      "detected_intents": [
+        "CESSATION_SEEKING"
+      ],
+      "detected_interventions": [
+        "oral_pharmacotherapy"
+      ],
+      "detected_populations": [],
+      "is_out_of_scope": false
+    },
+    "gold_tracking": {
+      "chunk_sec_3_5_1": {
+        "in_bm25": true,
+        "bm25_rank": 10,
+        "bm25_score": 15.2537,
+        "in_dense": true,
+        "dense_rank": 28,
+        "dense_score": 0.8781,
+        "in_hybrid": true,
+        "hybrid_rank": 17,
+        "hybrid_score": 0.025649,
+        "in_reranked": true,
+        "reranked_rank": 10,
+        "reranked_score": 0.5573,
+        "admitted_in_gate": false,
+        "gate_tier": "REJECTED_OR_CUT_BY_BUDGET"
+      }
+    },
+    "bm25_top5": [
+      "chunk_node_L3_pharmacological_intervent",
+      "chunk_sec_3_3_1",
+      "chunk_sec_2_4_p02",
+      "chunk_node_L3_interventions_for_smokele",
+      "chunk_sec_3_4_1"
+    ],
+    "dense_top5": [
+      "chunk_sec_3_3_3_3_p01",
+      "chunk_sec_3_3_2",
+      "chunk_sec_3_3_3_4",
+      "chunk_sec_3_3_1",
+      "chunk_sec_3_3_3_5"
+    ],
+    "hybrid_top5": [
+      "chunk_sec_3_3_1",
+      "chunk_node_L3_pharmacological_intervent",
+      "chunk_sec_3_3_3_5",
+      "chunk_sec_3_3_2",
+      "chunk_sec_3_3_3_3_p01"
+    ],
+    "reranked_top5": [
+      "chunk_sec_3_3_1",
+      "chunk_sec_3_3_3_3_p01",
+      "chunk_sec_3_3_3_4",
+      "chunk_sec_3_3_3_6_p03",
+      "chunk_sec_3_3_3_6_p02"
+    ],
+    "gated_admitted": [
+      "chunk_sec_3_3_1",
+      "chunk_sec_3_3_3_3_p01",
+      "chunk_sec_3_3_3_4",
+      "chunk_sec_3_3_3_6_p03",
+      "chunk_sec_3_3_3_6_p02"
+    ],
+    "safety_flag": null
+  },
+  "real_07": {
+    "question": "What support should doctors give to patients trying to stop chewing tobacco or using snuff?",
+    "category": "semantic_paraphrased",
+    "must_abstain": false,
+    "query_understanding": {
+      "expanded_search_query": "What support should doctors give to patients trying to stop chewing tobacco or using snuff?",
+      "detected_intents": [],
+      "detected_interventions": [],
+      "detected_populations": [],
+      "is_out_of_scope": false
+    },
+    "gold_tracking": {
+      "chunk_sec_3_4_1": {
+        "in_bm25": false,
+        "bm25_rank": "MISS",
+        "bm25_score": 0.0,
+        "in_dense": true,
+        "dense_rank": 2,
+        "dense_score": 0.8577,
+        "in_hybrid": true,
+        "hybrid_rank": 17,
+        "hybrid_score": 0.016129,
+        "in_reranked": true,
+        "reranked_rank": 16,
+        "reranked_score": 0.7786,
+        "admitted_in_gate": false,
+        "gate_tier": "REJECTED_OR_CUT_BY_BUDGET"
+      }
+    },
+    "bm25_top5": [
+      "chunk_node_L1_glossary_of_terms_p03",
+      "chunk_sec_3_4_3_p01",
+      "chunk_node_L1_glossary_of_terms_p24",
+      "chunk_node_L1_glossary_of_terms_p23",
+      "chunk_node_L1_glossary_of_terms_p02"
+    ],
+    "dense_top5": [
+      "chunk_node_L3_interventions_for_smokele",
+      "chunk_sec_3_4_1",
+      "chunk_node_L2_strategies_and_methods",
+      "chunk_node_L3_general_p01",
+      "chunk_node_L4_nrt"
+    ],
+    "hybrid_top5": [
+      "chunk_node_L3_general_p01",
+      "chunk_sec_3_4_3_p01",
+      "chunk_node_L1_glossary_of_terms_p03",
+      "chunk_node_L1_glossary_of_terms_p02",
+      "chunk_sec_3_7_4_2"
+    ],
+    "reranked_top5": [
+      "chunk_sec_3_4_3_p01",
+      "chunk_node_L3_general_p01",
+      "chunk_sec_3_4_3_p02",
+      "chunk_node_L2_financial_interventions",
+      "chunk_sec_3_5_4"
+    ],
+    "gated_admitted": [
+      "chunk_sec_3_4_3_p01",
+      "chunk_node_L3_general_p01",
+      "chunk_sec_3_4_3_p02",
+      "chunk_node_L2_financial_interventions",
+      "chunk_sec_3_5_4"
+    ],
+    "safety_flag": null
+  },
+  "real_14": {
+    "question": "Does using a nicotine patch together with a fast-acting nicotine product work better than using a single nicotine product alone?",
+    "category": "comparison_multi_evidence",
+    "must_abstain": false,
+    "query_understanding": {
+      "expanded_search_query": "Does using a nicotine patch together with a fast-acting nicotine product work better than using a single nicotine product alone? nicotine patch transdermal nicotine NRT Recommendation 3",
+      "detected_intents": [],
+      "detected_interventions": [
+        "nrt_transdermal_patch"
+      ],
+      "detected_populations": [],
+      "is_out_of_scope": false
+    },
+    "gold_tracking": {
+      "chunk_sec_3_3_3_5": {
+        "in_bm25": true,
+        "bm25_rank": 5,
+        "bm25_score": 26.9156,
+        "in_dense": true,
+        "dense_rank": 4,
+        "dense_score": 0.8716,
+        "in_hybrid": true,
+        "hybrid_rank": 4,
+        "hybrid_score": 0.03101,
+        "in_reranked": true,
+        "reranked_rank": 4,
+        "reranked_score": 0.838,
+        "admitted_in_gate": true,
+        "gate_tier": "DIRECT_EVIDENCE"
+      },
+      "chunk_sec_3_3_3_6_p03": {
+        "in_bm25": false,
+        "bm25_rank": "MISS",
+        "bm25_score": 0.0,
+        "in_dense": true,
+        "dense_rank": 3,
+        "dense_score": 0.8765,
+        "in_hybrid": true,
+        "hybrid_rank": 24,
+        "hybrid_score": 0.015873,
+        "in_reranked": false,
+        "reranked_rank": "MISS",
+        "reranked_score": 0.0,
+        "admitted_in_gate": false,
+        "gate_tier": "REJECTED_OR_CUT_BY_BUDGET"
+      }
+    },
+    "bm25_top5": [
+      "chunk_sec_3_3_3_1_p03",
+      "chunk_node_L1_glossary_of_terms_p17",
+      "chunk_node_L1_glossary_of_terms_p05",
+      "chunk_node_L4_nrt",
+      "chunk_sec_3_3_3_5"
+    ],
+    "dense_top5": [
+      "chunk_sec_3_3_3_1_p03",
+      "chunk_sec_3_3_3_1_p01",
+      "chunk_sec_3_3_3_6_p03",
+      "chunk_sec_3_3_3_5",
+      "chunk_node_L1_glossary_of_terms_p05"
+    ],
+    "hybrid_top5": [
+      "chunk_sec_3_3_3_1_p03",
+      "chunk_sec_3_3_3_1_p01",
+      "chunk_node_L1_glossary_of_terms_p05",
+      "chunk_sec_3_3_3_5",
+      "chunk_node_L4_nrt"
+    ],
+    "reranked_top5": [
+      "chunk_sec_3_3_1",
+      "chunk_sec_3_3_3_1_p03",
+      "chunk_sec_3_3_3_1_p01",
+      "chunk_sec_3_3_3_5",
+      "chunk_sec_2_2_p04"
+    ],
+    "gated_admitted": [
+      "chunk_sec_3_3_1",
+      "chunk_sec_3_3_3_1_p03",
+      "chunk_sec_3_3_3_1_p01",
+      "chunk_sec_3_3_3_5",
+      "chunk_node_L4_nrt"
+    ],
+    "safety_flag": null
+  },
+  "real_15": {
+    "question": "How does the effectiveness of cytisine compare directly against nicotine replacement therapy?",
+    "category": "comparison_multi_evidence",
+    "must_abstain": false,
+    "query_understanding": {
+      "expanded_search_query": "How does the effectiveness of cytisine compare directly against nicotine replacement therapy? cytisine Tabex plant-based alkaloid Recommendation 7 Section 3.3.3.4 NRT nicotine replacement therapy patch",
+      "detected_intents": [],
+      "detected_interventions": [
+        "cytisine",
+        "nicotine_replacement_therapy"
+      ],
+      "detected_populations": [],
+      "is_out_of_scope": false
+    },
+    "gold_tracking": {
+      "chunk_sec_3_3_3_4": {
+        "in_bm25": true,
+        "bm25_rank": 14,
+        "bm25_score": 16.4097,
+        "in_dense": true,
+        "dense_rank": 2,
+        "dense_score": 0.9106,
+        "in_hybrid": true,
+        "hybrid_rank": 6,
+        "hybrid_score": 0.029643,
+        "in_reranked": true,
+        "reranked_rank": 3,
+        "reranked_score": 0.6958,
+        "admitted_in_gate": true,
+        "gate_tier": "DIRECT_EVIDENCE"
+      },
+      "chunk_sec_3_3_3_6_p03": {
+        "in_bm25": true,
+        "bm25_rank": 32,
+        "bm25_score": 10.7308,
+        "in_dense": true,
+        "dense_rank": 1,
+        "dense_score": 0.9124,
+        "in_hybrid": true,
+        "hybrid_rank": 10,
+        "hybrid_score": 0.027263,
+        "in_reranked": true,
+        "reranked_rank": 10,
+        "reranked_score": 0.6112,
+        "admitted_in_gate": false,
+        "gate_tier": "REJECTED_OR_CUT_BY_BUDGET"
+      }
+    },
+    "bm25_top5": [
+      "chunk_node_L1_glossary_of_terms_p07",
+      "chunk_node_L3_pharmacological_intervent",
+      "chunk_sec_3_3_2",
+      "chunk_node_L1_glossary_of_terms_p17",
+      "chunk_sec_3_3_1"
+    ],
+    "dense_top5": [
+      "chunk_sec_3_3_3_6_p03",
+      "chunk_sec_3_3_3_4",
+      "chunk_node_L5_cytisine",
+      "chunk_sec_2_2_p04",
+      "chunk_sec_3_3_3_1_p01"
+    ],
+    "hybrid_top5": [
+      "chunk_node_L3_pharmacological_intervent",
+      "chunk_sec_3_3_3_1_p01",
+      "chunk_node_L1_references_p10",
+      "chunk_sec_3_3_2",
+      "chunk_node_L1_glossary_of_terms_p07"
+    ],
+    "reranked_top5": [
+      "chunk_sec_3_3_1",
+      "chunk_sec_3_3_3_1_p02",
+      "chunk_sec_3_3_3_4",
+      "chunk_sec_3_3_3_1_p01",
+      "chunk_node_L3_pharmacological_intervent"
+    ],
+    "gated_admitted": [
+      "chunk_sec_3_3_1",
+      "chunk_sec_3_3_3_1_p02",
+      "chunk_sec_3_3_3_4",
+      "chunk_sec_3_3_3_1_p01",
+      "chunk_node_L3_pharmacological_intervent"
+    ],
+    "safety_flag": null
+  },
+  "real_19": {
+    "question": "Does adding bupropion to varenicline provide any extra benefit over taking varenicline alone?",
+    "category": "comparison_multi_evidence",
+    "must_abstain": false,
+    "query_understanding": {
+      "expanded_search_query": "Does adding bupropion to varenicline provide any extra benefit over taking varenicline alone? varenicline Champix nicotinic receptor partial agonist Recommendation 5 Section 3.3.1 Section 3.3.3.3 Section 3.3.3.6 NNT",
+      "detected_intents": [],
+      "detected_interventions": [
+        "varenicline",
+        "bupropion_sr"
+      ],
+      "detected_populations": [],
+      "is_out_of_scope": false
+    },
+    "gold_tracking": {
+      "chunk_sec_3_3_3_5": {
+        "in_bm25": true,
+        "bm25_rank": 1,
+        "bm25_score": 33.3667,
+        "in_dense": true,
+        "dense_rank": 2,
+        "dense_score": 0.9063,
+        "in_hybrid": true,
+        "hybrid_rank": 1,
+        "hybrid_score": 0.032522,
+        "in_reranked": true,
+        "reranked_rank": 14,
+        "reranked_score": 0.6316,
+        "admitted_in_gate": false,
+        "gate_tier": "REJECTED_OR_CUT_BY_BUDGET"
+      },
+      "chunk_sec_3_3_3_6_p04": {
+        "in_bm25": true,
+        "bm25_rank": 5,
+        "bm25_score": 28.0901,
+        "in_dense": true,
+        "dense_rank": 3,
+        "dense_score": 0.9061,
+        "in_hybrid": true,
+        "hybrid_rank": 4,
+        "hybrid_score": 0.031258,
+        "in_reranked": true,
+        "reranked_rank": 2,
+        "reranked_score": 0.8511,
+        "admitted_in_gate": true,
+        "gate_tier": "DIRECT_EVIDENCE"
+      }
+    },
+    "bm25_top5": [
+      "chunk_sec_3_3_3_5",
+      "chunk_sec_3_3_1",
+      "chunk_sec_3_3_3_3_p01",
+      "chunk_annex_3_p03",
+      "chunk_sec_3_3_3_6_p04"
+    ],
+    "dense_top5": [
+      "chunk_sec_3_3_3_3_p01",
+      "chunk_sec_3_3_3_5",
+      "chunk_sec_3_3_3_6_p04",
+      "chunk_sec_3_4_3_p03",
+      "chunk_sec_3_3_3_6_p02"
+    ],
+    "hybrid_top5": [
+      "chunk_sec_3_3_3_5",
+      "chunk_sec_3_3_3_3_p01",
+      "chunk_sec_3_3_1",
+      "chunk_sec_3_3_3_6_p04",
+      "chunk_sec_3_4_3_p03"
+    ],
+    "reranked_top5": [
+      "chunk_sec_3_3_1",
+      "chunk_sec_3_3_3_6_p04",
+      "chunk_sec_3_3_4_p01",
+      "chunk_sec_3_3_3_6_p02",
+      "chunk_sec_3_3_3_6_p01"
+    ],
+    "gated_admitted": [
+      "chunk_sec_3_3_1",
+      "chunk_sec_3_3_3_6_p04",
+      "chunk_sec_3_3_4_p01",
+      "chunk_sec_3_3_3_6_p02",
+      "chunk_sec_3_3_3_6_p01"
+    ],
+    "safety_flag": null
+  },
+  "real_17": {
+    "question": "What is the recommended dose and quit rate for Topiramate when prescribed for smoking cessation?",
+    "category": "unsupported_abstention",
+    "must_abstain": true,
+    "query_understanding": {
+      "expanded_search_query": "What is the recommended dose and quit rate for Topiramate when prescribed for smoking cessation?",
+      "detected_intents": [
+        "CESSATION_SEEKING"
+      ],
+      "detected_interventions": [],
+      "detected_populations": [],
+      "is_out_of_scope": false
+    },
+    "gold_tracking": {},
+    "bm25_top5": [
+      "chunk_sec_4_1",
+      "chunk_node_L3_general_p01",
+      "chunk_sec_3_8_p02",
+      "chunk_sec_3_3_2",
+      "chunk_sec_3_7_3_p01"
+    ],
+    "dense_top5": [
+      "chunk_sec_3_5_1",
+      "chunk_node_L1_references_p07",
+      "chunk_sec_2_2_p04",
+      "chunk_node_L3_general_p02",
+      "chunk_sec_3_3_4_p02"
+    ],
+    "hybrid_top5": [
+      "chunk_sec_2_2_p04",
+      "chunk_sec_3_3_4_p01",
+      "chunk_sec_3_7_3_p01",
+      "chunk_sec_3_3_2",
+      "chunk_node_L3_general_p02"
+    ],
+    "reranked_top5": [
+      "chunk_sec_2_2_p04",
+      "chunk_sec_3_7_3_p01",
+      "chunk_sec_3_3_4_p01",
+      "chunk_sec_3_7_3_p05",
+      "chunk_node_L3_general_p02"
+    ],
+    "gated_admitted": [
+      "chunk_sec_2_2_p04",
+      "chunk_sec_3_7_3_p01",
+      "chunk_sec_3_3_4_p01",
+      "chunk_sec_3_7_3_p05",
+      "chunk_node_L3_general_p02"
+    ],
+    "safety_flag": null
+  },
+  "real_18": {
+    "question": "What does the WHO guideline conclude about transcranial magnetic stimulation (TMS) for nicotine dependence?",
+    "category": "unsupported_abstention",
+    "must_abstain": true,
+    "query_understanding": {
+      "expanded_search_query": "What does the WHO guideline conclude about transcranial magnetic stimulation (TMS) for nicotine dependence?",
+      "detected_intents": [],
+      "detected_interventions": [],
+      "detected_populations": [],
+      "is_out_of_scope": false
+    },
+    "gold_tracking": {},
+    "bm25_top5": [
+      "chunk_node_L1_glossary_of_terms_p26",
+      "chunk_sec_3_5_2",
+      "chunk_sec_3_4_2",
+      "chunk_sec_3_3_2",
+      "chunk_sec_2_2_p04"
+    ],
+    "dense_top5": [
+      "chunk_sec_1_1",
+      "chunk_sec_3_6_4",
+      "chunk_node_L2_rationale_and_objectives",
+      "chunk_node_L1_acknowledgements_p02",
+      "chunk_sec_3_4_1"
+    ],
+    "hybrid_top5": [
+      "chunk_sec_1_1",
+      "chunk_node_L2_rationale_and_objectives",
+      "chunk_node_L1_references_p02",
+      "chunk_sec_1_2_p01",
+      "chunk_sec_2_2_p04"
+    ],
+    "reranked_top5": [
+      "chunk_sec_1_1",
+      "chunk_sec_2_2_p04",
+      "chunk_node_L2_rationale_and_objectives",
+      "chunk_sec_1_2_p01",
+      "chunk_sec_6_p01"
+    ],
+    "gated_admitted": [
+      "chunk_sec_1_1",
+      "chunk_sec_2_2_p04",
+      "chunk_node_L2_rationale_and_objectives",
+      "chunk_sec_1_2_p01",
+      "chunk_sec_6_p01"
+    ],
+    "safety_flag": null
+  }
+}

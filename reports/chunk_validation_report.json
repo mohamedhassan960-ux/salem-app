@@ -1,0 +1,130 @@
+{
+  "all_tests_passed": true,
+  "total_tests": 12,
+  "passed_tests": 12,
+  "failed_tests": 0,
+  "total_chunks_evaluated": 99,
+  "chunks_by_type": {
+    "narrative_background": 21,
+    "structured_table": 5,
+    "glossary_definition": 27,
+    "recommendation": 12,
+    "clinical_question": 7,
+    "evidence_justification": 12,
+    "implementation_guidance": 15
+  },
+  "test_details": [
+    {
+      "test_name": "TEST 1: All 12 Canonical Recommendations Exist",
+      "passed": true,
+      "message": "Found 12 canonical recommendations out of 12 expected.",
+      "details": {
+        "found": [
+          "REC_01",
+          "REC_02",
+          "REC_03",
+          "REC_04",
+          "REC_05",
+          "REC_06",
+          "REC_07",
+          "REC_08",
+          "REC_09",
+          "REC_10",
+          "REC_11",
+          "REC_12"
+        ],
+        "missing": [],
+        "total_rec_chunks": 12
+      }
+    },
+    {
+      "test_name": "TEST 2: Recommendation Clinical Fields Completeness",
+      "passed": true,
+      "message": "All recommendations have complete clinical metadata.",
+      "details": {
+        "issues": []
+      }
+    },
+    {
+      "test_name": "TEST 3: Clean Separation of Recommendations from Evidence",
+      "passed": true,
+      "message": "No recommendation chunks contain accidental merged evidence review text.",
+      "details": {
+        "suspicious_chunks": []
+      }
+    },
+    {
+      "test_name": "TEST 4: Strict Classification of Evidence Chunks",
+      "passed": true,
+      "message": "All evidence chunks are strictly classified as evidence without false recommendation tags.",
+      "details": {
+        "misclassified": []
+      }
+    },
+    {
+      "test_name": "TEST 5: Zero False-Positive Section Headings",
+      "passed": true,
+      "message": "No false-positive numerical lines or recommendation lines were promoted to section headings.",
+      "details": {
+        "bad_headings": []
+      }
+    },
+    {
+      "test_name": "TEST 6: Contextual Hierarchy & Heading Path Completeness",
+      "passed": true,
+      "message": "Every chunk has a fully resolved section_id and heading_path.",
+      "details": {
+        "missing": []
+      }
+    },
+    {
+      "test_name": "TEST 7: Knowledge Graph & Cross-Reference Integrity",
+      "passed": true,
+      "message": "All related_chunk_ids resolve to valid chunk IDs (100% Referential Integrity).",
+      "details": {
+        "broken_links": []
+      }
+    },
+    {
+      "test_name": "TEST 8: Physical Page Provenance & Boundary Invariants",
+      "passed": true,
+      "message": "All chunks have valid physical page boundaries (1 <= start <= end <= 76).",
+      "details": {
+        "invalid": []
+      }
+    },
+    {
+      "test_name": "TEST 9: Unique Chunk Identifiers",
+      "passed": true,
+      "message": "All chunk IDs are globally unique.",
+      "details": {
+        "duplicates": []
+      }
+    },
+    {
+      "test_name": "TEST 10: PDF Running Header Cleansing",
+      "passed": true,
+      "message": "No running headers contaminated clinical chunk content.",
+      "details": {
+        "contaminated": []
+      }
+    },
+    {
+      "test_name": "TEST 11: Tables & Glossary Structured Preservation",
+      "passed": true,
+      "message": "Parsed 27 individual glossary definitions and 5 structured tables.",
+      "details": {
+        "glossary_count": 27,
+        "table_count": 5
+      }
+    },
+    {
+      "test_name": "TEST 12: Content Non-Emptiness & Text Integrity",
+      "passed": true,
+      "message": "Zero empty chunks detected. All chunks contain meaningful clinical text.",
+      "details": {
+        "empty": []
+      }
+    }
+  ]
+}
