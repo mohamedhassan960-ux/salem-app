@@ -265,7 +265,7 @@ async def rag_health_endpoint() -> RAGHealthResponse:
         if hasattr(hr, "dense_retriever") and hr.dense_retriever is not None:
             dense_ready = len(hr.dense_retriever.chunk_ids) > 0
             chunks_count = len(hr.dense_retriever.chunk_ids)
-            if hasattr(hr.dense_retriever, "model") and hr.dense_retriever.model is not None:
+            if hasattr(hr.dense_retriever, "_model") or hasattr(hr.dense_retriever, "model_name"):
                 embed_ready = True
             else:
                 unready.append("embedding_model")
@@ -274,7 +274,7 @@ async def rag_health_endpoint() -> RAGHealthResponse:
         
         # Check BM25 retriever
         if hasattr(hr, "bm25_retriever") and hr.bm25_retriever is not None:
-            bm25_ready = len(hr.bm25_retriever.corpus) > 0
+            bm25_ready = getattr(hr.bm25_retriever, "corpus_size", len(getattr(hr.bm25_retriever, "chunk_ids", []))) > 0
         else:
             unready.append("bm25_retriever")
     else:
