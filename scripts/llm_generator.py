@@ -301,7 +301,7 @@ class GeminiProvider(LLMProvider):
             model_name
             or os.environ.get("GEMINI_MODEL")
             or os.environ.get("LLM_MODEL")
-            or "gemini-2.5-flash-lite"
+            or "gemini-2.5-flash"
         )
 
     @property
