@@ -1,0 +1,16 @@
+.env
+*.env
+.git
+node_modules
+frontend/node_modules
+frontend/dist
+cloudflared.exe
+*.safetensors
+*.bin
+*.pt
+outputs/onnx_model/
+data/cache/
+data/models/multilingual-e5-small/model.safetensors
+docs/
+tests/
+evaluation/
