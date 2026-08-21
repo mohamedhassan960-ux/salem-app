@@ -1,5 +1,5 @@
 {
-  "model_name": "c:\\Users\\moham\\OneDrive\\Apps\\اوكسجين\\data\\models\\multilingual-e5-small",
+  "model_name": "C:\\Users\\moham\\OneDrive\\Apps\\اوكسجين\\data\\models\\multilingual-e5-small",
   "embedding_dimension": 384,
   "use_e5_prefixes": true,
   "corpus_size": 171,

@@ -206,9 +206,14 @@ async def chat_endpoint(payload: ChatRequest, request: Request) -> ChatResponse:
     )
 
 
-# ── 2. GET /api/v1/health & /health ──────────────────────────────────────────
+# ── 2. GET /api/v1/health & /health & /api/health ───────────────────────────
 @app.get(
     "/health",
+    response_model=HealthResponse,
+    include_in_schema=False,
+)
+@app.get(
+    "/api/health",
     response_model=HealthResponse,
     include_in_schema=False,
 )

@@ -55,8 +55,11 @@ yarn-debug.log*
 yarn-error.log*
 
 # Models / Cache (Heavy files that shouldn't go to git)
-data/models/
+data/models/**/*.safetensors
+data/models/**/*.bin
+data/models/**/*.pt
 data/cache/
+outputs/onnx_model/
 
 # OS / Editor
 .DS_Store

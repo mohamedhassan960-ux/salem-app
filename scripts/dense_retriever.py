@@ -15,11 +15,11 @@ import os
 import time
 import json
 import logging
+from abc import ABC, abstractmethod
 from dataclasses import dataclass, asdict
 from typing import Dict, List, Any, Optional, Tuple
 
 import numpy as np
-from sentence_transformers import SentenceTransformer
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 
@@ -54,8 +54,6 @@ class DenseSearchResult:
 
     def to_context_assembler_dict(self) -> Dict[str, Any]:
         """Produces exact dictionary consumed by ContextAssembler."""
-        # Convert cosine similarity (higher is better) to distance surrogate (lower is better)
-        # distance = 1.0 - score (for normalized vectors, in [0, 2])
         dist = max(0.0, 1.0 - self.score)
         return {
             "chunk_id": self.chunk_id,
@@ -74,12 +72,120 @@ class DenseSearchResult:
             "character_count": len(self.text),
             "source_type": "verbatim",
             "retrieval_role": self.retrieval_role,
-            "split_reason": None,
+            "heading_path": self.heading_path,
+            "score": self.score,
             "distance": round(dist, 4),
-            "dense_score": round(self.score, 4),
             "rank": self.rank,
             "text": self.text,
         }
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Embedding Provider Abstraction
+# ─────────────────────────────────────────────────────────────────────────────
+
+class BaseEmbeddingProvider(ABC):
+    """Abstract interface for embedding generation."""
+    @abstractmethod
+    def encode_query(self, query: str) -> np.ndarray:
+        """Encodes query string into normalized 1D float32 numpy array."""
+        pass
+
+    @abstractmethod
+    def encode_passage(self, text: str) -> np.ndarray:
+        """Encodes document passage into normalized 1D float32 numpy array."""
+        pass
+
+    @property
+    @abstractmethod
+    def dimension(self) -> int:
+        pass
+
+
+class ONNXEmbeddingProvider(BaseEmbeddingProvider):
+    """Lightweight ONNX Runtime inference provider (Serverless & Docker friendly)."""
+
+    def __init__(self, onnx_model_path: str, tokenizer_path: str, use_e5_prefixes: bool = True):
+        self.onnx_model_path = onnx_model_path
+        self.tokenizer_path = tokenizer_path
+        self.use_e5_prefixes = use_e5_prefixes
+        self._session = None
+        self._tokenizer = None
+        self._dimension = 384
+
+    def _init_runtime(self):
+        if self._session is None:
+            import onnxruntime as ort
+            from transformers import AutoTokenizer
+
+            logging.info(f"Initializing ONNX Inference Session from {self.onnx_model_path}...")
+            opts = ort.SessionOptions()
+            opts.intra_op_num_threads = 1
+            opts.inter_op_num_threads = 1
+            self._session = ort.InferenceSession(self.onnx_model_path, sess_options=opts)
+            self._tokenizer = AutoTokenizer.from_pretrained(self.tokenizer_path)
+
+    @property
+    def dimension(self) -> int:
+        return self._dimension
+
+    def _embed(self, text: str) -> np.ndarray:
+        self._init_runtime()
+        tokens = self._tokenizer([text], return_tensors="np", padding=True, truncation=True, max_length=512)
+        ort_inputs = {
+            "input_ids": tokens["input_ids"].astype(np.int64),
+            "attention_mask": tokens["attention_mask"].astype(np.int64),
+        }
+        ort_outs = self._session.run(["last_hidden_state"], ort_inputs)[0]
+        mask = np.expand_dims(tokens["attention_mask"], -1)
+        sum_hidden = np.sum(ort_outs * mask, axis=1)
+        sum_mask = np.clip(np.sum(mask, axis=1), a_min=1e-9, a_max=None)
+        mean_pooled = sum_hidden / sum_mask
+        norm = np.linalg.norm(mean_pooled, axis=-1, keepdims=True)
+        return (mean_pooled / norm)[0].astype(np.float32)
+
+    def encode_query(self, query: str) -> np.ndarray:
+        formatted = f"query: {query.strip()}" if self.use_e5_prefixes else query.strip()
+        return self._embed(formatted)
+
+    def encode_passage(self, text: str) -> np.ndarray:
+        formatted = f"passage: {text.strip()}" if self.use_e5_prefixes else text.strip()
+        return self._embed(formatted)
+
+
+class LocalE5EmbeddingProvider(BaseEmbeddingProvider):
+    """SentenceTransformers PyTorch provider for local development."""
+
+    def __init__(self, model_name: str, device: Optional[str] = None, use_e5_prefixes: bool = True):
+        self.model_name = model_name
+        self.device = device
+        self.use_e5_prefixes = use_e5_prefixes
+        self._model = None
+        self._dimension = 384
+
+    def _load_model(self):
+        if self._model is None:
+            from sentence_transformers import SentenceTransformer
+            logging.info(f"Loading dense embedding model '{self.model_name}' via PyTorch...")
+            self._model = SentenceTransformer(self.model_name, device=self.device)
+            self._dimension = self._model.get_embedding_dimension()
+        return self._model
+
+    @property
+    def dimension(self) -> int:
+        return self._dimension
+
+    def encode_query(self, query: str) -> np.ndarray:
+        model = self._load_model()
+        formatted = f"query: {query.strip()}" if self.use_e5_prefixes else query.strip()
+        vec = model.encode(formatted, normalize_embeddings=True, show_progress_bar=False)
+        return np.asarray(vec, dtype=np.float32)
+
+    def encode_passage(self, text: str) -> np.ndarray:
+        model = self._load_model()
+        formatted = f"passage: {text.strip()}" if self.use_e5_prefixes else text.strip()
+        vec = model.encode(formatted, normalize_embeddings=True, show_progress_bar=False)
+        return np.asarray(vec, dtype=np.float32)
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -89,6 +195,7 @@ class DenseSearchResult:
 class DenseRetriever:
     """
     Independent Dense Vector Retrieval Engine supporting English & Arabic queries.
+    Uses EmbeddingProvider abstraction (defaults to ONNX if model.onnx exists, falls back to PyTorch).
     """
 
     DEFAULT_MODEL_NAME = "intfloat/multilingual-e5-small"
@@ -99,83 +206,59 @@ class DenseRetriever:
         model_name: str = DEFAULT_MODEL_NAME,
         device: Optional[str] = None,
         use_e5_prefixes: Optional[bool] = None,
+        provider: Optional[BaseEmbeddingProvider] = None,
     ):
         self.model_name = model_name
         self.device = device
-        self._model: Optional[SentenceTransformer] = None
 
-        # Automatically determine prefix convention
         if use_e5_prefixes is None:
             self.use_e5_prefixes = "e5" in model_name.lower()
         else:
             self.use_e5_prefixes = use_e5_prefixes
 
-        self.embedding_dimension: Optional[int] = None
+        # Setup Embedding Provider
+        if provider is not None:
+            self.provider = provider
+        else:
+            base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+            onnx_path = os.path.join(base_dir, "outputs", "onnx_model", "model.onnx")
+            tokenizer_dir = os.path.join(base_dir, "data", "models", "multilingual-e5-small")
+            
+            if os.path.exists(onnx_path) and os.path.exists(tokenizer_dir):
+                self.provider = ONNXEmbeddingProvider(
+                    onnx_model_path=onnx_path,
+                    tokenizer_path=tokenizer_dir,
+                    use_e5_prefixes=self.use_e5_prefixes,
+                )
+            else:
+                self.provider = LocalE5EmbeddingProvider(
+                    model_name=self.model_name,
+                    device=self.device,
+                    use_e5_prefixes=self.use_e5_prefixes,
+                )
+
+        self.embedding_dimension: int = self.provider.dimension
         self.corpus_size: int = 0
         self.chunk_ids: List[str] = []
         self.vectors: Optional[np.ndarray] = None  # Shape (N, D), L2-normalized
         self.records_by_id: Dict[str, Dict[str, Any]] = {}
 
-    def _load_model(self) -> SentenceTransformer:
-        """Lazy loads SentenceTransformer model with fallback support."""
-        if self._model is None:
-            logging.info(f"Loading dense embedding model '{self.model_name}'...")
-            try:
-                self._model = SentenceTransformer(self.model_name, device=self.device)
-            except Exception as e:
-                logging.warning(f"Failed to load {self.model_name}: {e}. Trying fallback: {self.FALLBACK_MODEL_NAME}")
-                self.model_name = self.FALLBACK_MODEL_NAME
-                self.use_e5_prefixes = False
-                self._model = SentenceTransformer(self.FALLBACK_MODEL_NAME, device=self.device)
-
-            self.embedding_dimension = self._model.get_embedding_dimension()
-            logging.info(
-                f"Embedding model loaded successfully! Dimension: {self.embedding_dimension}, "
-                f"E5 Prefixes: {self.use_e5_prefixes}"
-            )
-        return self._model
-
     def encode_passage(self, text: str) -> np.ndarray:
-        """Encodes document text using passage prefix convention."""
-        model = self._load_model()
-        formatted_text = f"passage: {text.strip()}" if self.use_e5_prefixes else text.strip()
-        vec = model.encode(formatted_text, normalize_embeddings=True, show_progress_bar=False)
-        return np.asarray(vec, dtype=np.float32)
+        return self.provider.encode_passage(text)
 
     def encode_query(self, query: str) -> np.ndarray:
-        """Encodes user query using query prefix convention."""
-        model = self._load_model()
-        formatted_query = f"query: {query.strip()}" if self.use_e5_prefixes else query.strip()
-        vec = model.encode(formatted_query, normalize_embeddings=True, show_progress_bar=False)
-        return np.asarray(vec, dtype=np.float32)
+        return self.provider.encode_query(query)
 
     def index_records(self, records: List[Dict[str, Any]], batch_size: int = 32):
-        """
-        Generates dense embeddings for all records and builds the vector index.
-        """
-        model = self._load_model()
+        """Generates dense embeddings for all records and builds the vector index."""
         self.corpus_size = len(records)
         self.chunk_ids = [r["chunk_id"] for r in records]
         self.records_by_id = {r["chunk_id"]: r for r in records}
 
-        passages: List[str] = []
-        for r in records:
-            verbatim_text = r.get("content", {}).get("verbatim_text", "")
-            if self.use_e5_prefixes:
-                passages.append(f"passage: {verbatim_text.strip()}")
-            else:
-                passages.append(verbatim_text.strip())
-
         t0 = time.time()
-        logging.info(f"Generating dense embeddings for {self.corpus_size} chunks (batch_size={batch_size})...")
-        raw_embeddings = model.encode(
-            passages,
-            batch_size=batch_size,
-            normalize_embeddings=True,
-            show_progress_bar=False,
-        )
-
-        self.vectors = np.asarray(raw_embeddings, dtype=np.float32)
+        logging.info(f"Generating dense embeddings for {self.corpus_size} chunks...")
+        embeddings = [self.encode_passage(r.get("content", {}).get("verbatim_text", "")) for r in records]
+        self.vectors = np.asarray(embeddings, dtype=np.float32)
         elapsed = time.time() - t0
         logging.info(
             f"Successfully indexed {self.corpus_size} chunks in {elapsed:.2f}s. "
@@ -188,17 +271,7 @@ class DenseRetriever:
         top_k: int = 5,
         score_threshold: float = -1.0,
     ) -> List[DenseSearchResult]:
-        """
-        Performs cosine similarity search against the indexed corpus.
-
-        Parameters:
-        - query (str): Natural language question (English or Arabic / العامية المصرية).
-        - top_k (int): Number of top results to return.
-        - score_threshold (float): Minimum cosine similarity to include.
-
-        Returns:
-        - List of DenseSearchResult sorted by cosine similarity descending.
-        """
+        """Performs cosine similarity search against the indexed corpus."""
         if not query or not query.strip():
             return []
 
@@ -283,6 +356,7 @@ class DenseRetriever:
         meta_path: str,
         records_path: str,
         device: Optional[str] = None,
+        provider: Optional[BaseEmbeddingProvider] = None,
     ) -> DenseRetriever:
         """Loads precomputed vectors and metadata without re-indexing."""
         if not os.path.exists(npz_path):
@@ -308,6 +382,7 @@ class DenseRetriever:
             model_name=meta.get("model_name", cls.DEFAULT_MODEL_NAME),
             device=device,
             use_e5_prefixes=meta.get("use_e5_prefixes", True),
+            provider=provider,
         )
         retriever.embedding_dimension = meta.get("embedding_dimension", vectors.shape[1])
         retriever.corpus_size = len(chunk_ids)
@@ -320,25 +395,3 @@ class DenseRetriever:
             f"Dim: {retriever.embedding_dimension}"
         )
         return retriever
-
-
-def build_and_save_default_dense_index(
-    records_path: str = r"C:\Users\moham\OneDrive\Apps\اوكسجين\outputs\retrieval_records_v2.json",
-    output_npz_path: str = r"C:\Users\moham\OneDrive\Apps\اوكسجين\outputs\dense_index_v2.npz",
-    output_meta_path: str = r"C:\Users\moham\OneDrive\Apps\اوكسجين\outputs\dense_metadata_v2.json",
-    model_name: str = r"C:\Users\moham\OneDrive\Apps\اوكسجين\data\models\multilingual-e5-small",
-) -> DenseRetriever:
-    """Builds and serializes dense index from retrieval records."""
-    with open(records_path, "r", encoding="utf-8") as f:
-        data = json.load(f)
-    records = data.get("records", [])
-
-    retriever = DenseRetriever(model_name=model_name)
-    retriever.index_records(records)
-    retriever.save_index(output_npz_path, output_meta_path)
-    return retriever
-
-
-
-if __name__ == "__main__":
-    build_and_save_default_dense_index()
