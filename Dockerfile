@@ -5,8 +5,8 @@ FROM python:3.11-slim
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
     PORT=8080 \
-    LLM_PROVIDER=nvidia \
-    NVIDIA_MODEL=openai/gpt-oss-120b
+    LLM_PROVIDER=gemini \
+    GEMINI_MODEL=gemini-2.5-flash
 
 WORKDIR /app
 
