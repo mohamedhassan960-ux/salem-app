@@ -2,8 +2,36 @@
 
 @layer theme {
   :root {
-    --font-arabic: 'Cairo', system-ui, -apple-system, sans-serif;
+    --font-arabic: 'Cairo', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --font-sans: 'Cairo', system-ui, sans-serif;
+    
+    /* Brand Navy */
+    --color-brand-darkest: #061A3A;
+    --color-brand-deep: #0B2454;
+    --color-brand-navy: #0F2D5E;
+    --color-brand-primary: #1E3A8A;
+    --color-brand-bright: #2D8BFF;
+    --color-brand-electric: #4D9BFF;
+    --color-brand-soft: #7FAFFF;
+    --color-brand-very-light: #A5C1FF;
+
+    /* Light Surfaces */
+    --color-light-bg: #F7F9FC;
+    --color-light-surface: #FFFFFF;
+    --color-light-surface-secondary: #F4F7FB;
+    --color-light-input: #F1F5FA;
+    --color-light-border: #D9E2F0;
+    --color-light-border-strong: #C4D1E3;
+    --color-light-text-primary: #061A3A;
+    --color-light-text-secondary: #5F708C;
+    --color-light-text-muted: #8291A8;
+    --color-light-cta: #2D8BFF;
+
+    /* Semantic */
+    --color-semantic-success: #34D399;
+    --color-semantic-warning: #FBBF24;
+    --color-semantic-error: #F87171;
+    --color-semantic-info: #4D9BFF;
   }
 }
 
@@ -21,8 +49,13 @@
 html {
   height: 100%;
   height: 100dvh;
-  overflow: hidden;
-  overscroll-behavior: none;
+  direction: rtl;
+  text-align: right;
+  background-color: #F7F9FC;
+  color: #061A3A;
+  font-family: 'Cairo', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -30,26 +63,20 @@ body {
   height: 100dvh;
   margin: 0;
   padding: 0;
-  background-color: #0b1329;
-  font-family: 'Cairo', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: #F7F9FC;
+  color: #061A3A;
+  font-family: 'Cairo', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   overflow: hidden;
   overscroll-behavior: none;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
-  user-select: none;
-  -webkit-user-select: none;
 }
 
 #root {
   height: 100%;
   height: 100dvh;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  background-color: #0b1329;
+  background-color: #F7F9FC;
 }
 
 /* Scrollable areas inside the app */
@@ -58,20 +85,20 @@ body {
   overscroll-behavior-y: contain;
 }
 
-/* Thin, subtle scrollbar for chat */
+/* Thin, subtle scrollbar for light UI */
 ::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
+  width: 5px;
+  height: 5px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(148, 163, 184, 0.18);
+  background: rgba(196, 209, 227, 0.6);
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(148, 163, 184, 0.35);
+  background: rgba(95, 112, 140, 0.8);
 }
 
 /* Reduce motion for accessibility */

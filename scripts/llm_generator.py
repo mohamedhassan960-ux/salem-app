@@ -530,22 +530,22 @@ class LLMGenerator:
             prompt_parts.append(
                 "\nTASK: Provide a warm, natural, empathetic clinical response strictly grounded in the retrieved evidence above.\n"
                 "RULES (strictly enforced):\n"
-                "- Use ONLY the evidence in the RETRIEVED WHO GUIDELINE EVIDENCE block above.\n"
-                "- Do NOT use pretrained knowledge to fill any gap, infer any dosage, NNT, duration, efficacy, or recommendation.\n"
-                "- Every substantive medical claim must be traceable to retrieved evidence and cited using [WHO — Section X.X] or [WHO — Section X.X — Page Y] ONLY if that section/page exists in AVAILABLE CITATIONS METADATA.\n"
+                "- Apply the Answer-First principle: answer the patient's actual question directly in your opening sentence.\n"
+                "- Select and apply ONLY the retrieved evidence directly relevant to the patient's current situation, question, and cessation stage. Do NOT attempt to use all retrieved chunks, and do NOT mention an evidence chunk merely because it appears above.\n"
+                "- Do NOT force medication or cessation initiation details on a patient seeking behavioral craving support or maintenance.\n"
+                "- Every substantive medical claim must be supported by the retrieved evidence and cited using [WHO — Section X.X] or [WHO — Section X.X — Page Y] ONLY if that section/page exists in AVAILABLE CITATIONS METADATA.\n"
                 "- Do NOT fabricate section numbers or page numbers.\n"
-                "- If the retrieved evidence does not establish a specific clinical detail (dosage, NNT, contraindication, etc.), explicitly say so.\n"
                 "- Do NOT transform contextual or background text into a WHO recommendation.\n"
                 "- Do NOT infer a recommendation from the mere mention of an intervention in the evidence.\n"
-                "- If a requested sub-question has no supporting evidence, state: "
-                "'الأدلة المتاحة لا تتضمن هذه المعلومة تحديداً، لذا لا يمكنني تقديمها.'\n"
+                "- If the patient describes acute red-flag symptoms (chest pain, severe dyspnea, suicide risk), safety overrides all normal RAG behavior: direct immediately to emergency services.\n"
+                "- If a specific clinical detail (e.g. dosage, NNT) is genuinely requested by the patient but absent from the evidence, state briefly: 'المعلومة دي مش متوفرة عندي بشكل موثوق دلوقتي.' without long epistemic disclaimers.\n"
             )
         else:
             prompt_parts.append(
-                "\nTASK: Provide a warm, natural, empathetic response to the patient. "
-                "For medical facts or advice, use ONLY the evidence above and cite using [WHO — Section X.X — Page Y]. "
-                "If off-topic or personal, acknowledge and support empathetically without making major life decisions. "
-                "Do NOT invent ungrounded medical facts."
+                "\nTASK: Provide a warm, natural, empathetic response to the patient following the Answer-First principle.\n"
+                "- For medical facts or advice, use ONLY relevant supporting evidence above and cite using [WHO — Section X.X — Page Y].\n"
+                "- If off-topic or personal, acknowledge and support empathetically without forcing tobacco discussions.\n"
+                "- Do NOT invent ungrounded medical facts.\n"
             )
 
         return "\n".join(prompt_parts)

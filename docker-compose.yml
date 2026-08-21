@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  # 1. FastAPI Medical RAG Backend
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: salem-backend
+    restart: unless-stopped
+    ports:
+      - "8000:8080"
+    environment:
+      - PORT=8080
+      - PYTHONUNBUFFERED=1
+      - LLM_PROVIDER=nvidia
+      - NVIDIA_MODEL=openai/gpt-oss-120b
+      - NVIDIA_API_KEY=${NVIDIA_API_KEY}
+      - GROQ_API_KEY=${GROQ_API_KEY}
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - CORS_ORIGINS=http://localhost:5173,http://localhost:3000,http://localhost:8080
+      - AUTH_ENABLED=false
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/api/v1/health"]
+      interval: 20s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+
+  # 2. Frontend React / Vite Application (Optional production container)
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: salem-frontend
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    environment:
+      - VITE_API_BASE_URL=http://localhost:8000
+      - VITE_SUPABASE_URL=${VITE_SUPABASE_URL}
+      - VITE_SUPABASE_ANON_KEY=${VITE_SUPABASE_ANON_KEY}
+    depends_on:
+      backend:
+        condition: service_healthy

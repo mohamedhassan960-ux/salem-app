@@ -3,11 +3,14 @@ export type MessageRole = 'user' | 'assistant';
 export interface EvidenceSource {
   id: string;
   title: string;
-  sourceDoc: string;
+  organization: string; // e.g. "منظمة الصحة العالمية (WHO)"
+  year: string;         // e.g. "2024"
+  sourceType: string;   // e.g. "دليل إكلينيكي معتمد"
   section?: string;
+  whyRelevant?: string; // Clear human explanation of why this source was used
   excerpt?: string;
-  chunkId?: string;
   pageStart?: number;
+  externalUrl?: string;
 }
 
 export interface StructuredContent {
@@ -33,9 +36,8 @@ export interface ChatMessage {
 export interface ConversationSession {
   id: string;
   title: string;
-  group: 'اليوم' | 'أمس' | 'هذا الأسبوع';
+  group: 'اليوم' | 'أمس' | 'هذا الأسبوع' | 'سابقًا';
   createdAt: number;
   updatedAt: number;
   messages: ChatMessage[];
 }
-

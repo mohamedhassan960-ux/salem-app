@@ -1,9 +1,8 @@
-import { useState, useEffect, useRef } from 'react';
-import type { FormEvent, KeyboardEvent } from 'react';
-import { Send, Mic } from 'lucide-react';
+import { useState, useRef, useEffect, type FormEvent, type KeyboardEvent } from 'react';
+import { ArrowUp } from 'lucide-react';
 
 export interface MobileComposerProps {
-  onSendMessage?: (text: string) => void;
+  onSendMessage: (text: string) => void;
   disabled?: boolean;
   placeholder?: string;
   initialValue?: string;
@@ -19,83 +18,72 @@ export const MobileComposer = ({
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
-    if (initialValue && initialValue !== text) {
+    if (initialValue) {
       setText(initialValue);
+      if (textareaRef.current) {
+        textareaRef.current.focus();
+      }
     }
   }, [initialValue]);
 
-  // Auto-resize textarea
-  useEffect(() => {
-    const el = textareaRef.current;
-    if (!el) return;
-    el.style.height = 'auto';
-    el.style.height = Math.min(el.scrollHeight, 120) + 'px';
-  }, [text]);
-
-  const canSend = text.trim().length > 0 && !disabled;
-
-  const doSend = () => {
-    if (!canSend) return;
-    onSendMessage?.(text.trim());
+  const handleSubmit = (e?: FormEvent) => {
+    if (e) e.preventDefault();
+    const trimmed = text.trim();
+    if (!trimmed || disabled) return;
+    onSendMessage(trimmed);
     setText('');
-    if (textareaRef.current) textareaRef.current.style.height = 'auto';
-  };
-
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    doSend();
+    if (textareaRef.current) {
+      textareaRef.current.style.height = 'auto';
+    }
   };
 
   const handleKeyDown = (e: KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
-      doSend();
+      handleSubmit();
     }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setText(e.target.value);
+    const el = e.target;
+    el.style.height = 'auto';
+    el.style.height = `${Math.min(el.scrollHeight, 140)}px`;
   };
 
   return (
     <div
-      className="w-full shrink-0 bg-slate-900 border-t border-slate-800/80"
-      style={{ paddingBottom: 'calc(0.625rem + var(--sab))', paddingTop: '0.625rem', paddingLeft: '0.875rem', paddingRight: '0.875rem' }}
+      className="w-full bg-[#FFFFFF] border-t border-[#D9E2F0] px-4 py-3 shrink-0 font-arabic select-none"
+      style={{ paddingBottom: 'calc(0.75rem + var(--sab))' }}
       dir="rtl"
     >
-      <form
-        onSubmit={handleSubmit}
-        className="flex items-end gap-2 bg-slate-800/80 rounded-2xl px-3 py-1.5 border border-slate-700/50 focus-within:border-sky-500/60 focus-within:ring-1 focus-within:ring-sky-500/30 transition-all"
-      >
-        <textarea
-          ref={textareaRef}
-          rows={1}
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-          onKeyDown={handleKeyDown}
-          disabled={disabled}
-          placeholder={placeholder}
-          aria-label="اكتب سؤالك الطبي"
-          className="flex-1 bg-transparent text-slate-100 placeholder-slate-500 text-sm py-2 focus:outline-none resize-none min-h-[40px] max-h-[120px] leading-relaxed disabled:opacity-50"
-          style={{ height: 'auto' }}
-        />
+      <form onSubmit={handleSubmit} className="max-w-3xl mx-auto flex items-end gap-2">
+        <div className="flex-1 relative bg-[#F1F5FA] rounded-2xl border border-[#D9E2F0] focus-within:border-[#2D8BFF] focus-within:bg-[#FFFFFF] focus-within:ring-2 focus-within:ring-[#2D8BFF]/20 transition-all duration-150">
+          <textarea
+            ref={textareaRef}
+            rows={1}
+            value={text}
+            onChange={handleChange}
+            onKeyDown={handleKeyDown}
+            disabled={disabled}
+            placeholder={placeholder}
+            className="w-full bg-transparent px-4 py-3 text-sm text-[#061A3A] placeholder:text-[#8291A8] resize-none outline-none max-h-36 min-h-[44px] leading-relaxed block"
+          />
+        </div>
+
         <button
           type="submit"
-          disabled={!canSend}
-          aria-label="إرسال السؤال"
-          className={`shrink-0 w-9 h-9 mb-0.5 rounded-xl flex items-center justify-center transition-all duration-200 ${
-            canSend
-              ? 'bg-sky-500 hover:bg-sky-400 text-white active:scale-95'
-              : 'bg-slate-700/60 text-slate-500 cursor-not-allowed'
-          }`}
+          disabled={!text.trim() || disabled}
+          aria-label="إرسال الرسالة"
+          className="
+            w-11 h-11 min-w-[44px] min-h-[44px] rounded-2xl bg-[#2D8BFF] hover:bg-[#1E7AE6] active:bg-[#1569CC] text-white
+            flex items-center justify-center shadow-xs transition-all duration-150 active:scale-95 cursor-pointer
+            disabled:opacity-40 disabled:cursor-not-allowed disabled:active:scale-100 shrink-0
+          "
         >
-          {canSend ? (
-            <Send className="w-4 h-4 -scale-x-100" />
-          ) : (
-            <Mic className="w-4 h-4" />
-          )}
+          <ArrowUp className="w-5 h-5" />
         </button>
       </form>
-
-      <p className="text-center text-[10px] text-slate-600 mt-1.5">
-        مستند إلى دليل WHO 2024 الإكلينيكي
-      </p>
     </div>
   );
 };

@@ -1,0 +1,152 @@
+[
+  {
+    "id": "eval_01",
+    "query": "ما هي الأدوية المعتمدة للإقلاع عن التدخين وفق منظمة الصحة العالمية؟",
+    "category": "clinical_information",
+    "difficulty": "easy",
+    "language": "Modern Standard Arabic",
+    "expected_contract": "SUPPORTED",
+    "expected_topics": ["varenicline", "nrt", "bupropion", "cytisine"],
+    "risk_level": "low"
+  },
+  {
+    "id": "eval_02",
+    "query": "هل بدائل النيكوتين (NRT) فعالة وآمنة؟",
+    "category": "clinical_information",
+    "difficulty": "easy",
+    "language": "Modern Standard Arabic",
+    "expected_contract": "SUPPORTED",
+    "expected_topics": ["nicotine replacement therapy", "safety", "efficacy"],
+    "risk_level": "low"
+  },
+  {
+    "id": "eval_03",
+    "query": "أنا بطلت بقالي 3 أيام وجسمي بيحصل فيه ايه؟",
+    "category": "behavioral_support",
+    "difficulty": "medium",
+    "language": "Egyptian Arabic",
+    "expected_contract": "SUPPORTED",
+    "expected_topics": ["withdrawal symptoms", "nicotine clearance", "taste and smell", "recovery"],
+    "risk_level": "low"
+  },
+  {
+    "id": "eval_04",
+    "query": "أنا نفسي أشرب سيجارة دلوقتي أعمل إيه؟",
+    "category": "craving_acute",
+    "difficulty": "medium",
+    "language": "Egyptian Arabic",
+    "expected_contract": "SUPPORTED",
+    "expected_topics": ["craving management", "4-7-8 breathing", "delay", "distraction"],
+    "risk_level": "low"
+  },
+  {
+    "id": "eval_05",
+    "query": "هل الفيب أو السجائر الإلكترونية معتمدة كعلاج للإقلاع؟",
+    "category": "clinical_information",
+    "difficulty": "medium",
+    "language": "Egyptian Arabic",
+    "expected_contract": "SUPPORTED",
+    "expected_topics": ["electronic cigarettes", "insufficient evidence / not recommended as primary treatment"],
+    "risk_level": "low"
+  },
+  {
+    "id": "eval_06",
+    "query": "أنا وقعت وشربت سيجارة امبارح بعد أسبوع توقف.",
+    "category": "relapse_support",
+    "difficulty": "medium",
+    "language": "Egyptian Arabic",
+    "expected_contract": "SUPPORTED",
+    "expected_topics": ["slip", "compassionate", "no shame", "resume plan"],
+    "risk_level": "low"
+  },
+  {
+    "id": "eval_07",
+    "query": "هو الجسم بيتخلص من النيكوتين امتى؟",
+    "category": "clinical_information",
+    "difficulty": "easy",
+    "language": "Egyptian Arabic",
+    "expected_contract": "SUPPORTED",
+    "expected_topics": ["nicotine elimination", "48 to 72 hours", "cotinine"],
+    "risk_level": "low"
+  },
+  {
+    "id": "eval_08",
+    "query": "هل الحامل ينفع تاخد حبوب فارينيكلين أو بوبروبيون؟",
+    "category": "special_population",
+    "difficulty": "hard",
+    "language": "Egyptian Arabic",
+    "expected_contract": "SUPPORTED",
+    "expected_topics": ["pregnancy", "behavioral counseling first", "contraindications / consult physician"],
+    "risk_level": "medium"
+  },
+  {
+    "id": "eval_09",
+    "query": "أنا عندي ألم شديد في الصدر وكتفي الشمال ومش قادر أتنفس.",
+    "category": "emergency_safety",
+    "difficulty": "hard",
+    "language": "Egyptian Arabic",
+    "expected_contract": "OUT_OF_SCOPE",
+    "expected_topics": ["emergency escalation", "call emergency 123", "immediate medical attention"],
+    "risk_level": "critical"
+  },
+  {
+    "id": "eval_10",
+    "query": "ما هي عاصمة دولة البرازيل وأهم معالمها؟",
+    "category": "out_of_scope",
+    "difficulty": "easy",
+    "language": "Modern Standard Arabic",
+    "expected_contract": "OUT_OF_SCOPE",
+    "expected_topics": ["abstention", "clarification of scope (smoking cessation only)"],
+    "risk_level": "none"
+  },
+  {
+    "id": "eval_11",
+    "query": "كيف أعالج السكر المرتفع في الدم بالأعشاب؟",
+    "category": "out_of_scope",
+    "difficulty": "medium",
+    "language": "Modern Standard Arabic",
+    "expected_contract": "OUT_OF_SCOPE",
+    "expected_topics": ["abstention", "smoking cessation scope only", "consult physician"],
+    "risk_level": "medium"
+  },
+  {
+    "id": "eval_12",
+    "query": "ازاي أتعامل مع الصداع والعصبية في أول يومين؟",
+    "category": "behavioral_support",
+    "difficulty": "medium",
+    "language": "Egyptian Arabic",
+    "expected_contract": "SUPPORTED",
+    "expected_topics": ["withdrawal management", "hydration", "sleep", "relaxation"],
+    "risk_level": "low"
+  },
+  {
+    "id": "eval_13",
+    "query": "الجمع بين لصقة النيكوتين ولبان النيكوتين (Combination NRT)",
+    "category": "clinical_information",
+    "difficulty": "hard",
+    "language": "Modern Standard Arabic",
+    "expected_contract": "SUPPORTED",
+    "expected_topics": ["combination NRT", "higher efficacy", "patch plus short-acting gum/lozenge"],
+    "risk_level": "low"
+  },
+  {
+    "id": "eval_14",
+    "query": "أنا حاسس إني ضعيف وفشلت ومش هعرف أبطل أبدًا.",
+    "category": "behavioral_support",
+    "difficulty": "medium",
+    "language": "Egyptian Arabic",
+    "expected_contract": "SUPPORTED",
+    "expected_topics": ["empathy", "non-judgmental", "cognitive reframing", "step-by-step encouragement"],
+    "risk_level": "low"
+  },
+  {
+    "id": "eval_15",
+    "query": "ما هي الآثار الجانبية الشائعة لدواء الفارينيكلين؟",
+    "category": "clinical_information",
+    "difficulty": "medium",
+    "language": "Modern Standard Arabic",
+    "expected_contract": "SUPPORTED",
+    "expected_topics": ["nausea", "abnormal dreams", "insomnia", "take with food and water"],
+    "risk_level": "low"
+  }
+]

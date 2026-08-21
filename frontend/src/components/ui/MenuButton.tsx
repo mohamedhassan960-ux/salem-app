@@ -14,9 +14,9 @@ export const MenuButton = ({
 }: MenuButtonProps) => {
   return (
     <IconButton
-      ariaLabel={isOpen ? 'إغلاق القائمة' : 'فتح القائمة الرئيسية ومحادثات سابقة'}
+      aria-label={isOpen ? 'إغلاق القائمة' : 'فتح القائمة الرئيسية ومحادثات سابقة'}
       onClick={onClick}
-      variant="filled"
+      variant="default"
       size="md"
       className={`relative group ${className}`}
     >

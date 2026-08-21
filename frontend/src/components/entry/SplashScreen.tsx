@@ -1,48 +1,64 @@
 import { useEffect } from 'react';
+import { useAuth } from '../../context/AuthContext';
 
 export interface SplashScreenProps {
-  onComplete: () => void;
   durationMs?: number;
 }
 
 export const SplashScreen = ({
-  onComplete,
-  durationMs = 1200,
+  durationMs = 900,
 }: SplashScreenProps) => {
+  const { user, hasSeenOnboarding, setAuthStep } = useAuth();
+
   useEffect(() => {
-    const timer = setTimeout(onComplete, durationMs);
+    const timer = setTimeout(() => {
+      if (user) {
+        setAuthStep(hasSeenOnboarding ? 'chat_ready' : 'onboarding');
+      } else {
+        setAuthStep('login');
+      }
+    }, durationMs);
+
     return () => clearTimeout(timer);
-  }, [onComplete, durationMs]);
+  }, [user, hasSeenOnboarding, setAuthStep, durationMs]);
 
   return (
     <div
-      className="w-full h-[100dvh] flex flex-col items-center justify-center bg-slate-950 text-white select-none"
+      className="w-full h-[100dvh] flex flex-col items-center justify-center bg-gradient-to-b from-[#040F24] via-[#061A3A] to-[#0B2454] text-white select-none font-arabic"
       style={{ paddingTop: 'var(--sat)', paddingBottom: 'var(--sab)' }}
       role="status"
-      aria-label="جارٍ تحميل سالم"
+      aria-label="جارٍ تهيئة سالم"
     >
-      <div className="flex flex-col items-center gap-6">
+      <div className="flex flex-col items-center gap-6 animate-in fade-in zoom-in-95 duration-700">
+        {/* Brand Logo */}
         <div className="relative">
-          <div className="absolute -inset-4 rounded-3xl bg-sky-500/20 blur-2xl animate-pulse" />
-          <div className="relative w-28 h-28 rounded-3xl p-1 bg-gradient-to-b from-sky-400 via-blue-600 to-indigo-600 border border-sky-400/40 shadow-2xl overflow-hidden flex items-center justify-center">
+          <div className="absolute -inset-4 rounded-3xl bg-[#2D8BFF]/20 blur-2xl animate-pulse" />
+          <div className="relative w-28 h-28 rounded-3xl p-1 bg-gradient-to-b from-[#2D8BFF] via-[#1E3A8A] to-[#0B2454] border border-[#4D9BFF]/30 shadow-2xl overflow-hidden flex items-center justify-center">
             <img
-              src="/logo.png"
+              src="/salem-logo.png"
               alt="سالم"
               className="w-full h-full object-cover rounded-2xl"
+              onError={(e) => {
+                const t = e.currentTarget;
+                t.onerror = null;
+                t.src = '/logo.png';
+              }}
             />
           </div>
         </div>
 
+        {/* Brand Titles */}
         <div className="flex flex-col items-center gap-1 text-center">
           <h1 className="text-3xl font-extrabold tracking-tight text-white">سالم</h1>
-          <p className="text-sm text-slate-300 font-medium">
-            المساعد الطبي للإقلاع عن التدخين
+          <p className="text-sm text-[#A5C1FF] font-medium">
+            مساعدك للإقلاع عن التدخين
           </p>
         </div>
 
-        <div className="flex items-center gap-2 mt-1">
-          <span className="w-2 h-2 rounded-full bg-sky-400 animate-ping" />
-          <span className="text-[11px] text-slate-400 font-semibold">إرشادات منظمة الصحة العالمية 2024</span>
+        {/* Minimal indicator */}
+        <div className="flex items-center gap-2 mt-2 px-3 py-1 rounded-full bg-white/10 border border-white/15">
+          <span className="w-2 h-2 rounded-full bg-[#34D399] animate-ping" />
+          <span className="text-xs text-white/90 font-medium">إرشادات منظمة الصحة العالمية 2024</span>
         </div>
       </div>
     </div>

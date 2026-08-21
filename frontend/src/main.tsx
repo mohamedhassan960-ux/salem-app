@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import './index.css';
 import App from './App.tsx';
 import { AuthProvider } from './context/AuthContext.tsx';
+import { UserStateProvider } from './state/UserStateContext.tsx';
 
 // Register PWA Service Worker only in production
 if ('serviceWorker' in navigator && import.meta.env.PROD) {
@@ -16,7 +17,9 @@ if ('serviceWorker' in navigator && import.meta.env.PROD) {
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <AuthProvider>
-      <App />
+      <UserStateProvider>
+        <App />
+      </UserStateProvider>
     </AuthProvider>
   </StrictMode>,
 );
