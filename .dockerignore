@@ -1,4 +1,4 @@
-﻿.git
+.git
 .gitignore
 .env
 .venv
@@ -8,6 +8,5 @@ __pycache__
 *.pyd
 .pytest_cache
 tests/
-outputs/
 scratch/
 *.partial
