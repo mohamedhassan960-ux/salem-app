@@ -134,9 +134,18 @@ export const ChatScreen = ({ activeConversation }: ChatScreenProps) => {
     } catch (err) {
       if (controller.signal.aborted) return;
 
-      // Safe error display — no stack traces, no internal details in UI
-      if (import.meta.env.DEV) {
-        console.error('[ChatScreen] RAG error:', err);
+      // Safe structured console logging for observability in both DEV and PROD
+      if (err instanceof RAGNetworkError) {
+        console.error('[ChatScreen] RAG Network Failure:', {
+          endpoint: err.endpoint,
+          statusCode: err.statusCode,
+          message: err.message,
+        });
+      } else if (err instanceof Error && err.name !== 'AbortError') {
+        console.error('[ChatScreen] Query Processing Error:', {
+          name: err.name,
+          message: err.message,
+        });
       }
 
       const isTimeout =
@@ -148,6 +157,8 @@ export const ChatScreen = ({ activeConversation }: ChatScreenProps) => {
         setErrorMessage('انتهت مهلة الاستجابة. يرجى المحاولة مرة أخرى.');
       } else if (isNetwork && err.statusCode === 503) {
         setErrorMessage('المساعد الطبي لا يزال يتهيأ، يرجى الانتظار قليلاً ثم المحاولة مجدداً.');
+      } else if (isNetwork && err.statusCode === 404) {
+        setErrorMessage('تعذر الاتصال بخادم المعالجة الطبية (404 Not Found). يرجى التحقق من إعدادات الرابط VITE_API_URL.');
       } else {
         setErrorMessage('حدث خطأ أثناء معالجة السؤال.');
       }

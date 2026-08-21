@@ -60,19 +60,35 @@ export interface RAGResult {
 
 export class RAGNetworkError extends Error {
   public readonly statusCode?: number;
-  constructor(statusCode?: number, message?: string) {
+  public readonly responseBody?: string;
+  public readonly endpoint?: string;
+
+  constructor(statusCode?: number, message?: string, responseBody?: string, endpoint?: string) {
     super(message ?? 'RAG network error');
     this.statusCode = statusCode;
+    this.responseBody = responseBody;
+    this.endpoint = endpoint;
     this.name = 'RAGNetworkError';
   }
 }
 
-// ─── Core send function ───────────────────────────────────────────────────────
+// ─── Base URL Configuration & Validation ──────────────────────────────────────
 
-const BASE_API = import.meta.env.VITE_API_URL || '';
+const RAW_API_URL = import.meta.env.VITE_API_URL;
+// Ensure no trailing slash
+export const BASE_API = (RAW_API_URL ? String(RAW_API_URL).trim().replace(/\/+$/, '') : '');
+
+if (!BASE_API) {
+  console.warn(
+    '[Oxygen RAG] Missing VITE_API_URL environment variable. ' +
+    'API calls will fall back to the current origin. ' +
+    'In Production (Vercel), make sure to configure VITE_API_URL pointing to your backend service.'
+  );
+}
+
 const RAG_ENDPOINT = `${BASE_API}/api/v1/chat`;
 const HEALTH_ENDPOINT = `${BASE_API}/api/v1/health`;
-const REQUEST_TIMEOUT_MS = 120_000; // 2 minutes — LLM can be slow locally
+const REQUEST_TIMEOUT_MS = 120_000; // 2 minutes — LLM generation and retrieval timeout
 
 /**
  * Sends a query to the existing Oxygen Medical RAG pipeline via HTTP.
@@ -114,7 +130,26 @@ export async function sendQuery(
     });
 
     if (!response.ok) {
-      throw new RAGNetworkError(response.status, `HTTP ${response.status}`);
+      let errBody = '';
+      try {
+        errBody = await response.text();
+      } catch {
+        // Ignore read failure
+      }
+
+      console.error('[Oxygen RAG API Error]', {
+        endpoint: RAG_ENDPOINT,
+        status: response.status,
+        statusText: response.statusText,
+        responseBody: errBody.slice(0, 500),
+      });
+
+      throw new RAGNetworkError(
+        response.status,
+        `HTTP ${response.status}: ${response.statusText || 'Request Failed'}`,
+        errBody,
+        RAG_ENDPOINT
+      );
     }
 
     const data: RAGResponse = await response.json();
@@ -130,6 +165,19 @@ export async function sendQuery(
       latencyMs: data.latency_ms,
       requestId: data.request_id,
     };
+  } catch (err: unknown) {
+    if (err instanceof RAGNetworkError) {
+      throw err;
+    }
+    const isAbort = err instanceof Error && err.name === 'AbortError';
+    if (!isAbort) {
+      console.error('[Oxygen RAG Network Exception]', {
+        endpoint: RAG_ENDPOINT,
+        errorType: err instanceof Error ? err.name : typeof err,
+        message: err instanceof Error ? err.message : String(err),
+      });
+    }
+    throw err;
   } finally {
     if (timeoutId !== undefined) clearTimeout(timeoutId);
   }

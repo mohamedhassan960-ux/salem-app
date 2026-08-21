@@ -102,6 +102,22 @@ class HealthResponse(BaseModel):
     """Lightweight process liveness health status."""
     status: str = "ok"
     service: str = "oxygen-medical-rag-api"
+    rag_loaded: bool = False
+    retriever_loaded: bool = False
+    llm_provider: str = "unknown"
+
+
+class RAGHealthResponse(BaseModel):
+    """Detailed RAG components readiness verification (zero secrets)."""
+    status: str = "ok"
+    retriever: bool
+    dense_index: bool
+    bm25: bool
+    embedding_model: bool
+    llm_configured: bool
+    llm_provider: str
+    vector_store_chunks: int
+    unready_components: List[str] = Field(default_factory=list)
 
 
 class ReadyResponse(BaseModel):

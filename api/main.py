@@ -32,6 +32,7 @@ from api.schemas import (
     ChatRequest,
     ChatResponse,
     HealthResponse,
+    RAGHealthResponse,
     ReadyResponse,
     MetaResponse,
 )
@@ -218,10 +219,103 @@ async def chat_endpoint(payload: ChatRequest, request: Request) -> ChatResponse:
 )
 async def health_endpoint() -> HealthResponse:
     """Cheap liveness probe to verify HTTP process is responding."""
-    return HealthResponse(status="ok", service="oxygen-medical-rag-api")
+    service = get_rag_service()
+    is_ready = service.is_ready
+    provider_name = "unknown"
+    if is_ready:
+        provider_name = getattr(service._pipeline.llm_generator.provider, "provider_name", "unknown")
+    
+    return HealthResponse(
+        status="ok",
+        service="oxygen-medical-rag-api",
+        rag_loaded=is_ready,
+        retriever_loaded=is_ready,
+        llm_provider=provider_name,
+    )
 
 
-# ── 3. GET /api/v1/ready & /ready ───────────────────────────────────────────
+# ── 3. GET /api/v1/health/rag & /health/rag ──────────────────────────────────
+@app.get(
+    "/health/rag",
+    response_model=RAGHealthResponse,
+    include_in_schema=False,
+)
+@app.get(
+    "/api/v1/health/rag",
+    response_model=RAGHealthResponse,
+    summary="Diagnostic health check for all RAG subsystems (zero secrets)",
+)
+async def rag_health_endpoint() -> RAGHealthResponse:
+    """Diagnostic probe verifying BM25, dense index, embedding model, and LLM configuration."""
+    service = get_rag_service()
+    unready = []
+
+    pipeline = getattr(service, "_pipeline", None)
+    retriever_ready = False
+    dense_ready = False
+    bm25_ready = False
+    embed_ready = False
+    chunks_count = 0
+
+    if pipeline is not None and hasattr(pipeline, "hybrid_retriever") and pipeline.hybrid_retriever is not None:
+        retriever_ready = True
+        hr = pipeline.hybrid_retriever
+        
+        # Check dense retriever & NPZ chunks
+        if hasattr(hr, "dense_retriever") and hr.dense_retriever is not None:
+            dense_ready = len(hr.dense_retriever.chunk_ids) > 0
+            chunks_count = len(hr.dense_retriever.chunk_ids)
+            if hasattr(hr.dense_retriever, "model") and hr.dense_retriever.model is not None:
+                embed_ready = True
+            else:
+                unready.append("embedding_model")
+        else:
+            unready.append("dense_retriever")
+        
+        # Check BM25 retriever
+        if hasattr(hr, "bm25_retriever") and hr.bm25_retriever is not None:
+            bm25_ready = len(hr.bm25_retriever.corpus) > 0
+        else:
+            unready.append("bm25_retriever")
+    else:
+        unready.append("hybrid_retriever")
+
+    # Check LLM configuration
+    llm_configured = False
+    llm_provider_name = "unconfigured"
+    if pipeline is not None and hasattr(pipeline, "llm_generator") and pipeline.llm_generator is not None:
+        provider = pipeline.llm_generator.provider
+        if provider is not None:
+            llm_provider_name = getattr(provider, "provider_name", "unknown")
+            # Check if required provider keys/settings exist
+            if llm_provider_name == "mock":
+                llm_configured = True
+            elif llm_provider_name == "google_gemini":
+                llm_configured = bool(getattr(provider, "api_key", None))
+            elif llm_provider_name in {"groq", "nvidia", "openai_compatible"}:
+                llm_configured = bool(getattr(provider, "api_key", None) or getattr(provider, "base_url", None))
+            else:
+                llm_configured = True
+    
+    if not llm_configured:
+        unready.append("llm_configuration")
+
+    overall_status = "ok" if (retriever_ready and dense_ready and bm25_ready and embed_ready and llm_configured) else "degraded"
+
+    return RAGHealthResponse(
+        status=overall_status,
+        retriever=retriever_ready,
+        dense_index=dense_ready,
+        bm25=bm25_ready,
+        embedding_model=embed_ready,
+        llm_configured=llm_configured,
+        llm_provider=llm_provider_name,
+        vector_store_chunks=chunks_count,
+        unready_components=unready,
+    )
+
+
+# ── 4. GET /api/v1/ready & /ready ───────────────────────────────────────────
 @app.get(
     "/ready",
     response_model=ReadyResponse,
@@ -249,7 +343,7 @@ async def ready_endpoint() -> ReadyResponse:
     )
 
 
-# ── 4. GET /api/v1/meta ────────────────────────────────────────────────────────
+# ── 5. GET /api/v1/meta ────────────────────────────────────────────────────────
 @app.get(
     "/api/v1/meta",
     response_model=MetaResponse,

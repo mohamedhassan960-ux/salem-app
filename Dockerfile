@@ -1,4 +1,4 @@
-﻿# Oxygen Medical RAG — Production Container Image (Cloud Run & Docker)
+# Oxygen Medical RAG — Production Container Image (Cloud Run & Docker)
 FROM python:3.11-slim
 
 # Set non-interactive environment variables
@@ -21,6 +21,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy application directories
 COPY data/ /app/data/
+COPY outputs/ /app/outputs/
 COPY prompts/ /app/prompts/
 COPY scripts/ /app/scripts/
 COPY api/ /app/api/
