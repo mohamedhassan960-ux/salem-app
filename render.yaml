@@ -6,6 +6,10 @@ services:
     region: frankfurt
     dockerfilePath: ./Dockerfile
     envVars:
+      - key: EMBEDDING_PROVIDER
+        value: gemini
+      - key: EMBEDDING_MODEL
+        value: models/gemini-embedding-2
       - key: LLM_PROVIDER
         value: gemini
       - key: GEMINI_MODEL
@@ -13,6 +17,6 @@ services:
       - key: AUTH_ENABLED
         value: "false"
       - key: CORS_ORIGINS
-        value: "https://frontend-gray-gamma-76.vercel.app,*"
+        value: "*"
       - key: GEMINI_API_KEY
         sync: false

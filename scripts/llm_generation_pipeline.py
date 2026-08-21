@@ -36,10 +36,17 @@ from context_assembler import ContextAssembler, AssembledContext
 from llm_generator import LLMGenerator, LLMGenerationResponse, LLMProvider, MockLLMProvider
 from simplification_verifier import SimplificationVerifier, VerificationResult
 
-RECORDS_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "outputs", "retrieval_records_v2.json")
-DENSE_NPZ = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "outputs", "dense_index_v2.npz")
-DENSE_META = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "outputs", "dense_metadata_v2.json")
-LOCAL_EMBED_MODEL = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "models", "multilingual-e5-small")
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+RECORDS_PATH = os.path.join(BASE_DIR, "outputs", "retrieval_records_v2.json")
+DENSE_NPZ_V3 = os.path.join(BASE_DIR, "outputs", "dense_index_cloud_v3.npz")
+DENSE_META_V3 = os.path.join(BASE_DIR, "outputs", "dense_metadata_cloud_v3.json")
+DENSE_NPZ_V2 = os.path.join(BASE_DIR, "outputs", "dense_index_v2.npz")
+DENSE_META_V2 = os.path.join(BASE_DIR, "outputs", "dense_metadata_v2.json")
+
+# Prioritize v3 cloud index if present, fallback to v2 for rollback
+DENSE_NPZ = DENSE_NPZ_V3 if os.path.exists(DENSE_NPZ_V3) else DENSE_NPZ_V2
+DENSE_META = DENSE_META_V3 if os.path.exists(DENSE_META_V3) else DENSE_META_V2
+LOCAL_EMBED_MODEL = os.path.join(BASE_DIR, "data", "models", "multilingual-e5-small")
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 
@@ -67,7 +74,6 @@ class GenerationPipeline:
             records_path=RECORDS_PATH,
             dense_npz_path=DENSE_NPZ,
             dense_meta_path=DENSE_META,
-            model_name=LOCAL_EMBED_MODEL,
             k_rrf=60,
             candidate_pool_size=30,
         )

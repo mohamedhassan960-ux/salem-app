@@ -143,14 +143,30 @@ class HybridRetriever:
     @classmethod
     def from_files(
         cls,
-        records_path: str = r"C:\Users\moham\OneDrive\Apps\اوكسجين\outputs\retrieval_records_v2.json",
-        dense_npz_path: str = r"C:\Users\moham\OneDrive\Apps\اوكسجين\outputs\dense_index_v2.npz",
-        dense_meta_path: str = r"C:\Users\moham\OneDrive\Apps\اوكسجين\outputs\dense_metadata_v2.json",
-        model_name: str = r"C:\Users\moham\OneDrive\Apps\اوكسجين\data\models\multilingual-e5-small",
+        records_path: Optional[str] = None,
+        dense_npz_path: Optional[str] = None,
+        dense_meta_path: Optional[str] = None,
+        model_name: Optional[str] = None,
         k_rrf: int = DEFAULT_K_RRF,
         candidate_pool_size: int = DEFAULT_CANDIDATE_POOL,
+        provider: Optional[Any] = None,
     ) -> HybridRetriever:
         """Loads and initializes both retrievers from disk records and precomputed dense index."""
+        base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        if records_path is None:
+            records_path = os.path.join(base_dir, "outputs", "retrieval_records_v2.json")
+
+        # Prioritize cloud v3 index, fall back to v2 for rollback
+        v3_npz = os.path.join(base_dir, "outputs", "dense_index_cloud_v3.npz")
+        v3_meta = os.path.join(base_dir, "outputs", "dense_metadata_cloud_v3.json")
+        v2_npz = os.path.join(base_dir, "outputs", "dense_index_v2.npz")
+        v2_meta = os.path.join(base_dir, "outputs", "dense_metadata_v2.json")
+
+        if dense_npz_path is None:
+            dense_npz_path = v3_npz if os.path.exists(v3_npz) else v2_npz
+        if dense_meta_path is None:
+            dense_meta_path = v3_meta if os.path.exists(v3_meta) else v2_meta
+
         with open(records_path, "r", encoding="utf-8") as f:
             records_data = json.load(f)
         records = records_data.get("records", [])
@@ -161,9 +177,9 @@ class HybridRetriever:
 
         # Initialize Dense
         if os.path.exists(dense_npz_path) and os.path.exists(dense_meta_path):
-            dense = DenseRetriever.load_index(dense_npz_path, dense_meta_path, records_path)
+            dense = DenseRetriever.load_index(dense_npz_path, dense_meta_path, records_path, provider=provider)
         else:
-            dense = DenseRetriever(model_name=model_name)
+            dense = DenseRetriever(model_name=model_name or "models/gemini-embedding-2", provider=provider)
             dense.index_records(records)
             dense.save_index(dense_npz_path, dense_meta_path)
 

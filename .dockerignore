@@ -10,3 +10,10 @@ __pycache__
 tests/
 scratch/
 *.partial
+*.log
+*.exe
+*.pdf
+*.png
+frontend/
+outputs/onnx_model/
+data/models/

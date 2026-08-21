@@ -1,0 +1,51 @@
+{
+  "benchmark_version": "v1.0",
+  "evaluated_at": "2026-08-22T02:50:00Z",
+  "corpus_size": 171,
+  "total_queries": 50,
+  "evaluable_queries": 45,
+  "negative_control_queries": 5,
+  "gemini_generation_calls": 0,
+  "old_index": {
+    "model": "intfloat/multilingual-e5-small",
+    "dimension": 384,
+    "dense": {
+      "recall_1": 0.0667,
+      "recall_3": 0.1556,
+      "recall_5": 0.3111,
+      "mrr": 0.1393,
+      "avg_score": 0.9440
+    },
+    "hybrid": {
+      "recall_1": 0.0444,
+      "recall_3": 0.1778,
+      "recall_5": 0.3778,
+      "mrr": 0.1407,
+      "avg_score": 0.0320
+    }
+  },
+  "cloud_index": {
+    "model": "models/gemini-embedding-2",
+    "dimension": 768,
+    "dense": {
+      "recall_1": 0.0000,
+      "recall_3": 0.2667,
+      "recall_5": 0.4000,
+      "mrr": 0.1363,
+      "avg_score": 0.8115
+    },
+    "hybrid": {
+      "recall_1": 0.0222,
+      "recall_3": 0.1556,
+      "recall_5": 0.4222,
+      "mrr": 0.1326,
+      "avg_score": 0.0323
+    }
+  },
+  "overlap": {
+    "top_1_overlap": 0.2600,
+    "top_3_overlap": 0.5133,
+    "top_5_overlap": 0.5840
+  },
+  "decision": "GO"
+}

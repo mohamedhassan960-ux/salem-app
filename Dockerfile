@@ -1,21 +1,23 @@
-# Oxygen Medical RAG — Production Container Image (Cloud Run & Docker)
+# Oxygen Medical RAG — Production Lightweight Container Image
 FROM python:3.11-slim
 
 # Set non-interactive environment variables
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
     PORT=8080 \
+    EMBEDDING_PROVIDER=gemini \
+    EMBEDDING_MODEL=models/gemini-embedding-2 \
     LLM_PROVIDER=gemini \
     GEMINI_MODEL=gemini-2.5-flash
 
 WORKDIR /app
 
-# Install system dependencies
+# Install minimal system dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy requirements and install python packages
+# Copy lightweight requirements and install python packages
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
@@ -31,10 +33,10 @@ RUN useradd -m -u 1000 appuser && chown -R appuser:appuser /app
 USER appuser
 
 # Health check using lightweight liveness endpoint
-HEALTHCHECK --interval=30s --timeout=5s --start-period=20s --retries=3 \
+HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
     CMD curl -f http://localhost:${PORT}/api/v1/health || exit 1
 
-# Expose standard Cloud Run port
+# Expose standard container port
 EXPOSE 8080
 
 # Run FastAPI server with Uvicorn

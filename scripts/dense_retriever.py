@@ -19,7 +19,23 @@ from abc import ABC, abstractmethod
 from dataclasses import dataclass, asdict
 from typing import Dict, List, Any, Optional, Tuple
 
+import requests
 import numpy as np
+
+# Auto-load .env file from project root if available
+def _load_env_file() -> None:
+    env_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".env")
+    if os.path.exists(env_path):
+        with open(env_path, "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith("#") and "=" in line:
+                    k, v = line.split("=", 1)
+                    k, v = k.strip(), v.strip().strip("\"'")
+                    if k and k not in os.environ:
+                        os.environ[k] = v
+
+_load_env_file()
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 
@@ -96,14 +112,282 @@ class BaseEmbeddingProvider(ABC):
         """Encodes document passage into normalized 1D float32 numpy array."""
         pass
 
+    def encode_passages_batch(self, texts: List[str]) -> List[np.ndarray]:
+        """Encodes a list of passages. Defaults to sequential encode_passage if not overridden."""
+        return [self.encode_passage(t) for t in texts]
+
     @property
     @abstractmethod
     def dimension(self) -> int:
         pass
 
+    @property
+    @abstractmethod
+    def provider_name(self) -> str:
+        pass
+
+    @property
+    @abstractmethod
+    def model_name(self) -> str:
+        pass
+
+
+class GeminiEmbeddingProvider(BaseEmbeddingProvider):
+    """
+    Google Gemini Cloud Embedding Provider.
+    Zero C++ runtime dependencies, pure HTTP client, SOTA multilingual performance.
+    """
+
+    def __init__(
+        self,
+        api_key: Optional[str] = None,
+        model_name: str = "models/gemini-embedding-2",
+        dimension: int = 768,
+        timeout_seconds: int = 30,
+    ):
+        self.api_key = (
+            api_key
+            or os.environ.get("GEMINI_API_KEY")
+            or os.environ.get("GOOGLE_API_KEY")
+            or os.environ.get("EMBEDDING_API_KEY")
+        )
+        self._model_name = model_name or os.environ.get("EMBEDDING_MODEL") or "models/gemini-embedding-2"
+        if not self._model_name.startswith("models/"):
+            self._model_name = f"models/{self._model_name}"
+        self._dimension = dimension
+        self.timeout = timeout_seconds
+
+    @property
+    def dimension(self) -> int:
+        return self._dimension
+
+    @property
+    def provider_name(self) -> str:
+        return "gemini_cloud"
+
+    @property
+    def model_name(self) -> str:
+        return self._model_name
+
+    def _normalize(self, vec: np.ndarray) -> np.ndarray:
+        norm = np.linalg.norm(vec)
+        if norm > 1e-9:
+            return (vec / norm).astype(np.float32)
+        return vec.astype(np.float32)
+
+    def _post_with_retry(self, url: str, payload: dict, max_retries: int = 5) -> requests.Response:
+        """Executes POST request with automatic retry and rate-limit backoff."""
+        for attempt in range(max_retries):
+            try:
+                resp = requests.post(url, json=payload, timeout=self.timeout)
+                if resp.status_code == 200:
+                    return resp
+                elif resp.status_code == 429:
+                    wait_time = 5.0 * (attempt + 1)
+                    try:
+                        err_data = resp.json()
+                        details = err_data.get("error", {}).get("details", [])
+                        for d in details:
+                            if "retryDelay" in d:
+                                rd_str = d["retryDelay"].rstrip("s")
+                                wait_time = float(rd_str) + 1.0
+                                break
+                    except Exception:
+                        pass
+                    logging.warning(
+                        f"[GeminiEmbedding] 429 Rate limit hit (attempt {attempt+1}/{max_retries}). "
+                        f"Waiting {wait_time:.1f}s before retry..."
+                    )
+                    time.sleep(wait_time)
+                elif resp.status_code in {500, 502, 503, 504}:
+                    wait_time = 3.0 * (attempt + 1)
+                    logging.warning(
+                        f"[GeminiEmbedding] HTTP {resp.status_code} transient error (attempt {attempt+1}/{max_retries}). "
+                        f"Waiting {wait_time:.1f}s..."
+                    )
+                    time.sleep(wait_time)
+                else:
+                    return resp
+            except requests.exceptions.RequestException as e:
+                if attempt == max_retries - 1:
+                    raise
+                wait_time = 3.0 * (attempt + 1)
+                logging.warning(f"[GeminiEmbedding] Network error: {e}. Retrying in {wait_time:.1f}s...")
+                time.sleep(wait_time)
+        raise RuntimeError("Gemini embedding request failed after max retries.")
+
+    def encode_query(self, query: str) -> np.ndarray:
+        if not self.api_key:
+            raise ValueError("GEMINI_API_KEY is not configured for GeminiEmbeddingProvider.")
+
+        url = f"https://generativelanguage.googleapis.com/v1beta/{self._model_name}:embedContent?key={self.api_key}"
+        payload = {
+            "model": self._model_name,
+            "content": {"parts": [{"text": query.strip()}]},
+            "taskType": "RETRIEVAL_QUERY",
+            "outputDimensionality": self._dimension,
+        }
+        resp = self._post_with_retry(url, payload)
+        if resp.status_code == 200:
+            values = resp.json().get("embedding", {}).get("values", [])
+            vec = np.asarray(values, dtype=np.float32)
+            return self._normalize(vec)
+        raise RuntimeError(f"Gemini embedding failed [HTTP {resp.status_code}]: {resp.text[:200]}")
+
+    def encode_passage(self, text: str) -> np.ndarray:
+        if not self.api_key:
+            raise ValueError("GEMINI_API_KEY is not configured for GeminiEmbeddingProvider.")
+
+        url = f"https://generativelanguage.googleapis.com/v1beta/{self._model_name}:embedContent?key={self.api_key}"
+        payload = {
+            "model": self._model_name,
+            "content": {"parts": [{"text": text.strip()}]},
+            "taskType": "RETRIEVAL_DOCUMENT",
+            "outputDimensionality": self._dimension,
+        }
+        resp = self._post_with_retry(url, payload)
+        if resp.status_code == 200:
+            values = resp.json().get("embedding", {}).get("values", [])
+            vec = np.asarray(values, dtype=np.float32)
+            return self._normalize(vec)
+        raise RuntimeError(f"Gemini embedding failed [HTTP {resp.status_code}]: {resp.text[:200]}")
+
+    def encode_passages_batch(self, texts: List[str], batch_size: int = 30) -> List[np.ndarray]:
+        if not self.api_key:
+            raise ValueError("GEMINI_API_KEY is not configured for GeminiEmbeddingProvider.")
+
+        results: List[np.ndarray] = []
+        url = f"https://generativelanguage.googleapis.com/v1beta/{self._model_name}:batchEmbedContents?key={self.api_key}"
+
+        for i in range(0, len(texts), batch_size):
+            chunk_texts = texts[i : i + batch_size]
+            req_entries = [
+                {
+                    "model": self._model_name,
+                    "content": {"parts": [{"text": t.strip()}]},
+                    "taskType": "RETRIEVAL_DOCUMENT",
+                    "outputDimensionality": self._dimension,
+                }
+                for t in chunk_texts
+            ]
+            resp = self._post_with_retry(url, {"requests": req_entries})
+            if resp.status_code == 200:
+                embeddings_data = resp.json().get("embeddings", [])
+                for item in embeddings_data:
+                    vals = item.get("values", [])
+                    vec = np.asarray(vals, dtype=np.float32)
+                    results.append(self._normalize(vec))
+                # Gentle pacing between batches
+                if i + batch_size < len(texts):
+                    time.sleep(0.5)
+            else:
+                raise RuntimeError(f"Gemini batch embedding failed [HTTP {resp.status_code}]: {resp.text[:200]}")
+
+        return results
+
+
+class NvidiaEmbeddingProvider(BaseEmbeddingProvider):
+    """NVIDIA NIM Hosted Embedding Provider."""
+
+    def __init__(
+        self,
+        api_key: Optional[str] = None,
+        model_name: str = "nvidia/nv-embedqa-e5-v5",
+        dimension: int = 1024,
+        timeout_seconds: int = 30,
+    ):
+        self.api_key = api_key or os.environ.get("NVIDIA_API_KEY") or os.environ.get("EMBEDDING_API_KEY")
+        self._model_name = model_name or os.environ.get("EMBEDDING_MODEL") or "nvidia/nv-embedqa-e5-v5"
+        self._dimension = dimension
+        self.timeout = timeout_seconds
+
+    @property
+    def dimension(self) -> int:
+        return self._dimension
+
+    @property
+    def provider_name(self) -> str:
+        return "nvidia_cloud"
+
+    @property
+    def model_name(self) -> str:
+        return self._model_name
+
+    def _normalize(self, vec: np.ndarray) -> np.ndarray:
+        norm = np.linalg.norm(vec)
+        if norm > 1e-9:
+            return (vec / norm).astype(np.float32)
+        return vec.astype(np.float32)
+
+    def _embed(self, texts: List[str], input_type: str) -> List[np.ndarray]:
+        if not self.api_key:
+            raise ValueError("NVIDIA_API_KEY is not configured for NvidiaEmbeddingProvider.")
+
+        url = "https://integrate.api.nvidia.com/v1/embeddings"
+        headers = {"Authorization": f"Bearer {self.api_key}", "Content-Type": "application/json"}
+        payload = {
+            "input": texts,
+            "model": self._model_name,
+            "input_type": input_type,
+        }
+        resp = requests.post(url, headers=headers, json=payload, timeout=self.timeout)
+        if resp.status_code == 200:
+            data = resp.json().get("data", [])
+            return [self._normalize(np.asarray(item["embedding"], dtype=np.float32)) for item in data]
+        raise RuntimeError(f"NVIDIA embedding failed [HTTP {resp.status_code}]: {resp.text[:200]}")
+
+    def encode_query(self, query: str) -> np.ndarray:
+        return self._embed([query.strip()], input_type="query")[0]
+
+    def encode_passage(self, text: str) -> np.ndarray:
+        return self._embed([text.strip()], input_type="passage")[0]
+
+    def encode_passages_batch(self, texts: List[str], batch_size: int = 50) -> List[np.ndarray]:
+        results: List[np.ndarray] = []
+        for i in range(0, len(texts), batch_size):
+            chunk = texts[i : i + batch_size]
+            results.extend(self._embed(chunk, input_type="passage"))
+        return results
+
+
+class MockEmbeddingProvider(BaseEmbeddingProvider):
+    """Deterministic Mock Embedding Provider for fast offline testing (zero network)."""
+
+    def __init__(self, dimension: int = 768):
+        self._dimension = dimension
+
+    @property
+    def dimension(self) -> int:
+        return self._dimension
+
+    @property
+    def provider_name(self) -> str:
+        return "mock"
+
+    @property
+    def model_name(self) -> str:
+        return "mock-embedding-v1"
+
+    def _hash_embed(self, text: str) -> np.ndarray:
+        import hashlib
+        seed = int(hashlib.md5(text.encode("utf-8")).hexdigest(), 16) % (2**32)
+        rng = np.random.RandomState(seed)
+        vec = rng.randn(self._dimension).astype(np.float32)
+        norm = np.linalg.norm(vec)
+        return vec / (norm if norm > 1e-9 else 1.0)
+
+    def encode_query(self, query: str) -> np.ndarray:
+        return self._hash_embed(f"q:{query}")
+
+    def encode_passage(self, text: str) -> np.ndarray:
+        return self._hash_embed(f"p:{text}")
+
+    def encode_passages_batch(self, texts: List[str]) -> List[np.ndarray]:
+        return [self.encode_passage(t) for t in texts]
+
 
 class ONNXEmbeddingProvider(BaseEmbeddingProvider):
-    """Lightweight ONNX Runtime inference provider (Serverless & Docker friendly)."""
+    """Lightweight ONNX Runtime inference provider (Rollback Baseline)."""
 
     def __init__(self, onnx_model_path: str, tokenizer_path: str, use_e5_prefixes: bool = True):
         self.onnx_model_path = onnx_model_path
@@ -112,6 +396,14 @@ class ONNXEmbeddingProvider(BaseEmbeddingProvider):
         self._session = None
         self._tokenizer = None
         self._dimension = 384
+
+    @property
+    def provider_name(self) -> str:
+        return "onnx_local"
+
+    @property
+    def model_name(self) -> str:
+        return "intfloat/multilingual-e5-small"
 
     def _init_runtime(self):
         if self._session is None:
@@ -154,20 +446,28 @@ class ONNXEmbeddingProvider(BaseEmbeddingProvider):
 
 
 class LocalE5EmbeddingProvider(BaseEmbeddingProvider):
-    """SentenceTransformers PyTorch provider for local development."""
+    """SentenceTransformers PyTorch provider for local development (Rollback)."""
 
     def __init__(self, model_name: str, device: Optional[str] = None, use_e5_prefixes: bool = True):
-        self.model_name = model_name
+        self._model_name = model_name
         self.device = device
         self.use_e5_prefixes = use_e5_prefixes
         self._model = None
         self._dimension = 384
 
+    @property
+    def provider_name(self) -> str:
+        return "pytorch_local"
+
+    @property
+    def model_name(self) -> str:
+        return self._model_name
+
     def _load_model(self):
         if self._model is None:
             from sentence_transformers import SentenceTransformer
-            logging.info(f"Loading dense embedding model '{self.model_name}' via PyTorch...")
-            self._model = SentenceTransformer(self.model_name, device=self.device)
+            logging.info(f"Loading dense embedding model '{self._model_name}' via PyTorch...")
+            self._model = SentenceTransformer(self._model_name, device=self.device)
             self._dimension = self._model.get_embedding_dimension()
         return self._model
 
@@ -188,6 +488,29 @@ class LocalE5EmbeddingProvider(BaseEmbeddingProvider):
         return np.asarray(vec, dtype=np.float32)
 
 
+def get_default_embedding_provider() -> BaseEmbeddingProvider:
+    """Factory creating the appropriate EmbeddingProvider based on environment variables."""
+    p = os.environ.get("EMBEDDING_PROVIDER", "gemini").lower()
+    if p in {"gemini", "google", "cloud"}:
+        return GeminiEmbeddingProvider()
+    elif p in {"nvidia", "nim"}:
+        return NvidiaEmbeddingProvider()
+    elif p == "mock":
+        return MockEmbeddingProvider()
+    elif p == "onnx":
+        base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        onnx_path = os.path.join(base_dir, "outputs", "onnx_model", "model.onnx")
+        tokenizer_dir = os.path.join(base_dir, "data", "models", "multilingual-e5-small")
+        return ONNXEmbeddingProvider(onnx_path, tokenizer_dir)
+    elif p in {"local", "pytorch"}:
+        return LocalE5EmbeddingProvider("intfloat/multilingual-e5-small")
+    
+    # Auto-detection: if GEMINI_API_KEY is present, default to Gemini Cloud
+    if os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY"):
+        return GeminiEmbeddingProvider()
+    return MockEmbeddingProvider()
+
+
 # ─────────────────────────────────────────────────────────────────────────────
 # Dense Retriever Class
 # ─────────────────────────────────────────────────────────────────────────────
@@ -195,11 +518,10 @@ class LocalE5EmbeddingProvider(BaseEmbeddingProvider):
 class DenseRetriever:
     """
     Independent Dense Vector Retrieval Engine supporting English & Arabic queries.
-    Uses EmbeddingProvider abstraction (defaults to ONNX if model.onnx exists, falls back to PyTorch).
+    Uses EmbeddingProvider abstraction (defaults to Gemini Cloud, falls back to ONNX/PyTorch).
     """
 
-    DEFAULT_MODEL_NAME = "intfloat/multilingual-e5-small"
-    FALLBACK_MODEL_NAME = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+    DEFAULT_MODEL_NAME = "models/gemini-embedding-001"
 
     def __init__(
         self,
@@ -210,32 +532,13 @@ class DenseRetriever:
     ):
         self.model_name = model_name
         self.device = device
-
-        if use_e5_prefixes is None:
-            self.use_e5_prefixes = "e5" in model_name.lower()
-        else:
-            self.use_e5_prefixes = use_e5_prefixes
+        self.use_e5_prefixes = use_e5_prefixes if use_e5_prefixes is not None else False
 
         # Setup Embedding Provider
         if provider is not None:
             self.provider = provider
         else:
-            base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-            onnx_path = os.path.join(base_dir, "outputs", "onnx_model", "model.onnx")
-            tokenizer_dir = os.path.join(base_dir, "data", "models", "multilingual-e5-small")
-            
-            if os.path.exists(onnx_path) and os.path.exists(tokenizer_dir):
-                self.provider = ONNXEmbeddingProvider(
-                    onnx_model_path=onnx_path,
-                    tokenizer_path=tokenizer_dir,
-                    use_e5_prefixes=self.use_e5_prefixes,
-                )
-            else:
-                self.provider = LocalE5EmbeddingProvider(
-                    model_name=self.model_name,
-                    device=self.device,
-                    use_e5_prefixes=self.use_e5_prefixes,
-                )
+            self.provider = get_default_embedding_provider()
 
         self.embedding_dimension: int = self.provider.dimension
         self.corpus_size: int = 0
@@ -371,20 +674,36 @@ class DenseRetriever:
 
         with open(records_path, "r", encoding="utf-8") as f:
             rec_data = json.load(f)
-
         records_list = rec_data.get("records", [])
 
         data = np.load(npz_path, allow_pickle=True)
         vectors = data["vectors"]
         chunk_ids = list(data["chunk_ids"])
 
+        target_dim = meta.get("embedding_dimension", vectors.shape[1])
+
+        # Auto-resolve provider matching index dimension if not explicitly provided
+        if provider is None:
+            if target_dim == 384:
+                base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+                onnx_path = os.path.join(base_dir, "outputs", "onnx_model", "model.onnx")
+                tokenizer_dir = os.path.join(base_dir, "data", "models", "multilingual-e5-small")
+                if os.path.exists(onnx_path) and os.path.exists(tokenizer_dir):
+                    provider = ONNXEmbeddingProvider(onnx_path, tokenizer_dir, use_e5_prefixes=meta.get("use_e5_prefixes", True))
+                else:
+                    provider = LocalE5EmbeddingProvider(meta.get("model_name", "intfloat/multilingual-e5-small"), device=device, use_e5_prefixes=meta.get("use_e5_prefixes", True))
+            elif target_dim == 768:
+                provider = GeminiEmbeddingProvider(dimension=768)
+            elif target_dim == 1024:
+                provider = NvidiaEmbeddingProvider(dimension=1024)
+
         retriever = cls(
             model_name=meta.get("model_name", cls.DEFAULT_MODEL_NAME),
             device=device,
-            use_e5_prefixes=meta.get("use_e5_prefixes", True),
+            use_e5_prefixes=meta.get("use_e5_prefixes", False),
             provider=provider,
         )
-        retriever.embedding_dimension = meta.get("embedding_dimension", vectors.shape[1])
+        retriever.embedding_dimension = target_dim
         retriever.corpus_size = len(chunk_ids)
         retriever.chunk_ids = chunk_ids
         retriever.vectors = vectors
