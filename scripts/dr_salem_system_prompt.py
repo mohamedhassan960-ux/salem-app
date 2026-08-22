@@ -369,5 +369,18 @@ Simplify the language, not the clinical truth.
 
 def get_dr_salem_system_prompt() -> str:
     """Returns the production Dr. Salem system prompt."""
+    prompt_file = os.path.join(
+        os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+        "prompts",
+        "clinical_assistant_system.txt",
+    )
+    if os.path.exists(prompt_file):
+        try:
+            with open(prompt_file, "r", encoding="utf-8") as f:
+                content = f.read().strip()
+                if content:
+                    return content
+        except Exception:
+            pass
     return DR_SALEM_SYSTEM_PROMPT.strip()
 

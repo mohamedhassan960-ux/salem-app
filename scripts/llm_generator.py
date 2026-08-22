@@ -296,12 +296,12 @@ class GeminiProvider(LLMProvider):
             or os.environ.get("GOOGLE_API_KEY")
             or os.environ.get("LLM_API_KEY")
         )
-        # Prefer GEMINI_MODEL env var, fall back to gemini-2.5-flash
+        # Prefer GEMINI_MODEL env var, fall back to gemini-3.6-flash
         self._model_name = (
             model_name
             or os.environ.get("GEMINI_MODEL")
             or os.environ.get("LLM_MODEL")
-            or "gemini-2.5-flash"
+            or "gemini-3.6-flash"
         )
 
     @property
