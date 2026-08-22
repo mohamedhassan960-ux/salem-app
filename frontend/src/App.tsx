@@ -23,47 +23,11 @@ import { NetworkBanner } from './components/pwa/NetworkBanner';
 
 import type { ConversationSession, ChatMessage } from './types/chat';
 
+import { useMemo } from 'react';
+
 type Tab = 'chat' | 'plan' | 'history' | 'profile' | 'settings' | 'marketing';
 
-const INITIAL_CONVERSATIONS: ConversationSession[] = [
-  {
-    id: 'conv_1',
-    title: 'كيفية البدء في خطة الإقلاع',
-    group: 'اليوم',
-    createdAt: Date.now() - 3600000,
-    updatedAt: Date.now() - 3600000,
-    messages: [
-      {
-        id: 'm1',
-        role: 'user',
-        content: 'عايز أبدأ خطة إقلاع تدريجية بدون توتر كبير.',
-        timestamp: Date.now() - 3600000,
-      },
-      {
-        id: 'm2',
-        role: 'assistant',
-        content: 'أهلاً بيك يا بطل! التوقف مع تحديد هدف واضح خطوة بخطوة من أنجح الطرق المعتمدة في دليل منظمة الصحة العالمية (WHO 2024). خلينا نحدد أهم المحفزات اللي بتواجهك ونبدأ خطوة صغيرة اليوم.',
-        timestamp: Date.now() - 3500000,
-      },
-    ],
-  },
-  {
-    id: 'conv_2',
-    title: 'التعامل مع أعراض الانسحاب والصداع',
-    group: 'اليوم',
-    createdAt: Date.now() - 7200000,
-    updatedAt: Date.now() - 7200000,
-    messages: [],
-  },
-  {
-    id: 'conv_3',
-    title: 'بدائل النيكوتين (NRT) واللصقات',
-    group: 'أمس',
-    createdAt: Date.now() - 86400000,
-    updatedAt: Date.now() - 86400000,
-    messages: [],
-  },
-];
+const INITIAL_CONVERSATIONS: ConversationSession[] = [];
 
 export function App() {
   const { authStep, setAuthStep, signOut } = useAuth();
@@ -76,7 +40,7 @@ export function App() {
   // Conversations State
   const [conversations, setConversations] = useState<ConversationSession[]>(() => {
     try {
-      const saved = localStorage.getItem('salem_conversations_v2');
+      const saved = localStorage.getItem('salem_conversations_v3');
       if (saved) return JSON.parse(saved);
     } catch {
       // ignore
@@ -84,17 +48,54 @@ export function App() {
     return INITIAL_CONVERSATIONS;
   });
 
-  const [activeConversationId, setActiveConversationId] = useState<string | null>('conv_1');
+  // Always start with a fresh clean chat session
+  const [activeConversationId, setActiveConversationId] = useState<string | null>(() => `conv_${Date.now()}`);
 
   useEffect(() => {
     try {
-      localStorage.setItem('salem_conversations_v2', JSON.stringify(conversations));
+      localStorage.setItem('salem_conversations_v3', JSON.stringify(conversations));
     } catch {
       // ignore
     }
   }, [conversations]);
 
-  const activeConversation = conversations.find((c) => c.id === activeConversationId) || null;
+  // Reset to fresh clean chat if user leaves app idle for > 30 minutes
+  useEffect(() => {
+    let lastActive = Date.now();
+    const checkInactivity = () => {
+      const now = Date.now();
+      if (now - lastActive > 30 * 60 * 1000) {
+        setActiveConversationId(`conv_${now}`);
+      }
+      lastActive = now;
+    };
+
+    window.addEventListener('focus', checkInactivity);
+    const onVisibility = () => {
+      if (document.visibilityState === 'visible') {
+        checkInactivity();
+      }
+    };
+    document.addEventListener('visibilitychange', onVisibility);
+
+    return () => {
+      window.removeEventListener('focus', checkInactivity);
+      document.removeEventListener('visibilitychange', onVisibility);
+    };
+  }, []);
+
+  const activeConversation: ConversationSession = useMemo(() => {
+    const found = conversations.find((c) => c.id === activeConversationId);
+    if (found) return found;
+    return {
+      id: activeConversationId || `conv_${Date.now()}`,
+      title: 'محادثة جديدة',
+      group: 'اليوم',
+      createdAt: Date.now(),
+      updatedAt: Date.now(),
+      messages: [],
+    };
+  }, [conversations, activeConversationId]);
 
   // Handlers
   const handleSelectConversation = (conv: ConversationSession) => {
