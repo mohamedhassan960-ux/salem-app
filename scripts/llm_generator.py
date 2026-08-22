@@ -296,12 +296,12 @@ class GeminiProvider(LLMProvider):
             or os.environ.get("GOOGLE_API_KEY")
             or os.environ.get("LLM_API_KEY")
         )
-        # Prefer GEMINI_MODEL env var, fall back to gemini-3.6-flash
+        # Prefer GEMINI_MODEL env var, fall back to gemini-2.5-flash
         self._model_name = (
             model_name
             or os.environ.get("GEMINI_MODEL")
             or os.environ.get("LLM_MODEL")
-            or "gemini-3.6-flash"
+            or "gemini-2.5-flash"
         )
 
     @property
@@ -317,7 +317,7 @@ class GeminiProvider(LLMProvider):
         system_prompt: str,
         messages: List[Dict[str, str]],
         temperature: float = 0.0,
-        max_tokens: int = 512,
+        max_tokens: int = 2048,
     ) -> str:
         if not self.api_key:
             raise ValueError("GEMINI_API_KEY is not set. Set it as an environment variable.")
@@ -332,12 +332,15 @@ class GeminiProvider(LLMProvider):
             role = "user" if m["role"] == "user" else "model"
             contents.append({"role": role, "parts": [{"text": m["content"]}]})
 
+        # Ensure ample token headroom for reasoning/thinking tokens + full clinical response
+        effective_max_tokens = max(max_tokens, 2048)
+
         payload = {
             "systemInstruction": {"parts": [{"text": system_prompt}]},
             "contents": contents,
             "generationConfig": {
                 "temperature": temperature,
-                "maxOutputTokens": max_tokens,
+                "maxOutputTokens": effective_max_tokens,
             },
         }
 
@@ -350,10 +353,14 @@ class GeminiProvider(LLMProvider):
                     if not candidates:
                         return ""
                     parts = candidates[0].get("content", {}).get("parts", [])
-                    # Exclude thought parts (thinkingBudget=0 but guard anyway)
-                    text_parts = [p.get("text", "") for p in parts if "text" in p and not p.get("thought", False)]
+                    # Exclude thought/reasoning scratchpad parts to avoid leaking internal reasoning
+                    text_parts = [
+                        p.get("text", "")
+                        for p in parts
+                        if isinstance(p, dict) and "text" in p and not p.get("thought", False)
+                    ]
                     if not text_parts:
-                        text_parts = [p.get("text", "") for p in parts if "text" in p]
+                        text_parts = [p.get("text", "") for p in parts if isinstance(p, dict) and "text" in p]
                     # Log token usage (safe — no secrets)
                     usage = data.get("usageMetadata", {})
                     if usage:
@@ -366,7 +373,7 @@ class GeminiProvider(LLMProvider):
                     return "".join(text_parts).strip()
                 elif resp.status_code == 404:
                     # Model retirement fallback by Google
-                    fallback_models = ["gemini-3.6-flash", "gemini-3.5-flash", "gemini-2.5-flash"]
+                    fallback_models = ["gemini-3.6-flash", "gemini-flash-latest", "gemini-2.5-flash"]
                     next_model = None
                     for fm in fallback_models:
                         if fm != self._model_name:
@@ -595,7 +602,7 @@ class LLMGenerator:
                 system_prompt=self.system_prompt,
                 messages=messages,
                 temperature=temperature,
-                max_tokens=800,
+                max_tokens=2048,
             )
 
             citations = citations_metadata or []
