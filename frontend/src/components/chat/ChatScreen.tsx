@@ -62,12 +62,13 @@ export const ChatScreen = ({
   const scrollRef = useRef<HTMLDivElement>(null);
   const abortControllerRef = useRef<AbortController | null>(null);
 
-  // Sync with active conversation change
+  // Sync with active conversation change only when conversation ID changes
+  const activeConvId = activeConversation?.id;
   useEffect(() => {
     setMessages(activeConversation ? activeConversation.messages : []);
     setErrorMessage(null);
     setComposerValue('');
-  }, [activeConversation]);
+  }, [activeConvId]);
 
   // Scroll to bottom smoothly on message or loading state changes
   useEffect(() => {

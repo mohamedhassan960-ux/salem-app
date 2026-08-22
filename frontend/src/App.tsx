@@ -128,43 +128,42 @@ export function App() {
   };
 
   const handleUpdateMessages = (msgs: ChatMessage[]) => {
+    const currentId = activeConversationId || `conv_${Date.now()}`;
+    const firstUserMsg = msgs.find((m) => m.role === 'user');
+    const autoTitle = firstUserMsg ? firstUserMsg.content.slice(0, 30) + '...' : 'محادثة مع سالم';
+
+    setConversations((prev) => {
+      const idx = prev.findIndex((c) => c.id === currentId);
+      if (idx >= 0) {
+        return prev.map((c, i) =>
+          i === idx
+            ? {
+                ...c,
+                title:
+                  (c.title === 'استشارة جديدة' || c.title === 'محادثة جديدة') && firstUserMsg
+                    ? autoTitle
+                    : c.title,
+                updatedAt: Date.now(),
+                messages: msgs,
+              }
+            : c
+        );
+      } else {
+        const newConv: ConversationSession = {
+          id: currentId,
+          title: autoTitle,
+          group: 'اليوم',
+          createdAt: Date.now(),
+          updatedAt: Date.now(),
+          messages: msgs,
+        };
+        return [newConv, ...prev];
+      }
+    });
+
     if (!activeConversationId) {
-      // Create new conversation automatically on first message
-      const newId = `conv_${Date.now()}`;
-      const firstUserMsg = msgs.find((m) => m.role === 'user');
-      const title = firstUserMsg ? firstUserMsg.content.slice(0, 30) + '...' : 'محادثة مع سالم';
-      const newConv: ConversationSession = {
-        id: newId,
-        title,
-        group: 'اليوم',
-        createdAt: Date.now(),
-        updatedAt: Date.now(),
-        messages: msgs,
-      };
-      setConversations((prev) => [newConv, ...prev]);
-      setActiveConversationId(newId);
-      return;
+      setActiveConversationId(currentId);
     }
-
-    setConversations((prev) =>
-      prev.map((c) => {
-        if (c.id === activeConversationId) {
-          const firstUserMsg = msgs.find((m) => m.role === 'user');
-          const title =
-            c.title === 'استشارة جديدة' && firstUserMsg
-              ? firstUserMsg.content.slice(0, 30) + '...'
-              : c.title;
-
-          return {
-            ...c,
-            title,
-            updatedAt: Date.now(),
-            messages: msgs,
-          };
-        }
-        return c;
-      })
-    );
   };
 
   const handleConfirmLogout = async () => {
