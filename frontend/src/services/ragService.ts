@@ -75,8 +75,8 @@ export class RAGNetworkError extends Error {
 // ─── Base URL Configuration & Validation ──────────────────────────────────────
 
 const RAW_API_URL = import.meta.env.VITE_API_URL;
-// Ensure no trailing slash
-export const BASE_API = (RAW_API_URL ? String(RAW_API_URL).trim().replace(/\/+$/, '') : '');
+// Ensure no trailing slash and fallback to live production cloud backend
+export const BASE_API = (RAW_API_URL ? String(RAW_API_URL).trim().replace(/\/+$/, '') : 'https://salem-backend.vercel.app');
 
 if (!BASE_API) {
   console.warn(
