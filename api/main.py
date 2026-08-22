@@ -169,7 +169,7 @@ async def request_lifecycle_middleware(request: Request, call_next):
     summary="Process clinical query through Oxygen RAG pipeline",
     dependencies=[Depends(verify_authentication)],
 )
-async def chat_endpoint(payload: ChatRequest, request: Request) -> ChatResponse:
+def chat_endpoint(payload: ChatRequest, request: Request) -> ChatResponse:
     """
     Submits a query to the Dr. Salem clinical RAG pipeline.
     Executes deterministic circuit breaker for unsupported/out-of-scope queries (0 LLM calls).

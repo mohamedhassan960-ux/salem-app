@@ -387,19 +387,10 @@ class GeminiProvider(LLMProvider):
                     else:
                         raise RuntimeError(f"Gemini API Error 404: {resp.text}")
                 elif resp.status_code in [429, 503, 500, 502]:
-                    wait_time = 5 * (attempt + 1)
-                    if resp.status_code == 429:
-                        try:
-                            err_data = resp.json()
-                            msg = err_data.get("error", {}).get("message", "")
-                            match = re.search(r"retry in (\d+(\.\d+)?)s", msg)
-                            if match:
-                                wait_time = float(match.group(1)) + 2
-                        except Exception:
-                            pass
-                        logging.warning(f"Gemini 429 Rate Limit (attempt {attempt+1}/5). Waiting {wait_time:.1f}s...")
-                    else:
-                        logging.warning(f"Gemini {resp.status_code} High Demand / Transient (attempt {attempt+1}/5). Retrying in {wait_time:.1f}s...")
+                    if attempt >= 2:
+                        raise RuntimeError(f"Gemini API rate limit / server busy ({resp.status_code}): {resp.text[:200]}")
+                    wait_time = min(2.0, 1.0 * (attempt + 1))
+                    logging.warning(f"Gemini {resp.status_code} (attempt {attempt+1}/3). Quick wait {wait_time:.1f}s...")
                     time.sleep(wait_time)
                 else:
                     raise RuntimeError(f"Gemini API Error {resp.status_code}: {resp.text[:300]}")
