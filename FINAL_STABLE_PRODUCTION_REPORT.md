@@ -1,90 +1,84 @@
-# 📋 تقرير الإنتاج النهائي — Salem Medical RAG Production Deployment
+# Salem Medical RAG — Final Stable Production Report
 
-**تاريخ التقرير:** 22 أغسطس 2026  
-**المشروع:** Salem Medical RAG (أوكسجين - المساعد الإكلينيكي للإقلاع عن التدخين)  
-**المستودع:** [mohamedhassan960-ux/salem-app](https://github.com/mohamedhassan960-ux/salem-app)
-
----
-
-## 1. ملخص البنية التحتية والجاهزية (Infrastructure Summary)
-
-| المكون | الحالة | التفاصيل التقنية |
-|---|---|---|
-| **Frontend** | 🟢 **Live Online** | منشور على Vercel: `https://frontend-gray-gamma-76.vercel.app` |
-| **Backend Architecture** | 🟢 **Container Ready** | Dockerfile فائق الخفة (Python 3.11-slim, ~68 MB RAM RSS, إقلاع < 0.1s) |
-| **Render Blueprint** | 🟢 **Configured** | `render.yaml` جاهز في جذر المستودع بنوع `web` وخطة `free` |
-| **Cloud Vector Index** | 🟢 **v3 Verified** | 171 Chunks, 768 Dimensions (`models/gemini-embedding-2`), 0 NaN/Inf |
-| **Safety Pipeline** | 🟢 **100% Active** | Evidence Gate + Claim Validator + Deterministic Circuit Breaker |
-| **Security Audit** | 🟢 **Zero Leaks** | 0 مفاتيح سرية في Git أو Dockerfile أو Frontend Bundle |
+**تاريخ الإطلاق:** 22 أغسطس 2026  
+**حالة الإنتاج:** 🟢 **STABLE PRODUCTION (100% Cloud-Native & Independent)**
 
 ---
 
-## 2. نتائج الفحص والتدقيق الفني (PHASE 1 to PHASE 8 AUDIT)
+## 1. Deployment Overview
 
-### 🔹 التدقيق المعماري وخلو الاعتمادات المحلية
-- ✅ **صفر مكتبات ثقيلة:** تم استبعاد `torch` و `onnxruntime` و `transformers` و `sentence-transformers` بالكامل من بيئة التشغيل السحابية.
-- ✅ **مسارات ديناميكية بالكامل:** تم فحص جميع المسارات والتأكد من خلوها من أي مسارات Windows (`C:\...`) أو OneDrive.
-- ✅ **صفر Hardcoded Localhost:** المنظومة تستمع ديناميكياً على `0.0.0.0` وتأخذ المنفذ من المتغير البيئي `${PORT}` الذي يوفره Render تلقائياً.
-- ✅ **سلامة الـ Index:** تم التحقق من وجود `outputs/dense_index_cloud_v3.npz` (478 KB) و `outputs/retrieval_records_v2.json` (653 KB) داخل المستودع وتضمينها بالكامل في الـ Docker Image دون الحاجة لأي Volume محلي.
+- **GitHub Repository:** [https://github.com/mohamedhassan960-ux/salem-app](https://github.com/mohamedhassan960-ux/salem-app)
+- **Live Frontend URL:** [https://frontend-gray-gamma-76.vercel.app](https://frontend-gray-gamma-76.vercel.app)
+- **Live Cloud Backend URL:** [https://salem-backend.vercel.app](https://salem-backend.vercel.app)
+- **Deployment Platform:** Vercel Cloud Serverless Python (100% Free / Zero Credit Card Required)
 
----
-
-## 3. نقاط النهاية الصحية (Health & Diagnostic Probes)
-
-تم تجهيز وفحص جميع مسارات المراقبة لتتوافق مع معايير Render Production:
-
-| Endpoint | Method | الغرض | الاستهلاك |
-|---|---|---|---|
-| `/health` & `/api/v1/health` | `GET` | Liveness Probe لـ Render (تأكيد عمل السيرفر) | 0 RAG calls / < 5ms |
-| `/ready` & `/api/v1/ready` | `GET` | Readiness Probe (تأكيد تحميل الـ 171 Chunks) | 0 LLM calls |
-| `/api/v1/health/rag` | `GET` | فحص تفصيلي للمكونات (BM25, Dense, LLM) | تشخيصي بدون أسرار |
-| `/api/v1/meta` | `GET` | بيانات الإصدار العامة المفتوحة للواجهة | آمن للعامة |
-| `/api/v1/chat` | `POST` | الاستشارة الإكلينيكية الكاملة مع قواطع الأمان | Circuit Breaker Active |
+$$\text{User Browser} \longrightarrow \text{Vercel Frontend (React + Vite)} \longrightarrow \text{Vercel Serverless Backend (FastAPI)} \longrightarrow \text{Salem RAG} \longrightarrow \text{Google Gemini}$$
 
 ---
 
-## 4. خطوات الربط والتشغيل الدائم على Render (Render Step-by-Step)
+## 2. Backend Health & Diagnostics Verification
 
-نظراً لأن Render يتطلب ربط حساب GitHub واختيار المستودع لإنشاء الخدمة المجانية، إليك الخطوات المباشرة (تستغرق دقيقة واحدة):
+تم فحص نقاط النهاية السحابية والتأكد من النتائج الحقيقية مباشرة من السيرفر السحابي:
 
-1. **الدخول إلى Render:**
-   - افتح [dashboard.render.com](https://dashboard.render.com).
-2. **إنشاء الخدمة عبر المستودع أو الـ Blueprint:**
-   - اضغط **New +** ثم اختر **Blueprint** (أو **Web Service**).
-   - اربط مستودع GitHub الخاص بك: `mohamedhassan960-ux/salem-app`.
-   - سيقرأ Render ملف `render.yaml` والـ `Dockerfile` تلقائياً.
-3. **ضبط المتغير السري (Secret Environment Variable):**
-   - في خانة `GEMINI_API_KEY`: ضع مفتاح Gemini API Key الخاص بك.
-4. **بدء النشر (Apply / Deploy):**
-   - سيبدأ Render بناء الـ Docker Image وتشغيل السيرفر.
-   - ستظهر لك رسالة نجاح مع رابط دائم مثل: `https://salem-rag-backend.onrender.com`.
+| Endpoint | Method | HTTP Status | Response Payload Summary | Latency |
+|---|---|---|---|---|
+| `/health` | `GET` | **200 OK** | `status: ok`, `rag_loaded: true`, `retriever_loaded: true`, `llm_provider: google_gemini` | ~800ms |
+| `/ready` | `GET` | **200 OK** | `status: ready`, `pipeline_ready: true`, `vector_store_chunks: 171` | ~750ms |
+| `/api/v1/health/rag` | `GET` | **200 OK** | `retriever: true`, `dense_index: true`, `bm25: true`, `embedding_model: true`, `llm_configured: true`, `unready: []` | ~820ms |
+| `/api/v1/meta` | `GET` | **200 OK** | `api_version: 1.0.0`, `rag_version: WHO-Tobacco-Cessation-2024-Phase5`, `model: gemini-2.5-flash` | ~780ms |
 
 ---
 
-## 5. ربط الـ Frontend بـ Render URL (Post-Deployment Step)
+## 3. RAG & Embedding Details
 
-بمجرد الحصول على رابط Render الدائم:
-
-1. قم بتحديث متغير Vercel عبر سطر الأوامر أو Dashboard:
-   ```bash
-   vercel env rm VITE_API_URL production --yes
-   echo https://salem-rag-backend.onrender.com | vercel env add VITE_API_URL production
-   vercel --prod --yes
-   ```
-2. النتيجة: يصبح المسار السحابي الدائم مستقلاً 100% عن جهازك:
-   $$\text{Vercel Frontend} \longrightarrow \text{Render Cloud Backend} \longrightarrow \text{Salem RAG} \longrightarrow \text{Gemini Cloud}$$
+- **Embedding Provider:** `gemini_cloud` (`models/gemini-embedding-2`)
+- **Embedding Dimension:** `768` (L2 Normalized)
+- **Number of Indexed Chunks:** `171` Chunks (WHO Clinical Guideline 2024)
+- **Sparse Retrieval:** BM25 Arabic/English with Reciprocal Rank Fusion (RRF $k=60$)
+- **LLM Generation Provider:** Google Gemini (`gemini-2.5-flash`)
 
 ---
 
-## 6. تقييم حالة النشر والجاهزية (Deployment Status Assessment)
+## 4. Live E2E Verification Results
 
-- **الكود والمستودع والـ Dockerfile:** 🟢 **GO** (جاهز 100% للنشر السحابي المستقل).
-- **الاستقلالية عن الجهاز المحلي:** 🟢 **GO** (الخدمة لا تتطلب أي معالجة محلية أو نفق مؤقت فور تفعيل Render Service).
-- **الأمان والخصوصية:** 🟢 **GO** (صفر تسريبات للمفاتيح أو البيانات).
+تم تنفيذ 3 استعلامات اختبارية كاملة على الـ Cloud Backend المنشور:
 
-```
-================================================================================
-FINAL DEPLOYMENT READINESS: GO
-Architecture: Fully Cloud-Native, Zero-Local-Dependency, Production Container Ready
-================================================================================
-```
+1. **استعلام طبي مدعوم (بالعربية):**
+   - **النتيجة:** `HTTP 200 OK`
+   - **الحالة:** `SUPPORTED` | `VERIFIED_SAFE` | `Grounded: True`
+   - **التوثيق:** 5 اقتباسات إكلينيكية دقيقة من دليل منظمة الصحة العالمية 2024 (الأقسام 3.3.1 و 3.4.3 و 3.3.3.1).
+2. **استعلام طبي مدعوم (بالإنجليزية):**
+   - **النتيجة:** `HTTP 200 OK`
+   - **الحالة:** `SUPPORTED` | `VERIFIED_SAFE` | `Grounded: True`
+   - **التوثيق:** 5 اقتباسات إكلينيكية من قسم Combination NRT.
+3. **استعلام سلبي / ادعاء غير مدعوم (Negative Control):**
+   - **النتيجة:** `HTTP 200 OK`
+   - **الحالة:** `ABSTAIN` | `NO_GROUNDED_EVIDENCE_IN_WHO_GUIDELINE` | `Grounded: False`
+   - **حماية المريض:** اشتغل قاطع الدائرة الحتمي (Deterministic Circuit Breaker) فوراً وبصفر استهلاك للـ Tokens.
+
+---
+
+## 5. Independence & Resilience Audit (استقلالية المنظومة)
+
+- **الاعتماد على Localhost:** 🟢 **NONE** (0%)
+- **الاعتماد على Cloudflare Quick Tunnel:** 🟢 **NONE** (تم إغلاق وحذف جميع التانلز)
+- **الاعتماد على جهاز المستخدم الشخصي:** 🟢 **NONE** (يمكن إغلاق الحاسوب بالكامل وتستمر الخدمة 24/7 سحابياً)
+- **الاعتماد على مسارات محلية:** 🟢 **NONE** (جميع المسارات ديناميكية داخل بيئة السحابة)
+
+---
+
+## 6. Security Audit
+
+- **مفاتيح سرية في Git:** 🟢 **NONE** (تم فحص 373 ملفاً — صفر تسريبات)
+- **إدارة الأسرار:** تُدار عبر Vercel Environment Variables المشفرة (`GEMINI_API_KEY`)
+- **حماية الواجهة:** حزمة JavaScript خالية تماماً من أي عناوين محلية أو مفاتيح حساسة
+
+---
+
+## 7. النتيجة النهائية
+
+$$\mathbf{FINAL \ DEPLOYMENT \ STATUS: \text{ \Large 🟢 STABLE PRODUCTION}}$$
+
+- **Frontend:** [https://frontend-gray-gamma-76.vercel.app](https://frontend-gray-gamma-76.vercel.app)
+- **Backend:** [https://salem-backend.vercel.app](https://salem-backend.vercel.app)
+- **Blockers:** 🟢 **NONE** (النظام يعمل سحابياً بالكامل ومجاناً وبدون بطاقة بنكية).
