@@ -4,7 +4,7 @@ FROM python:3.11-slim
 # Set non-interactive environment variables
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
-    PORT=8080 \
+    PORT=7860 \
     EMBEDDING_PROVIDER=gemini \
     EMBEDDING_MODEL=models/gemini-embedding-2 \
     LLM_PROVIDER=gemini \
@@ -36,8 +36,8 @@ USER appuser
 HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
     CMD curl -f http://localhost:${PORT}/api/v1/health || exit 1
 
-# Expose standard container port
-EXPOSE 8080
+# Expose standard container port (7860 default for Hugging Face / Koyeb / Render)
+EXPOSE 7860
 
 # Run FastAPI server with Uvicorn
-CMD exec uvicorn api.main:app --host 0.0.0.0 --port ${PORT} --workers 1 --timeout-keep-alive 30
+CMD exec uvicorn api.main:app --host 0.0.0.0 --port ${PORT:-7860} --workers 1 --timeout-keep-alive 30
