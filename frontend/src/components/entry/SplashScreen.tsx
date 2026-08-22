@@ -6,21 +6,17 @@ export interface SplashScreenProps {
 }
 
 export const SplashScreen = ({
-  durationMs = 900,
+  durationMs = 600,
 }: SplashScreenProps) => {
-  const { user, hasSeenOnboarding, setAuthStep } = useAuth();
+  const { setAuthStep } = useAuth();
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      if (user) {
-        setAuthStep(hasSeenOnboarding ? 'chat_ready' : 'onboarding');
-      } else {
-        setAuthStep('login');
-      }
+      setAuthStep('chat_ready');
     }, durationMs);
 
     return () => clearTimeout(timer);
-  }, [user, hasSeenOnboarding, setAuthStep, durationMs]);
+  }, [setAuthStep, durationMs]);
 
   return (
     <div

@@ -52,9 +52,6 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         }
       } else {
         setHasSeenOnboarding(false);
-        if (authStep !== 'splash') {
-          setAuthStep('login');
-        }
       }
     });
 
@@ -62,7 +59,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       isMounted = false;
       unsubscribe();
     };
-  }, [authStep]);
+  }, []);
 
   const clearError = () => setErrorMessage(null);
 
