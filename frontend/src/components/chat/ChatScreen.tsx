@@ -18,18 +18,31 @@ export interface ChatScreenProps {
   onUpdateConversationMessages?: (messages: ChatMessage[]) => void;
 }
 
-/** Maps raw RAG citations to UI EvidenceSource (zero medical hallucination) */
+/** Maps raw RAG citations to UI EvidenceSource with verified original text and highlights */
 function mapCitations(citations: RAGCitation[]): EvidenceSource[] {
-  return citations.map((c) => ({
-    id: String(c.source_id),
-    title: c.title || 'دليل منظمة الصحة العالمية الإكلينيكي للإقلاع عن التبغ',
-    organization: 'منظمة الصحة العالمية (WHO)',
-    year: '2024',
-    sourceType: 'دليل إكلينيكي معتمد',
-    section: c.section_number ?? undefined,
-    pageStart: c.physical_page_start ?? undefined,
-    whyRelevant: 'تم التحقق من هذه التوصية استنادًا إلى بروتوكول منظمة الصحة العالمية المعتمد لعام 2024.',
-  }));
+  return citations.map((c) => {
+    const origText = c.evidence?.original_text || '';
+    const highText = c.evidence?.highlight_text || undefined;
+    
+    // Strict safety verification: highlightText MUST be an exact substring of originalText
+    const verifiedHighlight = (highText && origText.includes(highText)) ? highText : undefined;
+
+    return {
+      id: c.citation_id || String(c.source_id),
+      title: c.source?.title || 'WHO clinical treatment guideline for tobacco cessation in adults',
+      sectionTitle: c.source?.section_title || c.title || 'إرشادات منظمة الصحة العالمية',
+      organization: c.source?.organization || 'منظمة الصحة العالمية (WHO)',
+      year: c.source?.year || '2024',
+      sourceType: 'دليل إكلينيكي معتمد',
+      section: c.source?.section || c.section_number || undefined,
+      pageStart: c.physical_page_start ?? (c.source?.page ? parseInt(c.source.page, 10) : undefined),
+      pageEnd: c.physical_page_end ?? undefined,
+      externalUrl: c.source?.url || 'https://www.who.int/publications/i/item/9789240096493',
+      originalText: origText || undefined,
+      highlightText: verifiedHighlight,
+      whyRelevant: 'تم التحقق من هذه التوصية استنادًا إلى بروتوكول منظمة الصحة العالمية المعتمد لعام 2024.',
+    };
+  });
 }
 
 export const ChatScreen = ({

@@ -3,14 +3,18 @@ export type MessageRole = 'user' | 'assistant';
 export interface EvidenceSource {
   id: string;
   title: string;
+  sectionTitle?: string;
   organization: string; // e.g. "منظمة الصحة العالمية (WHO)"
   year: string;         // e.g. "2024"
   sourceType: string;   // e.g. "دليل إكلينيكي معتمد"
   section?: string;
-  whyRelevant?: string; // Clear human explanation of why this source was used
+  whyRelevant?: string;
   excerpt?: string;
   pageStart?: number;
+  pageEnd?: number;
   externalUrl?: string;
+  originalText?: string;
+  highlightText?: string;
 }
 
 export interface StructuredContent {

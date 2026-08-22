@@ -51,6 +51,66 @@ LOCAL_EMBED_MODEL = os.path.join(BASE_DIR, "data", "models", "multilingual-e5-sm
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 
 
+def extract_verified_evidence_highlight(original_text: str, query: str = "", parsed_query: Optional[Any] = None) -> Optional[str]:
+    """
+    Extracts a verified, verbatim supporting sentence/span from original_text.
+    Guarantees:
+    1. Returns a span ONLY if it is an exact verbatim substring of original_text.
+    2. Matches clinical recommendations, interventions, or cessation actions.
+    3. If no exact match can be rigorously proven, returns None.
+    """
+    if not original_text or not original_text.strip():
+        return None
+
+    import re
+    raw_sentences = re.split(r'(?<=[.!?\n])\s+', original_text)
+    
+    guideline_markers = [
+        "recommends", "recommendation", "effective", "efficacy", "evidence",
+        "intervention", "treatment", "support", "cessation", "quitting",
+        "cravings", "withdrawal", "advice", "counselling", "behavioral"
+    ]
+    
+    keywords = set()
+    if parsed_query:
+        for ent in getattr(parsed_query, "detected_interventions", []):
+            keywords.add(str(ent).lower())
+        for intent in getattr(parsed_query, "detected_intents", []):
+            keywords.add(str(intent).lower())
+            
+    best_span = None
+    best_score = 0
+    
+    for s in raw_sentences:
+        clean_s = s.strip()
+        if len(clean_s) < 20 or len(clean_s) >= len(original_text) * 0.95:
+            continue
+        
+        # Rigorous check: clean_s MUST BE an exact substring in original_text
+        if clean_s not in original_text:
+            continue
+            
+        score = 0
+        s_lower = clean_s.lower()
+        
+        if any(m in s_lower for m in ["recommends", "suggests", "strong recommendation", "conditional recommendation"]):
+            score += 3
+        if any(m in s_lower for m in guideline_markers):
+            score += 1
+        for kw in keywords:
+            if kw in s_lower:
+                score += 2
+                
+        if score > best_score:
+            best_score = score
+            best_span = clean_s
+            
+    if best_score >= 2 and best_span and (best_span in original_text):
+        return best_span
+        
+    return None
+
+
 class GenerationPipeline:
     """
     Streamlined production clinical generation pipeline.
@@ -111,8 +171,6 @@ class GenerationPipeline:
         )
 
         # ── PHASE 5: Grounded Answer Contract (CIRCUIT BREAKER) ───────────
-        # Deterministic decision: SUPPORTED / PARTIALLY_SUPPORTED / UNSUPPORTED / OUT_OF_SCOPE / ABSTAIN
-        # If is_generation_allowed == False → return deterministic response; LLM provider is NEVER called.
         contract = GroundedAnswerContract.evaluate(gate_res, claim_report)
 
         logging.info(
@@ -162,16 +220,48 @@ class GenerationPipeline:
         if ca_sources:
             assembled = self.context_assembler.assemble(query, ca_sources)
 
-        # Build Citations Metadata
+        # Build Citations Metadata with Real Evidence Store Verification
         citations_metadata = []
+        records_lookup = getattr(self.hybrid_retriever.dense_retriever, "records_by_id", {})
         if assembled:
             for src in assembled.sources:
+                rec = records_lookup.get(src.chunk_id, {})
+                h = rec.get("hierarchy", {})
+                p = rec.get("provenance", {})
+                c = rec.get("content", {})
+                
+                original_text = c.get("verbatim_text", "")
+                section_num = src.section_number or h.get("section_number")
+                sec_title = src.title or h.get("section_title", "")
+                page_start = src.physical_page_start or p.get("physical_page_start")
+                page_end = p.get("physical_page_end")
+                doc_title = rec.get("document_title") or "WHO clinical treatment guideline for tobacco cessation in adults"
+                
+                verified_highlight = extract_verified_evidence_highlight(original_text, query, parsed_q)
+                if verified_highlight and (verified_highlight not in original_text):
+                    verified_highlight = None
+                
                 citations_metadata.append({
+                    "citation_id": str(src.source_id),
                     "source_id": src.source_id,
-                    "section_number": src.section_number,
-                    "physical_page_start": src.physical_page_start,
-                    "title": src.title,
                     "chunk_id": src.chunk_id,
+                    "section_number": section_num,
+                    "physical_page_start": page_start,
+                    "physical_page_end": page_end,
+                    "title": sec_title,
+                    "source": {
+                        "title": doc_title,
+                        "section_title": sec_title,
+                        "organization": "منظمة الصحة العالمية (WHO)",
+                        "year": "2024",
+                        "section": section_num,
+                        "page": str(page_start) if page_start is not None else None,
+                        "url": "https://www.who.int/publications/i/item/9789240096493",
+                    },
+                    "evidence": {
+                        "original_text": original_text,
+                        "highlight_text": verified_highlight,
+                    }
                 })
 
         # ── 7. LLM Generation (contract-state-aware prompt) ───────────────

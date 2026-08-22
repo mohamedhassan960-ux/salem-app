@@ -23,12 +23,31 @@ export interface RAGConversationTurn {
   content: string;
 }
 
+export interface RAGCitationSource {
+  title?: string;
+  section_title?: string;
+  organization?: string;
+  year?: string;
+  section?: string | null;
+  page?: string | null;
+  url?: string | null;
+}
+
+export interface RAGCitationEvidence {
+  original_text?: string;
+  highlight_text?: string | null;
+}
+
 export interface RAGCitation {
+  citation_id?: string;
   source_id: number;
   section_number?: string | null;
   physical_page_start?: number | null;
+  physical_page_end?: number | null;
   title: string;
   chunk_id: string;
+  source?: RAGCitationSource;
+  evidence?: RAGCitationEvidence;
 }
 
 export interface RAGResponse {

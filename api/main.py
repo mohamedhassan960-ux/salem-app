@@ -367,3 +367,35 @@ async def meta_endpoint() -> MetaResponse:
         model=model_name,
         circuit_breaker_enabled=True,
     )
+
+
+@app.get("/api/v1/diagnostic", include_in_schema=False)
+async def diagnostic_endpoint():
+    """Safe diagnostic probe to inspect LLM provider connection error."""
+    service = get_rag_service()
+    gen = service._pipeline.llm_generator
+    api_key = getattr(gen.provider, "api_key", None)
+    has_key = bool(api_key)
+    key_len = len(api_key) if api_key else 0
+    key_prefix = api_key[:4] if (api_key and key_len >= 4) else ""
+    provider_name = getattr(gen.provider, "provider_name", "unknown")
+    model_name = getattr(gen.provider, "model_name", "unknown")
+    
+    test_error = None
+    test_success = False
+    try:
+        res = gen.provider.complete(system_prompt="Say hi", messages=[{"role": "user", "content": "hi"}], max_tokens=10)
+        test_success = bool(res)
+    except Exception as e:
+        test_error = str(e)
+        
+    return {
+        "has_key": has_key,
+        "key_len": key_len,
+        "key_prefix": key_prefix,
+        "provider": provider_name,
+        "model": model_name,
+        "test_success": test_success,
+        "test_error": test_error,
+    }
+

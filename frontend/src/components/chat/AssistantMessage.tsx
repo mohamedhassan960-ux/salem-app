@@ -37,10 +37,14 @@ export const AssistantMessage = ({
             <button
               type="button"
               onClick={() => setIsSourceSheetOpen(true)}
-              className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#2D8BFF]/10 text-[#1E3A8A] hover:bg-[#2D8BFF]/20 text-[11px] font-semibold transition-colors cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#2D8BFF]/10 text-[#1E3A8A] hover:bg-[#2D8BFF]/20 text-[11px] font-semibold transition-colors cursor-pointer"
             >
               <BookOpen className="w-3 h-3 text-[#2D8BFF]" />
-              <span>المصادر ({message.evidence?.length})</span>
+              <span>
+                {message.evidence?.length === 1
+                  ? 'الدليل المستخدم · منظمة الصحة العالمية 2024 ›'
+                  : `الدليل المستخدم · ${message.evidence?.length} مصادر ›`}
+              </span>
             </button>
           )}
         </div>
@@ -92,10 +96,14 @@ export const AssistantMessage = ({
             <button
               type="button"
               onClick={() => setIsSourceSheetOpen(true)}
-              className="text-[11px] text-[#2D8BFF] hover:text-[#1E3A8A] font-semibold flex items-center gap-1 transition-colors cursor-pointer"
+              className="text-[11px] text-[#2D8BFF] hover:text-[#1E3A8A] font-semibold flex items-center gap-1.5 transition-colors cursor-pointer"
             >
               <ShieldCheck className="w-3.5 h-3.5" />
-              <span>مدعوم بأدلة منظمة الصحة العالمية (WHO 2024)</span>
+              <span>
+                {message.evidence?.length === 1
+                  ? 'الدليل المستخدم · منظمة الصحة العالمية 2024 ›'
+                  : `الدليل المستخدم · ${message.evidence?.length} مصادر ›`}
+              </span>
             </button>
           </div>
         )}

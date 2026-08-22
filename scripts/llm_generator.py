@@ -296,12 +296,12 @@ class GeminiProvider(LLMProvider):
             or os.environ.get("GOOGLE_API_KEY")
             or os.environ.get("LLM_API_KEY")
         )
-        # Prefer GEMINI_MODEL env var, fall back to GEMINI_MODEL default
+        # Prefer GEMINI_MODEL env var, fall back to gemini-3.6-flash
         self._model_name = (
             model_name
             or os.environ.get("GEMINI_MODEL")
             or os.environ.get("LLM_MODEL")
-            or "gemini-2.5-flash"
+            or "gemini-3.6-flash"
         )
 
     @property
@@ -364,12 +364,21 @@ class GeminiProvider(LLMProvider):
                             usage.get("totalTokenCount", "?"),
                         )
                     return "".join(text_parts).strip()
-                elif resp.status_code == 404 and "gemini-2.5-flash-lite" in self._model_name:
+                elif resp.status_code == 404:
                     # Model retirement fallback by Google
-                    logging.warning("gemini-2.5-flash-lite returned 404 (retired). Upgrading to gemini-3.5-flash-lite.")
-                    self._model_name = "gemini-3.5-flash-lite"
-                    url = f"https://generativelanguage.googleapis.com/v1beta/models/{self._model_name}:generateContent?key={self.api_key}"
-                    continue
+                    fallback_models = ["gemini-3.6-flash", "gemini-3.5-flash", "gemini-2.5-flash"]
+                    next_model = None
+                    for fm in fallback_models:
+                        if fm != self._model_name:
+                            next_model = fm
+                            break
+                    if next_model and attempt < 3:
+                        logging.warning(f"Gemini model {self._model_name} returned 404. Trying fallback model {next_model}.")
+                        self._model_name = next_model
+                        url = f"https://generativelanguage.googleapis.com/v1beta/models/{self._model_name}:generateContent?key={self.api_key}"
+                        continue
+                    else:
+                        raise RuntimeError(f"Gemini API Error 404: {resp.text}")
                 elif resp.status_code in [429, 503, 500, 502]:
                     wait_time = 5 * (attempt + 1)
                     if resp.status_code == 429:
