@@ -5,11 +5,14 @@ import App from './App.tsx';
 import { AuthProvider } from './context/AuthContext.tsx';
 import { UserStateProvider } from './state/UserStateContext.tsx';
 
-// Register PWA Service Worker only in production
+// Register PWA Service Worker only in production, and clear stale caches
 if ('serviceWorker' in navigator && import.meta.env.PROD) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js').catch(() => {
-      // Silently ignore SW registration failures (localhost / dev)
+    navigator.serviceWorker.register('/sw.js').then((reg) => {
+      // Force update check on each page load
+      reg.update().catch(() => {});
+    }).catch(() => {
+      // Silently ignore SW registration failures
     });
   });
 }
