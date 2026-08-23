@@ -5,15 +5,23 @@ import App from './App.tsx';
 import { AuthProvider } from './context/AuthContext.tsx';
 import { UserStateProvider } from './state/UserStateContext.tsx';
 
-// Register PWA Service Worker only in production, and clear stale caches
+// Register PWA Service Worker only in production, and auto-reload on update
 if ('serviceWorker' in navigator && import.meta.env.PROD) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/sw.js').then((reg) => {
-      // Force update check on each page load
       reg.update().catch(() => {});
-    }).catch(() => {
-      // Silently ignore SW registration failures
-    });
+      reg.addEventListener('updatefound', () => {
+        const newWorker = reg.installing;
+        if (newWorker) {
+          newWorker.addEventListener('statechange', () => {
+            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+              console.log('[SW] New version installed, reloading to apply updates...');
+              window.location.reload();
+            }
+          });
+        }
+      });
+    }).catch(() => {});
   });
 }
 
