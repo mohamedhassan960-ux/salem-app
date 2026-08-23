@@ -284,10 +284,18 @@ class OpenAICompatibleProvider(LLMProvider):
 
 class GeminiProvider(LLMProvider):
     """
-    Google Gemini API Provider.
-    API key is read exclusively from GEMINI_API_KEY or GOOGLE_API_KEY environment variables.
-    No key is hardcoded in this file.
+    Google Gemini API Provider with Intelligent Multi-Model Cascade (Fallback Chain).
+    Starts with lightweight cost-effective flash-lite models and automatically falls back to
+    higher-capacity flash models on rate limits, quota exhaustion, or server errors.
     """
+
+    CASCADE_MODELS = [
+        "gemini-3.5-flash-lite",
+        "gemini-flash-lite-latest",
+        "gemini-3.1-flash-lite",
+        "gemini-3.6-flash",
+        "gemini-flash-latest",
+    ]
 
     def __init__(self, api_key: Optional[str] = None, model_name: Optional[str] = None):
         self.api_key = (
@@ -296,12 +304,12 @@ class GeminiProvider(LLMProvider):
             or os.environ.get("GOOGLE_API_KEY")
             or os.environ.get("LLM_API_KEY")
         )
-        # Prefer GEMINI_MODEL env var, fall back to gemini-3.6-flash
+        # Prefer GEMINI_MODEL env var if explicitly provided, else start with the first cascade model
         self._model_name = (
             model_name
             or os.environ.get("GEMINI_MODEL")
             or os.environ.get("LLM_MODEL")
-            or "gemini-3.6-flash"
+            or self.CASCADE_MODELS[0]
         )
 
     @property
@@ -322,19 +330,13 @@ class GeminiProvider(LLMProvider):
         if not self.api_key:
             raise ValueError("GEMINI_API_KEY is not set. Set it as an environment variable.")
 
-        # Key is passed only in the URL query param (Gemini REST API standard). Never logged.
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/{self._model_name}:generateContent?key={self.api_key}"
-        headers = {"Content-Type": "application/json"}
-
-        # Build contents from messages — only user/assistant turns (no full history)
+        # Build contents from messages — only user/assistant turns
         contents = []
         for m in messages:
             role = "user" if m["role"] == "user" else "model"
             contents.append({"role": role, "parts": [{"text": m["content"]}]})
 
-        # Ensure ample token headroom for reasoning/thinking tokens + full clinical response
         effective_max_tokens = max(max_tokens, 2048)
-
         payload = {
             "systemInstruction": {"parts": [{"text": system_prompt}]},
             "contents": contents,
@@ -343,63 +345,58 @@ class GeminiProvider(LLMProvider):
                 "maxOutputTokens": effective_max_tokens,
             },
         }
+        headers = {"Content-Type": "application/json"}
 
-        for attempt in range(5):
-            try:
-                resp = requests.post(url, headers=headers, json=payload, timeout=35)
-                if resp.status_code == 200:
-                    data = resp.json()
-                    candidates = data.get("candidates", [])
-                    if not candidates:
-                        return ""
-                    parts = candidates[0].get("content", {}).get("parts", [])
-                    # Exclude thought/reasoning scratchpad parts to avoid leaking internal reasoning
-                    text_parts = [
-                        p.get("text", "")
-                        for p in parts
-                        if isinstance(p, dict) and "text" in p and not p.get("thought", False)
-                    ]
-                    if not text_parts:
-                        text_parts = [p.get("text", "") for p in parts if isinstance(p, dict) and "text" in p]
-                    # Log token usage (safe — no secrets)
-                    usage = data.get("usageMetadata", {})
-                    if usage:
-                        logging.info(
-                            "[GeminiProvider] tokens: input=%s output=%s total=%s",
-                            usage.get("promptTokenCount", "?"),
-                            usage.get("candidatesTokenCount", "?"),
-                            usage.get("totalTokenCount", "?"),
+        # Build candidate list starting from current model, then remaining cascade models
+        models_to_try = [self._model_name] + [m for m in self.CASCADE_MODELS if m != self._model_name]
+
+        last_error = None
+        for current_model in models_to_try:
+            url = f"https://generativelanguage.googleapis.com/v1beta/models/{current_model}:generateContent?key={self.api_key}"
+            for attempt in range(2):
+                try:
+                    resp = requests.post(url, headers=headers, json=payload, timeout=25)
+                    if resp.status_code == 200:
+                        data = resp.json()
+                        candidates = data.get("candidates", [])
+                        if not candidates:
+                            return ""
+                        parts = candidates[0].get("content", {}).get("parts", [])
+                        text_parts = [
+                            p.get("text", "")
+                            for p in parts
+                            if isinstance(p, dict) and "text" in p and not p.get("thought", False)
+                        ]
+                        if not text_parts:
+                            text_parts = [p.get("text", "") for p in parts if isinstance(p, dict) and "text" in p]
+                        
+                        usage = data.get("usageMetadata", {})
+                        if usage:
+                            logging.info(
+                                "[GeminiProvider] model=%s tokens: input=%s output=%s total=%s",
+                                current_model,
+                                usage.get("promptTokenCount", "?"),
+                                usage.get("candidatesTokenCount", "?"),
+                                usage.get("totalTokenCount", "?"),
+                            )
+                        self._model_name = current_model
+                        return "".join(text_parts).strip()
+                    elif resp.status_code in [404, 429, 500, 502, 503]:
+                        logging.warning(
+                            f"[GeminiProvider] Model {current_model} returned {resp.status_code}. Cascading to next model in chain..."
                         )
-                    return "".join(text_parts).strip()
-                elif resp.status_code == 404:
-                    # Model retirement fallback by Google
-                    fallback_models = ["gemini-3.6-flash", "gemini-flash-latest", "gemini-2.5-flash"]
-                    next_model = None
-                    for fm in fallback_models:
-                        if fm != self._model_name:
-                            next_model = fm
-                            break
-                    if next_model and attempt < 3:
-                        logging.warning(f"Gemini model {self._model_name} returned 404. Trying fallback model {next_model}.")
-                        self._model_name = next_model
-                        url = f"https://generativelanguage.googleapis.com/v1beta/models/{self._model_name}:generateContent?key={self.api_key}"
-                        continue
+                        last_error = f"HTTP {resp.status_code}: {resp.text[:200]}"
+                        break  # Break inner retry and try next cascade model
                     else:
-                        raise RuntimeError(f"Gemini API Error 404: {resp.text}")
-                elif resp.status_code in [429, 503, 500, 502]:
-                    if attempt >= 2:
-                        raise RuntimeError(f"Gemini API rate limit / server busy ({resp.status_code}): {resp.text[:200]}")
-                    wait_time = min(2.0, 1.0 * (attempt + 1))
-                    logging.warning(f"Gemini {resp.status_code} (attempt {attempt+1}/3). Quick wait {wait_time:.1f}s...")
-                    time.sleep(wait_time)
-                else:
-                    raise RuntimeError(f"Gemini API Error {resp.status_code}: {resp.text[:300]}")
-            except requests.exceptions.RequestException as e:
-                if attempt == 4:
-                    raise
-                logging.warning(f"Gemini request exception: {e}. Retrying in 5s...")
-                time.sleep(5)
-        raise RuntimeError("Gemini API call failed after 5 retries due to persistent rate limiting or server demand.")
+                        last_error = f"HTTP {resp.status_code}: {resp.text[:200]}"
+                        logging.warning(f"[GeminiProvider] Model {current_model} error: {last_error}")
+                        break
+                except Exception as ex:
+                    last_error = str(ex)
+                    logging.warning(f"[GeminiProvider] Model {current_model} attempt {attempt+1} exception: {ex}")
+                    time.sleep(1)
+
+        raise RuntimeError(f"All Gemini cascade models failed. Last error: {last_error}")
 
 
 class GroqProvider(OpenAICompatibleProvider):
