@@ -51,7 +51,14 @@ export const QuickActions = ({
             <button
               key={i}
               type="button"
-              onClick={act.onClick}
+              onPointerDown={(e) => {
+                e.preventDefault();
+                act.onClick?.();
+              }}
+              onClick={(e) => {
+                e.preventDefault();
+                act.onClick?.();
+              }}
               className="shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#2D8BFF]/10 hover:bg-[#2D8BFF]/20 text-[#1E3A8A] border border-[#2D8BFF]/30 text-xs font-bold transition-all duration-150 active:scale-95 cursor-pointer"
             >
               <HeartPulse className="w-3.5 h-3.5 text-[#2D8BFF]" />
@@ -64,7 +71,14 @@ export const QuickActions = ({
           <button
             key={i}
             type="button"
-            onClick={() => act.text && onSelectAction(act.text)}
+            onPointerDown={(e) => {
+              e.preventDefault();
+              if (act.text) onSelectAction(act.text);
+            }}
+            onClick={(e) => {
+              e.preventDefault();
+              if (act.text) onSelectAction(act.text);
+            }}
             className="shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#FFFFFF] hover:bg-[#F4F7FB] text-[#061A3A] border border-[#D9E2F0] hover:border-[#C4D1E3] text-xs font-semibold transition-all duration-150 active:scale-95 shadow-xs cursor-pointer"
           >
             <Sparkles className="w-3.5 h-3.5 text-[#2D8BFF]" />

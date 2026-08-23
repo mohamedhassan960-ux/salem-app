@@ -101,9 +101,7 @@ export const ChatScreen = ({
     };
   }, []);
 
-  const handleSelectSuggestion = (text: string) => {
-    handleSend(text);
-  };
+
 
   const handleSend = useCallback(
     async (text: string) => {
@@ -225,7 +223,7 @@ export const ChatScreen = ({
         {messages.length === 0 ? (
           <div className="h-full flex items-center justify-center">
             <EmptyChatState
-              onSelectSuggestion={handleSelectSuggestion}
+              onSelectSuggestion={handleSend}
               onOpenCravingModal={onOpenCravingModal}
             />
           </div>

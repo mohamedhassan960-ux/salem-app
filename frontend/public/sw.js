@@ -1,5 +1,5 @@
 // Oxygen Medical RAG — Progressive Web App Service Worker
-const CACHE_NAME = 'salem-medical-rag-v5';
+const CACHE_NAME = 'salem-medical-rag-v6';
 const STATIC_ASSETS = [
   '/',
   '/index.html',

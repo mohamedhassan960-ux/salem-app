@@ -37,9 +37,17 @@ export const EmptyChatState = ({
     },
   ];
 
+  const handleTrigger = (item: (typeof suggestions)[number]) => {
+    if (item.isSpecial && item.onClick) {
+      item.onClick();
+    } else if (item.prompt) {
+      onSelectSuggestion(item.prompt);
+    }
+  };
+
   return (
     <div
-      className="w-full max-w-lg mx-auto flex flex-col items-center text-center px-4 py-8 gap-6 font-arabic select-none"
+      className="w-full max-w-lg mx-auto flex flex-col items-center text-center px-4 py-8 gap-6 font-arabic"
       dir="rtl"
     >
       <div className="relative">
@@ -74,15 +82,16 @@ export const EmptyChatState = ({
             <button
               key={i}
               type="button"
-              onClick={() => {
-                if (item.isSpecial && item.onClick) {
-                  item.onClick();
-                } else if (item.prompt) {
-                  onSelectSuggestion(item.prompt);
-                }
+              onPointerDown={(e) => {
+                e.preventDefault();
+                handleTrigger(item);
+              }}
+              onClick={(e) => {
+                e.preventDefault();
+                handleTrigger(item);
               }}
               className={`
-                p-4 rounded-2xl border text-right transition-all duration-150 cursor-pointer flex items-center justify-between gap-3 shadow-xs
+                p-4 rounded-2xl border text-right transition-all duration-150 cursor-pointer flex items-center justify-between gap-3 shadow-xs active:scale-[0.98]
                 ${
                   item.isSpecial
                     ? 'bg-[#2D8BFF]/5 border-[#2D8BFF]/30 hover:bg-[#2D8BFF]/10 text-[#1E3A8A]'
