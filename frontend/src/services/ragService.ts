@@ -124,6 +124,7 @@ export async function sendQuery(
   history: RAGConversationTurn[] = [],
   signal?: AbortSignal,
 ): Promise<RAGResult> {
+  const correlationId = `req_cli_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`;
   const body = JSON.stringify({
     query: query.trim(),
     conversation_history: history.length > 0 ? history : undefined,
@@ -140,13 +141,21 @@ export async function sendQuery(
     effectiveSignal = timeoutController.signal;
   }
 
+  const startTime = performance.now();
+  console.info(`[Oxygen RAG] [${correlationId}] REQUEST_START -> ${RAG_ENDPOINT}`);
+
   try {
     const response = await fetch(RAG_ENDPOINT, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Request-ID': correlationId,
+      },
       body,
       signal: effectiveSignal,
     });
+
+    const elapsed = Math.round(performance.now() - startTime);
 
     if (!response.ok) {
       let errBody = '';
@@ -156,10 +165,11 @@ export async function sendQuery(
         // Ignore read failure
       }
 
-      console.error('[Oxygen RAG API Error]', {
+      console.error(`[Oxygen RAG] [${correlationId}] HTTP_ERROR:`, {
         endpoint: RAG_ENDPOINT,
         status: response.status,
         statusText: response.statusText,
+        elapsedMs: elapsed,
         responseBody: errBody.slice(0, 500),
       });
 
@@ -172,6 +182,13 @@ export async function sendQuery(
     }
 
     const data: RAGResponse = await response.json();
+    console.info(`[Oxygen RAG] [${correlationId}] RESPONSE_SUCCESS:`, {
+      requestId: data.request_id || correlationId,
+      contractState: data.contract_state,
+      provider: data.provider,
+      citationsCount: data.citations?.length ?? 0,
+      elapsedMs: elapsed,
+    });
 
     return {
       answer: data.answer,
@@ -181,19 +198,23 @@ export async function sendQuery(
       provider: data.provider,
       model: data.model,
       citations: data.citations ?? [],
-      latencyMs: data.latency_ms,
-      requestId: data.request_id,
+      latencyMs: data.latency_ms ?? elapsed,
+      requestId: data.request_id || correlationId,
     };
   } catch (err: unknown) {
+    const elapsed = Math.round(performance.now() - startTime);
     if (err instanceof RAGNetworkError) {
       throw err;
     }
     const isAbort = err instanceof Error && err.name === 'AbortError';
-    if (!isAbort) {
-      console.error('[Oxygen RAG Network Exception]', {
+    if (isAbort) {
+      console.warn(`[Oxygen RAG] [${correlationId}] REQUEST_ABORTED (timeout or user cancel) after ${elapsed}ms`);
+    } else {
+      console.error(`[Oxygen RAG] [${correlationId}] NETWORK_EXCEPTION:`, {
         endpoint: RAG_ENDPOINT,
         errorType: err instanceof Error ? err.name : typeof err,
         message: err instanceof Error ? err.message : String(err),
+        elapsedMs: elapsed,
       });
     }
     throw err;

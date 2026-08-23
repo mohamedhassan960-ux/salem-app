@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo, useCallback } from 'react';
 import { useAuth } from './context/AuthContext';
 import { useUserState } from './state/UserStateContext';
 import { SplashScreen } from './components/entry/SplashScreen';
@@ -23,7 +23,7 @@ import { NetworkBanner } from './components/pwa/NetworkBanner';
 
 import type { ConversationSession, ChatMessage } from './types/chat';
 
-import { useMemo } from 'react';
+
 
 type Tab = 'chat' | 'plan' | 'history' | 'profile' | 'settings' | 'marketing';
 
@@ -48,8 +48,8 @@ export function App() {
     return INITIAL_CONVERSATIONS;
   });
 
-  // Always start with a fresh clean chat session
-  const [activeConversationId, setActiveConversationId] = useState<string | null>(() => `conv_${Date.now()}`);
+  // Always start with a stable, persistent chat session ID
+  const [activeConversationId, setActiveConversationId] = useState<string>(() => `conv_${Date.now()}`);
 
   useEffect(() => {
     try {
@@ -62,6 +62,10 @@ export function App() {
   // Reset to fresh clean chat if user leaves app idle for > 30 minutes
   useEffect(() => {
     let lastActive = Date.now();
+    const updateActivity = () => {
+      lastActive = Date.now();
+    };
+
     const checkInactivity = () => {
       const now = Date.now();
       if (now - lastActive > 30 * 60 * 1000) {
@@ -71,6 +75,10 @@ export function App() {
     };
 
     window.addEventListener('focus', checkInactivity);
+    window.addEventListener('pointerdown', updateActivity, { passive: true });
+    window.addEventListener('keydown', updateActivity, { passive: true });
+    window.addEventListener('touchstart', updateActivity, { passive: true });
+
     const onVisibility = () => {
       if (document.visibilityState === 'visible') {
         checkInactivity();
@@ -80,6 +88,9 @@ export function App() {
 
     return () => {
       window.removeEventListener('focus', checkInactivity);
+      window.removeEventListener('pointerdown', updateActivity);
+      window.removeEventListener('keydown', updateActivity);
+      window.removeEventListener('touchstart', updateActivity);
       document.removeEventListener('visibilitychange', onVisibility);
     };
   }, []);
@@ -88,7 +99,7 @@ export function App() {
     const found = conversations.find((c) => c.id === activeConversationId);
     if (found) return found;
     return {
-      id: activeConversationId || `conv_${Date.now()}`,
+      id: activeConversationId,
       title: 'محادثة جديدة',
       group: 'اليوم',
       createdAt: Date.now(),
@@ -123,48 +134,48 @@ export function App() {
   const handleDeleteConversation = (id: string) => {
     setConversations((prev) => prev.filter((c) => c.id !== id));
     if (activeConversationId === id) {
-      setActiveConversationId(null);
+      setActiveConversationId(`conv_${Date.now()}`);
     }
   };
 
-  const handleUpdateMessages = (msgs: ChatMessage[]) => {
-    const currentId = activeConversationId || `conv_${Date.now()}`;
-    const firstUserMsg = msgs.find((m) => m.role === 'user');
-    const autoTitle = firstUserMsg ? firstUserMsg.content.slice(0, 30) + '...' : 'محادثة مع سالم';
+  const handleUpdateMessages = useCallback((msgs: ChatMessage[]) => {
+    setActiveConversationId((currentActiveId) => {
+      const currentId = currentActiveId || `conv_${Date.now()}`;
+      const firstUserMsg = msgs.find((m) => m.role === 'user');
+      const autoTitle = firstUserMsg ? firstUserMsg.content.slice(0, 30) + '...' : 'محادثة مع سالم';
 
-    setConversations((prev) => {
-      const idx = prev.findIndex((c) => c.id === currentId);
-      if (idx >= 0) {
-        return prev.map((c, i) =>
-          i === idx
-            ? {
-                ...c,
-                title:
-                  (c.title === 'استشارة جديدة' || c.title === 'محادثة جديدة') && firstUserMsg
-                    ? autoTitle
-                    : c.title,
-                updatedAt: Date.now(),
-                messages: msgs,
-              }
-            : c
-        );
-      } else {
-        const newConv: ConversationSession = {
-          id: currentId,
-          title: autoTitle,
-          group: 'اليوم',
-          createdAt: Date.now(),
-          updatedAt: Date.now(),
-          messages: msgs,
-        };
-        return [newConv, ...prev];
-      }
+      setConversations((prev) => {
+        const idx = prev.findIndex((c) => c.id === currentId);
+        if (idx >= 0) {
+          return prev.map((c, i) =>
+            i === idx
+              ? {
+                  ...c,
+                  title:
+                    (c.title === 'استشارة جديدة' || c.title === 'محادثة جديدة') && firstUserMsg
+                      ? autoTitle
+                      : c.title,
+                  updatedAt: Date.now(),
+                  messages: msgs,
+                }
+              : c
+          );
+        } else {
+          const newConv: ConversationSession = {
+            id: currentId,
+            title: autoTitle,
+            group: 'اليوم',
+            createdAt: Date.now(),
+            updatedAt: Date.now(),
+            messages: msgs,
+          };
+          return [newConv, ...prev];
+        }
+      });
+
+      return currentId;
     });
-
-    if (!activeConversationId) {
-      setActiveConversationId(currentId);
-    }
-  };
+  }, []);
 
   const handleConfirmLogout = async () => {
     setIsLogoutDialogOpen(false);

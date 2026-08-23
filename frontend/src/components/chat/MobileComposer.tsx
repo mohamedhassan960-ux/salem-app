@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, type FormEvent, type KeyboardEvent } from 'react';
+import { useState, useRef, useEffect, type FormEvent, type KeyboardEvent, type PointerEvent } from 'react';
 import { ArrowUp } from 'lucide-react';
 
 export interface MobileComposerProps {
@@ -16,6 +16,7 @@ export const MobileComposer = ({
 }: MobileComposerProps) => {
   const [text, setText] = useState(initialValue);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const isSubmittingRef = useRef(false);
 
   useEffect(() => {
     if (initialValue) {
@@ -26,21 +27,38 @@ export const MobileComposer = ({
     }
   }, [initialValue]);
 
-  const handleSubmit = (e?: FormEvent) => {
-    if (e) e.preventDefault();
+  const executeSend = () => {
     const trimmed = text.trim();
-    if (!trimmed || disabled) return;
+    if (!trimmed || disabled || isSubmittingRef.current) return;
+
+    isSubmittingRef.current = true;
     onSendMessage(trimmed);
     setText('');
     if (textareaRef.current) {
       textareaRef.current.style.height = 'auto';
     }
+    // Release debounce lock after brief tick
+    setTimeout(() => {
+      isSubmittingRef.current = false;
+    }, 300);
+  };
+
+  const handleSubmit = (e?: FormEvent) => {
+    if (e) e.preventDefault();
+    executeSend();
+  };
+
+  const handlePointerDownSend = (e: PointerEvent<HTMLButtonElement>) => {
+    // Crucial for mobile touch: prevent blur layout shift before execution
+    if (!text.trim() || disabled) return;
+    e.preventDefault();
+    executeSend();
   };
 
   const handleKeyDown = (e: KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
-      handleSubmit();
+      executeSend();
     }
   };
 
@@ -51,9 +69,11 @@ export const MobileComposer = ({
     el.style.height = `${Math.min(el.scrollHeight, 140)}px`;
   };
 
+  const canSend = Boolean(text.trim()) && !disabled;
+
   return (
     <div
-      className="w-full bg-[#FFFFFF] border-t border-[#D9E2F0] px-4 py-3 shrink-0 font-arabic select-none"
+      className="w-full bg-[#FFFFFF] border-t border-[#D9E2F0] px-4 py-3 shrink-0 font-arabic"
       style={{ paddingBottom: 'calc(0.75rem + var(--sab))' }}
       dir="rtl"
     >
@@ -67,13 +87,15 @@ export const MobileComposer = ({
             onKeyDown={handleKeyDown}
             disabled={disabled}
             placeholder={placeholder}
-            className="w-full bg-transparent px-4 py-3 text-sm text-[#061A3A] placeholder:text-[#8291A8] resize-none outline-none max-h-36 min-h-[44px] leading-relaxed block"
+            className="w-full bg-transparent px-4 py-3 text-sm text-[#061A3A] placeholder:text-[#8291A8] resize-none outline-none max-h-36 min-h-[44px] leading-relaxed block select-text"
           />
         </div>
 
         <button
           type="submit"
-          disabled={!text.trim() || disabled}
+          onPointerDown={handlePointerDownSend}
+          onClick={handleSubmit}
+          disabled={!canSend}
           aria-label="إرسال الرسالة"
           className="
             w-11 h-11 min-w-[44px] min-h-[44px] rounded-2xl bg-[#2D8BFF] hover:bg-[#1E7AE6] active:bg-[#1569CC] text-white

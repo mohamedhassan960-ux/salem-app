@@ -63,13 +63,19 @@ export const ChatScreen = ({
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const abortControllerRef = useRef<AbortController | null>(null);
 
-  // Sync with active conversation change only when conversation ID changes
+  // Track last loaded conversation ID to prevent in-flight messages from being wiped by prop changes
   const activeConvId = activeConversation?.id;
+  const lastLoadedIdRef = useRef(activeConvId);
+
   useEffect(() => {
-    setMessages(activeConversation ? activeConversation.messages : []);
-    setErrorMessage(null);
-    setComposerValue('');
-  }, [activeConvId]);
+    // Only re-sync messages if the conversation ID has genuinely changed (user switched conversation)
+    if (activeConvId && activeConvId !== lastLoadedIdRef.current) {
+      lastLoadedIdRef.current = activeConvId;
+      setMessages(activeConversation ? activeConversation.messages : []);
+      setErrorMessage(null);
+      setComposerValue('');
+    }
+  }, [activeConvId, activeConversation]);
 
   // Scroll to bottom smoothly on message or loading state changes (robust on mobile viewports & virtual keyboards)
   useEffect(() => {
@@ -107,6 +113,8 @@ export const ChatScreen = ({
       setErrorMessage(null);
       setComposerValue('');
 
+      console.info('[ChatScreen] SEND_HANDLER_ENTERED:', { queryPreview: trimmed.slice(0, 40) });
+
       // Check for safety emergency keywords (chest pain, shortness of breath, etc.)
       const isEmergencyQuery =
         /ألم في الصدر|وجع صدر|ضيق تنفس|مش قادر اتنفس|نزيف|إغماء|طوارئ/i.test(trimmed);
@@ -116,15 +124,23 @@ export const ChatScreen = ({
 
       // 1. Add user message
       const userMsg: ChatMessage = {
-        id: `u_${Date.now()}`,
+        id: `u_${Date.now()}_${Math.random().toString(36).slice(2, 6)}`,
         role: 'user',
         content: trimmed,
         timestamp: Date.now(),
       };
 
-      const nextMessages = [...messages, userMsg];
-      setMessages(nextMessages);
-      onUpdateConversationMessages?.(nextMessages);
+      // Take current messages snapshot for conversation history passed to RAG
+      const currentHistorySnapshot = messages.map((m) => ({
+        role: m.role as 'user' | 'assistant',
+        content: m.content,
+      }));
+
+      // Commit user message
+      const messagesWithUser = [...messages, userMsg];
+      setMessages(messagesWithUser);
+      onUpdateConversationMessages?.(messagesWithUser);
+
       setIsLoading(true);
 
       // 2. Call real RAG pipeline
@@ -133,13 +149,11 @@ export const ChatScreen = ({
       abortControllerRef.current = controller;
 
       try {
-        const historySnapshot = messages.map((m) => ({
-          role: m.role as 'user' | 'assistant',
-          content: m.content,
-        }));
-
-        const result = await sendQuery(trimmed, historySnapshot, controller.signal);
-        if (controller.signal.aborted) return;
+        const result = await sendQuery(trimmed, currentHistorySnapshot, controller.signal);
+        if (controller.signal.aborted) {
+          console.warn('[ChatScreen] Request aborted before state commit');
+          return;
+        }
 
         const evidence =
           result.citations && result.citations.length > 0
@@ -147,7 +161,7 @@ export const ChatScreen = ({
             : undefined;
 
         const assistantMsg: ChatMessage = {
-          id: `a_${Date.now()}`,
+          id: `a_${Date.now()}_${Math.random().toString(36).slice(2, 6)}`,
           role: 'assistant',
           content: result.answer,
           evidence,
@@ -158,11 +172,19 @@ export const ChatScreen = ({
           timestamp: Date.now(),
         };
 
-        const updatedWithAssistant = [...nextMessages, assistantMsg];
+        // Commit assistant message cleanly without inside-reducer side-effects
+        const updatedWithAssistant = [...messagesWithUser, assistantMsg];
         setMessages(updatedWithAssistant);
         onUpdateConversationMessages?.(updatedWithAssistant);
+
+        console.info('[ChatScreen] STATE_COMMITTED: Assistant message permanently added', {
+          totalMessages: updatedWithAssistant.length,
+          contractState: assistantMsg.contractState,
+        });
       } catch (err) {
         if (controller.signal.aborted) return;
+
+        console.error('[ChatScreen] SEND_FAILED:', err);
 
         const isTimeout = err instanceof Error && err.name === 'AbortError';
         const isNetwork = err instanceof RAGNetworkError;
@@ -171,8 +193,10 @@ export const ChatScreen = ({
           setErrorMessage('انتهت مهلة الانتظار. يرجى إعادة المحاولة.');
         } else if (isNetwork && err.statusCode === 503) {
           setErrorMessage('المساعد الطبي قيد التجهيز، يرجى الانتظار ثوانٍ ثم المحاولة مجددًا.');
+        } else if (!navigator.onLine) {
+          setErrorMessage('لا يوجد اتصال بالإنترنت. يرجى التحقق من الشبكة.');
         } else {
-          setErrorMessage('حصلت مشكلة وأنا بحاول أجهز الرد. جرّب تاني.');
+          setErrorMessage('حصلت مشكلة أثناء تجهيز الرد الطبي. يرجى إعادة المحاولة.');
         }
       } finally {
         if (!controller.signal.aborted) {
@@ -187,7 +211,6 @@ export const ChatScreen = ({
     const lastUser = [...messages].reverse().find((m) => m.role === 'user');
     if (lastUser && !isLoading) {
       setErrorMessage(null);
-      setMessages((prev) => prev.slice(0, -1));
       handleSend(lastUser.content);
     }
   };
