@@ -85,7 +85,7 @@ export const AssistantMessage = ({
             )}
           </div>
         ) : (
-          <div className="text-sm text-[#061A3A] leading-relaxed whitespace-pre-wrap">
+          <div className="text-sm text-[#061A3A] leading-relaxed whitespace-pre-wrap break-words [overflow-wrap:anywhere]">
             {message.content}
           </div>
         )}

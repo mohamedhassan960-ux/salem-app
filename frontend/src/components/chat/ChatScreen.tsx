@@ -60,6 +60,7 @@ export const ChatScreen = ({
   const [showSafetyBanner, setShowSafetyBanner] = useState(false);
 
   const scrollRef = useRef<HTMLDivElement>(null);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
   const abortControllerRef = useRef<AbortController | null>(null);
 
   // Sync with active conversation change only when conversation ID changes
@@ -70,11 +71,21 @@ export const ChatScreen = ({
     setComposerValue('');
   }, [activeConvId]);
 
-  // Scroll to bottom smoothly on message or loading state changes
+  // Scroll to bottom smoothly on message or loading state changes (robust on mobile viewports & virtual keyboards)
   useEffect(() => {
-    const el = scrollRef.current;
-    if (!el) return;
-    el.scrollTop = el.scrollHeight;
+    const scrollToBottom = () => {
+      if (messagesEndRef.current) {
+        messagesEndRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
+      }
+      if (scrollRef.current) {
+        scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+      }
+    };
+
+    scrollToBottom();
+    // Second pass after DOM paint / mobile keyboard reflow
+    const timer = setTimeout(scrollToBottom, 120);
+    return () => clearTimeout(timer);
   }, [messages, isLoading]);
 
   // Abort pending request on unmount
@@ -238,6 +249,9 @@ export const ChatScreen = ({
                 </button>
               </div>
             )}
+
+            {/* Mobile Scroll Target */}
+            <div ref={messagesEndRef} className="h-2 shrink-0" />
           </div>
         )}
       </div>
