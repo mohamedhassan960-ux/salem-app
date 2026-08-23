@@ -93,20 +93,21 @@ export class RAGNetworkError extends Error {
 
 // ─── Base URL Configuration & Validation ──────────────────────────────────────
 
-const RAW_API_URL = import.meta.env.VITE_API_URL;
-// Ensure no trailing slash and fallback to live production cloud backend
-export const BASE_API = (RAW_API_URL ? String(RAW_API_URL).trim().replace(/\/+$/, '') : 'https://salem-backend.vercel.app');
-
-if (!BASE_API) {
-  console.warn(
-    '[Oxygen RAG] Missing VITE_API_URL environment variable. ' +
-    'API calls will fall back to the current origin. ' +
-    'In Production (Vercel), make sure to configure VITE_API_URL pointing to your backend service.'
-  );
+export function getBaseApi(): string {
+  const envUrl = import.meta.env.VITE_API_URL;
+  if (envUrl && typeof envUrl === 'string' && envUrl.trim().length > 0) {
+    return envUrl.trim().replace(/\/+$/, '');
+  }
+  if (typeof window !== 'undefined') {
+    const host = window.location.hostname;
+    if (host === 'localhost' || host === '127.0.0.1') {
+      return 'http://127.0.0.1:8000';
+    }
+  }
+  return 'https://salem-backend.vercel.app';
 }
 
-const RAG_ENDPOINT = `${BASE_API}/api/v1/chat`;
-const HEALTH_ENDPOINT = `${BASE_API}/api/v1/health`;
+export const BASE_API = getBaseApi();
 const REQUEST_TIMEOUT_MS = 120_000; // 2 minutes — LLM generation and retrieval timeout
 
 /**
@@ -141,11 +142,12 @@ export async function sendQuery(
     effectiveSignal = timeoutController.signal;
   }
 
+  const endpoint = `${getBaseApi()}/api/v1/chat`;
   const startTime = performance.now();
-  console.info(`[Oxygen RAG] [${correlationId}] REQUEST_START -> ${RAG_ENDPOINT}`);
+  console.info(`[Oxygen RAG] [${correlationId}] REQUEST_START -> ${endpoint}`);
 
   try {
-    const response = await fetch(RAG_ENDPOINT, {
+    const response = await fetch(endpoint, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -166,7 +168,7 @@ export async function sendQuery(
       }
 
       console.error(`[Oxygen RAG] [${correlationId}] HTTP_ERROR:`, {
-        endpoint: RAG_ENDPOINT,
+        endpoint,
         status: response.status,
         statusText: response.statusText,
         elapsedMs: elapsed,
@@ -177,7 +179,7 @@ export async function sendQuery(
         response.status,
         `HTTP ${response.status}: ${response.statusText || 'Request Failed'}`,
         errBody,
-        RAG_ENDPOINT
+        endpoint
       );
     }
 
@@ -211,7 +213,7 @@ export async function sendQuery(
       console.warn(`[Oxygen RAG] [${correlationId}] REQUEST_ABORTED (timeout or user cancel) after ${elapsed}ms`);
     } else {
       console.error(`[Oxygen RAG] [${correlationId}] NETWORK_EXCEPTION:`, {
-        endpoint: RAG_ENDPOINT,
+        endpoint,
         errorType: err instanceof Error ? err.name : typeof err,
         message: err instanceof Error ? err.message : String(err),
         elapsedMs: elapsed,
@@ -229,7 +231,7 @@ export async function sendQuery(
  */
 export async function checkHealth(): Promise<boolean> {
   try {
-    const r = await fetch(HEALTH_ENDPOINT, { method: 'GET' });
+    const r = await fetch(`${getBaseApi()}/api/v1/health`, { method: 'GET' });
     return r.ok;
   } catch {
     return false;
