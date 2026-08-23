@@ -224,6 +224,7 @@ export function App() {
       >
         {currentTab === 'chat' && (
           <ChatScreen
+            key={activeConversation.id}
             activeConversation={activeConversation}
             onOpenCravingModal={() => setActiveIntervention('craving')}
             onOpenRelapseModal={() => setActiveIntervention('relapse')}

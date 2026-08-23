@@ -63,19 +63,7 @@ export const ChatScreen = ({
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const abortControllerRef = useRef<AbortController | null>(null);
 
-  // Track last loaded conversation ID to prevent in-flight messages from being wiped by prop changes
-  const activeConvId = activeConversation?.id;
-  const lastLoadedIdRef = useRef(activeConvId);
 
-  useEffect(() => {
-    // Only re-sync messages if the conversation ID has genuinely changed (user switched conversation)
-    if (activeConvId && activeConvId !== lastLoadedIdRef.current) {
-      lastLoadedIdRef.current = activeConvId;
-      setMessages(activeConversation ? activeConversation.messages : []);
-      setErrorMessage(null);
-      setComposerValue('');
-    }
-  }, [activeConvId, activeConversation]);
 
   // Scroll to bottom smoothly on message or loading state changes (robust on mobile viewports & virtual keyboards)
   useEffect(() => {
