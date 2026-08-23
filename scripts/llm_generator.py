@@ -407,7 +407,7 @@ class GroqProvider(OpenAICompatibleProvider):
 
     def __init__(self, api_key: Optional[str] = None, model_name: Optional[str] = None, timeout_seconds: int = 45):
         groq_api_key = api_key or os.environ.get("GROQ_API_KEY") or os.environ.get("LLM_API_KEY")
-        groq_model = model_name or os.environ.get("LLM_MODEL") or "llama-3.3-70b-versatile"
+        groq_model = model_name or os.environ.get("GROQ_MODEL") or os.environ.get("LLM_MODEL") or "openai/gpt-oss-120b"
         super().__init__(
             base_url="https://api.groq.com/openai/v1",
             api_key=groq_api_key,
@@ -609,7 +609,30 @@ class LLMGenerator:
                 error=None,
             )
         except Exception as e:
-            logging.error(f"LLM Generation failed: {e}")
+            logging.error(f"LLM Generation with {self.provider.provider_name} failed: {e}. Trying Gemini fallback...")
+            # Automatic fallback to Gemini if primary provider (e.g. Groq/Nvidia) failed or hit 429
+            if self.provider.provider_name != "google_gemini" and os.environ.get("GEMINI_API_KEY"):
+                try:
+                    fallback_provider = GeminiProvider()
+                    raw_text = fallback_provider.complete(
+                        system_prompt=self.system_prompt,
+                        messages=messages,
+                        temperature=temperature,
+                        max_tokens=2048,
+                    )
+                    return LLMGenerationResponse(
+                        answer=raw_text,
+                        citations=citations_metadata or [],
+                        grounded=is_grounded and (safety_flag != "NO_GROUNDED_EVIDENCE_IN_WHO_GUIDELINE"),
+                        safety_status=safety_flag or ("DIRECT_EVIDENCE" if is_grounded else "INSUFFICIENT_EVIDENCE"),
+                        provider="google_gemini_fallback",
+                        model=fallback_provider.model_name,
+                        raw_response=raw_text,
+                        error=None,
+                    )
+                except Exception as fb_err:
+                    logging.error(f"Fallback Gemini Provider also failed: {fb_err}")
+
             fallback_ans = (
                 "أهلاً بحضرتك. وفقاً للأدلة الإكلينيكية لمنظمة الصحة العالمية (2024)، "
                 "يتوفر دعم سلوكي وعلاجات معتمدة لمساعدتك في رحلة الإقلاع. "
